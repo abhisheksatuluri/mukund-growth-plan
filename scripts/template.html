@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukund Venkat — £10k/Month Growth Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#0a0a0b; --bg-2:#111114; --bg-3:#16161a; --line:#26262c; --line-2:#1d1d22;
+  --ink:#f3f1ec; --ink-dim:#a8a59f; --ink-mute:#6c6a65;
+  --accent:#c9a96a; --accent-2:#e6c886; --good:#7fb98c; --bad:#d68a8a; --warn:#d6c08a;
+  --serif:'Cormorant Garamond',serif; --sans:'Inter Tight','Inter',system-ui,-apple-system,sans-serif; --mono:'JetBrains Mono',monospace;
+  --r:6px; --r-lg:14px; --pad:clamp(18px,3vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;letter-spacing:-.005em}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s ease}
+a:hover{border-color:var(--accent)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.012em;margin:0 0 .5em}
+h1{font-size:clamp(34px,5vw,64px);line-height:1.04;letter-spacing:-.02em}
+h2{font-size:clamp(26px,3.4vw,44px);line-height:1.1}
+h3{font-size:clamp(20px,2.2vw,26px);line-height:1.2}
+h4{font-size:17px;font-family:var(--serif);font-weight:500;letter-spacing:-.005em;color:var(--ink);margin:0 0 .55em;line-height:1.25;text-transform:none}
+p{margin:0 0 1em;color:var(--ink-dim);line-height:1.6}
+b,strong{font-weight:600;color:var(--ink)}
+.eyebrow{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500;font-family:var(--sans)}
+.mono{font-family:var(--mono);font-feature-settings:'tnum'}
+.container{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+
+/* Header */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.84);backdrop-filter:blur(14px) saturate(120%);-webkit-backdrop-filter:blur(14px) saturate(120%);border-bottom:1px solid var(--line-2)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px var(--pad);max-width:1280px;margin:0 auto;gap:16px}
+.brand{font-family:var(--serif);font-size:20px;flex:0 0 auto}
+.brand small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);margin-top:2px;font-weight:500}
+.toc-wrap{flex:1 1 auto;min-width:0;position:relative;overflow:hidden}
+.toc-wrap::after{content:'';position:absolute;right:0;top:0;bottom:0;width:24px;background:linear-gradient(90deg,transparent,rgba(10,10,11,.85));pointer-events:none}
+.toc{display:flex;gap:2px;font-size:12px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-right:24px;justify-content:flex-end}
+.toc::-webkit-scrollbar{display:none}
+.toc a{color:var(--ink-dim);padding:6px 10px;border:1px solid transparent;border-radius:var(--r);font-weight:500;letter-spacing:0;border-bottom:none;white-space:nowrap;flex:0 0 auto;cursor:pointer}
+.toc a:hover{color:var(--ink);border-color:var(--line);background:var(--bg-2)}
+.toc a.active{color:var(--accent);border-color:var(--line);background:rgba(201,169,106,.06)}
+@media (max-width:720px){
+  .topbar-inner{padding:10px var(--pad);gap:10px}
+  .brand{font-size:17px}
+  .brand small{display:none}
+  .toc{justify-content:flex-start}
+  .toc a{padding:5px 8px;font-size:11.5px}
+}
+
+/* Hero */
+.hero{padding:80px 0 56px;border-bottom:1px solid var(--line-2);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(800px 400px at 80% 20%,rgba(201,169,106,.08),transparent 60%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;position:relative}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero h1 em{color:var(--accent);font-style:italic}
+.hero-meta{display:flex;flex-wrap:wrap;gap:32px;margin-top:32px;font-size:13px;color:var(--ink-mute)}
+.hero-meta div b{display:block;font-family:var(--serif);font-size:28px;color:var(--ink);font-weight:500;margin-bottom:2px}
+.hero-card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+.hero-card h4{margin-top:0}
+.bridge{display:flex;align-items:flex-end;gap:6px;height:140px;margin:18px 0 6px}
+.bridge-bar{flex:1;background:linear-gradient(180deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:4px 4px 0 0;display:flex;flex-direction:column;justify-content:flex-end;padding:6px 4px;color:var(--ink-dim);font-size:10px;font-family:var(--mono);text-align:center;position:relative}
+.bridge-bar.current{background:linear-gradient(180deg,#1c1c20,var(--bg-2));color:var(--ink)}
+.bridge-bar.target{background:linear-gradient(180deg,rgba(201,169,106,.4),rgba(201,169,106,.1));border-color:var(--accent);color:var(--accent-2)}
+.bridge-bar.add{background:linear-gradient(180deg,rgba(127,185,140,.25),rgba(127,185,140,.05));border-color:rgba(127,185,140,.4);color:var(--good)}
+.bridge-label{font-size:9px;color:var(--ink-mute);margin-top:6px;text-align:center}
+
+/* Sections */
+section{padding:clamp(48px,7vw,80px) 0;border-bottom:1px solid var(--line-2);scroll-margin-top:80px}
+section:last-of-type{border-bottom:none}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(24px,3.5vw,36px);flex-wrap:wrap}
+.section-head h2{margin-bottom:8px}
+.section-head .eyebrow{display:block;margin-bottom:10px}
+.section-head p{max-width:560px;margin:0;font-size:14px;color:var(--ink-dim)}
+
+/* Cards / grids */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){.grid-3,.grid-2,.grid-4{grid-template-columns:1fr;gap:14px}}
+.card{background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;position:relative;transition:border-color .2s ease,transform .2s ease}
+.card:hover{border-color:#33333a}
+.card h4{margin-top:0}
+.card .num{font-family:var(--serif);font-size:clamp(34px,4vw,44px);font-weight:500;color:var(--ink);line-height:1;letter-spacing:-.02em}
+.card .num.accent{color:var(--accent)}
+.card .num.good{color:var(--good)}
+.card .num.bad{color:var(--bad)}
+.card .label{font-size:10.5px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.12em;margin-top:8px;font-weight:500}
+.tag{display:inline-block;padding:3px 9px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;color:var(--ink-dim);font-weight:500;font-family:var(--sans)}
+.tag.good{border-color:rgba(127,185,140,.45);color:var(--good);background:rgba(127,185,140,.05)}
+.tag.bad{border-color:rgba(214,138,138,.45);color:var(--bad);background:rgba(214,138,138,.05)}
+.tag.warn{border-color:rgba(214,192,138,.45);color:var(--warn);background:rgba(214,192,138,.05)}
+.tag.acc{border-color:rgba(201,169,106,.5);color:var(--accent);background:rgba(201,169,106,.06)}
+@media (max-width:760px){.card{padding:18px}}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:24px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--ink-dim);border-bottom:2px solid transparent;font-weight:500;letter-spacing:0;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--sans);white-space:nowrap;flex:0 0 auto}
+.tab:hover{color:var(--ink)}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* Sliders */
+.slider-row{display:grid;grid-template-columns:1fr 70px;gap:12px;align-items:center;margin:12px 0;font-size:13px}
+.slider-row label{display:flex;justify-content:space-between;color:var(--ink-dim)}
+.slider-row label b{color:var(--ink);font-weight:500}
+.slider-row input[type=range]{width:100%;accent-color:var(--accent);background:var(--bg-3)}
+.slider-row .val{font-family:var(--mono);font-size:12px;color:var(--accent);text-align:right;background:var(--bg-3);padding:4px 8px;border-radius:4px;border:1px solid var(--line)}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{font-weight:600;color:var(--ink-dim);text-transform:uppercase;font-size:10px;letter-spacing:.1em;font-family:var(--sans)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:12px}
+tr:hover td{background:var(--bg-3)}
+.table-wrap{border:1px solid var(--line);border-radius:var(--r-lg);overflow-x:auto;background:var(--bg-2);-webkit-overflow-scrolling:touch}
+.card table,.card .table-wrap{width:100%}
+@media (max-width:600px){
+  table{font-size:12.5px}
+  th,td{padding:8px 6px}
+}
+
+/* Timeline */
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:24px}
+@media (max-width:1100px){.timeline{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.timeline{grid-template-columns:repeat(2,1fr);gap:12px}}
+@media (max-width:480px){.timeline{grid-template-columns:1fr}}
+.phase{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;display:flex;flex-direction:column;gap:8px;min-height:230px}
+.phase .ph-num{font-family:var(--sans);font-size:10.5px;color:var(--accent);letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.phase h4{margin:0;font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:500}
+.phase ul{margin:6px 0 0;padding-left:18px;font-size:12.5px;color:var(--ink-dim);line-height:1.5}
+.phase li{margin-bottom:5px}
+.phase .impact{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-2);font-size:10.5px;color:var(--ink-mute);font-family:var(--mono)}
+
+/* Flywheel */
+.flywheel{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;margin:24px 0;padding:20px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg)}
+.fw-step{padding:12px 16px;background:var(--bg-3);border:1px solid var(--line);border-radius:var(--r);font-size:12.5px;color:var(--ink);min-width:130px;text-align:center;font-weight:500;letter-spacing:-.005em}
+.fw-arrow{padding:0 8px;color:var(--accent);font-size:16px}
+@media (max-width:760px){.fw-step{min-width:auto;flex:1 1 calc(50% - 8px);font-size:12px;padding:10px 8px}.fw-arrow{display:none}}
+
+/* Checklist */
+.check-list{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+@media (max-width:1024px){.check-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.check-list{grid-template-columns:1fr}}
+.check-col{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px}
+.check-col h4{margin-top:0}
+.check-col label{display:flex;gap:10px;font-size:13px;color:var(--ink-dim);padding:8px 0;border-bottom:1px solid var(--line-2);cursor:pointer;line-height:1.45}
+.check-col label:last-child{border-bottom:none}
+.check-col input[type=checkbox]{margin-top:3px;accent-color:var(--accent);flex-shrink:0}
+.check-col label.done{color:var(--ink-mute);text-decoration:line-through}
+
+/* Trigger bars */
+.trig-bar{display:grid;grid-template-columns:140px 1fr 46px;gap:10px;align-items:center;margin:8px 0;font-size:12.5px;color:var(--ink-dim)}
+.trig-bar .meter{height:6px;background:var(--bg-3);border-radius:4px;overflow:hidden;border:1px solid var(--line-2)}
+.trig-bar .fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:3px}
+.trig-bar .v{font-family:var(--mono);font-size:11.5px;color:var(--ink);text-align:right}
+.trig-bar.weak .fill{background:linear-gradient(90deg,#5a3838,var(--bad))}
+@media (max-width:600px){.trig-bar{grid-template-columns:110px 1fr 40px;font-size:11.5px}}
+
+/* Offer ladder */
+.ladder{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:20px;align-items:stretch}
+@media (max-width:1100px){.ladder{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.ladder{grid-template-columns:repeat(2,1fr)}}
+.rung{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 12px;text-align:center;display:flex;flex-direction:column;gap:5px}
+.rung .price{font-family:var(--serif);font-size:22px;color:var(--accent);font-weight:500;letter-spacing:-.01em}
+.rung .name{font-size:12.5px;color:var(--ink);font-weight:500;margin-top:4px;line-height:1.3}
+.rung .desc{font-size:11px;color:var(--ink-mute);line-height:1.45}
+.rung.featured{border-color:var(--accent);background:linear-gradient(180deg,rgba(201,169,106,.06),var(--bg-2))}
+
+/* Chart wrappers (flex pattern so Chart.js gets a sized parent reliably) */
+.chart-wrap{background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;height:340px;position:relative;display:flex;flex-direction:column;overflow:hidden}
+.chart-wrap canvas{flex:1 1 0;min-height:0;width:100% !important;height:auto !important;display:block}
+.chart-title{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-dim);margin-bottom:12px;font-weight:500;flex:0 0 auto}
+@media (max-width:760px){.chart-wrap{height:280px;padding:14px}}
+
+/* Disclaimer */
+.disclaimer{padding:16px 20px;background:rgba(214,192,138,.06);border:1px solid rgba(214,192,138,.25);border-radius:var(--r-lg);font-size:12.5px;color:var(--ink-dim);margin:24px 0;line-height:1.6}
+.disclaimer b{color:var(--warn)}
+
+/* Footer */
+footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);text-align:center;color:var(--ink-mute);font-size:12px}
+
+/* Reel preview */
+.reel-row{display:grid;grid-template-columns:36px 70px 1fr 80px 80px;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line-2);font-size:13px}
+.reel-row .rank{font-family:var(--serif);color:var(--ink-mute);font-size:18px;text-align:center}
+.reel-row .meta{font-size:11px;color:var(--ink-mute);font-family:var(--mono)}
+.reel-row .hook{color:var(--ink);font-size:13px;line-height:1.4}
+.reel-row .improved{color:var(--good);font-size:12px;font-style:italic;margin-top:4px;display:block;line-height:1.4}
+.reel-row .improved::before{content:'→ ';color:var(--accent);font-style:normal}
+.reel-row a{font-size:11px;color:var(--ink-mute);font-family:var(--mono)}
+@media (max-width:760px){
+  .reel-row{grid-template-columns:30px 60px 1fr;gap:8px;font-size:12px}
+  .reel-row > :nth-child(4),.reel-row > :nth-child(5){grid-column:1 / -1;text-align:left}
+}
+
+/* Util */
+.row-flex{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.muted{color:var(--ink-mute);font-size:12px}
+.note{font-size:12px;color:var(--ink-mute);margin-top:8px;line-height:1.55}
+hr{border:none;border-top:1px solid var(--line-2);margin:18px 0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--bg-3);border:1px solid var(--line-2);border-radius:var(--r);padding:14px}
+.kpi .v{font-family:var(--serif);font-size:clamp(20px,3vw,26px);color:var(--ink);font-weight:500;letter-spacing:-.01em;line-height:1.1}
+.kpi .l{font-size:10px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.12em;margin-top:4px;font-weight:500}
+
+@media print{
+  .topbar,.toc-wrap{display:none}
+  body{background:white;color:black}
+  .card,.phase,.check-col,.chart-wrap{background:white;border-color:#ccc}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-inner">
+  <div class="brand">Mukund Venkat<small>Growth Roadmap · 2026</small></div>
+  <div class="toc-wrap">
+  <nav class="toc">
+    <a href="#summary" data-section="summary">Summary</a>
+    <a href="#bridge" data-section="bridge">Bridge</a>
+    <a href="#funnels" data-section="funnels">Funnels</a>
+    <a href="#timeline" data-section="timeline">Timeline</a>
+    <a href="#audience" data-section="audience">Audience</a>
+    <a href="#segments" data-section="segments">Segments</a>
+    <a href="#hyrox" data-section="hyrox">HYROX</a>
+    <a href="#paid" data-section="paid">Paid CAC</a>
+    <a href="#competitors" data-section="competitors">Competitors</a>
+    <a href="#content" data-section="content">Content</a>
+    <a href="#offers" data-section="offers">Offers</a>
+    <a href="#corporate" data-section="corporate">Corporate</a>
+    <a href="#positioning" data-section="positioning">Positioning</a>
+    <a href="#compliance" data-section="compliance">Compliance</a>
+    <a href="#integrity" data-section="integrity">Sources</a>
+    <a href="#actions" data-section="actions">Actions</a>
+  </nav>
+  </div>
+</div></div>
+
+<header class="hero"><div class="container hero-grid">
+  <div>
+    <span class="eyebrow">90-day growth plan · evidence-based</span>
+    <h1>From £5k to <em>£10k/month</em>, deliberately.</h1>
+    <p style="font-size:17px;max-width:560px;margin-top:18px">
+      A research-backed roadmap built from the last 50 Instagram posts, Gemini video analysis,
+      and a four-stream revenue model. <span style="color:var(--ink)">It is a conversion problem,
+      not an audience problem.</span>
+    </p>
+    <div class="hero-meta">
+      <div><b id="kFollowers">29,206</b>followers · @mukun69</div>
+      <div><b id="kPosts">50</b>posts analysed</div>
+      <div><b id="kReels">31</b>reels via Gemini</div>
+      <div><b id="kEr">0.44%</b>avg engagement</div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <h4>The bridge</h4>
+    <div class="bridge" id="bridgeChart"></div>
+    <div class="muted">Hover bars below to see the breakdown · drag the sliders in §2.</div>
+  </div>
+</div></header>
+
+<!-- 1. Executive Summary -->
+<section id="summary"><div class="container">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">01 — Executive Summary</span>
+      <h2>What the data says</h2>
+    </div>
+    <p>Snapshot dated <span id="genDate">today</span>. Corpus: last 50 IG posts (Jan 30 → Mar 25, 2026) + Gemini video analysis on every reel.</p>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">£5,015</div><div class="l">Modelled PT baseline</div></div>
+    <div class="kpi"><div class="v">£4,985</div><div class="l">Online lever (5 sales/mo)</div></div>
+    <div class="kpi"><div class="v">£10,485</div><div class="l">Recommended path target</div></div>
+    <div class="kpi"><div class="v">90d</div><div class="l">Time horizon</div></div>
+  </div>
+
+  <div class="grid-3" style="margin-top:24px">
+    <div class="card">
+      <span class="tag bad">Risk #1</span>
+      <h4 style="margin:8px 0 4px">Conversion leakage</h4>
+      <p>Only <b style="color:var(--ink)">1 in 50 posts</b> contains an apply / DM CTA. The audience exists; the ask doesn't.</p>
+    </div>
+    <div class="card">
+      <span class="tag good">Strength</span>
+      <h4 style="margin:8px 0 4px">HYROX is the differentiator</h4>
+      <p>Three of the top six posts by engagement are HYROX-themed. The "two lions in London" framing is unique.</p>
+    </div>
+    <div class="card">
+      <span class="tag warn">Drift</span>
+      <h4 style="margin:8px 0 4px">Mindset is overweighted</h4>
+      <p><b style="color:var(--ink)">27 of 50 posts</b> (54%) are mindset/motivation, but most sit in the bottom half of views.</p>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-top:24px">
+    <div class="card">
+      <h4>Top 3 immediate actions</h4>
+      <ol style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-dim);line-height:1.7">
+        <li>Lift new-client PT rate £55→£85 (verified mid-London tier, Prompt 1).</li>
+        <li>Add Hybrid Signature tier at £499-549/mo (currently missing from ladder).</li>
+        <li>Add a CTA to every reel — match Enrico's 20% rate as floor.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <span class="tag good">Verified · Prompt 1</span>
+      <h4 style="margin:8px 0 4px">Recommended commercial architecture</h4>
+      <p style="font-size:13px">PT £85-£100/session · Online <b style="color:var(--accent)">keep £997</b> as premium floor · <b style="color:var(--accent)">Hybrid Signature £499-549/mo (NEW)</b> · 12-wk in-person transformation £2,100-£2,700.</p>
+      <p class="muted">Don't lower £997 — make it more obviously premium and put a hybrid flagship above it.</p>
+    </div>
+    <div class="card">
+      <span class="tag warn">Audience verified</span>
+      <h4 style="margin:8px 0 4px">UK-first thesis contradicted</h4>
+      <p style="font-size:13px">Top 80 engagers: <b style="color:var(--ink)">21% UK</b>, <b style="color:var(--ink)">15% India</b>, ICP-fit <b style="color:var(--ink)">1.11/10</b>, <b style="color:var(--ink)">19% peer creators</b>. Bose Fitness validates Indian-diaspora niche (clients in 25+ countries) — repositioning is the play.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 2. Revenue Bridge -->
+<section id="bridge"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">02 — Revenue Bridge</span><h2>Drag the sliders. Watch the bridge close.</h2></div>
+    <p>All inputs editable. The model recomputes live. Cash and recognised revenue are shown side-by-side.</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>In-person PT</h4>
+      <div class="slider-row"><label>Sessions/week<b id="lblPtSessions">27</b></label><input type="range" id="ptSessions" min="15" max="35" value="27"><div class="val" id="valPtSessions">27</div></div>
+      <div class="slider-row"><label>Avg session rate £<b id="lblPtRate">55</b></label><input type="range" id="ptRate" min="40" max="120" value="55"><div class="val" id="valPtRate">£55</div></div>
+      <div class="slider-row"><label>Attendance realisation<b id="lblPtReal">78%</b></label><input type="range" id="ptReal" min="50" max="100" value="78"><div class="val" id="valPtReal">78%</div></div>
+      <hr>
+      <h4>Online coaching</h4>
+      <div class="slider-row"><label>Active clients<b id="lblOnAct">15</b></label><input type="range" id="onAct" min="0" max="40" value="15"><div class="val" id="valOnAct">15</div></div>
+      <div class="slider-row"><label>New clients / month (cash)<b id="lblOnNew">5</b></label><input type="range" id="onNew" min="0" max="15" value="5"><div class="val" id="valOnNew">5</div></div>
+      <div class="slider-row"><label>Price £<b id="lblOnPrice">997</b></label><input type="range" id="onPrice" min="500" max="2500" step="50" value="997"><div class="val" id="valOnPrice">£997</div></div>
+      <hr>
+      <h4>Corporate</h4>
+      <div class="slider-row"><label>Active retainers<b id="lblCorpRet">0</b></label><input type="range" id="corpRet" min="0" max="3" value="0"><div class="val" id="valCorpRet">0</div></div>
+      <div class="slider-row"><label>Avg retainer £/month<b id="lblCorpVal">2000</b></label><input type="range" id="corpVal" min="1000" max="5000" step="100" value="2000"><div class="val" id="valCorpVal">£2,000</div></div>
+      <div class="slider-row"><label>Workshops / month<b id="lblCorpWk">0</b></label><input type="range" id="corpWk" min="0" max="3" value="0"><div class="val" id="valCorpWk">0</div></div>
+      <div class="slider-row"><label>Avg workshop £<b id="lblCorpWkVal">1000</b></label><input type="range" id="corpWkVal" min="500" max="3000" step="100" value="1000"><div class="val" id="valCorpWkVal">£1,000</div></div>
+    </div>
+    <div>
+      <div class="chart-wrap"><div class="chart-title">Revenue waterfall (recognised)</div><canvas id="waterChart"></canvas></div>
+      <div class="grid-2" style="margin-top:18px">
+        <div class="card"><div class="num accent" id="totalRecognised">£0</div><div class="label">Total recognised /mo</div></div>
+        <div class="card"><div class="num" id="totalCash">£0</div><div class="label">Total cash /mo</div></div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h4>Scenario presets</h4>
+        <div class="row-flex">
+          <button class="tab" data-preset="A">A · Fast cash</button>
+          <button class="tab" data-preset="B">B · Run-rate (recommended)</button>
+          <button class="tab" data-preset="C">C · Balanced</button>
+          <button class="tab" data-preset="D">D · Premium</button>
+        </div>
+        <p class="note" id="presetNote">Click a preset to load.</p>
+      </div>
+    </div>
+  </div>
+  <div class="disclaimer"><b>Note:</b> recognised revenue divides £997 over 3 months. Cash counts upfront payment when made. Both are useful — the recognised line is more stable, the cash line is more honest about volatility.</div>
+</div></section>
+
+<!-- 3. Funnels -->
+<section id="funnels"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">03 — Funnel Calculators</span><h2>Inverted funnels per stream</h2></div>
+    <p>Set your target sales. The model back-calculates required leads, calls, applications, content reach.</p>
+  </div>
+  <div class="tabs" id="funnelTabs">
+    <button class="tab active" data-fn="online">Online coaching</button>
+    <button class="tab" data-fn="pt">In-person PT</button>
+    <button class="tab" data-fn="corp">Corporate</button>
+    <button class="tab" data-fn="content">Content</button>
+  </div>
+  <div class="tab-pane active" data-fn="online">
+    <div class="grid-2">
+      <div class="card">
+        <h4>Inputs</h4>
+        <div class="slider-row"><label>Target sales / month<b id="lblOTarget">5</b></label><input type="range" id="oTarget" min="1" max="15" value="5"><div class="val" id="valOTarget">5</div></div>
+        <div class="slider-row"><label>Close rate (qualified call → sale)<b id="lblOClose">30%</b></label><input type="range" id="oClose" min="10" max="60" value="30"><div class="val" id="valOClose">30%</div></div>
+        <div class="slider-row"><label>Show rate<b id="lblOShow">70%</b></label><input type="range" id="oShow" min="40" max="95" value="70"><div class="val" id="valOShow">70%</div></div>
+        <div class="slider-row"><label>App → booked call<b id="lblOAppBook">40%</b></label><input type="range" id="oAppBook" min="10" max="80" value="40"><div class="val" id="valOAppBook">40%</div></div>
+        <div class="slider-row"><label>Lead → application<b id="lblOLeadApp">20%</b></label><input type="range" id="oLeadApp" min="5" max="60" value="20"><div class="val" id="valOLeadApp">20%</div></div>
+        <div class="slider-row"><label>Visit → lead<b id="lblOVisitLead">20%</b></label><input type="range" id="oVisitLead" min="2" max="50" value="20"><div class="val" id="valOVisitLead">20%</div></div>
+      </div>
+      <div class="card">
+        <h4>Required volume</h4>
+        <table id="onlineFunnel"><tbody></tbody></table>
+        <p class="note">Reality check: corpus avg = 955 views/reel. To drive 1,575 profile visits/month, you need ~3 reels/week with explicit profile/bio CTAs.</p>
+        <hr>
+        <h4 style="margin-top:14px">Verified ranges <span class="tag good">Prompt 2</span></h4>
+        <div id="funnelRanges" style="font-size:12px"></div>
+        <p class="note">Sources: <a href="https://www.zuko.io/benchmarking/form-type-benchmarking" target="_blank">Zuko</a> · <a href="https://joannalottcoaching.com/how-many-discovery-calls-do-you-need-to-hit-your-coaching-income-goal/" target="_blank">Joanna Lott Coaching</a> · <a href="https://www.tirionforge.com/blog/how-to-convert-instagram-followers-to-clients" target="_blank">Tirion</a>. Slider defaults are mid-range; tune for low/high scenarios. Hyperbound: structured sales coaching can lift close rate by 35%.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" data-fn="pt">
+    <div class="grid-2">
+      <div class="card">
+        <h4>Levers (without adding hours) <span class="tag good">Prompt 1 verified</span></h4>
+        <table>
+          <thead><tr><th>Lever</th><th class="num">Δ/month</th><th>Risk</th></tr></thead>
+          <tbody>
+            <tr><td>Lift new-client rate £55→£85 (mid-London tier)</td><td class="num good">+£3,247</td><td>Low — grandfather existing</td></tr>
+            <tr><td>6 clients on £2,150 / 12-week pkg (PT 1to1 benchmark)</td><td class="num good">+£1,075</td><td>Low</td></tr>
+            <tr><td>3 × 2:1 small-group sessions/wk at £45pp</td><td class="num good">+£585</td><td>Low</td></tr>
+            <tr><td>Cap at 22hrs, redirect 5h to online + Hybrid Sig</td><td class="num good">+£800 net</td><td>Med</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Verified London tiers: Budget £30-45, Mid £55-75, Premium £80-100, Elite £95-120+. Mukund's £55 sits at top of Budget tier — material headroom. Recommended: £85-100 on new clients (Premium tier, aligns with Trang/No Shane/PT Guru).</p>
+      </div>
+      <div class="card">
+        <h4>Why packages over per-session</h4>
+        <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7">
+          <li>Cash collected upfront covers cancellations.</li>
+          <li>Client commitment lifts retention.</li>
+          <li>Builds a transformation case study (12-wk = visible result).</li>
+          <li>Justifies the price → fewer rate negotiations.</li>
+        </ul>
+        <p class="note">Verified comps: <a href="https://www.personaltraining1to1.co.uk/services/body-transformation/" target="_blank">PT 1 to 1 £2,150/3mo</a>, <a href="https://www.thefittingrooms.london/personal-training-kick-start/" target="_blank">Fitting Rooms £1,299/6wk 1:1</a>, Minimal FIT £2,995/12wk. Effective £700-£1,000/month is market-accepted. Build a 14-day cancellation window into the package agreement.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" data-fn="corp">
+    <div class="grid-2">
+      <div class="card">
+        <h4>Outbound funnel</h4>
+        <table>
+          <tbody>
+            <tr><td>Targeted prospects/month (LinkedIn + email)</td><td class="num">150</td></tr>
+            <tr><td>Meaningful engagement (30%)</td><td class="num">45</td></tr>
+            <tr><td>Replies (10%)</td><td class="num">15</td></tr>
+            <tr><td>Discovery calls</td><td class="num">8</td></tr>
+            <tr><td>Proposals</td><td class="num">3</td></tr>
+            <tr><td>Pilots closed</td><td class="num good">1</td></tr>
+            <tr><td>Retainer (M3-4)</td><td class="num good">1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h4>Offer ladder (corporate)</h4>
+        <table>
+          <thead><tr><th>Product</th><th class="num">Price</th><th class="num">Cycle</th></tr></thead>
+          <tbody>
+            <tr><td>Lunch & Learn</td><td class="num">£500-£1,500</td><td class="num">2 wks</td></tr>
+            <tr><td>4-week team challenge</td><td class="num">£1,500-£3,000</td><td class="num">4 wks</td></tr>
+            <tr><td>Monthly wellbeing retainer</td><td class="num">£2,000-£5,000</td><td class="num">6 wks</td></tr>
+            <tr><td>Executive cohort 12-wk</td><td class="num">£3,000-£10,000</td><td class="num">8 wks</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Land with #1 or #2; expand to #3 within 60 days.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" data-fn="content">
+    <div class="grid-2">
+      <div class="card">
+        <h4>Weekly production</h4>
+        <table>
+          <tbody>
+            <tr><td>YouTube long-form</td><td class="num">1×/wk</td></tr>
+            <tr><td>Shorts/Reels (cut from long)</td><td class="num">5-8×/wk</td></tr>
+            <tr><td>IG Reels (original)</td><td class="num">3×/wk</td></tr>
+            <tr><td>TikTok</td><td class="num">3×/wk</td></tr>
+            <tr><td>LinkedIn</td><td class="num">2×/wk</td></tr>
+            <tr><td>Email newsletter</td><td class="num">1×/wk</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h4>Metrics that matter (not vanity)</h4>
+        <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7">
+          <li><b>3-second hold rate</b> — the only hook quality metric that matters.</li>
+          <li><b>Profile visits / reel</b> — the upstream lead funnel.</li>
+          <li><b>DM keyword sends</b> ("ELITE", "AUDIT", "TEAM") — direct revenue intent.</li>
+          <li><b>Application form starts</b> — bottom-funnel conversion.</li>
+          <li><b>Booked calls / week</b> — revenue-leading indicator.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4. Timeline -->
+<section id="timeline"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">04 — Timeline</span><h2>The 90-day execution sequence</h2></div>
+    <p>Each phase has an owner, a metric, and an expected revenue impact.</p>
+  </div>
+  <div class="timeline">
+    <div class="phase">
+      <span class="ph-num">Phase 0</span>
+      <h4>Days 1–7 · Diagnose</h4>
+      <ul>
+        <li>This roadmap published</li>
+        <li>Audience geography sample (Prompt 9)</li>
+        <li>Competitor pricing scan (3 London comps)</li>
+        <li>Define the 1 pillar to test</li>
+      </ul>
+      <div class="impact">Metric: roadmap signed off</div>
+    </div>
+    <div class="phase">
+      <span class="ph-num">Phase 1</span>
+      <h4>Days 8–14 · Position</h4>
+      <ul>
+        <li>Bio + landing page rewrite</li>
+        <li>Application form (11 questions)</li>
+        <li>Consultation call script</li>
+        <li>Lead magnet: "Hybrid Audit"</li>
+        <li>Testimonial collection process</li>
+      </ul>
+      <div class="impact">Metric: form live + 1st 5 applications</div>
+    </div>
+    <div class="phase">
+      <span class="ph-num">Phase 2</span>
+      <h4>Days 15–30 · Build funnel</h4>
+      <ul>
+        <li>WhatsApp/DM follow-up templates</li>
+        <li>Email nurture sequence (5 emails)</li>
+        <li>CRM tracker (Notion/Airtable)</li>
+        <li>1st YouTube long-form filmed</li>
+        <li>5–8 shorts cut + scheduled</li>
+      </ul>
+      <div class="impact">Target: 1-2 closes from inbound</div>
+    </div>
+    <div class="phase">
+      <span class="ph-num">Phase 3</span>
+      <h4>Month 2 · First sprint</h4>
+      <ul>
+        <li>Warm DM outreach (80/mo)</li>
+        <li>Weekly YouTube + 5-8 shorts</li>
+        <li>2 LinkedIn corporate posts/wk</li>
+        <li>Corporate prospect list (50 firms)</li>
+        <li>1 workshop offer pitched</li>
+      </ul>
+      <div class="impact">Target: 3-5 online sales (£3-5k cash)</div>
+    </div>
+    <div class="phase">
+      <span class="ph-num">Phase 4</span>
+      <h4>Month 3 · £10k push</h4>
+      <ul>
+        <li>5 online sales target</li>
+        <li>1 corporate pilot signed</li>
+        <li>PT price lift on new clients</li>
+        <li>Case study #1 published</li>
+        <li>Email list 250+</li>
+      </ul>
+      <div class="impact">Target: £10,000+ recognised</div>
+    </div>
+    <div class="phase">
+      <span class="ph-num">Phase 5</span>
+      <h4>Months 4–6 · Stabilise</h4>
+      <ul>
+        <li>15-25 active online clients</li>
+        <li>1-2 corporate retainers</li>
+        <li>Group call + community layer</li>
+        <li>Referral campaign live</li>
+        <li>Test paid ads (only if CAC works)</li>
+      </ul>
+      <div class="impact">Target: £12-£18k/mo run-rate</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4b. Audience Reality (real data) -->
+<section id="audience"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">04b — Audience Reality</span><h2>Who is actually watching</h2></div>
+    <p>Sample: top 80 of 155 unique commenters from the 50-post corpus. Profile bios scraped + classified by Gemini. <span class="tag good">Verified</span></p>
+  </div>
+  <div class="grid-2">
+    <div class="chart-wrap"><div class="chart-title">Geography — top 80 engagers</div><canvas id="geoChart"></canvas></div>
+    <div class="card">
+      <h4>The numbers</h4>
+      <table>
+        <tbody id="audienceTable"></tbody>
+      </table>
+      <p class="note">Of those classifiable (49 of 80), UK is the largest single bucket at <b style="color:var(--ink)">~35%</b>, with India at <b style="color:var(--ink)">~24%</b> and EU <b style="color:var(--ink)">~16%</b>. London-likelihood avg <b style="color:var(--ink)">1.96/10</b>; ICP-fit avg <b style="color:var(--ink)">1.11/10</b>.</p>
+    </div>
+  </div>
+  <div class="grid-3" style="margin-top:24px">
+    <div class="card">
+      <span class="tag bad">Reality #1</span>
+      <h4 style="margin:8px 0 4px">Audience is global, not London</h4>
+      <p>Only ~21% of top engagers are verifiably UK. The £10k path that depends on London corporate or in-person referrals can't ride this audience for free.</p>
+    </div>
+    <div class="card">
+      <span class="tag warn">Reality #2</span>
+      <h4 style="margin:8px 0 4px">Heavy peer-creator engagement</h4>
+      <p>15 of 80 (19%) top engagers are fitness pros — creators liking creators. Inflated engagement metrics don't translate to leads.</p>
+    </div>
+    <div class="card">
+      <span class="tag good">Reality #3</span>
+      <h4 style="margin:8px 0 4px">Indian audience is real</h4>
+      <p>15% verified Indian + a chunk of unknowns likely diaspora. The £997 price translates well to high-income Indian and Indian-diaspora professionals — a credible global online segment.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px;border-color:var(--accent);background:linear-gradient(180deg,rgba(201,169,106,.08),var(--bg-2))">
+    <span class="tag acc">⭐ Synthesised positioning recommendation</span>
+    <h3 style="margin:8px 0;font-family:var(--serif);color:var(--ink);font-weight:500">London-based, Chennai-trained body transformation coach for high-performing Indian professionals worldwide.</h3>
+    <p style="font-size:13.5px">The data converges on this position. Mukund is <b style="color:var(--ink)">Indian-born, studied in London, ran gyms in Chennai</b> before becoming London-based — he <em>is</em> authentically one of this segment, not selling into it. Bose Fitness has proven the niche buys 12-week transformation at premium ("clients in 25+ countries"). Mukund's audience is already 25-40% verified+inferred Indian/diaspora — the largest single ethnic cluster. UK alone is too small organically (21% verified).</p>
+    <div class="grid-2" style="margin-top:14px">
+      <div>
+        <h4 style="margin:0 0 6px">Why this beats alternatives</h4>
+        <table id="positioningEvidence" style="font-size:12px"></table>
+      </div>
+      <div>
+        <h4 style="margin:0 0 6px">What changes</h4>
+        <ul id="positioningChanges" style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;padding-left:18px;margin:0"></ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:14px"><b style="color:var(--ink)">What stays:</b> £997 12-week price (Prompt 2 verified premium) · Hybrid Signature £499-549/mo (Prompt 1 missing tier) · PT lift £55→£85 (Prompt 1 mid-tier) · HYROX content pillar (Prompt 5 flagship) · Application form + instant scheduler (Prompt 7 critical lever).</p>
+  </div>
+</div></section>
+
+<!-- 4c. Competitor Comparison -->
+<section id="competitors"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">04c — Competitor Comparison</span><h2>Three direct UK comparators</h2></div>
+    <p>Live IG scrape + website fetch. Engagement, CTA discipline, pricing, and lead-magnet posture. <span class="tag good">Verified</span></p>
+  </div>
+  <div class="table-wrap">
+    <table id="competitorTable">
+      <thead><tr>
+        <th>Coach</th><th class="num">Followers</th><th class="num">ER %</th><th class="num">CTA %</th>
+        <th>Hero offer</th><th>Lead magnet</th><th>Pricing posture</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="chart-wrap"><div class="chart-title">Engagement rate vs CTA discipline</div><canvas id="competitorChart"></canvas></div>
+    <div class="card">
+      <h4>Six observable patterns</h4>
+      <ol id="competitorFindings" style="font-size:13px;color:var(--ink-dim);line-height:1.6;padding-left:20px;margin:0"></ol>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h4>Pricing landscape (UK 12-week online)</h4>
+    <div class="ladder" id="pricingLadder"></div>
+    <p class="note">Mukund's £997 sits 3.3× above TJ's app-led £299 and well below UP's premium quote-only positioning. Mid-premium is consistent with 1:1 + plan + check-ins delivery.</p>
+  </div>
+</div></section>
+
+<!-- 4d. Audience Psychology Segments -->
+<section id="segments"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">04d — Audience Psychology</span><h2>What buyers are actually buying</h2></div>
+    <p>7 segments × 3 buying drivers × messaging guardrails. <span class="tag good">Prompt 6 verified</span></p>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <span class="tag acc">1. Implementation certainty</span>
+      <p style="font-size:13px;margin-top:8px">Translation of general advice into a routine compatible with commuting, childcare, deadlines, travel, cultural food.</p>
+    </div>
+    <div class="card">
+      <span class="tag acc">2. Identity repair</span>
+      <p style="font-size:13px;margin-top:8px">Becoming the kind of person who trains consistently, feels capable, can look in the mirror without self-disappointment.</p>
+    </div>
+    <div class="card">
+      <span class="tag acc">3. Relational safety</span>
+      <p style="font-size:13px;margin-top:8px">Coach understands them, won't shame, gives structure without making life smaller. Working alliance has consistent moderate effect on outcomes.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h4>Segment-by-segment messaging map</h4>
+    <div class="table-wrap"><table id="segmentsTable">
+      <thead><tr><th>Segment</th><th>Psychological core</th><th>Best messaging angles</th><th>Avoid</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card" style="background:linear-gradient(180deg,rgba(201,169,106,.08),var(--bg-2));border-color:var(--accent)">
+      <span class="tag acc">⭐ Highest leverage segment</span>
+      <h4 style="margin:8px 0 4px">South Asian / Indian diaspora professionals</h4>
+      <p style="font-size:13.5px">15% of Mukund's verified top engagers are Indian (likely more in 39% Unknown bucket). UK evidence: persistent ethnic disparities in activity, particularly low muscle-strengthening among Asian adults. Generic fitness feels culturally tone-deaf.</p>
+      <p style="font-size:13px"><b style="color:var(--accent)">Bose Fitness validates this segment buys at premium ("trusted by clients in 25+ countries", free 30-min clarity call entry).</b> Pivoting positioning here removes London-dependency entirely.</p>
+      <p class="note">Hooks: "The fitness problem is not your culture; it's bad translation" · "If your plan collapses every family event, it was never built for your life" · "How to handle Indian meals without all-or-nothing tracking"</p>
+    </div>
+    <div class="card">
+      <h4>Ethical persuasion guardrails (UK compliance)</h4>
+      <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+        <li><b style="color:var(--ink)">Genuine before/after</b> — ASA treats as testimonial-style; needs substantiation. Testimonials alone ≠ adequate for weight-loss claims.</li>
+        <li><b style="color:var(--ink)">No fake scarcity</b> — CMA: countdown clocks lawful only if accurate + non-pressuring. Use real capacity-based urgency.</li>
+        <li><b style="color:var(--ink)">No medical / weight-loss overclaiming</b> — no "X kg in Y weeks" guarantees, no spot reduction, no "nobody can fail".</li>
+        <li><b style="color:var(--ink)">Don't use shame as conversion</b> — the right buyer responds to relief, competence, self-respect, identity recovery.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4f. HYROX Market Intelligence -->
+<section id="hyrox"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">04f — HYROX Market</span><h2>Mukund's strongest organic pillar, market-validated</h2></div>
+    <p>UK HYROX participation grew 13× in four years. Every UK event sold out. London hosts the biggest HYROX events in the world. <span class="tag good">Prompt 5 verified</span></p>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="v">97k+</div><div class="l">UK participants 2025 (was 7.4k in 2021)</div></div>
+    <div class="kpi"><div class="v">33,999</div><div class="l">London ExCeL Dec 2025 athletes</div></div>
+    <div class="kpi"><div class="v">4.4×</div><div class="l">Demand vs supply (70k applicants / 16k slots)</div></div>
+    <div class="kpi"><div class="v">57%</div><div class="l">Female participants UK</div></div>
+  </div>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>Strategic verdict</h4>
+      <p style="font-size:13.5px"><b style="color:var(--accent)">HYROX as flagship differentiator INSIDE a broader busy-professional transformation offer.</b> Not "HYROX-only coach for everyone." The audience is growing fast, affluent, deadline-driven, socially contagious — but going pure HYROX traps you in a smaller, more seasonal niche while F45/Les Mills/Third Space commoditise the basic programming.</p>
+      <p class="note">Recommended frame: "Get leaner, stronger, fitter, and optionally race-ready" — NOT "HYROX-only coaching".</p>
+    </div>
+    <div class="card">
+      <h4>UK HYROX pricing tiers (verified)</h4>
+      <table>
+        <thead><tr><th>Tier</th><th class="num">Range</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td>Digital / community</td><td class="num">£33-£60/mo</td><td style="font-size:11px">ONE LDN Unbeatable £33, Aaron Woodman £39.99, Jade Skillen £1+£59</td></tr>
+          <tr><td>Fixed race-prep blocks</td><td class="num">£80-£149</td><td style="font-size:11px">MARCHON £149, BOX £149, Heather £80/8wk</td></tr>
+          <tr><td>Premium in-person London</td><td class="num">£280-£960/mo</td><td style="font-size:11px">Luke Kelly £280-£960, Jonno PT £500/10</td></tr>
+          <tr style="background:rgba(201,169,106,0.06)"><td><b style="color:var(--accent)">Mukund Hybrid Signature ⭐</b></td><td class="num">£499-£549/mo</td><td style="font-size:11px">Above digital, below premium specialist ceiling</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <h4>Recommended HYROX offer ladder for Mukund</h4>
+      <div id="hyroxOfferLadder"></div>
+    </div>
+    <div class="card">
+      <h4>8 content angles that fit the data</h4>
+      <ul id="hyroxContentAngles" style="font-size:12.5px;color:var(--ink-dim);line-height:1.7;padding-left:18px;margin:0"></ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h4>London hybrid ecosystem (you're competing with these)</h4>
+    <p style="font-size:13px">Mainstream gyms are commoditising HYROX-style programming, which makes "HYROX-only coaching" a weaker long-term moat. Differentiate via transformation + community + ICP fit.</p>
+    <div id="hyroxPartners" class="row-flex" style="margin-top:10px"></div>
+  </div>
+</div></section>
+
+<!-- 4e. Paid Acquisition CAC -->
+<section id="paid"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">04e — Paid Acquisition</span><h2>When to spend, where, and the maths</h2></div>
+    <p>£997 break-even ceiling £817 (after 15% buffer + 3% processing). Healthy targets need much more headroom. <span class="tag good">Prompt 7 verified</span></p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Channel CPL bands (UK 2025-26)</h4>
+      <table id="paidChannels">
+        <thead><tr><th>Channel</th><th class="num">Low</th><th class="num">Mid</th><th class="num">High</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="note">Meta/IG warm = cheapest controllable lead source. Google Search "PT London" = highest intent but most expensive. YouTube retargeting needs 100+ active users on the list.</p>
+    </div>
+    <div class="card">
+      <h4>CAC scenarios on £997 offer</h4>
+      <table id="paidCacScenarios">
+        <thead><tr><th>Scenario</th><th class="num">CPL</th><th class="num">Cost / sale</th><th class="num">Margin</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="note"><b style="color:var(--ink)">The cheapest lever is rarely the ad platform — it's the application-to-booked-call rate.</b> Chili Piper benchmark: 30-40% manual vs 66.7% with instant scheduler. Coaches who feel "ads don't work" usually have a thank-you-page problem.</p>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <h4>3-phase rollout sequencing</h4>
+      <div id="paidPhases"></div>
+    </div>
+    <div class="card">
+      <h4>Mukund readiness check</h4>
+      <table id="paidReadiness"></table>
+      <p class="note" id="paidVerdict"></p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5. Instagram Content Intelligence -->
+<section id="content"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">05 — Content Intelligence</span><h2>What the corpus reveals</h2></div>
+    <p>50 posts, 31 reels analysed by Gemini. Every claim links to a shortcode.</p>
+  </div>
+  <div class="grid-2">
+    <div class="chart-wrap"><div class="chart-title">Posts vs avg engagement by topic</div><canvas id="topicChart"></canvas></div>
+    <div class="card">
+      <h4>Topic mix (last 50 posts)</h4>
+      <table id="topicTable"></table>
+      <p class="note">Mindset overweight (54% of posts) but underperforms. HYROX (8%) carries highest engagement. Rebalance toward 30% hybrid + 30% busy-pro transformation.</p>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>Psychological triggers — corpus average (0–10, Gemini)</h4>
+      <div id="triggerBars"></div>
+      <p class="note">Strong: aspiration, identity, self-efficacy, relatability. Weak: urgency, social_proof, fear_of_loss — these are the missing ingredients to convert lurkers into leads.</p>
+    </div>
+    <div class="card">
+      <h4>Top reels by views — with Gemini-suggested rewrites</h4>
+      <div id="reelTable"></div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-top:24px">
+    <div class="card">
+      <span class="tag good">Repeat</span>
+      <h4 style="margin:8px 0 4px">HYROX hybrid + race recap</h4>
+      <p>Highest engagement category. "Two lions in London" framing differentiates from generic fitness creators.</p>
+    </div>
+    <div class="card">
+      <span class="tag good">Repeat</span>
+      <h4 style="margin:8px 0 4px">Problem-aware reels</h4>
+      <p>"Are you stuck on your fat-loss journey?" hit 6,746 views (7× median). Specific pain → self-identification.</p>
+    </div>
+    <div class="card">
+      <span class="tag bad">Avoid</span>
+      <h4 style="margin:8px 0 4px">Generic mindset platitudes</h4>
+      <p>"Recovery isn't fancy" (119 views). "Nutrition isn't complicated" (130). Saturated genre — no specific viewer.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 6. Content Engine -->
+<section id="engine"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">06 — Content Engine</span><h2>YouTube long-form is the source</h2></div>
+    <p>One long-form per week becomes 5–8 vertical clips, an email, a LinkedIn post. One shoot, six surfaces.</p>
+  </div>
+  <div class="flywheel">
+    <div class="fw-step">YouTube<br>long-form</div><div class="fw-arrow">→</div>
+    <div class="fw-step">5-8 shorts<br>(IG/TT/Yt)</div><div class="fw-arrow">→</div>
+    <div class="fw-step">Profile visit</div><div class="fw-arrow">→</div>
+    <div class="fw-step">Lead magnet<br>or DM keyword</div><div class="fw-arrow">→</div>
+    <div class="fw-step">Application</div><div class="fw-arrow">→</div>
+    <div class="fw-step">Consultation</div><div class="fw-arrow">→</div>
+    <div class="fw-step">£997<br>coaching</div><div class="fw-arrow">→</div>
+    <div class="fw-step">Result +<br>case study</div>
+  </div>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>12 long-form topics (Q2-Q3 2026)</h4>
+      <ol style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+        <li>The 12-week framework I use with London professionals (online sale)</li>
+        <li>Why busy professionals train hard but don't transform (online sale)</li>
+        <li>Lose 5kg without destroying your social life (online sale)</li>
+        <li>HYROX-style training while building muscle (online sale)</li>
+        <li>The biggest nutrition mistakes London professionals make (online sale)</li>
+        <li>What I'd do with 90 days to transform from scratch (authority)</li>
+        <li>Beginner to strong: your first 12 weeks (online sale)</li>
+        <li>The 20-minute weekly mobility routine (authority)</li>
+        <li>Father + son: training for life (trust/community)</li>
+        <li>The hidden cost of poor energy at work (corporate)</li>
+        <li>From overworked to optimal: 5 client transformations (online sale)</li>
+        <li>Why your gym membership isn't enough (online sale)</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h4>CTA discipline (the missing piece)</h4>
+      <p style="font-size:13px">Every reel ends with one CTA — no exceptions. If you can't pick one, the post is filler.</p>
+      <table>
+        <thead><tr><th>CTA</th><th>Stream</th><th>Volume goal</th></tr></thead>
+        <tbody>
+          <tr><td>"DM <b style="color:var(--accent)">ELITE</b>"</td><td>Online</td><td>40+/mo</td></tr>
+          <tr><td>"Comment <b style="color:var(--accent)">AUDIT</b>"</td><td>Lead magnet</td><td>50+/mo</td></tr>
+          <tr><td>"Apply via bio link"</td><td>Online (high intent)</td><td>20+/mo</td></tr>
+          <tr><td>"DM <b style="color:var(--accent)">TEAM</b>"</td><td>Corporate (LI)</td><td>10+/mo</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Today: 1 in 50 posts. Target: 50 in 50.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 7. Offer Ladder -->
+<section id="offers"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">07 — Offer Ladder</span><h2>What people can buy, in order</h2></div>
+    <p>Free → entry → core → hybrid → premium → corporate. Most clients arrive at "core".</p>
+  </div>
+  <div class="ladder">
+    <div class="rung"><div class="price">Free</div><div class="name">Clarity Call</div><div class="desc">30-min entry · Bose Fitness model · qualifies + builds trust</div></div>
+    <div class="rung"><div class="price">£997</div><div class="name">Online · 12 wks</div><div class="desc">Premium online floor · 3-4 live calls + app-first check-ins · NOT always-on</div></div>
+    <div class="rung"><div class="price">£1,197-£1,347</div><div class="name">Hybrid Light</div><div class="desc">Online + 1 in-person/month · £399-£449/mo</div></div>
+    <div class="rung featured"><div class="price">£1,497-£1,647</div><div class="name">⭐ Hybrid Signature</div><div class="desc">Online + 2-3 in-person/mo · £499-£549/mo · flagship for affluent London pros</div></div>
+    <div class="rung"><div class="price">£2,100-£2,700</div><div class="name">12-wk Transformation</div><div class="desc">In-person 2-3×/wk · aligns with PT 1to1 £2,150 / Minimal FIT £2,995</div></div>
+    <div class="rung"><div class="price">£500-£10k</div><div class="name">Corporate</div><div class="desc">Workshop → challenge → retainer → exec cohort</div></div>
+  </div>
+  <p class="note" style="margin-top:18px">Pricing tiers verified by <a href="reports/prompt1_uk_london_pt_market.md">Prompt 1 deep research</a>. London transformation comps: <a href="https://www.personaltraining1to1.co.uk/services/body-transformation/" target="_blank">Personal Training 1 to 1</a> (£2,150 / 12wk), <a href="https://www.thefittingrooms.london/personal-training-kick-start/" target="_blank">The Fitting Rooms</a> (£1,299 / 6wk 1:1), <a href="https://www.espinosaphysiques.co.uk/services/hybrid-coaching" target="_blank">Espinosa Physiques</a> (£429/mo hybrid). The <b style="color:var(--accent)">Hybrid Signature tier</b> is currently absent from Mukund's offer ladder — adding it captures the £499-549/mo affluent London pro segment.</p>
+</div></section>
+
+<!-- 8. Corporate (UPGRADED via Prompt 3) -->
+<section id="corporate"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">08 — Corporate Path</span><h2>London SME wellness — verified pricing + sector targeting</h2></div>
+    <p>50,785 enterprises in London 10-249 range. 25 retained accounts = 0.05% market share. <span class="tag good">Prompt 3 verified</span></p>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="v">50,785</div><div class="l">London 10-249 enterprises (target)</div></div>
+    <div class="kpi"><div class="v">9.4d</div><div class="l">UK avg sickness absence (CIPD 2025)</div></div>
+    <div class="kpi"><div class="v">21% → 55%</div><div class="l">Wellbeing strategy adoption (2-49 → 50-249)</div></div>
+    <div class="kpi"><div class="v">0.05%</div><div class="l">Share for 25 retained accounts</div></div>
+  </div>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>Sector targeting (verified ranking)</h4>
+      <table id="corpSectors"></table>
+    </div>
+    <div class="card">
+      <h4>⭐ Recommended offer ladder (Prompt 3 verified)</h4>
+      <table id="corpLadder"></table>
+      <p class="note"><b style="color:var(--ink)">DOWNWARD CORRECTION:</b> earlier model had retainers at £2-5k/mo from the brief framework. Verified market is £750-£2,500/mo for independents. Human Fitness floor: £499/10 employees.</p>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <h4>Buyer personas (verified)</h4>
+      <table id="corpPersonas"></table>
+      <p class="note"><b style="color:var(--accent)">⭐ Targeting cue:</b> 21% of 2-49 employee orgs have formal wellbeing strategy vs 55% of 50-249 orgs. → 50-249 firms buy structured programmes; 20-49 firms buy simple pilots.</p>
+    </div>
+    <div class="card">
+      <h4>Outreach motion (priority order)</h4>
+      <ol id="corpOutreach" style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px;margin:0"></ol>
+      <p class="note">Cold email angles that work: "lunch-and-learn for energy slump/focus/stress" · "4-week movement challenge for hybrid teams" · "RTO reset week" · "wellbeing week with tangible takeaways".</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h4>Independent coach's edge (4 pillars — vs platforms like Vitality / YOURZEN)</h4>
+    <div class="grid-4" id="corpEdge"></div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h4>Sample LinkedIn DM (corporate)</h4>
+    <p style="font-family:var(--mono);font-size:12.5px;background:var(--bg-3);padding:14px;border-radius:6px;color:var(--ink-dim);white-space:pre-wrap">Hi {firstName} — saw your post on {topic}. I run 4-week energy challenges and lunch-and-learns for teams (10-50 people) in London. Two formats: (a) 45-min lunch-and-learn from £450, (b) 4-week pilot from £1,500. Would a 20-min call to scope a fit for {company} be useful? — Mukund</p>
+    <p class="note">Single CTA · choice architecture · price transparency · founder-led delivery (Prompt 3 evidence-aligned).</p>
+  </div>
+</div></section>
+
+<!-- 8a. Positioning Validation -->
+<section id="positioning"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">08a — Positioning Validation</span><h2>Two AI deep-research engines, same answer</h2></div>
+    <p>Gemini's Prompt 10 independently reproduced the South Asian Professional positioning recommendation. Plus a 60-day A/B test protocol and ready-to-use copy. <span class="tag good">Prompt 10 verified</span></p>
+  </div>
+  <div class="grid-2">
+    <div class="card" style="border-color:var(--accent);background:linear-gradient(180deg,rgba(201,169,106,.08),var(--bg-2))">
+      <span class="tag acc">⭐ NEW authority unlock</span>
+      <h4 style="margin:8px 0">Former Mr. India medallist</h4>
+      <p style="font-size:13.5px">Verified via <a href="https://www.deccanchronicle.com/lifestyle/health-and-wellbeing/261119/boys-on-the-runway.html" target="_blank">Deccan Chronicle 2019</a>. International men's physique pageant participant. Trajectory: Chennai → London luxury market.</p>
+      <p class="note"><b style="color:var(--ink)">This is the strongest unmonetised authority asset Mukund has.</b> Surface in bio + landing page hero + every sales touch. Pageant credentials are nearly impossible to fake — they're the closest thing to clinical credentials in this segment.</p>
+    </div>
+    <div class="card" style="border-color:rgba(214,138,138,0.4);background:rgba(214,138,138,0.03)">
+      <span class="tag bad">Critical operational risk</span>
+      <h4 style="margin:8px 0">Budget-gym brand contamination</h4>
+      <p style="font-size:13.5px">Mukund currently teaches group classes at <b>The Gym Group Walthamstow</b> + has <b>"Fitwithmukund" listings on Gumtree/Bark</b>. These psychologically anchor to budget pricing — directly contradicting £997 premium positioning.</p>
+      <p class="note"><b style="color:var(--ink)">Action:</b> phase out OR maintain strict brand separation. The gym-group classes can't share the same digital identity as the Elite £997 brand.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>Five-candidate ranking (Gemini Prompt 10)</h4>
+    <div class="table-wrap"><table id="positioningCandidates">
+      <thead><tr><th>Rank</th><th>Candidate</th><th>Verdict</th><th>Concern / Why</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <span class="tag acc">⭐ Recommended copy (ready to ship)</span>
+      <h4 style="margin:8px 0">Candidate D — Bio</h4>
+      <p style="font-family:var(--mono);font-size:11.5px;background:var(--bg-3);padding:12px;border-radius:6px;color:var(--ink-dim);white-space:pre-wrap;line-height:1.6" id="positioningBio"></p>
+      <h4 style="margin:14px 0 8px">Landing page hero</h4>
+      <p style="font-family:var(--mono);font-size:11.5px;background:var(--bg-3);padding:12px;border-radius:6px;color:var(--ink-dim);white-space:pre-wrap;line-height:1.6" id="positioningHero"></p>
+    </div>
+    <div class="card">
+      <h4>60-day A/B validation protocol</h4>
+      <p style="font-size:13px">Don't permanently rebrand on intuition. Test D vs A with cold paid traffic + Trojan-Horse organic rotation, then decide on CAC/ROAS.</p>
+      <table id="positioningPhases"></table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>South Asian niche — direct competitor architecture (validated)</h4>
+    <div class="grid-3" style="margin-top:10px">
+      <div style="padding:12px;border:1px solid var(--line-2);border-radius:6px;background:var(--bg-3)">
+        <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em">PersonalTrainerXP ⭐⭐</div>
+        <p style="font-size:12.5px;margin-top:6px">Multi-page service architecture: NRIs/Indians Abroad · British Indians London · PCOS South Asian Women · Heart Health · Yoga+Strength · Indians in Canada. <b style="color:var(--ink)">Proves niche supports 6+ sub-segment landing pages.</b></p>
+      </div>
+      <div style="padding:12px;border:1px solid var(--line-2);border-radius:6px;background:var(--bg-3)">
+        <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em">Bose Fitness</div>
+        <p style="font-size:12.5px;margin-top:6px">Free 30-min clarity call entry. <b style="color:var(--ink)">Clients in 25+ countries.</b> Closest model to Mukund's potential offer — global online + cultural specificity.</p>
+      </div>
+      <div style="padding:12px;border:1px solid var(--line-2);border-radius:6px;background:var(--bg-3)">
+        <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em">RNT Fitness (Akash Vaghela)</div>
+        <p style="font-size:12.5px;margin-top:6px">Mandates <b style="color:var(--ink)">minimum 12-month commitment</b> for transformation journey. Founder is British Asian — replicable authority pattern. High LTV proof.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:12px">All three prove the niche buys at premium and commits long-term. Mukund could test a £997 12-week intro feeding into a 12-month renewal pathway, replicating RNT's high-LTV model.</p>
+  </div>
+</div></section>
+
+<!-- 8b. UK Compliance -->
+<section id="compliance"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">08b — UK Compliance</span><h2>Wording and consent rules before scale</h2></div>
+    <p>The biggest legal risks aren't training content — they're the claims around it. <span class="tag good">Prompt 8 verified</span></p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Phrases to avoid (per CAP / ASA)</h4>
+      <table id="complianceAvoid"></table>
+    </div>
+    <div class="card">
+      <h4>Pre-publish checklist (10 items)</h4>
+      <ol id="complianceChecklist" style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;padding-left:18px;margin:0"></ol>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <h4>Specific Mukund posts likely needing review</h4>
+      <table id="complianceMukundAudit" style="font-size:12.5px"></table>
+      <p class="note">Recommendation: one-pass audit of last 200 posts before scaling content or running paid ads. ~3-4 hours focused review.</p>
+    </div>
+    <div class="card">
+      <h4>Safer wording library (copy-paste)</h4>
+      <div id="complianceSaferWording"></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h4>Landing page disclaimer template</h4>
+    <p style="font-family:var(--mono);font-size:11.5px;background:var(--bg-3);padding:14px;border-radius:6px;color:var(--ink-dim);white-space:pre-wrap;line-height:1.6;max-height:240px;overflow:auto" id="complianceDisclaimer"></p>
+    <p class="note">Use verbatim. Place near headline claim, next to testimonials, beside before/after images, near CTA — NOT footer-only.</p>
+  </div>
+  <div class="card" style="margin-top:18px;border-color:rgba(214,138,138,0.4);background:rgba(214,138,138,0.03)">
+    <span class="tag bad">Refer out — don't coach through</span>
+    <p style="font-size:13px;margin-top:8px">Red-flag symptoms requiring urgent medical referral (per NHS guidance, NOT coaching territory):</p>
+    <p id="complianceRedFlags" style="font-size:12.5px;color:var(--ink-dim);margin-top:6px"></p>
+  </div>
+</div></section>
+
+<!-- 9. Sources / Integrity -->
+<section id="integrity"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">09 — Sources & Integrity</span><h2>What's verified vs. inferred</h2></div>
+    <p>Every market number has a source or is labelled an assumption. Mukund-specific numbers come from the IG corpus.</p>
+  </div>
+  <div class="grid-4">
+    <div class="card"><span class="tag good">User-provided</span><div id="dataUser"></div></div>
+    <div class="card"><span class="tag good">Verified — scraped</span><div id="dataVerified"></div></div>
+    <div class="card"><span class="tag warn">Inferred</span><div id="dataInferred"></div></div>
+    <div class="card"><span class="tag bad">Unknown</span><div id="dataUnknown"></div></div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h4>External sources</h4>
+    <div class="table-wrap"><table id="sourcesTable">
+      <thead><tr><th>Claim</th><th>Source</th><th>Quality</th><th>Conf</th></tr></thead><tbody></tbody>
+    </table></div>
+  </div>
+  <div class="disclaimer"><b>Disclaimer:</b> This roadmap mixes user-provided business inputs, scraped public Instagram data, external market research, and scenario assumptions. Revenue projections are not guarantees. All assumptions should be validated with actual funnel data over 30–90 days.</div>
+</div></section>
+
+<!-- 10. Action Checklist -->
+<section id="actions"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">10 — Action Checklist</span><h2>What gets done, by when</h2></div>
+    <p>Tick items as you ship. Saved locally in your browser.</p>
+  </div>
+  <div class="check-list" id="checklist">
+    <div class="check-col" data-key="week">
+      <h4>This week</h4>
+      <label><input type="checkbox" data-id="cta-every-reel"><span>Add CTA to every new reel ("DM ELITE")</span></label>
+      <label><input type="checkbox" data-id="bio-rewrite"><span>Rewrite IG bio for chosen pillar</span></label>
+      <label><input type="checkbox" data-id="application-form"><span>Application form live (Typeform/Tally)</span></label>
+      <label><input type="checkbox" data-id="consult-script"><span>Consultation call script drafted</span></label>
+      <label><input type="checkbox" data-id="audience-geo"><span>Run audience geography sample</span></label>
+    </div>
+    <div class="check-col" data-key="2wk">
+      <h4>Next 2 weeks</h4>
+      <label><input type="checkbox" data-id="lead-magnet"><span>Hybrid Audit lead magnet built</span></label>
+      <label><input type="checkbox" data-id="landing"><span>One-page landing page (replace Linktree)</span></label>
+      <label><input type="checkbox" data-id="email-nurture"><span>5-email nurture sequence written</span></label>
+      <label><input type="checkbox" data-id="dm-templates"><span>DM follow-up templates (3 variants)</span></label>
+      <label><input type="checkbox" data-id="testimonial-system"><span>Testimonial request process</span></label>
+      <label><input type="checkbox" data-id="prospect-list"><span>50 corporate prospects on list</span></label>
+    </div>
+    <div class="check-col" data-key="30d">
+      <h4>Next 30 days</h4>
+      <label><input type="checkbox" data-id="yt-1"><span>YouTube long-form #1 published</span></label>
+      <label><input type="checkbox" data-id="yt-shorts-1"><span>5-8 shorts cut + scheduled from #1</span></label>
+      <label><input type="checkbox" data-id="warm-dm-80"><span>80 warm DMs sent (engaged audience)</span></label>
+      <label><input type="checkbox" data-id="li-corp-posts"><span>4 corporate-angle LinkedIn posts</span></label>
+      <label><input type="checkbox" data-id="online-sales-3"><span>3 online coaching sales closed</span></label>
+      <label><input type="checkbox" data-id="pt-package-1"><span>1 PT client converted to package</span></label>
+    </div>
+    <div class="check-col" data-key="90d">
+      <h4>Next 90 days</h4>
+      <label><input type="checkbox" data-id="online-15"><span>15 active online clients</span></label>
+      <label><input type="checkbox" data-id="corp-pilot"><span>1 corporate pilot signed</span></label>
+      <label><input type="checkbox" data-id="pt-rate-lift"><span>PT effective rate +£10/session on new</span></label>
+      <label><input type="checkbox" data-id="case-study-1"><span>1 published transformation case study</span></label>
+      <label><input type="checkbox" data-id="email-250"><span>Email list 250+</span></label>
+      <label><input type="checkbox" data-id="run-rate-10k"><span>£10k/mo recognised hit</span></label>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="container">
+  Built from 50 IG posts, Gemini video analysis, and four-stream revenue modelling.<br>
+  Generated <span id="footerDate"></span> · Re-run any time with the scripts in <span class="mono">/scripts</span>.
+</div></footer>
+
+{{DATA_SCRIPT}}
+
+<script>
+// Defensive: if data wasn't injected (e.g. raw template viewed without build), fall back to empty
+if (!window.__DATA__) {
+  window.__DATA__ = {
+    profile: { followers: 29206 }, aggregates: {}, revenue: {}, sources: {},
+    triggerAvg: {}, topicChartData: [], reelTable: [], audienceAgg: {},
+    competitors: {}, normalizedCount: 50, geminiCount: 30, geminiErrors: 1,
+    _stub: true
+  };
+  const w = document.createElement('div');
+  w.style.cssText = 'position:fixed;bottom:14px;left:14px;background:#26262c;color:#d6c08a;padding:10px 14px;border-radius:6px;font-size:12px;z-index:1000;max-width:340px;line-height:1.5;border:1px solid #3a3a40';
+  w.innerHTML = '⚠️ <b>Preview mode</b> — viewing the unbuilt template. Run <code>node scripts/build_html.js</code> and open <code>output/index.html</code> for the live data + working interactivity.';
+  document.addEventListener('DOMContentLoaded', () => document.body.appendChild(w));
+}
+const D = window.__DATA__;
+// Error isolation — any uncaught error in one block shouldn't break the rest
+const safeRun = (label, fn) => { try { fn(); } catch (e) { console.error('[' + label + ']', e); } };
+window.addEventListener('error', (e) => console.error('[global]', e.message, e.error));
+
+// Smooth scroll for TOC clicks (artifact-iframe safe)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      try { history.replaceState(null, '', href); } catch (_) {}
+    });
+  });
+});
+const fmtGBP = (n) => '£' + Math.round(n).toLocaleString('en-GB');
+
+// Hero KPIs
+document.getElementById('kFollowers').textContent = (D.profile.followers || 29206).toLocaleString();
+document.getElementById('kPosts').textContent = D.normalizedCount || 50;
+document.getElementById('kReels').textContent = D.geminiCount || 31;
+document.getElementById('kEr').textContent = (D.aggregates.avg_engagement_rate_pct ?? 0.44) + '%';
+document.getElementById('genDate').textContent = new Date(D.generated_at || Date.now()).toLocaleDateString('en-GB', {day:'2-digit',month:'long',year:'numeric'});
+document.getElementById('footerDate').textContent = new Date(D.generated_at || Date.now()).toLocaleDateString('en-GB');
+
+// Hero bridge mini
+(function(){
+  const el = document.getElementById('bridgeChart');
+  const items = [
+    {l:'PT now',v:5015,c:'current'},
+    {l:'+ Online',v:4985,c:'add'},
+    {l:'+ Corp',v:1500,c:'add'},
+    {l:'Target',v:10500,c:'target'},
+  ];
+  const max = Math.max(...items.map(i=>i.v));
+  el.innerHTML = items.map(i =>
+    `<div class="bridge-bar ${i.c}" style="height:${(i.v/max*100).toFixed(0)}%" title="${i.l}: ${fmtGBP(i.v)}">
+       <div class="mono">${fmtGBP(i.v)}</div>
+       <div class="bridge-label">${i.l}</div>
+     </div>`).join('');
+})();
+
+// Revenue model live
+const sliderState = {
+  ptSessions:27, ptRate:55, ptReal:78,
+  onAct:15, onNew:5, onPrice:997,
+  corpRet:0, corpVal:2000, corpWk:0, corpWkVal:1000,
+};
+const valFmt = {
+  ptRate: (v)=>'£'+v, onPrice: (v)=>'£'+v, corpVal: (v)=>'£'+Number(v).toLocaleString(),
+  corpWkVal: (v)=>'£'+Number(v).toLocaleString(), ptReal:(v)=>v+'%',
+};
+
+function bindSlider(id, key) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.value = sliderState[key];
+  const lbl = document.getElementById('lbl'+id.charAt(0).toUpperCase()+id.slice(1));
+  const val = document.getElementById('val'+id.charAt(0).toUpperCase()+id.slice(1));
+  const update = () => {
+    sliderState[key] = +el.value;
+    if (lbl) lbl.textContent = valFmt[key] ? valFmt[key](el.value) : el.value;
+    if (val) val.textContent = valFmt[key] ? valFmt[key](el.value) : el.value;
+    recompute();
+  };
+  el.addEventListener('input', update);
+  update();
+}
+
+let waterChart;  // ← MUST be declared before the forEach (TDZ fix)
+
+['ptSessions','ptRate','ptReal','onAct','onNew','onPrice','corpRet','corpVal','corpWk','corpWkVal']
+  .forEach(k => bindSlider(k, k));
+
+function recompute() {
+  const s = sliderState;
+  const pt = s.ptSessions * s.ptRate * 4.33 * (s.ptReal/100);
+  const onlineRec = s.onAct * (s.onPrice/3);
+  const onlineCash = s.onNew * s.onPrice;
+  const corpRetainer = s.corpRet * s.corpVal;
+  const corpWorkshop = s.corpWk * s.corpWkVal;
+  const totalRec = pt + onlineRec + corpRetainer + corpWorkshop;
+  const totalCash = pt + onlineCash + corpRetainer + corpWorkshop;
+  document.getElementById('totalRecognised').textContent = fmtGBP(totalRec);
+  document.getElementById('totalCash').textContent = fmtGBP(totalCash);
+
+  const data = [
+    { l:'PT', v:pt, color:'rgba(168,165,159,0.65)'},
+    { l:'Online (rec.)', v:onlineRec, color:'rgba(201,169,106,0.85)'},
+    { l:'Corp retainer', v:corpRetainer, color:'rgba(127,185,140,0.7)'},
+    { l:'Corp workshop', v:corpWorkshop, color:'rgba(127,185,140,0.4)'},
+    { l:'Total', v:totalRec, color:'rgba(230,200,134,0.95)'},
+    { l:'Target', v:10000, color:'rgba(214,138,138,0.45)'},
+  ];
+
+  if (!waterChart) {
+    const ctx = document.getElementById('waterChart');
+    waterChart = new Chart(ctx, {
+      type:'bar',
+      data:{labels:data.map(d=>d.l),datasets:[{label:'£/month',data:data.map(d=>d.v),backgroundColor:data.map(d=>d.color),borderRadius:4,borderSkipped:false}]},
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:(c)=>fmtGBP(c.parsed.y)}}},
+        scales:{
+          x:{ticks:{color:'#a8a59f',font:{family:'Inter',size:11}},grid:{display:false}},
+          y:{ticks:{color:'#a8a59f',font:{family:'JetBrains Mono',size:10},callback:(v)=>fmtGBP(v)},grid:{color:'#1d1d22'}}
+        }
+      }
+    });
+  } else {
+    waterChart.data.datasets[0].data = data.map(d=>d.v);
+    waterChart.update();
+  }
+}
+recompute();
+
+// Presets
+const presets = {
+  A:{ptSessions:27,ptRate:55,ptReal:78,onAct:0,onNew:5,onPrice:997,corpRet:0,corpVal:2000,corpWk:1,corpWkVal:1000,note:'Fast cash: PT current + 5 new online @ £997 upfront + 1 workshop. Cash: ~£10,985.'},
+  B:{ptSessions:27,ptRate:60,ptReal:80,onAct:15,onNew:0,onPrice:997,corpRet:0,corpVal:2000,corpWk:0,corpWkVal:1000,note:'Run-rate: 15 active online + PT lift = £10,485 recognised. Recommended.'},
+  C:{ptSessions:27,ptRate:60,ptReal:80,onAct:9,onNew:0,onPrice:997,corpRet:1,corpVal:2000,corpWk:0,corpWkVal:1000,note:'Balanced: PT + 9 online + 1 corporate retainer. ~£10,991.'},
+  D:{ptSessions:25,ptRate:75,ptReal:85,onAct:10,onNew:0,onPrice:997,corpRet:0,corpVal:2000,corpWk:1,corpWkVal:1500,note:'Premium: PT rate-lift + 10 online + 1 corporate workshop. ~£10,823.'},
+};
+document.querySelectorAll('[data-preset]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const p = presets[btn.dataset.preset];
+    if (!p) return;
+    Object.entries(p).forEach(([k,v]) => {
+      if (k==='note') return;
+      const el = document.getElementById(k);
+      if (el) { el.value = v; el.dispatchEvent(new Event('input')); }
+    });
+    document.getElementById('presetNote').textContent = p.note;
+    document.querySelectorAll('[data-preset]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Funnel tabs
+document.querySelectorAll('#funnelTabs .tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('#funnelTabs .tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelectorAll('[data-fn]').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.tab-pane[data-fn="'+t.dataset.fn+'"]').forEach(p=>p.classList.add('active'));
+  });
+});
+
+// Online funnel calculator
+const onlineSliders = ['oTarget','oClose','oShow','oAppBook','oLeadApp','oVisitLead'];
+const oFmt = {oClose:(v)=>v+'%',oShow:(v)=>v+'%',oAppBook:(v)=>v+'%',oLeadApp:(v)=>v+'%',oVisitLead:(v)=>v+'%'};
+const oState = {oTarget:5,oClose:30,oShow:70,oAppBook:40,oLeadApp:20,oVisitLead:20};
+onlineSliders.forEach(id => {
+  const el = document.getElementById(id);
+  el.value = oState[id];
+  const lbl = document.getElementById('lbl'+id.charAt(0).toUpperCase()+id.slice(1));
+  const val = document.getElementById('val'+id.charAt(0).toUpperCase()+id.slice(1));
+  el.addEventListener('input', () => {
+    oState[id] = +el.value;
+    const f = oFmt[id]||((v)=>v);
+    if (lbl) lbl.textContent = f(el.value);
+    if (val) val.textContent = f(el.value);
+    drawOnlineFunnel();
+  });
+});
+function drawOnlineFunnel() {
+  const s = oState;
+  const sales = s.oTarget;
+  const calls_q = Math.ceil(sales / (s.oClose/100));
+  const booked = Math.ceil(calls_q / (s.oShow/100));
+  const apps = Math.ceil(booked / (s.oAppBook/100));
+  const leads = Math.ceil(apps / (s.oLeadApp/100));
+  const visits = Math.ceil(leads / (s.oVisitLead/100));
+  const rows = [
+    ['Sales / month', sales, 'good'],
+    ['Qualified calls', calls_q, ''],
+    ['Booked calls', booked, ''],
+    ['Applications', apps, ''],
+    ['Leads', leads, ''],
+    ['Profile / landing visits', visits, 'warn'],
+  ];
+  document.querySelector('#onlineFunnel tbody').innerHTML = rows.map(([l,v,c]) =>
+    `<tr><td>${l}</td><td class="num"><span class="tag ${c}">${v.toLocaleString()}</span></td></tr>`).join('');
+}
+drawOnlineFunnel();
+
+// Topic table + chart
+const tdata = D.topicChartData || [];
+document.getElementById('topicTable').innerHTML =
+  '<thead><tr><th>Topic</th><th class="num">Posts</th><th class="num">Avg views</th><th class="num">Avg eng</th></tr></thead>' +
+  '<tbody>' + tdata.sort((a,b)=>(b.avg_engagement)-(a.avg_engagement)).map(r =>
+    `<tr><td>${r.topic.replace(/_/g,' ')}</td><td class="num">${r.posts}</td><td class="num">${r.avg_views??'—'}</td><td class="num">${r.avg_engagement}</td></tr>`).join('') + '</tbody>';
+
+new Chart(document.getElementById('topicChart'), {
+  type:'bar',
+  data:{
+    labels: tdata.map(t=>t.topic.replace(/_/g,' ')),
+    datasets:[
+      {label:'Posts (count)',data:tdata.map(t=>t.posts),backgroundColor:'rgba(168,165,159,0.4)',yAxisID:'y1',borderRadius:4},
+      {label:'Avg engagement',data:tdata.map(t=>t.avg_engagement),backgroundColor:'rgba(201,169,106,0.85)',yAxisID:'y',borderRadius:4},
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{color:'#a8a59f',font:{family:'Inter',size:11}}}},
+    scales:{
+      x:{ticks:{color:'#a8a59f',font:{size:10}},grid:{display:false}},
+      y:{ticks:{color:'#a8a59f',font:{family:'JetBrains Mono',size:10}},grid:{color:'#1d1d22'},title:{display:true,text:'Avg engagement',color:'#a8a59f',font:{size:10}}},
+      y1:{position:'right',ticks:{color:'#a8a59f',font:{family:'JetBrains Mono',size:10}},grid:{display:false},title:{display:true,text:'Posts',color:'#a8a59f',font:{size:10}}}
+    }
+  }
+});
+
+// Trigger bars
+const tk = ['authority','aspiration','identity','self_efficacy','relatability','simplicity','pain_agitation','novelty','social_proof','urgency','fear_of_loss','community_belonging'];
+const ta = D.triggerAvg || {};
+document.getElementById('triggerBars').innerHTML = tk.map(k => {
+  const v = ta[k] || 0;
+  const pct = (v/10*100).toFixed(0);
+  const weak = v < 3 ? ' weak' : '';
+  return `<div class="trig-bar${weak}"><span>${k.replace(/_/g,' ')}</span><div class="meter"><div class="fill" style="width:${pct}%"></div></div><span class="v">${v.toFixed(1)}</span></div>`;
+}).join('');
+
+// Reel table
+const rt = (D.reelTable||[]).slice(0,8);
+document.getElementById('reelTable').innerHTML = rt.map((r,i) => `
+  <div class="reel-row">
+    <div class="rank">${i+1}</div>
+    <div>
+      <div class="meta">${(r.views||0).toLocaleString()} views</div>
+      <div class="meta">${r.likes||0}❤ ${r.comments||0}💬</div>
+    </div>
+    <div>
+      <div class="hook">${(r.hook||'(no transcript)').replace(/[<>]/g,'')}</div>
+      ${r.improved_hook ? '<span class="improved">'+r.improved_hook.replace(/[<>]/g,'')+'</span>' : ''}
+    </div>
+    <div>
+      <span class="tag ${r.cta_present?'good':'bad'}">${r.cta_present?'CTA':'no CTA'}</span>
+      <div class="meta" style="margin-top:4px">${r.topic.replace(/_/g,' ')}</div>
+    </div>
+    <div><a href="${r.url}" target="_blank">${r.shortcode}↗</a></div>
+  </div>
+`).join('');
+
+// Data integrity
+const di = D.revenue?.data_integrity || {};
+const fillList = (id, arr) => document.getElementById(id).innerHTML =
+  '<ul style="font-size:13px;margin:8px 0 0;padding-left:18px;color:var(--ink-dim);line-height:1.6">' +
+  (arr||[]).map(x => `<li>${x}</li>`).join('') + '</ul>';
+fillList('dataUser', di.user_provided);
+fillList('dataVerified', di.verified_scraped);
+fillList('dataInferred', di.inferred);
+fillList('dataUnknown', di.unknown);
+
+// Sources table
+const allSources = [
+  ...(D.sources?.uk_fitness_market||[]),
+  ...(D.sources?.london_pt_pricing||[]),
+  ...(D.sources?.uk_corporate_wellness||[]),
+  ...(D.sources?.platform_monetisation||[]),
+  ...(D.sources?.compliance_uk||[]),
+  ...(D.sources?.tooling||[]),
+];
+document.querySelector('#sourcesTable tbody').innerHTML = allSources.map(s => `
+  <tr>
+    <td>${s.claim}</td>
+    <td><a href="${s.url}" target="_blank">${s.source}</a></td>
+    <td><span class="tag ${s.evidence_quality==='verified'?'good':s.evidence_quality==='directional'?'warn':'bad'}">${s.evidence_quality}</span></td>
+    <td class="num">${s.confidence_0_10}/10</td>
+  </tr>
+`).join('');
+
+// Checklist localStorage (wrapped — fails gracefully in private/sandboxed contexts)
+const STORAGE_KEY = 'mukund-roadmap-checks-v1';
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (_) { saved = {}; }
+document.querySelectorAll('#checklist input[type=checkbox]').forEach(cb => {
+  if (saved[cb.dataset.id]) { cb.checked = true; cb.closest('label').classList.add('done'); }
+  cb.addEventListener('change', () => {
+    saved[cb.dataset.id] = cb.checked;
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch (_) {}
+    cb.closest('label').classList.toggle('done', cb.checked);
+  });
+});
+
+// --- Audience composition ---
+(function(){
+  const a = D.audienceAgg || {};
+  const geo = a.geography || {};
+  const order = ['UK','India','EU','North America','SE Asia','Africa','Other','Unknown'];
+  const labels = order.filter(k => geo[k]);
+  const values = labels.map(k => geo[k]);
+  const colors = ['#c9a96a','#d68a8a','#7fb98c','#a8a59f','#d6c08a','#8aa9d6','#a98ad6','#3a3a3f'];
+  if (document.getElementById('geoChart')) {
+    new Chart(document.getElementById('geoChart'), {
+      type:'doughnut',
+      data:{labels,datasets:[{data:values,backgroundColor:colors.slice(0,labels.length),borderColor:'#0a0a0b',borderWidth:2}]},
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{position:'right',labels:{color:'#a8a59f',font:{family:'Inter',size:11},boxWidth:12}}}
+      }
+    });
+  }
+  const tbl = document.getElementById('audienceTable');
+  if (tbl) {
+    const rows = [
+      ['Sample size', `${a.total} of 155 unique commenters`],
+      ['UK', `${geo['UK']||0} (${a.total?Math.round((geo['UK']||0)/a.total*100):0}%)`],
+      ['India', `${geo['India']||0} (${a.total?Math.round((geo['India']||0)/a.total*100):0}%)`],
+      ['EU', `${geo['EU']||0} (${a.total?Math.round((geo['EU']||0)/a.total*100):0}%)`],
+      ['Unknown', `${geo['Unknown']||0} (${a.total?Math.round((geo['Unknown']||0)/a.total*100):0}%)`],
+      ['London likelihood (avg)', `${a.london_likelihood_avg||'?'}/10`],
+      ['ICP fit (avg)', `${a.icp_fit_avg||'?'}/10`],
+      ['Fitness pros (peer creators)', `${a.occupation_class?.fitness_pro || 0} (${a.total?Math.round((a.occupation_class?.fitness_pro||0)/a.total*100):0}%)`],
+      ['Corporate professionals', `${a.occupation_class?.corporate_professional || 0} (${a.total?Math.round((a.occupation_class?.corporate_professional||0)/a.total*100):0}%)`],
+    ];
+    tbl.innerHTML = rows.map(([k,v]) => `<tr><td>${k}</td><td class="num">${v}</td></tr>`).join('');
+  }
+})();
+
+// --- Competitor table + chart + pricing ladder ---
+(function(){
+  const c = D.competitors || {};
+  const comps = (c.competitors || []).filter(x => x.followers != null);
+  const tbody = document.querySelector('#competitorTable tbody');
+  if (tbody) {
+    tbody.innerHTML = comps.map(x => {
+      const isMukund = x.handle === 'mukun69';
+      return `<tr ${isMukund?'style="background:rgba(201,169,106,0.05)"':''}>
+        <td><b style="color:${isMukund?'var(--accent)':'var(--ink)'}">@${x.handle}</b><div class="muted">${x.full_name||''}</div></td>
+        <td class="num">${x.followers.toLocaleString()}</td>
+        <td class="num"><span class="tag ${x.engagement_rate_pct>=2?'good':x.engagement_rate_pct>=1?'warn':'bad'}">${x.engagement_rate_pct||'?'}%</span></td>
+        <td class="num"><span class="tag ${x.cta_rate_pct>=15?'good':x.cta_rate_pct>=10?'warn':'bad'}">${x.cta_rate_pct||0}%</span></td>
+        <td>${x.offer_pricing||''}</td>
+        <td>${x.lead_magnet||''}</td>
+        <td>${x.positioning_signal||''}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  if (document.getElementById('competitorChart')) {
+    new Chart(document.getElementById('competitorChart'), {
+      type:'scatter',
+      data:{datasets: comps.map(x => ({
+        label: '@' + x.handle,
+        data:[{x:x.cta_rate_pct, y:x.engagement_rate_pct}],
+        backgroundColor: x.handle==='mukun69'?'#c9a96a':x.handle==='enricoargentin'?'#7fb98c':'#a8a59f',
+        pointRadius:10, pointHoverRadius:14, borderColor:'#0a0a0b', borderWidth:2,
+      }))},
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{labels:{color:'#a8a59f',font:{size:11}}},
+          tooltip:{callbacks:{label:(c)=>`${c.dataset.label}: ${c.parsed.y}% ER, ${c.parsed.x}% CTA`}}
+        },
+        scales:{
+          x:{title:{display:true,text:'CTA %',color:'#a8a59f'},ticks:{color:'#a8a59f',callback:(v)=>v+'%'},grid:{color:'#1d1d22'},min:0,max:30},
+          y:{title:{display:true,text:'Engagement rate %',color:'#a8a59f'},ticks:{color:'#a8a59f',callback:(v)=>v+'%'},grid:{color:'#1d1d22'},min:0,max:3.5}
+        }
+      }
+    });
+  }
+
+  const findings = (c.headline_findings || []);
+  const ul = document.getElementById('competitorFindings');
+  if (ul) ul.innerHTML = findings.map(f => `<li><b style="color:var(--ink)">${f.finding}</b><br><span style="color:var(--ink-mute)">→ ${f.implication}</span></li>`).join('');
+
+  const pl = c.pricing_landscape || {};
+  const order = ['bottom','mid_low','mid_premium','premium'];
+  const ladder = document.getElementById('pricingLadder');
+  if (ladder) {
+    ladder.innerHTML = order.map(k => {
+      const x = pl[k] || {};
+      const isMukund = (x.provider||'').includes('Mukund');
+      return `<div class="rung ${isMukund?'featured':''}">
+        <div class="price">${typeof x.price === 'number' ? '£'+x.price : (x.price || '?')}</div>
+        <div class="name">${x.provider||''}</div>
+        <div class="desc">${x.programme||''}<br>${x.model||''}</div>
+      </div>`;
+    }).join('');
+  }
+})();
+
+// --- Funnel verified ranges ---
+(function(){
+  const fb = D.revenue?.online_coaching?.funnel_benchmarks_verified;
+  const el = document.getElementById('funnelRanges');
+  if (!el || !fb) return;
+  el.innerHTML = '<table style="margin-top:8px"><thead><tr><th>Stage</th><th class="num">Low</th><th class="num">Mid</th><th class="num">High</th><th>Conf</th></tr></thead><tbody>' +
+    fb.stages.map(s => `<tr>
+      <td style="font-size:11.5px">${s.stage}</td>
+      <td class="num">${(s.low*100).toFixed(0)}%</td>
+      <td class="num"><b style="color:var(--accent)">${(s.mid*100).toFixed(0)}%</b></td>
+      <td class="num">${(s.high*100).toFixed(0)}%</td>
+      <td style="font-size:10px;color:var(--ink-mute)">${s.confidence.split(' — ')[0]}</td>
+    </tr>`).join('') + '</tbody></table>';
+})();
+
+// --- Audience Psychology Segments ---
+(function(){
+  const ap = D.revenue?.audience_psychology;
+  if (!ap) return;
+  const tbody = document.querySelector('#segmentsTable tbody');
+  if (!tbody) return;
+  tbody.innerHTML = (ap.segments||[]).map(s => `<tr ${s.relevance_to_mukund?'style="background:rgba(201,169,106,0.06)"':''}>
+    <td><b style="color:${s.relevance_to_mukund?'var(--accent)':'var(--ink)'}">${s.name}</b></td>
+    <td style="font-size:12px;color:var(--ink-dim)">${s.core||''}</td>
+    <td style="font-size:12px;color:var(--ink-dim)">${s.messaging||''}</td>
+    <td style="font-size:11px;color:var(--ink-mute)">${s.relevance_to_mukund || '—'}</td>
+  </tr>`).join('');
+})();
+
+// --- Positioning Validation (Prompt 10) ---
+(function(){
+  const p = D.revenue?.positioning_validation_prompt10;
+  if (!p) return;
+  // Candidate ranking
+  const ct = document.querySelector('#positioningCandidates tbody');
+  if (ct && p.candidate_ranking) {
+    ct.innerHTML = p.candidate_ranking.map(c => {
+      const isWinner = c.rank === 1;
+      const isBad = c.verdict.toLowerCase().includes('inviable') || c.verdict.toLowerCase().includes('insufficient');
+      return `<tr ${isWinner?'style="background:rgba(201,169,106,0.08)"':''}>
+        <td><b style="color:${isWinner?'var(--accent)':'var(--ink)'};font-family:var(--serif);font-size:18px">${c.rank}</b></td>
+        <td><b style="color:var(--ink)">${c.candidate}</b></td>
+        <td><span class="tag ${isWinner?'good':isBad?'bad':'warn'}">${c.verdict}</span></td>
+        <td style="font-size:12px;color:var(--ink-dim)">${c.concern || c.winning_dimensions || ''}</td>
+      </tr>`;
+    }).join('');
+  }
+  // Recommended copy
+  const recommended = p.candidate_copy_templates?.D_south_asian_professional_RECOMMENDED;
+  if (recommended) {
+    const bio = document.getElementById('positioningBio');
+    if (bio) bio.textContent = recommended.instagram_bio;
+    const hero = document.getElementById('positioningHero');
+    if (hero) hero.textContent = recommended.landing_hero_headline + '\n\n' + recommended.landing_hero_sub + '\n\nCTA: ' + recommended.cta;
+  }
+  // 60-day phases
+  const ph = document.querySelector('#positioningPhases');
+  if (ph && p.ab_test_protocol_60_day) {
+    const phases = p.ab_test_protocol_60_day;
+    const rows = [
+      ['1', phases.phase_1_infrastructure?.days, 'Infrastructure', '2 landing pages, 2 ad creative sets, distinct booking links'],
+      ['2', phases.phase_2_paid_traffic?.days, 'Cold paid traffic', 'Track CPC + CTR + CPL + application quality scoring'],
+      ['3', phases.phase_3_trojan_horse_organic?.days, 'Trojan Horse organic', 'Rotate IG content themes by week; Stories polls for friction-point segmentation'],
+      ['4', phases.phase_4_decision?.days, 'Decision', 'ROAS + CAC per funnel → permanent pivot or sharpened status quo'],
+    ];
+    ph.innerHTML = '<thead><tr><th>Phase</th><th>Days</th><th>Focus</th></tr></thead><tbody>' +
+      rows.map(([n,d,f,desc]) => `<tr><td><b style="color:var(--accent)">${n}</b></td><td class="num">${d||''}</td><td><b style="color:var(--ink)">${f}</b><div class="muted" style="margin-top:3px">${desc}</div></td></tr>`).join('') + '</tbody>';
+  }
+})();
+
+// --- Corporate Wellness (Prompt 3) ---
+(function(){
+  const c = D.revenue?.corporate;
+  if (!c) return;
+  // Sectors
+  const st = document.getElementById('corpSectors');
+  if (st && c.sector_targeting_ranked) {
+    st.innerHTML = '<thead><tr><th>Rank</th><th>Sector</th><th>City SMEs / Why</th></tr></thead><tbody>' +
+      c.sector_targeting_ranked.map(s => `<tr>
+        <td><b style="font-family:var(--serif);font-size:18px;color:${s.rank===1?'var(--accent)':'var(--ink)'}">${s.rank}</b></td>
+        <td><b style="color:var(--ink);font-size:12.5px">${s.sector}</b></td>
+        <td style="font-size:11px;color:var(--ink-dim)">${s.city_london_smes||''} ${s.why?'<br><i>'+s.why+'</i>':''}</td>
+      </tr>`).join('') + '</tbody>';
+  }
+  // Offer ladder
+  const ol = document.getElementById('corpLadder');
+  if (ol && c.package_ladder) {
+    ol.innerHTML = '<thead><tr><th>Tier</th><th class="num">Range</th><th class="num">Cycle</th></tr></thead><tbody>' +
+      c.package_ladder.map(p => `<tr>
+        <td><b style="color:var(--ink);font-size:12.5px">${p.name}</b><div class="muted" style="margin-top:3px;font-size:10.5px">${p.note||''}</div></td>
+        <td class="num"><b style="color:var(--accent)">£${p.price_gbp_min.toLocaleString()}-£${p.price_gbp_max.toLocaleString()}</b></td>
+        <td class="num" style="font-size:11px">${p.sales_cycle_weeks} wks</td>
+      </tr>`).join('') + '</tbody>';
+  }
+  // Personas
+  const pp = document.getElementById('corpPersonas');
+  if (pp && c.buyer_personas_verified) {
+    pp.innerHTML = '<tbody>' + c.buyer_personas_verified.map(p => `<tr>
+      <td><b style="color:var(--accent);font-size:12px">${p.persona}</b><div class="muted" style="margin-top:3px;font-size:10.5px">${p.best_for_size?'For '+p.best_for_size+' employees':p.best_for||p.use_case||''}</div></td>
+      <td style="font-size:11px;color:var(--ink-dim)">${p.language||p.concerns||p.concrete_lens||p.compares_on||''}</td>
+    </tr>`).join('') + '</tbody>';
+  }
+  // Outreach
+  const ou = document.getElementById('corpOutreach');
+  if (ou && c.outreach_motion_priority) {
+    ou.innerHTML = c.outreach_motion_priority.map(o =>
+      `<li><b style="color:var(--ink)">${o.channel}</b> — <span style="font-size:11.5px">${o.specific_routes||o.angles||o.use||''}</span></li>`).join('');
+  }
+  // Edge pillars
+  const eg = document.getElementById('corpEdge');
+  if (eg && c.independent_coach_edge_4_pillars) {
+    eg.innerHTML = c.independent_coach_edge_4_pillars.map(e =>
+      `<div style="padding:12px;border:1px solid var(--line-2);border-radius:6px;background:var(--bg-3)">
+        <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:500">${e.pillar}</div>
+        <p style="font-size:11.5px;color:var(--ink-dim);line-height:1.5;margin-top:6px;margin-bottom:0">${e.why}</p>
+      </div>`).join('');
+  }
+})();
+
+// --- UK Compliance ---
+(function(){
+  const c = D.revenue?.uk_compliance;
+  if (!c) return;
+  // Phrases to avoid
+  const av = document.getElementById('complianceAvoid');
+  if (av && c.wording_to_avoid) {
+    av.innerHTML = '<thead><tr><th>Category</th><th>Examples</th></tr></thead><tbody>' +
+      c.wording_to_avoid.map(w =>
+        `<tr><td style="font-size:12px;color:var(--bad);font-weight:500;padding-right:8px;vertical-align:top">${w.category}</td><td style="font-size:11.5px;color:var(--ink-dim)">${w.examples.map(e=>'"'+e+'"').join(' · ')}</td></tr>`).join('') + '</tbody>';
+  }
+  // Checklist
+  const cl = document.getElementById('complianceChecklist');
+  if (cl && c.content_risk_checklist_pre_publish) {
+    cl.innerHTML = c.content_risk_checklist_pre_publish.map(item => `<li>${item}</li>`).join('');
+  }
+  // Mukund-specific audit
+  const ma = document.getElementById('complianceMukundAudit');
+  if (ma && c.mukund_specific_audit) {
+    ma.innerHTML = '<thead><tr><th>Asset</th><th>Issue</th><th>Action</th></tr></thead><tbody>' +
+      c.mukund_specific_audit.map(a => {
+        const isSafe = (a.action||'').toLowerCase().includes('safe');
+        return `<tr><td style="font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);vertical-align:top">${a.shortcode}</td><td style="font-size:11.5px;color:var(--ink-dim)">${a.issue}</td><td style="font-size:11.5px"><span class="tag ${isSafe?'good':'warn'}">${a.action}</span></td></tr>`;
+      }).join('') + '</tbody>';
+  }
+  // Safer wording
+  const sw = document.getElementById('complianceSaferWording');
+  if (sw && c.safer_wording_library) {
+    sw.innerHTML = Object.entries(c.safer_wording_library).map(([k,v]) =>
+      `<div style="margin-bottom:14px"><div style="font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">${k.replace(/_/g,' ')}</div><div style="font-size:11.5px;color:var(--ink-dim);font-family:var(--mono);background:var(--bg-3);padding:10px;border-radius:4px;line-height:1.5">${v}</div></div>`).join('');
+  }
+  // Disclaimer template
+  const d = document.getElementById('complianceDisclaimer');
+  if (d) d.textContent = c.landing_page_disclaimer_template || '';
+  // Red flags
+  const rf = document.getElementById('complianceRedFlags');
+  if (rf && c.red_flags_refer_out) {
+    rf.innerHTML = c.red_flags_refer_out.map(r => `<span class="tag bad">${r}</span>`).join(' ');
+  }
+})();
+
+// --- Synthesised positioning ---
+(function(){
+  const sp = D.revenue?.synthesised_positioning_recommendation;
+  if (!sp) return;
+  const tbl = document.getElementById('positioningEvidence');
+  if (tbl && sp.evidence_stack) {
+    tbl.innerHTML = sp.evidence_stack.map(e =>
+      `<tr><td style="font-size:11.5px;color:var(--accent);font-weight:500;padding:4px 6px;vertical-align:top">${e.dimension}</td><td style="font-size:11.5px;color:var(--ink-dim);padding:4px 6px;line-height:1.5">${e.evidence}</td></tr>`).join('');
+  }
+  const ul = document.getElementById('positioningChanges');
+  if (ul && sp.what_changes) {
+    ul.innerHTML = sp.what_changes.map(c => `<li>${c}</li>`).join('');
+  }
+})();
+
+// --- HYROX market ---
+(function(){
+  const h = D.revenue?.hyrox_market;
+  if (!h) return;
+  // Offer ladder
+  const ol = document.getElementById('hyroxOfferLadder');
+  if (ol && h.recommended_hyrox_offer_ladder_for_mukund) {
+    ol.innerHTML = '<table>' + h.recommended_hyrox_offer_ladder_for_mukund.map((o,i) => {
+      const featured = (o.offer||'').includes('⭐');
+      return `<tr ${featured?'style="background:rgba(201,169,106,0.06)"':''}>
+        <td><b style="color:${featured?'var(--accent)':'var(--ink)'};font-size:13px">${(o.offer||'').replace(' ⭐','')}</b>${featured?' <span class="tag acc">recommended</span>':''}<div class="muted" style="margin-top:4px">${o.use||''}</div></td>
+        <td class="num" style="vertical-align:top;font-size:11.5px">${o.price_target||''}</td>
+      </tr>`;
+    }).join('') + '</table>';
+  }
+  // Content angles
+  const ca = document.getElementById('hyroxContentAngles');
+  if (ca) ca.innerHTML = (h.content_angles_that_work||[]).map(a => `<li>${a}</li>`).join('');
+  // Partners
+  const pa = document.getElementById('hyroxPartners');
+  if (pa) pa.innerHTML = (h.hybrid_ecosystem_partners||[]).map(p =>
+    `<span class="tag" title="${p.role}">${p.partner}</span>`).join('');
+})();
+
+// --- Paid Acquisition ---
+(function(){
+  const pa = D.revenue?.paid_acquisition;
+  if (!pa) return;
+  // Channel CPL bands
+  const cb = document.querySelector('#paidChannels tbody');
+  if (cb) cb.innerHTML = (pa.channel_cpl_bands||[]).map(c =>
+    `<tr><td>${c.channel}</td><td class="num">£${c.low_gbp}</td><td class="num"><b style="color:var(--accent)">£${c.mid_gbp}</b></td><td class="num">£${c.high_gbp}</td></tr>`).join('');
+  // CAC scenarios
+  const sc = document.querySelector('#paidCacScenarios tbody');
+  if (sc) sc.innerHTML = (pa.cac_scenarios||[]).map(s => {
+    const tag = s.viability==='good'?'good':s.viability==='marginal'?'warn':'bad';
+    return `<tr><td>${s.scenario}</td><td class="num">£${s.app_cpl_gbp}</td><td class="num"><span class="tag ${tag}">£${s.cost_per_sale_gbp}</span></td><td class="num">${s.margin_after_15pct_buffer_gbp >= 0 ? 'good':'bad'}: £${s.margin_after_15pct_buffer_gbp}</td></tr>`;
+  }).join('');
+  // Phases
+  const ph = document.getElementById('paidPhases');
+  if (ph && pa.test_budget_phases) {
+    ph.innerHTML = '<table>' + (pa.test_budget_phases.phases||[]).map(p =>
+      `<tr><td><b style="color:var(--accent)">Phase ${p.phase}</b></td><td>${p.channel}</td><td class="num">£${p.budget_gbp}</td></tr>
+       <tr><td colspan="3" style="font-size:11px;color:var(--ink-mute);padding-bottom:14px">${p.trigger}</td></tr>`).join('') + '</table>';
+  }
+  // Readiness
+  const rd = document.getElementById('paidReadiness');
+  if (rd && pa.mukund_status) {
+    const ms = pa.mukund_status;
+    const rows = [
+      ['Audience scale', ms.audience_scale_ready],
+      ['Engagement rate', ms.engagement_ready],
+      ['Application form live', ms.application_form_ready],
+      ['Instant scheduler', ms.instant_scheduler_ready],
+      ['Conversion tracking', ms.tracking_ready],
+    ];
+    rd.innerHTML = '<tbody>' + rows.map(([k,v]) =>
+      `<tr><td>${k}</td><td class="num"><span class="tag ${v?'good':'bad'}">${v?'✓ ready':'✗ missing'}</span></td></tr>`).join('') + '</tbody>';
+    document.getElementById('paidVerdict').textContent = ms.verdict;
+  }
+})();
+
+// Active TOC
+const sectionIds = ['summary','bridge','funnels','timeline','audience','segments','hyrox','paid','competitors','content','offers','corporate','positioning','compliance','integrity','actions'];
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 120;
+  let active = sectionIds[0];
+  for (const id of sectionIds) {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= y) active = id;
+  }
+  document.querySelectorAll('.toc a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#'+active);
+  });
+});
+</script>
+</body>
+</html>

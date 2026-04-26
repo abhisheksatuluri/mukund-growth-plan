@@ -1,0 +1,284 @@
+{
+  "follower_count": 29206,
+  "total_posts": 50,
+  "types": {
+    "carousel": 13,
+    "image": 6,
+    "reel": 31
+  },
+  "topic_counts": {
+    "lifestyle_personal": 8,
+    "training_strength": 9,
+    "mindset_motivation": 27,
+    "hyrox_hybrid": 4,
+    "mobility_recovery": 1,
+    "transformation": 1
+  },
+  "funnel_stage_counts": {
+    "awareness": 47,
+    "conversion": 2,
+    "trust": 1
+  },
+  "offer_alignment_counts": {
+    "none": 8,
+    "online": 16,
+    "content": 26
+  },
+  "cta_counts": {
+    "dm": 1,
+    "save_share": 1
+  },
+  "avg_engagement_rate_pct": 0.439,
+  "avg_likes": 120,
+  "avg_comments": 8.5,
+  "avg_views_video": 955,
+  "median_views_video": 471,
+  "top_posts_by_engagement": [
+    {
+      "shortcode": "DTBaCeGjLfl",
+      "url": "https://www.instagram.com/p/DTBaCeGjLfl/",
+      "type": "carousel",
+      "likes": 726,
+      "comments": 24,
+      "views": null,
+      "topic": "mindset_motivation",
+      "caption_preview": "Ten years ago, I met you, and something just felt right.\nI didn’t have the words for it then, but I knew.\nNot because life was easy with you — but because it fe"
+    },
+    {
+      "shortcode": "DWW5kjEFxiS",
+      "url": "https://www.instagram.com/p/DWW5kjEFxiS/",
+      "type": "carousel",
+      "likes": 434,
+      "comments": 42,
+      "views": null,
+      "topic": "hyrox_hybrid",
+      "caption_preview": "Showing you some action from our second @hyroxuk at London Olympia!\n\nEnjoy watching us take 5 mins off our time from our first HYROX in London Excel \n\n🇬🇭 x 🇮"
+    },
+    {
+      "shortcode": "DWULmqYDGyx",
+      "url": "https://www.instagram.com/p/DWULmqYDGyx/",
+      "type": "carousel",
+      "likes": 321,
+      "comments": 76,
+      "views": null,
+      "topic": "training_strength",
+      "caption_preview": "1:09:35. LONDON - OLYMPIA \n\nLungs burning. Legs gone. Still moving.\nRepresenting INDIA 🇮🇳 GHANA 🇬🇭 — two lions in London who refused to slow down.\nLast year"
+    },
+    {
+      "shortcode": "C-xvZJ-s1oO",
+      "url": "https://www.instagram.com/p/C-xvZJ-s1oO/",
+      "type": "reel",
+      "likes": 387,
+      "comments": 5,
+      "views": 6746,
+      "topic": "mindset_motivation",
+      "caption_preview": "Are You Feeling Stuck on Your Fat Loss Journey?🛑\n\nI get it. You’ve made some positive changes, put in the effort, and started seeing some results. But then, yo"
+    },
+    {
+      "shortcode": "DW8TVOPjtQT",
+      "url": "https://www.instagram.com/p/DW8TVOPjtQT/",
+      "type": "image",
+      "likes": 359,
+      "comments": 20,
+      "views": null,
+      "topic": "training_strength",
+      "caption_preview": "The reason I exist, the strength behind everything I am.\n\n Make sure you love and take care of your mother no matter what the purest form of love you will ever "
+    },
+    {
+      "shortcode": "DWeTVYvDJtI",
+      "url": "https://www.instagram.com/p/DWeTVYvDJtI/",
+      "type": "carousel",
+      "likes": 311,
+      "comments": 40,
+      "views": null,
+      "topic": "hyrox_hybrid",
+      "caption_preview": "You don’t have to be a runner to do HYROX.\nYou have to be tough.\nYou have to be fit.\nYou have to be able to suffer and keep moving.\nTeamwork. Effort. No excuses"
+    },
+    {
+      "shortcode": "C5xfymrMA_d",
+      "url": "https://www.instagram.com/p/C5xfymrMA_d/",
+      "type": "reel",
+      "likes": 263,
+      "comments": 36,
+      "views": 2289,
+      "topic": "mindset_motivation",
+      "caption_preview": "Discovering your “why” is the compass that guides you through life’s journey. It’s the reason behind every choice you make, every goal you pursue, and every dre"
+    },
+    {
+      "shortcode": "DHTMj_-osHm",
+      "url": "https://www.instagram.com/p/DHTMj_-osHm/",
+      "type": "carousel",
+      "likes": 263,
+      "comments": 7,
+      "views": null,
+      "topic": "mindset_motivation",
+      "caption_preview": "From Overworked to Optimal: How Busy Men Transformed Their Health\n\nFor years, I’ve worked with men who were grinding long hours, sacrificing their health, and f"
+    },
+    {
+      "shortcode": "DUxsThkjFoF",
+      "url": "https://www.instagram.com/p/DUxsThkjFoF/",
+      "type": "carousel",
+      "likes": 262,
+      "comments": 5,
+      "views": null,
+      "topic": "hyrox_hybrid",
+      "caption_preview": "Valentine’s Day😍, even after 10 years of marriage \n\nStill enjoying the simple things in life.\nThere’s no better way.\n\nWe fight.\nWe learn the lessons.\nWe evolve"
+    },
+    {
+      "shortcode": "DWUNbh3jTl7AG5TgcZF3Cbt07Z5EU49pRI0hYg0",
+      "url": "https://www.instagram.com/p/DWUNbh3jTl7AG5TgcZF3Cbt07Z5EU49pRI0hYg0/",
+      "type": "carousel",
+      "likes": 241,
+      "comments": 24,
+      "views": null,
+      "topic": "lifestyle_personal",
+      "caption_preview": "Proud of you both today!! Smashed it and so amazing to watch 🤩🫡"
+    }
+  ],
+  "top_posts_by_views": [
+    {
+      "shortcode": "C-xvZJ-s1oO",
+      "url": "https://www.instagram.com/p/C-xvZJ-s1oO/",
+      "views": 6746,
+      "likes": 387,
+      "comments": 5,
+      "topic": "mindset_motivation",
+      "duration_s": 54.5,
+      "caption_preview": "Are You Feeling Stuck on Your Fat Loss Journey?🛑\n\nI get it. You’ve made some positive changes, put in the effort, and started seeing some results. But then, yo"
+    },
+    {
+      "shortcode": "DTx5Zj8jCCU",
+      "url": "https://www.instagram.com/p/DTx5Zj8jCCU/",
+      "views": 3448,
+      "likes": 226,
+      "comments": 8,
+      "topic": "mindset_motivation",
+      "duration_s": 39.633,
+      "caption_preview": "Box Jump Challenge 😂🤣😂🤣😂🤣 \n\nWho is Up next ! Stealth Mode ! 🥷 \n\nComment Below who do you think did it better 🤣😂🤣😂\n\n🏆💯😎Benefits of Box Jumps\n\nExplo"
+    },
+    {
+      "shortcode": "C5xfymrMA_d",
+      "url": "https://www.instagram.com/p/C5xfymrMA_d/",
+      "views": 2289,
+      "likes": 263,
+      "comments": 36,
+      "topic": "mindset_motivation",
+      "duration_s": 181,
+      "caption_preview": "Discovering your “why” is the compass that guides you through life’s journey. It’s the reason behind every choice you make, every goal you pursue, and every dre"
+    },
+    {
+      "shortcode": "DVIhQzMApAK",
+      "url": "https://www.instagram.com/p/DVIhQzMApAK/",
+      "views": 2214,
+      "likes": 100,
+      "comments": 1,
+      "topic": "mindset_motivation",
+      "duration_s": 13.333,
+      "caption_preview": "When your HYROX partner don’t believe in recovery 🙃🙃🙃🙃🙃 zone 5 it is 😂😂😂😂\n\n#hyrox #zone #fun #training"
+    },
+    {
+      "shortcode": "DVNxhZcjPBJ",
+      "url": "https://www.instagram.com/p/DVNxhZcjPBJ/",
+      "views": 2073,
+      "likes": 166,
+      "comments": 22,
+      "topic": "training_strength",
+      "duration_s": 58.333,
+      "caption_preview": "Time is the one thing no father gets back.\n\nSo when I’m with my son, I’m present.\nWe train.\nWe laugh.\nWe fail.\nWe try again.\n\nThis isn’t about muscles.\nIt’s abo"
+    },
+    {
+      "shortcode": "DUQ-nozDNqd",
+      "url": "https://www.instagram.com/p/DUQ-nozDNqd/",
+      "views": 1913,
+      "likes": 173,
+      "comments": 10,
+      "topic": "lifestyle_personal",
+      "duration_s": 16,
+      "caption_preview": "I don’t train just to look good.\nI train to live long.\nTo stay strong.\nTo play.\nTo be present.\nThis is the real return on fitness.\nLegacy over aesthetics."
+    },
+    {
+      "shortcode": "DVMjjAZDF_V",
+      "url": "https://www.instagram.com/p/DVMjjAZDF_V/",
+      "views": 1851,
+      "likes": 66,
+      "comments": 5,
+      "topic": "mindset_motivation",
+      "duration_s": 15.3,
+      "caption_preview": "You wouldn’t buy a supercar and keep it in first gear forever.\nBut that’s exactly how most people treat their bodies.\n\nThey move.\nThey “work out.”\nThey stay com"
+    },
+    {
+      "shortcode": "DVBVI4mjF4Y",
+      "url": "https://www.instagram.com/p/DVBVI4mjF4Y/",
+      "views": 1371,
+      "likes": 75,
+      "comments": 3,
+      "topic": "lifestyle_personal",
+      "duration_s": 31.733,
+      "caption_preview": "Confident and Strong is how to Turn that Boy into a Man 😎🏆💯 \n\nOnly @legiongrappling"
+    },
+    {
+      "shortcode": "DURCNgbDGWu",
+      "url": "https://www.instagram.com/p/DURCNgbDGWu/",
+      "views": 636,
+      "likes": 34,
+      "comments": 1,
+      "topic": "training_strength",
+      "duration_s": 32.333,
+      "caption_preview": "Most people think mobility needs an hour in the gym.\nIt doesn’t.\nIt needs movement through the day.\n\nGet up.\nChange positions.\nSquat.\nRotate.\nBalance on one leg"
+    },
+    {
+      "shortcode": "DTx4gazDHNw",
+      "url": "https://www.instagram.com/p/DTx4gazDHNw/",
+      "views": 506,
+      "likes": 81,
+      "comments": 6,
+      "topic": "mindset_motivation",
+      "duration_s": 54.333,
+      "caption_preview": "If I told you I dreamt of having the perfect gym partner…\nAnd that dream became reality…\nWould you believe me?\n\nThis isn’t about reps or weights.\nThis is about "
+    }
+  ],
+  "bottom_posts_by_views": [
+    {
+      "shortcode": "DTNuP1aDEh2",
+      "url": "https://www.instagram.com/p/DTNuP1aDEh2/",
+      "views": 172,
+      "likes": 14,
+      "topic": "mindset_motivation",
+      "caption_preview": "Your body follows orders.\nYour life follows standards.\nBoth are controlled by the mind.\n\nI’ve seen strong bodies trapped in weak thinking.\nAnd I’ve seen average"
+    },
+    {
+      "shortcode": "DTf6wEqjGlw",
+      "url": "https://www.instagram.com/p/DTf6wEqjGlw/",
+      "views": 160,
+      "likes": 10,
+      "topic": "mindset_motivation",
+      "caption_preview": "Getting older doesn’t make you weak.\nStaying comfortable does.\n\nYou don’t lose strength because of age.\nYou lose it because you stop demanding it.\n\nMuscle is ea"
+    },
+    {
+      "shortcode": "DUEIqPdjHrL",
+      "url": "https://www.instagram.com/p/DUEIqPdjHrL/",
+      "views": 130,
+      "likes": 9,
+      "topic": "mindset_motivation",
+      "caption_preview": "Nutrition isn’t complicated.\nIt’s been made confusing on purpose.\n\nUltra-processed food keeps you addicted.\nConfusion keeps you dependent.\nSick people are profi"
+    },
+    {
+      "shortcode": "DT74V60DPxm",
+      "url": "https://www.instagram.com/p/DT74V60DPxm/",
+      "views": 119,
+      "likes": 9,
+      "topic": "mindset_motivation",
+      "caption_preview": "Recovery isn’t fancy.\nIt’s fundamentals done daily.\n\nSleep properly.\nEat real food.\nHydrate.\nBreathe.\nMove well.\n\nMost people chase gadgets.\nThey ignore basics."
+    },
+    {
+      "shortcode": "DUEGwiMjCoI",
+      "url": "https://www.instagram.com/p/DUEGwiMjCoI/",
+      "views": 81,
+      "likes": 6,
+      "topic": "lifestyle_personal",
+      "caption_preview": ""
+    }
+  ],
+  "posts_with_cta": 2,
+  "posts_with_apply_or_dm": 1
+}

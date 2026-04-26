@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply | Mukund Venkat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav container reveal-up">
+        <a href="index.html" class="nav-brand">Mukund Venkat</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="work.html">Work With Me</a>
+            <a href="results.html">Results</a>
+            <a href="apply.html">Apply</a>
+        </div>
+        <button class="menu-toggle">Menu</button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work With Me</a>
+            <a href="results.html">Results</a>
+            <a href="apply.html">Apply</a>
+        </div>
+    </div>
+
+    <!-- Page Header and Form -->
+    <section class="section-curtain" style="min-height: 100vh; padding-top: var(--space-6);">
+        <div class="container grid-2">
+
+            <div class="editorial-block reveal-up" style="position: sticky; top: var(--space-5); height: max-content;">
+                <div class="image-wrapper" style="margin-bottom: var(--space-4);">
+                    <img src="assets/mukund_portrait_boss.jpeg"
+                        alt="Mukund Venkat — Private Executive Performance Coach"
+                        style="width: 100%; max-height: 420px; object-fit: cover; object-position: center top;">
+                </div>
+                <span class="hero-subtitle">The Next Step</span>
+                <h1 style="margin-bottom: var(--space-3);">Initiate the Process.</h1>
+                <p>Because my engagements require immense personal operational bandwidth, I take on a strictly limited
+                    roster of clients per year.</p>
+                <p>Complete the application below. If there is a mutual fit, you will be invited to a 30-minute
+                    discovery call within 48 hours.</p>
+
+                <div style="margin-top: var(--space-5);">
+                    <h3
+                        style="font-family: var(--font-display); font-size: 2rem; font-style: italic; color: var(--color-accent);">
+                        "A system is only as strong as its weakest input. Are you ready to audit yours?"</h3>
+                    <p style="margin-top: 1rem; color: var(--color-text);">— Mukund Venkat</p>
+                </div>
+            </div>
+
+            <div class="reveal-up" style="transition-delay: 0.1s;">
+                <form id="application-form" action="#" method="POST"
+                    style="background-color: var(--color-bg-alt); padding: var(--space-4); border: 1px solid rgba(255,255,255,0.05);">
+
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Professional Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title" class="form-label">Role & Company</label>
+                        <input type="text" id="title" name="title" class="form-control"
+                            placeholder="e.g. CEO, Foundry Tech" required>
+                    </div>
+
+                    <div class="form-group" style="margin-top: var(--space-4);">
+                        <label for="primary_goal" class="form-label">What is the primary operational friction you are
+                            trying to resolve?</label>
+                        <textarea id="primary_goal" name="primary_goal" class="form-control" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="commitment" class="form-label">Are you prepared to commit 5-7 hours per week
+                            entirely to your physiological asset?</label>
+                        <select id="commitment" name="commitment" class="form-control" required
+                            style="background: transparent; color: var(--color-text); appearance: none;">
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="yes">Yes, without exception.</option>
+                            <option value="maybe">I need to discuss schedule integration.</option>
+                            <option value="no">No, I am looking for a lower commitment.</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="engagement_tier" class="form-label">Primary Engagement Interest</label>
+                        <select id="engagement_tier" name="engagement_tier" class="form-control" required
+                            style="background: transparent; color: var(--color-text); appearance: none;">
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="audit">The Executive Performance Audit</option>
+                            <option value="retainer">The Private Partnership</option>
+                            <option value="retreat">The Longevity Retreat</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary"
+                        style="width: 100%; border: none; cursor: pointer; margin-top: var(--space-2);">Submit
+                        Application</button>
+                    <p style="font-size: 0.8rem; color: var(--color-text-muted); text-align: center; margin-top: 1rem;">
+                        All information is strictly confidential.</p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">Mukund Venkat</div>
+            <div class="footer-copy">&copy; 2026 Mukund Venkat. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('application-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            btn.textContent = 'Application Received.';
+            btn.style.backgroundColor = 'var(--color-bg)';
+            btn.style.color = 'var(--color-accent)';
+            btn.style.border = '1px solid var(--color-accent)';
+            setTimeout(() => {
+                this.reset();
+                btn.textContent = 'Submit Application';
+                btn.style = '';
+                btn.style.width = '100%';
+                btn.style.border = 'none';
+                btn.style.cursor = 'pointer';
+                btn.style.marginTop = 'var(--space-2)';
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

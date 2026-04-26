@@ -1,0 +1,10 @@
+.env
+node_modules/
+output/data/videos/
+*.log
+.DS_Store
+# Heavy raw data — keep but consider pruning for repo size
+output/data/raw_instagram_comments.json
+output/data/raw_instagram_posts.json
+output/data/competitors.json
+output/data/profile.json

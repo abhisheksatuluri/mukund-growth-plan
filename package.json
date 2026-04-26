@@ -1,0 +1,22 @@
+{
+  "name": "mukund-venkat-roadmap",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scrape": "node scripts/scrape_instagram.js",
+    "normalize": "node scripts/normalize_posts.js",
+    "analyze": "node scripts/gemini_analyze.js",
+    "synthesize": "node scripts/gemini_aggregate.js",
+    "model": "node scripts/build_revenue_model.js",
+    "all": "npm run scrape && npm run normalize && npm run analyze && npm run synthesize && npm run model"
+  },
+  "dependencies": {
+    "@google/genai": "^0.7.0",
+    "apify-client": "^2.9.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "jsdom": "^29.0.2"
+  }
+}

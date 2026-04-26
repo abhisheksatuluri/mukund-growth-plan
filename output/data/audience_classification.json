@@ -1,0 +1,802 @@
+[
+  {
+    "username": "chandinisree1955",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio, name suggests Indian origin."
+  },
+  {
+    "username": "rangesh.voyeur95",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio, name suggests Indian origin."
+  },
+  {
+    "username": "ruslana_poberezhna",
+    "geography": "EU",
+    "london_likelihood": 7,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 3,
+    "evidence": "Ukrainian and UK flags, travel, gym interest. Female name."
+  },
+  {
+    "username": "margueritelefebvre",
+    "geography": "EU",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio, French name."
+  },
+  {
+    "username": "tevin_pinnock",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Religious bio, no location or occupation."
+  },
+  {
+    "username": "badeezy88",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio, male name."
+  },
+  {
+    "username": "mention_isaac",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Male name, no location or occupation. Mentions another account."
+  },
+  {
+    "username": "yukith_harnal",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Indian name, '.co.in' domain, links to clothing brands. Male."
+  },
+  {
+    "username": "manmeet_singh373",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Generic travel bio. Male name (John/Manmeet Singh)."
+  },
+  {
+    "username": "_mr_wild_born_official_",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 2,
+    "evidence": "Indian male name, civil engineer. No location."
+  },
+  {
+    "username": "ojunni0r",
+    "geography": "UK",
+    "london_likelihood": 10,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "m",
+    "age_band": "30s",
+    "icp_fit_score": 7,
+    "evidence": "Explicitly 'vivendo em Londres', UK flag, Brazilian origin, content creator. Male."
+  },
+  {
+    "username": "__nrjones",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio, female nickname. No location or occupation."
+  },
+  {
+    "username": "jimmypapezbnb",
+    "geography": "North America",
+    "london_likelihood": 0,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "m",
+    "age_band": "teen_20s",
+    "icp_fit_score": 0,
+    "evidence": "Musician/artist, male name, North American cultural cues."
+  },
+  {
+    "username": "myworldogram",
+    "geography": "India",
+    "london_likelihood": 2,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Explicitly 'India 🇮🇳', content creator. Unknown gender."
+  },
+  {
+    "username": "imran.666_",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio, male name."
+  },
+  {
+    "username": "_anjalyyy____",
+    "geography": "UK",
+    "london_likelihood": 9,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 5,
+    "evidence": "Mentions 'London' and 'दिल्ली'. Female name."
+  },
+  {
+    "username": "althuzzeyy",
+    "geography": "Other",
+    "london_likelihood": 3,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Multiple country flags, no specific location or occupation. Unknown gender."
+  },
+  {
+    "username": "enrougeladame",
+    "geography": "EU",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "French business name, female. Empty bio."
+  },
+  {
+    "username": "alba.bidueira",
+    "geography": "UK",
+    "london_likelihood": 6,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "f",
+    "age_band": "30s",
+    "icp_fit_score": 6,
+    "evidence": "QTS teacher, Albion, music therapist, female emoji. UK based professional."
+  },
+  {
+    "username": "kristhian_fitness",
+    "geography": "Other",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "30s",
+    "icp_fit_score": 0,
+    "evidence": "PT in Riyadh, male name, fitness specialist."
+  },
+  {
+    "username": "vikas_sugathan",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Kerala🇮🇳, Dxb🇦🇪, Vikas (male name), fashion company."
+  },
+  {
+    "username": "yiannismusicnow",
+    "geography": "UK",
+    "london_likelihood": 10,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 3,
+    "evidence": "London, Essex & Kent; Live Singer For Hire; Yiannis (male name)."
+  },
+  {
+    "username": "dr.neelreddy",
+    "geography": "UK",
+    "london_likelihood": 5,
+    "occupation_class": "healthcare",
+    "gender_inference": "m",
+    "age_band": "30s",
+    "icp_fit_score": 7,
+    "evidence": "NHS Consultant, Dr., multiple medical qualifications, likely 30s+."
+  },
+  {
+    "username": "fitwithmukund",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Online Coach, Peak Performance and Longevity Coach; Mukund (male name)."
+  },
+  {
+    "username": "iamsimbarz",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Calisthenics Athlete."
+  },
+  {
+    "username": "monu__v.erma",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Jai Shree Ram 🕉️🚩; Monu Verma (Indian name)."
+  },
+  {
+    "username": "drelove.19",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Qualified PT & Gym Instructor; Dre (male name)."
+  },
+  {
+    "username": "travelholic1988",
+    "geography": "EU",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "30s",
+    "icp_fit_score": 1,
+    "evidence": "🇮🇪, éire; '1988' in username."
+  },
+  {
+    "username": "_curlylioness",
+    "geography": "UK",
+    "london_likelihood": 10,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 3,
+    "evidence": "LDN📍; Fashion Model; Janete Zelinda (female name)."
+  },
+  {
+    "username": "dinspiringfitness",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio."
+  },
+  {
+    "username": "kukovamichaela",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Elite Strength & Fat Loss Coach; Michaela (female name)."
+  },
+  {
+    "username": "michaelessumann",
+    "geography": "UK",
+    "london_likelihood": 5,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 2,
+    "evidence": "🇬🇧 flag; Digital creator; Michael (male name)."
+  },
+  {
+    "username": "makeen_collection",
+    "geography": "UK",
+    "london_likelihood": 5,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 4,
+    "evidence": "🇬🇧 flag, +44 phone number, fashion brand."
+  },
+  {
+    "username": "sexayyysam",
+    "geography": "SE Asia",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "🇸🇬 flag; Mr Singapore; Fitness Ironman."
+  },
+  {
+    "username": "metah.fitt",
+    "geography": "EU",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "🇪🇸 flag; Fitness Trainer."
+  },
+  {
+    "username": "i_need_money_22",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio."
+  },
+  {
+    "username": "london.uke",
+    "geography": "UK",
+    "london_likelihood": 10,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "LONDON UK; Advertising/Marketing business category (brand account)."
+  },
+  {
+    "username": "sa4fitness",
+    "geography": "UK",
+    "london_likelihood": 10,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "teen_20s",
+    "icp_fit_score": 0,
+    "evidence": "@thegymgroup_walthamstow (London location); Sports Therapist, Personal Trainer; Samuel (male name)."
+  },
+  {
+    "username": "z33_ahmed",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Minimal bio."
+  },
+  {
+    "username": "rav4boy",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Benji (male name); 👨🏼‍🤝‍👨🏿 emoji."
+  },
+  {
+    "username": "afsalhameed_k",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 1,
+    "evidence": "Name suggests India, actor business category, no London cues."
+  },
+  {
+    "username": "becstarbee",
+    "geography": "Unknown",
+    "london_likelihood": 1,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 2,
+    "evidence": "Female host, 'Afrik_decor' suggests African connection but no strong geo, no age cues."
+  },
+  {
+    "username": "climbercise",
+    "geography": "Unknown",
+    "london_likelihood": 1,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 2,
+    "evidence": "Female, fitness hobbyist/micro-influencer, no geo/age cues."
+  },
+  {
+    "username": "thegoldstandard.sg",
+    "geography": "SE Asia",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": ".sg username for Singapore, male fitness pro."
+  },
+  {
+    "username": "wioleta_fitness",
+    "geography": "EU",
+    "london_likelihood": 1,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Female fitness coach, name 'Wioleta' suggests Eastern Europe."
+  },
+  {
+    "username": "architect_raaghav",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "m",
+    "age_band": "30s",
+    "icp_fit_score": 3,
+    "evidence": "Male architect/CEO, name suggests India, established career implies 30s+."
+  },
+  {
+    "username": "ziggy2995",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty profile."
+  },
+  {
+    "username": "rm_sabio",
+    "geography": "Unknown",
+    "london_likelihood": 1,
+    "occupation_class": "tech",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 2,
+    "evidence": "Male, runs marketing agency for fitness coaches, no geo/age cues."
+  },
+  {
+    "username": "gulzhasm",
+    "geography": "Other",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Empty bio, name 'Gul' suggests Central/South Asia, inferred female."
+  },
+  {
+    "username": "officaljaypatel",
+    "geography": "UK",
+    "london_likelihood": 8,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 5,
+    "evidence": "UK flag, male name 'Jay Patel', high likelihood of London, but no other info."
+  },
+  {
+    "username": "dante.pollard_drp",
+    "geography": "UK",
+    "london_likelihood": 7,
+    "occupation_class": "student",
+    "gender_inference": "m",
+    "age_band": "teen_20s",
+    "icp_fit_score": 1,
+    "evidence": "UK flag, male, U23 sprinter, likely too young for ICP."
+  },
+  {
+    "username": "angelashamini",
+    "geography": "Unknown",
+    "london_likelihood": 1,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 1,
+    "evidence": "Female, hobbyist bio, no geo/age/profession cues."
+  },
+  {
+    "username": "anthonydowefitness",
+    "geography": "Unknown",
+    "london_likelihood": 1,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "30s",
+    "icp_fit_score": 0,
+    "evidence": "Male fitness pro, targets 'Over 30', no geo cues."
+  },
+  {
+    "username": "iurie_grama",
+    "geography": "EU",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Male, name 'Iurie Grama' suggests Eastern Europe, empty bio."
+  },
+  {
+    "username": "joeolive.revxl",
+    "geography": "Unknown",
+    "london_likelihood": 1,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Male, coaches fitness businesses, not a client, no geo/age cues."
+  },
+  {
+    "username": "leanne_sheila",
+    "geography": "Unknown",
+    "london_likelihood": 1,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 3,
+    "evidence": "Female founder, no geo/age cues, implies professional."
+  },
+  {
+    "username": "ahnai_official",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "India flag, empty bio."
+  },
+  {
+    "username": "thecuppingguy",
+    "geography": "UK",
+    "london_likelihood": 10,
+    "occupation_class": "healthcare",
+    "gender_inference": "m",
+    "age_band": "30s",
+    "icp_fit_score": 4,
+    "evidence": "Explicit London address, male healthcare professional, established practice implies 30s+."
+  },
+  {
+    "username": "madeshgram",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 1,
+    "evidence": "Male, name suggests India, personal blog bio, no clear profession."
+  },
+  {
+    "username": "be_inspired_of_timmy",
+    "geography": "EU",
+    "london_likelihood": 0,
+    "occupation_class": "musician",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Male musician, name 'Jora Timofei' suggests Eastern Europe."
+  },
+  {
+    "username": "vishnurenumishra2610",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Indian name 'Renu', username suggests Indian origin."
+  },
+  {
+    "username": "georgiacourtney",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Female name 'Georgia'."
+  },
+  {
+    "username": "majorblazzor",
+    "geography": "North America",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Canada flag 🇨🇦 in bio."
+  },
+  {
+    "username": "saleswithdoug",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "m",
+    "age_band": "30s",
+    "icp_fit_score": 2,
+    "evidence": "Male name 'Douglas', bio indicates 'Sales Coach', professional experience implies 30s+."
+  },
+  {
+    "username": "omzzlift_",
+    "geography": "Africa",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "teen_20s",
+    "icp_fit_score": 0,
+    "evidence": "Nigeria flag 🇳🇬, 'throw weights around', TikTok presence, 'Sam' (male)."
+  },
+  {
+    "username": "lazinhabarros",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Female name 'Lazara'."
+  },
+  {
+    "username": "jannalitiya",
+    "geography": "UK",
+    "london_likelihood": 7,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "f",
+    "age_band": "30s",
+    "icp_fit_score": 6,
+    "evidence": "UK flag 🇬🇧, female name 'Janna', 'science 👩‍🔬' suggests professional, 'Global citizen' implies mobility/busyness."
+  },
+  {
+    "username": "srinjay_istaken",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "tech",
+    "gender_inference": "m",
+    "age_band": "teen_20s",
+    "icp_fit_score": 0,
+    "evidence": "Indian name 'Srinjay', 'Helping build @pneuma.club | We’re HIRING!' suggests startup/tech."
+  },
+  {
+    "username": "mayu_kanna",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "finance",
+    "gender_inference": "m",
+    "age_band": "30s",
+    "icp_fit_score": 3,
+    "evidence": "Male (👨🏽, 'Father'), 'Director of @tsk.mortgages' indicates finance professional."
+  },
+  {
+    "username": "fitfoodbrunetki",
+    "geography": "UK",
+    "london_likelihood": 8,
+    "occupation_class": "creator_influencer",
+    "gender_inference": "f",
+    "age_band": "30s",
+    "icp_fit_score": 5,
+    "evidence": "UK flag 🇬🇧, female name 'Daria', 👩 emoji, 'fitfoodbrunetki' username suggests content creator."
+  },
+  {
+    "username": "inayah.db",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "f",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Female name 'Inayah'."
+  },
+  {
+    "username": "mbr.mrza_",
+    "geography": "UK",
+    "london_likelihood": 7,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 3,
+    "evidence": "UK flag 🇬🇧, male name 'Mubashir' (مُباشِر)."
+  },
+  {
+    "username": "sathish_anandan",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Male Indian name 'Sathish Anandan'."
+  },
+  {
+    "username": "only_1_vicks",
+    "geography": "Other",
+    "london_likelihood": 0,
+    "occupation_class": "corporate_professional",
+    "gender_inference": "f",
+    "age_band": "30s",
+    "icp_fit_score": 1,
+    "evidence": "Female ('Mum of three', 'wife', 👩🏾‍🦱), 'MSc Criminology&Forensic Psychology Graduate' suggests professional, implies 30s. Dominica flag 🇩🇲."
+  },
+  {
+    "username": "pakzsouljah",
+    "geography": "Other",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Male name 'Hamza Ali', username 'pakzsouljah' suggests Pakistan."
+  },
+  {
+    "username": "thegymgroup_walthamstow",
+    "geography": "UK",
+    "london_likelihood": 10,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Explicitly 'Walthamstow' (London area), 'The Gym Group' is a fitness business."
+  },
+  {
+    "username": "cpringzz",
+    "geography": "Other",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "unknown",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Antigua and Barbuda 🇦🇬 and Jamaica 🇯🇲 flags."
+  },
+  {
+    "username": "chetansharma1292",
+    "geography": "India",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Male Indian name 'Chetan Sharma'."
+  },
+  {
+    "username": "randyranjit_07",
+    "geography": "Unknown",
+    "london_likelihood": 0,
+    "occupation_class": "fitness_pro",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 1,
+    "evidence": "Business category 'Sports & Fitness Instruction', 'Ranjit' is typically male."
+  },
+  {
+    "username": "edualb21",
+    "geography": "North America",
+    "london_likelihood": 0,
+    "occupation_class": "unknown",
+    "gender_inference": "m",
+    "age_band": "unknown",
+    "icp_fit_score": 0,
+    "evidence": "Male name 'Eduardo Alberto', 'living in USA 🇺🇸'."
+  }
+]

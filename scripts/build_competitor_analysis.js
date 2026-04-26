@@ -1,0 +1,579 @@
+// Consolidate competitor data into a single comparison file.
+import 'dotenv/config';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+const OUT_DIR = path.resolve(process.env.OUTPUT_DIR || './output', 'data');
+
+function metricsFor(handle, c, mukundCompare = false) {
+  const posts = c.posts || [];
+  const reels = posts.filter((p) => p.type === 'Video');
+  const carousels = posts.filter((p) => p.type === 'Sidecar');
+  const images = posts.filter((p) => p.type === 'Image');
+  // -1 likeCount means IG hides likes (creator choice). Exclude from average.
+  const visibleLikePosts = posts.filter((p) => (p.likesCount || 0) >= 0);
+  const totalLikes = visibleLikePosts.reduce((s, p) => s + (p.likesCount || 0), 0);
+  const totalComments = posts.reduce((s, p) => s + (p.commentsCount || 0), 0);
+  const videoViews = reels
+    .filter((p) => p.videoViewCount || p.videoPlayCount)
+    .map((p) => p.videoViewCount || p.videoPlayCount);
+  const followers = c.profile?.followers || null;
+  const ctaPosts = posts.filter((p) => /dm|apply|link in bio|comment .* below|sign up|book|elite|enquire/i.test(p.caption || '')).length;
+  return {
+    handle,
+    full_name: c.profile?.full_name,
+    bio: c.profile?.biography,
+    followers,
+    following: c.profile?.following,
+    posts_total: c.profile?.posts_total,
+    business_category: c.profile?.business_category,
+    external_url: c.profile?.external_url,
+    sample_size_posts: posts.length,
+    type_mix: { reels: reels.length, carousels: carousels.length, images: images.length },
+    avg_likes: visibleLikePosts.length ? Math.round(totalLikes / visibleLikePosts.length) : 0,
+    avg_comments: posts.length ? +(totalComments / posts.length).toFixed(1) : 0,
+    avg_video_views: videoViews.length ? Math.round(videoViews.reduce((a, b) => a + b, 0) / videoViews.length) : 0,
+    // ER on visible-likes posts only — caveat: skewed if many hidden likes
+    engagement_rate_pct: followers && visibleLikePosts.length
+      ? +(((totalLikes / visibleLikePosts.length) + (totalComments / posts.length)) / followers * 100).toFixed(2)
+      : null,
+    // Comment-rate is bias-free across hidden likes
+    comment_rate_pct: followers && posts.length
+      ? +((totalComments / posts.length / followers) * 100 * 100).toFixed(1) / 100  // round to 0.001 then back
+      : null,
+    likes_hidden_posts: posts.length - visibleLikePosts.length,
+    visible_likes_sample: visibleLikePosts.length,
+    posts_with_cta: ctaPosts,
+    cta_rate_pct: posts.length ? +((ctaPosts / posts.length) * 100).toFixed(0) : 0,
+  };
+}
+
+async function main() {
+  const enrico = JSON.parse(await fs.readFile(path.join(OUT_DIR, 'competitors/enricoargentin.json'), 'utf8'));
+  const james = JSON.parse(await fs.readFile(path.join(OUT_DIR, 'competitors/jamesdeag.json'), 'utf8'));
+  const tj = JSON.parse(await fs.readFile(path.join(OUT_DIR, 'competitors/chillinwithtj.json'), 'utf8'));
+  const mukundProfile = JSON.parse(await fs.readFile(path.join(OUT_DIR, 'profile.json'), 'utf8'));
+  const mukundPosts = JSON.parse(await fs.readFile(path.join(OUT_DIR, 'raw_instagram_posts.json'), 'utf8'));
+
+  const mukundC = {
+    profile: {
+      full_name: mukundProfile.fullName,
+      biography: mukundProfile.biography,
+      followers: mukundProfile.followersCount,
+      following: mukundProfile.followsCount,
+      posts_total: mukundProfile.postsCount,
+      business_category: mukundProfile.businessCategoryName,
+      external_url: mukundProfile.externalUrl,
+    },
+    posts: mukundPosts,
+  };
+
+  const out = {
+    generated_at: new Date().toISOString(),
+    methodology: 'Last 30 posts for competitors, last 50 for Mukund. CTA detection via regex. ER = (likes+comments)/posts/followers × 100.',
+    competitors: [
+      {
+        rank: 'A',
+        ...metricsFor('mukun69', mukundC),
+        notes: 'Subject — current state. ICP: high performers, build muscle + confidence.',
+        offer_pricing: '£997 / 3 months online (user-provided). PT £50-£60/session. ~£5k/mo run-rate.',
+        positioning_signal: 'Bio: "Helping High Performers Build Muscle & Confidence. DM ELITE to Apply."',
+        lead_magnet: 'None (just DM keyword).',
+      },
+      {
+        rank: 'B',
+        ...metricsFor('enricoargentin', enrico),
+        notes: '★ Closest comparator. Same scale, London, body transformation specialist. 4.7× higher engagement than Mukund.',
+        offer_pricing: 'Hidden — quote-only. 6-week Body Transformation programme is hero product (not 12-week). In-person Shoreditch + online.',
+        positioning_signal: 'Bio: "Personal Trainer · Online Coach · London-based · Italian · Body Transformation Specialist." 4.9★/56 reviews on directory.',
+        lead_magnet: '"First week always free" online + "first free trial session" in-person.',
+        edge_signals: [
+          '13% reels (4 of 30) vs Mukund 62% — carousels carry his content',
+          'Higher caption quality (longer, story-driven)',
+          'Direct CTA in nearly every post',
+          'Free-week lead magnet → reduces application friction',
+        ],
+      },
+      {
+        rank: 'C',
+        ...metricsFor('jamesdeag', james),
+        notes: 'HYROX/Hybrid niche play. Smaller (1.5k followers) but 6× higher ER than Mukund. Sells via @hybrid.athlete.club.',
+        offer_pricing: 'Hidden — programs at hybridathleteclub.com. "2 weeks of training free" trial. Stats: 89% hit race target, 77% retention post-event.',
+        positioning_signal: 'Bio: "I help Hybrid & Hyrox Athletes train and compete at their absolute best." Brand is the program (@hybrid.athlete.club), not the person.',
+        lead_magnet: '"Get two weeks of training free" + race-result guarantee statistic.',
+        edge_signals: [
+          'Niche-down: HYROX-only — clearer ICP than Mukund',
+          'Brand carries authority (89% hit-rate is a strong proof signal)',
+          'Personal IG funnels to brand IG → conversion architecture',
+        ],
+      },
+      {
+        rank: 'D',
+        ...metricsFor('chillinwithtj', tj),
+        notes: 'Pure online TJ — UK app-led competitor at low-tier price (£299). 2.2× Mukund\'s ER despite same low CTA rate. Hooks better, bio more concrete.',
+        offer_pricing: '£299 / 12-week online "Complete Body Transformation Coaching" (was £329). £110/mo rolling. Includes mobile app, recipes, progressive workouts, weekly check-ins, 1:1 messenger, habit tracker.',
+        positioning_signal: 'Bio: "🔥 I\'ll help you Lose 20lbs+ of Fat | 🚀 Feel confident w/ your top off! | 📉 No Fluff - Just Results | 👇1:1 Coaching" → /help. Specific outcome > Mukund\'s abstract "high performers".',
+        lead_magnet: 'Discount tier (£329 → £299) + 15+ named transformation testimonials with timeframes (8-24 weeks). Bio CTA: "Work with me".',
+        edge_signals: [
+          'Concrete bio promise ("Lose 20lbs+ of Fat") vs abstract identity claims',
+          'App-first delivery → economically scales without 1:1 time',
+          '83% reels mix similar to Mukund (62%) but with 2.2× ER → content quality matters even when CTA discipline is also weak',
+          'Heavy testimonial gallery — 15+ named transformations is the proof engine',
+          'Hides likes on most reels (focuses on saves/shares signal)',
+        ],
+      },
+      {
+        rank: 'E',
+        handle: 'bosefitness_website_only',
+        full_name: 'Kaushik Bose — Bose Fitness',
+        bio: 'Surfaced via Prompt 2 deep research. South Asian transformation niche — directly relevant given Mukund\'s 15% verified Indian audience + Indian-diaspora overlap in "Unknown" segment.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: 'Hidden — quote-only. 12-week Body Transformation Program. Sales entry: free 30-min clarity call.',
+        positioning_signal: 'Niche framing: South Asian physiology, food culture, metabolic risk. "Trusted by clients in 25+ countries."',
+        lead_magnet: 'Free 30-minute clarity call.',
+        edge_signals: [
+          '⭐ Validates that the South Asian / Indian-diaspora audience IS a paying market for £1k+ programmes',
+          'Proves a niche-specific positioning angle works at premium pricing',
+          'International ICP ("25+ countries") = the global online play, not London-only',
+          'Free clarity-call entry is the standard premium-tier sales motion (not free-trial-of-product)',
+        ],
+      },
+      {
+        rank: 'F',
+        handle: 'mattjusticefitness_website_only',
+        full_name: 'Matt Justice Fitness (UK)',
+        bio: 'UK independent comparator surfaced via Prompt 2.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: 'Hidden — quote-only. 12-Week Body Transformation Program.',
+        positioning_signal: '"200+ clients transformed." Average fat-loss outcomes claimed.',
+        lead_magnet: 'Application-led.',
+        edge_signals: [
+          'Closest mid-premium UK independent format — comparable spec to a Mukund offer',
+          'Deliverables: tailored training, weekly check-ins, app, nutrition, monthly form review, body composition',
+          'Proof anchor: 200+ transformations with averaged outcomes',
+        ],
+      },
+      {
+        rank: 'G',
+        handle: 'personaltraining1to1_website',
+        full_name: 'Personal Training 1 to 1 (London)',
+        bio: 'London transformation studio surfaced via Prompt 1.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£1,500 / 2 months · £2,150 / 3 months · £4,000 / 6 months. 3 sessions/wk + bi-weekly diet guide + bi-weekly fitness tests + bi-weekly measurements (incl body-fat). 6-mo adds free gym + life coaching.',
+        positioning_signal: 'Sells a "transformation system" with longer commitment frame, NOT ordinary PT blocks. "Most experienced trainers" 10+ years.',
+        lead_magnet: 'Application-led.',
+        edge_signals: [
+          '⭐ The £2,150/3-month benchmark for a Mukund-equivalent in-person transformation tier',
+          'Multi-tier packaging (2mo / 3mo / 6mo) anchors value via commitment ladder',
+          'Bundles measurement + nutrition + life coaching → harder to compare to hourly PT',
+        ],
+      },
+      {
+        rank: 'H',
+        handle: 'thefittingrooms_website',
+        full_name: 'The Fitting Rooms (London Bridge)',
+        bio: 'London boutique surfaced via Prompt 1.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£539 (6-wk shared, groups of 4) · £1,299 (6-wk 1:1). Both: 3 sessions/wk + nutrition coaching + dedicated coach + 1:1 check-ins + private boutique London Bridge gym.',
+        positioning_signal: 'Multi-tier packaging — shared as low-friction lead-in, 1:1 anchors value 2.4x higher.',
+        lead_magnet: 'Free consultation.',
+        edge_signals: [
+          'Strong precedent for shared-vs-1:1 dual offering — Mukund could test 2:1 small-group £45-50pp/session',
+          'Boutique London Bridge gym = embedded delivery infrastructure',
+          '£1,299 / 6 weeks ≈ £216/week 1:1 with 3 sessions = £72/session — sits at top of mid London tier',
+        ],
+      },
+      {
+        rank: 'I',
+        handle: 'espinosaphysiques_website',
+        full_name: 'Espinosa Physiques (London Hybrid)',
+        bio: 'London hybrid coaching benchmark via Prompt 1.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£429/month — 1 PT/week + app access. Recurring subscription.',
+        positioning_signal: '"Ideal for busy professionals who want PT in London and structure when travelling." Differentiated from pure online and full in-person.',
+        lead_magnet: 'Application/consultation.',
+        edge_signals: [
+          '⭐ The single clearest UK premium hybrid benchmark. Mukund\'s missing tier.',
+          'Validates: hybrid is a product, not a discount PT. Recurring monthly model works for affluent London pros.',
+          'Self-selection by lifestyle (travel + busy) rather than budget',
+        ],
+      },
+      {
+        rank: 'J',
+        handle: 'andygriffiths_website',
+        full_name: 'Andy Griffiths (Expert PT)',
+        bio: 'UK online coach surfaced via Prompt 4. Same online-tier comp as Mukund.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£195-£255/month online coaching — matches Prompt 1 "premium high-touch online" tier (£585-£765 / 12 weeks). Funnel: YouTube → website → "Start Now" coaching page → questionnaire + welcome video + weekly check-ins.',
+        positioning_signal: 'YouTube tightly focused on evidence-based body transformation. Direct authority funnel.',
+        lead_magnet: 'Free consultation via "Start Now" CTA.',
+        edge_signals: [
+          'Triangulates the £195-£255/mo online tier (matches Prompt 1 + Prompt 4 separately)',
+          'Long-form educational trust → website authority → paid 1:1 — clearest pattern for Mukund to copy',
+          'Tightly focused YouTube niche (evidence-based body transformation)',
+        ],
+      },
+      {
+        rank: 'K',
+        handle: 'scottlaidler_website',
+        full_name: 'Scott Laidler ⭐',
+        bio: 'UK busy-professional coach surfaced via Prompt 4 — closest ICP match to Mukund.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: 'Invitation-based online PT (pricing not public — consultation entry).',
+        positioning_signal: 'YouTube channel + podcast as authority assets for demanding-career audience. Site routes to consultation → invitation-only coaching.',
+        lead_magnet: 'Free consultation / clarity call.',
+        edge_signals: [
+          '⭐ Closest match to Mukund\'s exact offer architecture (busy professionals + premium online + YouTube authority + LinkedIn potential)',
+          'Pattern: thought leadership / expert content → consultation → bespoke service',
+          'Validates that "consultation entry" works at premium pricing for this ICP',
+        ],
+      },
+      {
+        rank: 'L',
+        handle: 'lukemitchell_website',
+        full_name: 'Luke Mitchell (Built To Inspire)',
+        bio: 'UK creator surfaced via Prompt 4. Multi-step coaching funnel.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: 'Built To Inspire community £25.99/mo (Skool: $33/mo). Plus 6-Week Inspired Program (price hidden).',
+        positioning_signal: 'Public link hub: free weight-loss guide + free start-up guide + free support group + book-a-call + 6-Week programme + YouTube/IG/LinkedIn.',
+        lead_magnet: 'Stack: free guides + free support group as low-friction entry → community at £25/mo or call → premium programme.',
+        edge_signals: [
+          'Lower-priced community model (£25/mo) different from Mukund\'s 1:1',
+          'Strong lead-magnet stack — multiple free entries',
+          'Pattern: educational content → lead magnet/community → call/programme entry',
+        ],
+      },
+      {
+        rank: 'N',
+        handle: 'lukekelly_hyrox_website',
+        full_name: 'Luke Kelly — West London HYROX Coach ⭐',
+        bio: 'London HYROX specialist surfaced via Prompt 5 — closest competitor on Mukund\'s strongest organic pillar.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£280/mo (1×PT/wk + HYROX) · £400/mo (1 PT + 2 prog days hybrid) · up to £960/mo (high-frequency). Premium in-person London tier.',
+        positioning_signal: 'West London HYROX specialist. Tiered packages by session frequency.',
+        lead_magnet: 'Consultation entry.',
+        edge_signals: [
+          '⭐ Closest London HYROX-coach competitor — same flagship event market',
+          'Premium tier (£280-£960/mo) validates Mukund\'s Hybrid Signature pricing (£499-549/mo) sits BELOW the top of HYROX-specialist range',
+          'Sells per-session-frequency packages — Mukund could mirror with hybrid intensity tiers',
+        ],
+      },
+      {
+        rank: 'O',
+        handle: 'unbeatable_hyrox_website',
+        full_name: 'Unbeatable Training (ONE LDN online)',
+        bio: 'London-affiliated HYROX online programme via Prompt 5.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£33/mo (Unbeatable online HYROX). ONE LDN Academy Program £50/mo. ONE LDN club membership £159/mo. Dedicated HYROX area + online academy.',
+        positioning_signal: 'ONE LDN brand — London premium club + dedicated HYROX area + scalable online programme tier.',
+        lead_magnet: 'Free trial / academy programme.',
+        edge_signals: [
+          '£33/mo establishes the bottom of HYROX online pricing — Mukund\'s £997/12wk sits 9× above this',
+          'Validates dual-tier model: online product + premium club for same brand',
+          'Mukund could build entry tier (£33-50/mo Skool community) feeding £997 transformation',
+        ],
+      },
+      {
+        rank: 'P',
+        handle: 'jadeskillen_hyrox_website',
+        full_name: 'Jade Skillen — HYROX Perform',
+        bio: 'UK HYROX coach for first-season athletes via Prompt 5.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£1 upfront + £59/mo. Positioned around first-season athletes, race readiness, community, mindset, work/life/family balance.',
+        positioning_signal: 'First-season HYROX niche. £1-trial entry hook reduces friction to near-zero. Family/balance messaging mirrors Mukund\'s ICP.',
+        lead_magnet: '£1 trial week — strong friction reducer.',
+        edge_signals: [
+          '⭐ £1 trial as lead magnet is testable for Mukund — converts uncertain prospects via low-stakes commitment',
+          'Niche positioning ("first-season HYROX athletes") solves the "do I belong?" objection',
+          'Family/balance messaging directly overlaps with busy-pro segment psychology (Prompt 6)',
+        ],
+      },
+      {
+        rank: 'R',
+        handle: 'personaltrainerxp_website',
+        full_name: 'PersonalTrainerXP ⭐⭐',
+        bio: 'Direct South Asian niche competitor surfaced via Prompt 10. Multi-page service architecture targeting Indian/diaspora segments.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: 'Hidden — quote-only. Multiple service tracks: NRIs/Indians Abroad, British Indians London, PCOS South Asian Women, South Asian Heart Health, Yoga+Strength for Indians, Indians in Canada (Toronto/Vancouver/Brampton).',
+        positioning_signal: 'Multi-segment service-line architecture. Each sub-niche has dedicated landing page targeting cultural-medical specifics (insulin resistance, central adiposity, lipid patterns).',
+        lead_magnet: 'Application/consultation per service.',
+        edge_signals: [
+          '⭐⭐ THE most direct strategic competitor for Mukund\'s recommended position',
+          'Proves the niche supports 6+ sub-segment service pages — geographic + medical specialisation works',
+          'Pattern: deeply specific landing pages by city + condition + demographic',
+          'Mukund could replicate: "Indian Professionals London" + "NRI Coaching" + "British Asian Executive Transformation"'
+        ],
+      },
+      {
+        rank: 'S',
+        handle: 'rntfitness_website',
+        full_name: 'RNT Fitness — Akash Vaghela',
+        bio: 'UK South Asian transformation specialist via Prompt 10.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '**Mandates minimum 12-month commitment** for transformation journey. Premium pricing throughout.',
+        positioning_signal: 'British Asian founder (Akash Vaghela) targeting South Asian male transformation. Long-form education content.',
+        lead_magnet: 'Application-led; long sales cycle.',
+        edge_signals: [
+          '⭐ Proves segment commits long-term at premium — 12-month minimum signals extreme client willingness to pay',
+          'High LTV per client — Mukund could test 12-month renewal pathway after £997 12-week intro',
+          'Founder is also a British Asian — replicable authority pattern (like Mukund\'s Mr. India + Chennai)',
+          'Long-form podcast/blog content as authority engine'
+        ],
+      },
+      {
+        rank: 'T',
+        handle: 'platinum_training_website',
+        full_name: 'Platinum Training London',
+        bio: 'Premium London transformation pricing comp via Prompt 10.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£2,150 / 3-Month Personal Training · £4,000 / 6-Month Ultimate Transformation. In-person / Hybrid.',
+        positioning_signal: 'Premium London PT studio at top tier of in-person transformation pricing.',
+        lead_magnet: 'Consultation.',
+        edge_signals: [
+          'Triangulates Prompt 1 (PT 1to1 £2,150 / Minimal FIT £2,995) + Prompt 10 in-person tier — same range',
+          '£997 online sits 50% below Platinum 3-month — accessible-premium positioning works',
+          'Same 3-month duration framing as Mukund\'s £997 — direct value comparison'
+        ],
+      },
+      {
+        rank: 'U',
+        handle: 'eden_pt_website',
+        full_name: 'Eden Personal Training',
+        bio: 'London PT mid-premium hybrid surfaced via Prompt 10.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£1,785 / 3 months (12 sessions/mo @ £595/mo). In-person / Hybrid.',
+        positioning_signal: 'Defined-frequency hybrid model — sets clear expectation around 12 sessions/mo.',
+        lead_magnet: 'Consultation.',
+        edge_signals: [
+          'Proves £595/mo (~£1,785/3-mo) hybrid hits market acceptance',
+          'Sits between Mukund Hybrid Signature (£499-549/mo) and premium PT — clean comparison'
+        ],
+      },
+      {
+        rank: 'V',
+        handle: 'wellbeing_people_corporate',
+        full_name: 'Wellbeing People (UK Corporate Wellness)',
+        bio: 'Established UK corporate wellness provider via Prompt 3.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: 'Webinars £525, mental-health webinar £575. Live workshops from £730+. Established corporate brand.',
+        positioning_signal: 'Multi-format wellness provider. Higher per-session price than smaller specialists.',
+        lead_magnet: 'Enquiry-led.',
+        edge_signals: [
+          'Webinar £525-575 anchors mid-tier of UK corporate wellness pricing',
+          'Workshop £730+ benchmarks top-end of single-session pricing',
+          'Mukund could compete on personal/founder-led delivery vs Wellbeing People\'s broader provider model'
+        ],
+      },
+      {
+        rank: 'W',
+        handle: 'human_fitness_retainer',
+        full_name: 'Human Fitness (Corporate Retainer Comp)',
+        bio: 'UK corporate wellness retainer via Prompt 3. Pricing comparator for monthly retainer tier.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£499/month for up to 10 employees · £899/month for up to 25 · £1,500/month for up to 50. Per-employee economics scale.',
+        positioning_signal: 'Tiered headcount-based retainer model. Clear pricing transparency.',
+        lead_magnet: 'Direct quote.',
+        edge_signals: [
+          '⭐ THE clearest UK SME corporate retainer pricing benchmark',
+          'Mukund\'s recommended £750-£2,500/mo retainer range sits ABOVE Human Fitness floor (£499/10emp) and is justified by founder-led delivery + Mr. India authority + South Asian niche specificity',
+          'Tiered headcount pricing model is replicable'
+        ],
+      },
+      {
+        rank: 'X',
+        handle: 'clinical_corporate_wellbeing_per_employee',
+        full_name: 'Clinical & Corporate Wellbeing (Per-Employee Pilot)',
+        bio: 'UK per-employee corporate fitness pilot via Prompt 3.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£165 per employee for 4-week corporate kickstart. Includes personalised programme + weekly group video call + direct app support.',
+        positioning_signal: 'High-touch per-employee model rather than fixed-fee company programme.',
+        lead_magnet: 'Direct enquiry.',
+        edge_signals: [
+          '£165/employee × 25 employees = £4,125 for 4-week pilot — sits within Mukund\'s recommended £1,500-£3,500 range',
+          'Validates per-employee economics for higher-touch pilots',
+          'Mukund could offer hybrid: fixed-fee company pilot OR per-employee with personal coaching layer'
+        ],
+      },
+      {
+        rank: 'Y',
+        handle: 'go_mammoth_4_week',
+        full_name: 'GO Mammoth (4-Week Trial)',
+        bio: 'UK corporate fitness pilot example via Prompt 3.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '4-week trial wellness programme: 4 weekly fitness classes + 1 workshop + 1 team-building evening. Bespoke pricing.',
+        positioning_signal: 'Multi-component pilot bundle to land enterprise client.',
+        lead_magnet: 'Trial-as-pilot.',
+        edge_signals: [
+          'Validates "trial" framing to de-risk longer commitments',
+          'Multi-component bundle = template Mukund could replicate for SME pilots'
+        ],
+      },
+      {
+        rank: 'Q',
+        handle: 'wdm_hyrox_website',
+        full_name: 'Aaron Woodman / WDM Coaching (FITR)',
+        bio: 'UK HYROX programming on FITR app via Prompt 5.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: '£39.99/mo OR £450/yr. App-based scalable programming.',
+        positioning_signal: 'FITR-platform delivery. App-led economics — bottom of UK HYROX coaching tier.',
+        lead_magnet: 'Annual pricing discount as commitment trigger.',
+        edge_signals: [
+          'Anchors digital tier at ~£40/mo — proves app-led HYROX model is viable',
+          'Different economics (low touch, high volume) — not Mukund\'s game but useful pricing floor reference',
+        ],
+      },
+      {
+        rank: 'M',
+        handle: 'coachadamjames_website',
+        full_name: 'Coach Adam James',
+        bio: 'UK entry-tier online coach surfaced via Prompt 4.',
+        followers: null,
+        engagement_rate_pct: null,
+        cta_rate_pct: null,
+        offer_pricing: 'Online coaching from £99/month (~£297 / 3 months). Bottom of mid-tier.',
+        positioning_signal: 'Tools-first entry: free macro/TDEE/strength calculators → coaching upsell.',
+        lead_magnet: 'Free calculators on website (macro, TDEE, strength standards).',
+        edge_signals: [
+          'Calculator-as-lead-magnet model — high signal of intent + immediate value',
+          '£99/mo entry tier means anchors below Mukund 3.3× — different ICP',
+          'Validates "scorecard/calculator → coaching" funnel pattern from Prompt 4',
+        ],
+      },
+    ],
+    headline_findings: [
+      {
+        finding: 'Mukund has lowest engagement rate of all four IG comparators measured (0.44% vs TJ 0.97%, James 2.64%, Enrico 4.36% on visible-like posts)',
+        implication: 'Engagement gap is real but not just about CTAs — TJ has the same low CTA rate (3%) yet 2.2× ER. Hook quality and bio specificity matter as much.',
+      },
+      {
+        finding: 'Mukund has lowest CTA rate (2% of posts vs Enrico 20%, James 13%, TJ 3%, by regex scan)',
+        implication: 'TJ proves CTA discipline alone isn\'t enough — but Enrico shows it amplifies good content. Combined with content fix this is a 5-10x lever.',
+      },
+      {
+        finding: 'TJ\'s bio is dramatically more concrete than Mukund\'s — "Lose 20lbs+ of Fat" vs "Helping High Performers Build Muscle & Confidence"',
+        implication: 'Specific outcome > abstract identity for online conversion. Mukund\'s bio doesn\'t name the transformation, the timeframe, or the quantifiable result.',
+      },
+      {
+        finding: 'Both London comps use a "free trial" lead magnet (Enrico: free week. James: free 2 weeks). Bose uses "free 30-min clarity call". Mukund has none.',
+        implication: 'A no-friction entry point is the consistent pattern. For a £997 programme, the clarity-call model (Bose) is more aligned than free-product-trial (TJ).',
+      },
+      {
+        finding: 'Pricing tier verdict (Prompt 2 deep research): £997 = PREMIUM in UK, above entire transparent comparison set (TJ £299, NKPT £399, Achieve £430, Sarah Louise £567-£777). Premium tier band: £800-£1,500.',
+        implication: 'Mukund\'s price is correctly positioned for the offer. Don\'t lower. But the offer must justify it via personalisation + 3-4 live calls + structured roadmap, not just plan + macros.',
+      },
+      {
+        finding: 'Bose Fitness validates the South Asian audience play — same market segment Mukund\'s top engagers indicate (15% verified Indian + Indian-diaspora in unknown bucket).',
+        implication: 'The South Asian / Indian-diaspora professional segment is paying premium for transformation already. Mukund could pivot positioning to this niche and still hit £997 globally — without London dependency.',
+      },
+      {
+        finding: 'Enrico relies on carousels (87% of posts), not reels. Mukund is reel-heavy (62%).',
+        implication: 'Carousels with story-driven captions may convert better than reels for body-transformation buyers. Worth testing 50/50 split.',
+      },
+      {
+        finding: 'James positions as the brand (@hybrid.athlete.club), not just himself.',
+        implication: 'For corporate / scaling: Mukund could create a programme brand layer (e.g. "Elite Performance Co.") to separate personal from product.',
+      },
+    ],
+    pricing_landscape: {
+      tier_framework_source: 'Prompt 2 deep research, 2026-04-26 — confidence 7/10',
+      tiers: [
+        { tier: 'Low', range: 'under £450', examples: ['Jamie Price PT £300', 'TJ £299', 'NKPT £399', 'Achieve £430'] },
+        { tier: 'Mid', range: '£450-£800', examples: ['Chris Ashford ~£525', 'Simon Graham £597', 'Sarah Louise £567-£777'] },
+        { tier: 'Premium ⭐ (Mukund)', range: '£800-£1,500', examples: ['Mukund £997', 'Matt Justice (UK, hidden)', 'Bose Fitness (hidden)'] },
+        { tier: 'Ultra-premium', range: '£1,500+', examples: ['Ultimate Performance (London, est. £8-15k)', 'Gauge Girl Training (US) $4,350'] },
+      ],
+      bottom: { provider: 'Fitness with TJ', programme: '12-week online', price: 299, model: 'app-led, scalable, low-touch' },
+      mid_low: { provider: 'Mukund (current)', programme: '12-week online', price: 997, model: '1:1 + plan + check-ins (= Premium tier per benchmarks)' },
+      mid_premium: { provider: 'Matt Justice (UK)', programme: '12-week transformation', price: 'hidden, quote-only', model: 'in-person + app + weekly check-ins, 200+ transformations' },
+      premium: { provider: 'Ultimate Performance', programme: '12-week transformation', price: 'hidden — reviews suggest £8-15k', model: 'flagship in-person, multiple London sites' },
+    },
+    funnel_benchmarks_verified: {
+      source: 'Prompt 2 deep research, 2026-04-26',
+      stages: [
+        { stage: 'Profile / bio visitor → lead', low: 0.10, mid: 0.25, high: 0.45, confidence: 'low — public data thin' },
+        { stage: 'Lead → completed application', low: 0.20, mid: 0.35, high: 0.50, confidence: 'medium' },
+        { stage: 'Application started → submitted', low: 0.40, mid: 0.50, high: 0.60, confidence: 'high — Zuko: 51.6% overall, 53.9% desktop, 45% mobile' },
+        { stage: 'Submitted application → attended call', low: 0.30, mid: 0.50, high: 0.70, confidence: 'medium — Tirion: 75-80% static, 88-92% conversational shows' },
+        { stage: 'Attended discovery call → close', low: 0.15, mid: 0.25, high: 0.35, confidence: 'medium — Joanna Lott 25-40%, Expert CFO 10-30%' },
+      ],
+      retention: {
+        renewal_after_12wk_low: 0.25,
+        renewal_after_12wk_mid: 0.40,
+        renewal_after_12wk_high: 0.50,
+        confidence: 'lower — partial inference. <25% = problem; >50% = strong; My PT Hub general PT 65-70% annual',
+      },
+    },
+    recommended_offer_structure: {
+      source: 'Prompt 2 deep research synthesis, 2026-04-26',
+      core_principle: 'High-touch feel, app-first systems. NOT always-on concierge. Stays profitable at 15-25 active clients.',
+      components: [
+        { component: 'Positioning', spec: 'One clear niche + outcome (e.g. South Asian body transformation, busy-professional fat loss, hybrid athlete)' },
+        { component: 'Onboarding', spec: '45-60 min strategy call + questionnaire + baseline photos/measurements + written 12-week roadmap' },
+        { component: 'Training', spec: 'Fully personalised, in-app, exercise videos + progression logic' },
+        { component: 'Nutrition', spec: 'Personalised cals/macros + meal framework + check-in adjustments. NOT rigid 7-day meal plan unless audience asks' },
+        { component: 'Check-ins', spec: 'Weekly async with structured review of adherence, body data, obstacles' },
+        { component: 'Live support', spec: '3-4 live calls across 12 weeks: onboarding, early-course adjustment, mid-point, week-12 close/renewal' },
+        { component: 'Messaging', spec: 'In-app primary, weekday response promise. WhatsApp ONLY for urgent issues' },
+        { component: 'Accountability', spec: 'Habit tracking, steps, sleep, training compliance, form-check video review' },
+        { component: 'Community', spec: 'Optional group chat / challenge board. Add-on, not core value driver' },
+        { component: 'Renewal', spec: '£299-£349/mo continuity OR second 12-wk block at loyalty discount' },
+      ],
+    },
+    notes_on_revenue_estimation: [
+      'Direct revenue figures for these competitors are NOT publicly observable.',
+      'Indirect signal: Enrico shows 56 reviews on directory @ 4.9★ → at £997-equivalent that suggests 50+ paid clients lifetime. James\'s @hybrid.athlete.club program appears active enough to claim 89% race-target hit-rate.',
+      'Estimating monthly revenue requires either (a) outreach to ask, (b) leaked sales numbers, or (c) trace-back from ad spend (Meta ad library).',
+    ],
+  };
+
+  await fs.writeFile(path.join(OUT_DIR, 'competitor_analysis.json'), JSON.stringify(out, null, 2));
+  console.log('[competitor] wrote competitor_analysis.json');
+  console.log('headline metrics:');
+  out.competitors.forEach((c) => {
+    if (c.followers != null) {
+      console.log(`  @${c.handle.padEnd(20)} ${(c.followers||0).toLocaleString().padStart(7)} foll | ER ${c.engagement_rate_pct ?? '?'}% | CTA ${c.cta_rate_pct}% of posts`);
+    }
+  });
+}
+
+main().catch((e) => { console.error(e); process.exit(1); });

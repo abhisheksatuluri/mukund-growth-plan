@@ -1,0 +1,38 @@
+{
+  "total": 80,
+  "geography": {
+    "Unknown": 31,
+    "EU": 8,
+    "India": 12,
+    "UK": 17,
+    "North America": 3,
+    "Other": 6,
+    "SE Asia": 2,
+    "Africa": 1
+  },
+  "occupation_class": {
+    "unknown": 37,
+    "creator_influencer": 12,
+    "corporate_professional": 9,
+    "fitness_pro": 15,
+    "healthcare": 2,
+    "tech": 2,
+    "student": 1,
+    "musician": 1,
+    "finance": 1
+  },
+  "age_band": {
+    "unknown": 62,
+    "30s": 13,
+    "teen_20s": 5
+  },
+  "gender": {
+    "f": 22,
+    "m": 43,
+    "unknown": 15
+  },
+  "london_likelihood_avg": 1.96,
+  "icp_fit_avg": 1.11,
+  "london_likely_high": 15,
+  "icp_fit_high": 4
+}
