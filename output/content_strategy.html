@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukund Venkat — Content Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0b; --bg-2:#111114; --bg-3:#16161a; --line:#26262c; --line-2:#1d1d22;
+  --ink:#f3f1ec; --ink-dim:#a8a59f; --ink-mute:#6c6a65;
+  --accent:#c9a96a; --accent-2:#e6c886; --good:#7fb98c; --bad:#d68a8a; --warn:#d6c08a;
+  --serif:'Cormorant Garamond',serif; --sans:'Inter Tight','Inter',system-ui,-apple-system,sans-serif; --mono:'JetBrains Mono',monospace;
+  --r:6px; --r-lg:14px; --pad:clamp(18px,3vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;letter-spacing:-.005em}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s ease}
+a:hover{border-color:var(--accent)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.012em;margin:0 0 .5em}
+h1{font-size:clamp(34px,5vw,64px);line-height:1.04;letter-spacing:-.02em}
+h2{font-size:clamp(26px,3.4vw,44px);line-height:1.1}
+h3{font-size:clamp(20px,2.2vw,26px);line-height:1.2}
+h4{font-size:17px;font-family:var(--serif);font-weight:500;letter-spacing:-.005em;color:var(--ink);margin:0 0 .55em;line-height:1.25;text-transform:none}
+p{margin:0 0 1em;color:var(--ink-dim);line-height:1.6}
+b,strong{font-weight:600;color:var(--ink)}
+.eyebrow{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500;font-family:var(--sans)}
+.mono{font-family:var(--mono);font-feature-settings:'tnum'}
+.container{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+
+/* Header */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.84);backdrop-filter:blur(14px) saturate(120%);-webkit-backdrop-filter:blur(14px) saturate(120%);border-bottom:1px solid var(--line-2)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px var(--pad);max-width:1280px;margin:0 auto;gap:16px}
+.brand{font-family:var(--serif);font-size:20px;flex:0 0 auto}
+.brand small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);margin-top:2px;font-weight:500}
+.toc-wrap{flex:1 1 auto;min-width:0;position:relative;overflow:hidden}
+.toc-wrap::after{content:'';position:absolute;right:0;top:0;bottom:0;width:24px;background:linear-gradient(90deg,transparent,rgba(10,10,11,.85));pointer-events:none}
+.toc{display:flex;gap:2px;font-size:12px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-right:24px;justify-content:flex-end}
+.toc::-webkit-scrollbar{display:none}
+.toc a{color:var(--ink-dim);padding:6px 10px;border:1px solid transparent;border-radius:var(--r);font-weight:500;letter-spacing:0;border-bottom:none;white-space:nowrap;flex:0 0 auto;cursor:pointer}
+.toc a:hover{color:var(--ink);border-color:var(--line);background:var(--bg-2)}
+.toc a.active{color:var(--accent);border-color:var(--line);background:rgba(201,169,106,.06)}
+@media (max-width:720px){
+  .topbar-inner{padding:10px var(--pad);gap:10px}
+  .brand{font-size:17px}
+  .brand small{display:none}
+  .toc{justify-content:flex-start}
+  .toc a{padding:5px 8px;font-size:11.5px}
+}
+
+/* Hero */
+.hero{padding:80px 0 56px;border-bottom:1px solid var(--line-2);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(800px 400px at 80% 20%,rgba(201,169,106,.08),transparent 60%);pointer-events:none}
+.hero h1 em{color:var(--accent);font-style:italic}
+.hero-meta{display:flex;flex-wrap:wrap;gap:32px;margin-top:32px;font-size:13px;color:var(--ink-mute)}
+.hero-meta div b{display:block;font-family:var(--serif);font-size:28px;color:var(--ink);font-weight:500;margin-bottom:2px;letter-spacing:-.01em}
+@media (max-width:760px){.hero{padding:48px 0 36px}.hero-meta{gap:18px}}
+
+/* Sections */
+section{padding:clamp(48px,7vw,80px) 0;border-bottom:1px solid var(--line-2);scroll-margin-top:80px}
+section:last-of-type{border-bottom:none}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(24px,3.5vw,36px);flex-wrap:wrap}
+.section-head h2{margin-bottom:8px}
+.section-head .eyebrow{display:block;margin-bottom:10px}
+.section-head p{max-width:580px;margin:0;font-size:14px;color:var(--ink-dim)}
+
+/* Cards / grids */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){.grid-3,.grid-2,.grid-4{grid-template-columns:1fr;gap:14px}}
+.card{background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;position:relative;transition:border-color .2s ease}
+.card:hover{border-color:#33333a}
+.card h4{margin-top:0}
+.tag{display:inline-block;padding:3px 9px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;color:var(--ink-dim);font-weight:500;font-family:var(--sans)}
+.tag.good{border-color:rgba(127,185,140,.45);color:var(--good);background:rgba(127,185,140,.05)}
+.tag.bad{border-color:rgba(214,138,138,.45);color:var(--bad);background:rgba(214,138,138,.05)}
+.tag.warn{border-color:rgba(214,192,138,.45);color:var(--warn);background:rgba(214,192,138,.05)}
+.tag.acc{border-color:rgba(201,169,106,.5);color:var(--accent);background:rgba(201,169,106,.06)}
+@media (max-width:760px){.card{padding:18px}}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{font-weight:600;color:var(--ink-dim);text-transform:uppercase;font-size:10px;letter-spacing:.1em;font-family:var(--sans)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:12px}
+.table-wrap{border:1px solid var(--line);border-radius:var(--r-lg);overflow-x:auto;background:var(--bg-2)}
+@media (max-width:600px){table{font-size:12.5px}th,td{padding:8px 6px}}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--bg-3);border:1px solid var(--line-2);border-radius:var(--r);padding:14px}
+.kpi .v{font-family:var(--serif);font-size:clamp(22px,3vw,28px);color:var(--ink);font-weight:500;letter-spacing:-.01em;line-height:1.05}
+.kpi .v.acc{color:var(--accent)}
+.kpi .l{font-size:10px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.12em;margin-top:4px;font-weight:500}
+
+/* Pillar bars */
+.pillar-list{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.pillar-row{display:grid;grid-template-columns:180px 1fr 70px;gap:14px;align-items:center;padding:14px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg)}
+.pillar-row .name{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:500}
+.pillar-row .name small{display:block;font-family:var(--sans);font-size:11px;color:var(--ink-mute);margin-top:3px;font-weight:400}
+.pillar-row .meter{height:8px;background:var(--bg-3);border-radius:4px;overflow:hidden;position:relative}
+.pillar-row .meter .fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:4px}
+.pillar-row .meter .desc{font-size:12px;color:var(--ink-dim);margin-top:8px;line-height:1.4}
+.pillar-row .v{font-family:var(--mono);font-size:13px;color:var(--accent);text-align:right;font-weight:500}
+@media (max-width:760px){
+  .pillar-row{grid-template-columns:1fr;gap:8px}
+  .pillar-row .v{text-align:left}
+}
+
+/* Long-form template (interactive timeline) */
+.lf-timeline{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.lf-section{display:grid;grid-template-columns:60px 200px 1fr 100px;gap:14px;align-items:center;padding:14px 18px;background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);cursor:pointer;transition:all .2s}
+.lf-section:hover{border-color:var(--accent);transform:translateX(2px)}
+.lf-section.expanded{border-color:var(--accent)}
+.lf-section .num{font-family:var(--serif);font-size:30px;color:var(--accent);font-weight:500;line-height:1;text-align:center}
+.lf-section .time{font-family:var(--mono);font-size:11.5px;color:var(--ink-mute);font-weight:500}
+.lf-section .name{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:500;line-height:1.2}
+.lf-section .name small{display:block;font-family:var(--sans);font-size:11px;color:var(--ink-mute);margin-top:3px;font-weight:400}
+.lf-section .purpose{font-size:12.5px;color:var(--ink-dim);line-height:1.45}
+.lf-section .reel-cut{font-family:var(--mono);font-size:11px;color:var(--good);text-align:right;font-weight:500}
+.lf-section .reel-cut.none{color:var(--ink-mute)}
+.lf-detail{grid-column:1 / -1;margin-top:14px;padding:14px;background:var(--bg-3);border-radius:var(--r);font-size:12.5px;color:var(--ink-dim);line-height:1.55;display:none}
+.lf-section.expanded .lf-detail{display:block}
+.lf-detail b{color:var(--ink)}
+.lf-detail ul{margin:6px 0;padding-left:18px}
+@media (max-width:760px){
+  .lf-section{grid-template-columns:40px 1fr;gap:10px;padding:14px}
+  .lf-section .time, .lf-section .reel-cut{grid-column:2;text-align:left;margin-top:4px}
+  .lf-section .purpose{grid-column:2}
+}
+
+/* Skit cards */
+.skit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+@media (max-width:760px){.skit-grid{grid-template-columns:1fr}}
+.skit-card{padding:18px;background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg)}
+.skit-card .label{font-family:var(--sans);font-size:10.5px;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-weight:500;margin-bottom:6px}
+.skit-card h4{margin:0 0 8px}
+.skit-card .ex{font-size:12px;color:var(--ink-mute);font-style:italic;margin-top:10px;padding-top:10px;border-top:1px solid var(--line-2)}
+
+/* Hook archetypes */
+.hook-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:18px}
+@media (max-width:1024px){.hook-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.hook-grid{grid-template-columns:1fr}}
+.hook-card{padding:18px;background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);display:flex;flex-direction:column;gap:8px}
+.hook-card .archetype{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:500}
+.hook-card .for{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+.hook-card .example{font-size:12.5px;color:var(--accent);font-style:italic;line-height:1.5;padding:10px;background:rgba(201,169,106,.05);border-radius:6px;border:1px solid rgba(201,169,106,.15);margin-top:auto}
+.hook-card .proof{font-size:11px;color:var(--ink-mute);font-family:var(--mono);margin-top:6px}
+
+/* 12-week calendar */
+.calendar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+@media (max-width:900px){.calendar{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.calendar{grid-template-columns:1fr}}
+.cal-week{padding:16px;background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);min-height:160px;cursor:pointer;transition:all .2s}
+.cal-week:hover{border-color:var(--accent);transform:translateY(-2px)}
+.cal-week.active{border-color:var(--accent);background:linear-gradient(180deg,rgba(201,169,106,.1),var(--bg-2))}
+.cal-week .wk{font-family:var(--sans);font-size:10px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.16em;font-weight:500}
+.cal-week .pillar{display:inline-block;padding:2px 7px;font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;border-radius:99px;font-weight:500;margin-top:6px;border:1px solid var(--line)}
+.cal-week .pillar.skit{color:var(--accent);border-color:rgba(201,169,106,.4)}
+.cal-week .pillar.transformation{color:var(--good);border-color:rgba(127,185,140,.4)}
+.cal-week .pillar.talking_head{color:var(--ink-dim);border-color:var(--line)}
+.cal-week .pillar.personal{color:var(--bad);border-color:rgba(214,138,138,.35)}
+.cal-week .pillar.event{color:var(--warn);border-color:rgba(214,192,138,.4)}
+.cal-week h4{font-family:var(--serif);font-size:16px;line-height:1.3;margin:8px 0 6px;color:var(--ink)}
+.cal-week .preview{font-size:11.5px;color:var(--ink-dim);line-height:1.5}
+.cal-week .magnet{font-size:10.5px;color:var(--accent);margin-top:8px;padding-top:8px;border-top:1px solid var(--line-2);font-family:var(--mono)}
+
+/* ICP playbook (numbered list) */
+.icp-list{counter-reset:icp;list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:14px}
+.icp-list li{counter-increment:icp;display:grid;grid-template-columns:50px 1fr;gap:16px;padding:18px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);align-items:start}
+.icp-list li::before{content:counter(icp,decimal-leading-zero);font-family:var(--serif);font-size:32px;color:var(--accent);font-weight:500;line-height:1}
+.icp-list h4{margin:0 0 6px}
+.icp-list .desc{font-size:13px;color:var(--ink-dim);line-height:1.55}
+.icp-list .desc b{color:var(--ink)}
+.icp-list .signal{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:8px;padding-top:8px;border-top:1px solid var(--line-2)}
+
+/* Hashtag tiers */
+.hash-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+@media (max-width:760px){.hash-tiers{grid-template-columns:1fr}}
+.hash-tier{padding:18px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg)}
+.hash-tier .num{font-family:var(--serif);font-size:32px;color:var(--accent);font-weight:500;line-height:1}
+.hash-tier h4{margin:6px 0 8px}
+.hash-tier .pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.hash-tier .pill{padding:3px 9px;background:var(--bg-3);border:1px solid var(--line);border-radius:99px;font-size:11px;color:var(--ink-dim);font-family:var(--mono)}
+.hash-tier .pills .pill.featured{color:var(--accent);border-color:rgba(201,169,106,.4)}
+.hash-tier .desc{font-size:12px;color:var(--ink-mute);line-height:1.45;margin-top:8px}
+
+/* Distribution rhythm */
+.dist-week{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:14px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:10px}
+.dist-week .day{font-family:var(--serif);font-size:18px;color:var(--accent);font-weight:500}
+.dist-week .day small{display:block;font-family:var(--sans);font-size:10px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
+.dist-week .actions{font-size:12.5px;color:var(--ink-dim);line-height:1.5}
+.dist-week .actions b{color:var(--ink)}
+
+/* Production checklist */
+.prod-checklist{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.prod-checklist label{display:flex;gap:10px;font-size:13px;color:var(--ink-dim);padding:10px 14px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);cursor:pointer;line-height:1.45}
+.prod-checklist input[type=checkbox]{margin-top:2px;accent-color:var(--accent);flex-shrink:0}
+.prod-checklist label.done{color:var(--ink-mute);text-decoration:line-through}
+
+/* Note + disclaimer */
+.note{font-size:12px;color:var(--ink-mute);margin-top:8px;line-height:1.55;font-style:italic}
+.disclaimer{padding:16px 20px;background:rgba(214,192,138,.06);border:1px solid rgba(214,192,138,.25);border-radius:var(--r-lg);font-size:12.5px;color:var(--ink-dim);margin:24px 0;line-height:1.6}
+.disclaimer b{color:var(--warn)}
+
+/* Util */
+.row-flex{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.muted{color:var(--ink-mute);font-size:12px}
+hr{border:none;border-top:1px solid var(--line-2);margin:18px 0}
+
+footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);text-align:center;color:var(--ink-mute);font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-inner">
+  <div class="brand">Mukund Venkat<small>Content Engine · 2026</small></div>
+  <div class="toc-wrap">
+  <nav class="toc">
+    <a href="#north" data-section="north">North star</a>
+    <a href="#pillars" data-section="pillars">Pillars</a>
+    <a href="#template" data-section="template">Long-form template</a>
+    <a href="#skits" data-section="skits">Skits</a>
+    <a href="#calendar" data-section="calendar">12-week plan</a>
+    <a href="#hooks" data-section="hooks">Hooks</a>
+    <a href="#meta" data-section="meta">Meta + hashtags</a>
+    <a href="#icp" data-section="icp">ICP fit</a>
+    <a href="#production" data-section="production">Production</a>
+    <a href="#metrics" data-section="metrics">Metrics</a>
+  </nav>
+  </div>
+</div></div>
+
+<header class="hero"><div class="container">
+  <span class="eyebrow">Content engine · 2-year data + verified positioning</span>
+  <h1>Build the engine. <em>Not the audience.</em></h1>
+  <p style="font-size:17px;max-width:640px;margin-top:18px;color:var(--ink-dim)">A weekly system that turns Mukund's verified content patterns — skits, transformation reveals, talking-head — into <b style="color:var(--ink)">qualified sales conversations</b>. Backed by 136-post analysis and Prompt-7 paid acquisition benchmarks.</p>
+  <div class="hero-meta">
+    <div><b>5</b>per week<br>qualified conversations target</div>
+    <div><b>1</b>YouTube long-form<br>+ 6-8 reels per week</div>
+    <div><b>2-3</b>standalone skits<br>per week (proven format)</div>
+    <div><b>100+</b>content pieces<br>over 12-week sprint</div>
+  </div>
+</div></header>
+
+<!-- 1. North star -->
+<section id="north"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">01 — North star</span><h2>The metric that drives £10k.</h2></div>
+    <p>Stop counting views. Start counting conversations. The path to £10k/month is mathematically clear — if you measure the right thing.</p>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="v acc">£10k</div><div class="l">Monthly run-rate target</div></div>
+    <div class="kpi"><div class="v">5 sales</div><div class="l">/month at £997 = £4,985 cash</div></div>
+    <div class="kpi"><div class="v">~5</div><div class="l">qualified calls / week</div></div>
+    <div class="kpi"><div class="v">25-40%</div><div class="l">close rate target (Prompt 7)</div></div>
+  </div>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>The math, end-to-end</h4>
+      <table>
+        <tbody>
+          <tr><td>Goal</td><td class="num">£4,985 / mo cash</td></tr>
+          <tr><td>÷ £997 price</td><td class="num">5 sales / mo</td></tr>
+          <tr><td>÷ 25% close rate</td><td class="num">20 calls / mo</td></tr>
+          <tr><td>÷ 70% show rate</td><td class="num">~28 booked / mo</td></tr>
+          <tr><td>÷ 50% app→booked</td><td class="num">~56 applications / mo</td></tr>
+          <tr><td>÷ 25% lead→app</td><td class="num">~225 leads / mo</td></tr>
+          <tr><td>÷ 8% visit→lead</td><td class="num">~2,800 profile visits / mo</td></tr>
+        </tbody>
+      </table>
+      <p class="note"><b>Reality:</b> his current avg = ~120k IG impressions / mo. The funnel exists. CTAs + scheduler are the gap (per Prompt 7).</p>
+    </div>
+    <div class="card">
+      <h4>Why content alone won't do it</h4>
+      <p style="font-size:13.5px">The 2-year scrape shows <b>0 of his top 15 reels has a CTA</b>. The reach is there — the conversion mechanics aren't. So this content engine pairs with the operational fixes from Prompt 7:</p>
+      <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7">
+        <li>Application form live (Tally / Typeform)</li>
+        <li>Instant scheduler post-application (Cal.com auto-redirect — 2× the booked-call rate per Chili Piper)</li>
+        <li>Lead magnet with email capture (so content drives a list, not just views)</li>
+        <li>One CTA per reel, no exceptions</li>
+      </ul>
+      <p class="note">Without the funnel infrastructure: best content in the world drives £0 sales. Build both in parallel.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 2. Pillars -->
+<section id="pillars"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">02 — Five content pillars</span><h2>What the data says works for Mukund.</h2></div>
+    <p>136 posts · 102 reels · 2 years of data. The format mix below reflects what actually performs — not what the brief said should.</p>
+  </div>
+  <div class="pillar-list">
+    <div class="pillar-row">
+      <div class="name">Skits<small>30% of output · 2-3/wk</small></div>
+      <div>
+        <div class="meter"><div class="fill" style="width:100%"></div></div>
+        <div class="desc"><b>USER-CONFIRMED winner.</b> Largest existing format (28 posts). Top performers: Box Jump Challenge (3,448 views), HYROX recovery skit (2,214). Format: hook → scenario → payoff. Drives discovery via TikTok/Reels algorithm.</div>
+      </div>
+      <div class="v">735<small style="display:block;font-family:var(--sans);color:var(--ink-mute);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-top:3px">avg views</small></div>
+    </div>
+    <div class="pillar-row">
+      <div class="name">Transformation<small>20% · 1-2/wk</small></div>
+      <div>
+        <div class="meter"><div class="fill" style="width:90%"></div></div>
+        <div class="desc"><b>Highest-performing format</b> by avg views (1,920 vs his overall 460). Massively underused — only 7 posts in 2 years. His best ever ("Are you stuck on your fat-loss journey?") hit 6,747 views. Story-led case studies with real client wins.</div>
+      </div>
+      <div class="v">1,920<small style="display:block;font-family:var(--sans);color:var(--ink-mute);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-top:3px">avg views</small></div>
+    </div>
+    <div class="pillar-row">
+      <div class="name">Talking-head<small>20% · 1-2/wk</small></div>
+      <div>
+        <div class="meter"><div class="fill" style="width:50%"></div></div>
+        <div class="desc"><b>Trust + authority engine.</b> This is where the YouTube long-form lives. 30-90s reels for IG; 8-15min episodes for YouTube. Methodology, contrarian truths, frameworks. Cuttable into multiple reels per long-form.</div>
+      </div>
+      <div class="v">460<small style="display:block;font-family:var(--sans);color:var(--ink-mute);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-top:3px">avg views</small></div>
+    </div>
+    <div class="pillar-row">
+      <div class="name">Personal / Family<small>15% · 1/wk</small></div>
+      <div>
+        <div class="meter"><div class="fill" style="width:60%"></div></div>
+        <div class="desc"><b>Highest engagement amplifier</b> — 297 avg likes (highest of any format), 15.8 avg comments. Father-son content, lifestyle moments, gratitude. Doesn't sell directly but builds parasocial trust that compounds.</div>
+      </div>
+      <div class="v">850<small style="display:block;font-family:var(--sans);color:var(--ink-mute);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-top:3px">avg views</small></div>
+    </div>
+    <div class="pillar-row">
+      <div class="name">Event / HYROX<small>10% · seasonal</small></div>
+      <div>
+        <div class="meter"><div class="fill" style="width:35%"></div></div>
+        <div class="desc"><b>Community pillar.</b> Highest avg comments (27.5) of any format — race recaps drive conversation. Tied to London ExCeL events. Doubles content + race recaps + training prep. Activated 4-6 weeks around HYROX races.</div>
+      </div>
+      <div class="v">506<small style="display:block;font-family:var(--sans);color:var(--ink-mute);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-top:3px">avg views</small></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px;background:rgba(214,138,138,.04);border-color:rgba(214,138,138,.25)">
+    <span class="tag bad">Drop / reduce</span>
+    <h4 style="margin:8px 0 6px">Pure mindset / motivation posts</h4>
+    <p style="font-size:13px"><b>25 posts, only 465 avg views.</b> 18% of his content with mediocre returns. Saturated genre, no specific viewer. <b>Drop volume from 18% to 0%</b> — when motivation fits a video, it lives inside a transformation or talking-head, never as standalone filler.</p>
+  </div>
+  <div class="card" style="margin-top:14px;background:rgba(214,138,138,.04);border-color:rgba(214,138,138,.25)">
+    <span class="tag bad">Drop / reduce</span>
+    <h4 style="margin:8px 0 6px">Pure training demos</h4>
+    <p style="font-size:13px"><b>Lowest performer:</b> 276 avg views across 8 posts. Counterintuitive but the data is clear — his audience doesn't engage with how-to-deadlift content. <b>Reframe as skits or scenarios</b> ("when your client tries to ego-lift...") or fold into talking-head methodology.</p>
+  </div>
+</div></section>
+
+<!-- 3. Sectioned long-form template -->
+<section id="template"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">03 — The sectioned long-form template</span><h2>One skeleton. Used every video.</h2></div>
+    <p>10 named sections. Each becomes a YouTube chapter AND a self-contained reel cut. Click any section to see the prompts + reel cut spec.</p>
+  </div>
+  <div class="lf-timeline" id="lfTimeline"></div>
+  <div class="card" style="margin-top:24px">
+    <h4>Why this template works</h4>
+    <div class="grid-3" style="margin-top:10px">
+      <div>
+        <span class="tag good">YouTube chapters</span>
+        <p style="font-size:12.5px;margin-top:8px">Each named section auto-becomes a chapter on YouTube. Increases watch time + lets viewers jump back. The chapter titles double as SEO — picked up by YouTube search.</p>
+      </div>
+      <div>
+        <span class="tag good">Reel-ready</span>
+        <p style="font-size:12.5px;margin-top:8px">7 of the 10 sections are reels in their own right. Editor cuts them as standalone vertical clips with captions + the original audio. Zero re-shoot needed.</p>
+      </div>
+      <div>
+        <span class="tag good">Batch shoots</span>
+        <p style="font-size:12.5px;margin-top:8px">Same skeleton means batched filming days produce 2-3 long-forms in one session. Editor's job becomes ~2 days/wk of cutting + caption work.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4. Skit content track -->
+<section id="skits"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">04 — Skit track (separate format)</span><h2>His proven discovery engine.</h2></div>
+    <p>2-3 standalone skits/week filmed separately from long-form. 30-60s each. Production cost: 30-60 min per skit. ROI: very high — Mukund's top skit hit 3,448 views.</p>
+  </div>
+  <div class="skit-grid" id="skitGrid"></div>
+  <div class="card" style="margin-top:18px">
+    <h4>Skit production system</h4>
+    <div class="grid-2" style="margin-top:10px">
+      <div>
+        <h4 style="font-family:var(--serif);font-size:16px">Filming</h4>
+        <ul style="font-size:13px;color:var(--ink-dim);line-height:1.65;padding-left:18px">
+          <li>Phone vertical (his existing setup is fine)</li>
+          <li>Single take if possible (authenticity > polish for skits)</li>
+          <li>Natural light + gym ambient sound — no need for studio</li>
+          <li>Batch 4-6 skits in one ~90 min shoot</li>
+          <li>Use real training partners or clients (Mukund's son, gym mates) — adds realism</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:var(--serif);font-size:16px">Editing brief (for the India editor)</h4>
+        <ul style="font-size:13px;color:var(--ink-dim);line-height:1.65;padding-left:18px">
+          <li>Subtitles burned in (large, premium font)</li>
+          <li>1 zoom-in + 1 cut per 5s of footage (energy)</li>
+          <li>Mukund's existing humour beats — don't over-edit</li>
+          <li>End frame holds for 1.5s on the punchline</li>
+          <li>Subtle SFX on punchline beat (whoosh / pop)</li>
+          <li>Branded outro: 0.5s on the Mukund Venkat lockup</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5. 12-week calendar -->
+<section id="calendar"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">05 — 12-week content calendar</span><h2>The 12 long-forms, pre-locked.</h2></div>
+    <p>One YouTube long-form per week. Pillar + lead magnet + ICP segment all mapped. Click any week to see the brief.</p>
+  </div>
+  <div class="calendar" id="calendarGrid"></div>
+  <div class="card" id="calendarDetail" style="margin-top:18px;display:none">
+    <div id="calendarDetailContent"></div>
+  </div>
+  <div class="disclaimer" style="margin-top:24px"><b>Validation note:</b> first 4 weeks are a sprint to test which pillars + hooks work for HIS audience. Weeks 5-12 double down on what wins, drop what doesn't. Don't commit to all 12 before week 4 data is in.</div>
+</div></section>
+
+<!-- 6. Psychological hooks -->
+<section id="hooks"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">06 — Psychological hooks</span><h2>5 archetypes that stop the scroll.</h2></div>
+    <p>The first 3 seconds decide whether his ICP — high-achieving men 35-50 — tunes in or scrolls past. These five archetypes are pulled from his proven winners.</p>
+  </div>
+  <div class="hook-grid" id="hookGrid"></div>
+  <div class="card" style="margin-top:18px">
+    <h4>Hook construction rules</h4>
+    <div class="grid-2" style="margin-top:10px">
+      <div>
+        <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px;margin:0">
+          <li><b style="color:var(--ink)">First 3 seconds = visual + verbal hook simultaneously.</b> Don't waste them on logos or intro.</li>
+          <li><b style="color:var(--ink)">Speak directly to the avatar.</b> "If you're a London exec who..." beats "many people don't know that..."</li>
+          <li><b style="color:var(--ink)">Question hooks outperform statements</b> — his #1 ever was a question ("Are you feeling stuck on your fat-loss journey?").</li>
+          <li><b style="color:var(--ink)">Numbers create specificity.</b> "3 mistakes" beats "some mistakes" beats "common mistakes."</li>
+        </ul>
+      </div>
+      <div>
+        <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px;margin:0">
+          <li><b style="color:var(--ink)">Negation creates intrigue.</b> "I'm not training to look good. I'm training to live longer." (1,914 views)</li>
+          <li><b style="color:var(--ink)">Tease the payoff, deliver it within 30s</b> on reels. Long-forms can hold longer — but never beyond 60s without paying off.</li>
+          <li><b style="color:var(--ink)">Avoid generic openers</b> like "Today I'm going to talk about..." or "Here's what most people..." — algorithmic poison.</li>
+          <li><b style="color:var(--ink)">Test 3 hooks per video</b> — film 3 versions of the first 5s, A/B test as separate reels (Meta will surface the winner).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 7. Meta + hashtags -->
+<section id="meta"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">07 — Meta algorithm + hashtag strategy</span><h2>Send the right signals.</h2></div>
+    <p>Meta pushes content based on engagement quality + audience signals. Wrong signals = wrong audience. Mukund's current ICP fit is 1.11/10 — these are the levers to lift it.</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Engagement quality hierarchy</h4>
+      <table>
+        <thead><tr><th>Signal</th><th>Algo weight</th><th>How to trigger</th></tr></thead>
+        <tbody>
+          <tr><td><b>Saves</b></td><td><span class="tag good">Highest</span></td><td>"Save this for [specific use]"</td></tr>
+          <tr><td><b>Shares</b></td><td><span class="tag good">High</span></td><td>Share-trigger content (insight, list, framework)</td></tr>
+          <tr><td><b>Comments</b></td><td><span class="tag warn">Medium-high</span></td><td>Question CTA + reply to every comment in first hour</td></tr>
+          <tr><td>Watch time / replays</td><td><span class="tag warn">Medium</span></td><td>Hook + payoff in &lt;30s</td></tr>
+          <tr><td>Profile visits</td><td><span class="tag warn">Medium</span></td><td>Bio teases lead magnet — drives click-through</td></tr>
+          <tr><td>Likes</td><td><span class="tag bad">Low</span></td><td>Don't optimise — vanity</td></tr>
+          <tr><td>Followers</td><td><span class="tag bad">Lowest</span></td><td>Don't optimise — vanity</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Saves + shares from VERIFIED ICP accounts (founders / execs) signal Meta who his real audience is. One save from a Goldman director outweighs 100 likes from fitness peers.</p>
+    </div>
+    <div class="card">
+      <h4>Story polls — weekly demographic signal</h4>
+      <p style="font-size:13px">Run one poll per week designed to make Meta map his audience to professional / executive demographics. Examples:</p>
+      <ul style="font-size:12.5px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+        <li>"What's your role? 👔 Founder/CEO &nbsp; 💼 Senior pro &nbsp; 🏃 Athlete &nbsp; 🎯 Other"</li>
+        <li>"Biggest training challenge? 🕐 No time &nbsp; 🛌 Recovery &nbsp; 🍽 Nutrition"</li>
+        <li>"Hours / week training? &lt;3 &nbsp; 3-5 &nbsp; 6+"</li>
+        <li>"Are you 35+? Yes / No"</li>
+      </ul>
+      <p class="note">Meta uses poll responses to refine audience modelling. Within 8-12 weeks the algorithm learns "this creator's audience = 35+ professional men" — which is the segment we want.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px;font-size:24px">Hashtag architecture (3-tier)</h3>
+  <p style="max-width:680px;margin-top:8px">Meta caps engagement signal at ~11 hashtags per post. Use exactly 10-12, distributed across three tiers.</p>
+  <div class="hash-tiers">
+    <div class="hash-tier">
+      <div class="num">01</div>
+      <h4>Broad reach (3 tags)</h4>
+      <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.55">High-volume, low-signal. Brings in cold traffic. Use sparingly — too many = generic.</p>
+      <div class="pills">
+        <span class="pill">#fitness</span>
+        <span class="pill">#personaltrainer</span>
+        <span class="pill">#fitover40</span>
+      </div>
+      <div class="desc">Examples. Rotate occasionally to keep the algo fresh.</div>
+    </div>
+    <div class="hash-tier">
+      <div class="num">02</div>
+      <h4>Niche-precise (5-6 tags) ⭐</h4>
+      <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.55">The real signal layer. ICP-specific. These tell Meta who to push to.</p>
+      <div class="pills">
+        <span class="pill featured">#londonpt</span>
+        <span class="pill featured">#londonexecutive</span>
+        <span class="pill featured">#hybridathlete</span>
+        <span class="pill featured">#hyroxlondon</span>
+        <span class="pill featured">#busyprofessional</span>
+        <span class="pill featured">#fatlossfor40</span>
+        <span class="pill featured">#mensphysique</span>
+      </div>
+      <div class="desc">Pick 5-6 per post. Match the post's content to the most relevant tags.</div>
+    </div>
+    <div class="hash-tier">
+      <div class="num">03</div>
+      <h4>Branded (2 tags)</h4>
+      <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.55">Builds searchable brand. Once enough volume builds, becomes a real brand asset.</p>
+      <div class="pills">
+        <span class="pill">#strengthasasystem</span>
+        <span class="pill">#venkatmethod</span>
+      </div>
+      <div class="desc">Use on EVERY post. Builds the brand over time.</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 8. ICP fit playbook -->
+<section id="icp"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">08 — ICP fit improvement playbook</span><h2>1.11/10 → 5+/10 in 90 days.</h2></div>
+    <p>Mukund's audience is currently polluted with fitness-creator peers (19% of top engagers) and broad fitness fans. These 7 actions reset the algo + audience to actual ICP.</p>
+  </div>
+  <ol class="icp-list" id="icpList"></ol>
+  <div class="card" style="margin-top:24px">
+    <h4>Why this lifts ICP fit (the algorithm logic)</h4>
+    <p style="font-size:13.5px">Meta + Instagram's recommendation models look at WHO engages with content (not just how much). When the engagement comes from professional / founder accounts in the right age/location bucket, the algo concludes "this creator's audience is X" and pushes future content to similar profiles.</p>
+    <p style="font-size:13.5px">Currently Mukund's content reaches a lot of fitness creators because they engage out of professional courtesy. That contaminates the audience signal. The audience reset (action 1) is the biggest single lever — it removes the wrong signals so the right ones can dominate.</p>
+    <p style="font-size:13.5px">Expected lift: <b>1.11/10 → 3.0/10 by week 4 → 5+/10 by week 12</b>. Track via the audience composition scrape we ran (re-run every 4 weeks).</p>
+  </div>
+</div></section>
+
+<!-- 9. Production system + distribution -->
+<section id="production"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">09 — Production + distribution</span><h2>Weekly rhythm. Sustainable.</h2></div>
+    <p>Mukund has phone, mic, camera. Editor (India-based) joining soon. Here's the system that produces ~12 pieces of content per week without burning him out.</p>
+  </div>
+
+  <h3 style="font-size:24px">Weekly distribution rhythm</h3>
+  <div style="margin-top:14px" id="distRhythm"></div>
+
+  <h3 style="margin-top:32px;font-size:24px">Editor brief template (one-pager for the India editor)</h3>
+  <div class="card" style="margin-top:14px">
+    <h4>What you receive each week (Tuesday)</h4>
+    <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+      <li>1 long-form raw cut (12-18 min)</li>
+      <li>4-6 standalone skit raw clips (30-60s each)</li>
+      <li>Section timestamps for the long-form</li>
+      <li>Reel cut spec (which 6-8 segments to extract)</li>
+      <li>Caption + hashtag list per output</li>
+      <li>LinkedIn rewrite brief</li>
+    </ul>
+    <h4 style="margin-top:14px">What you ship by Wednesday EOD UK time</h4>
+    <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+      <li>Long-form polished edit (chapters, intro/outro, captions)</li>
+      <li>Long-form thumbnail (3 options)</li>
+      <li>2-4 vertical Shorts cut from long-form</li>
+      <li>2 IG Reels cut from long-form (different sections than Shorts)</li>
+      <li>1 TikTok-native edit (different angle, more energy)</li>
+      <li>Skits: subtitled + branded outro</li>
+      <li>LinkedIn vertical clip + carousel post</li>
+    </ul>
+    <h4 style="margin-top:14px">Style rules</h4>
+    <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+      <li>Captions: Inter Tight bold, white text, dark drop shadow, 80% bottom of frame</li>
+      <li>Branded outro: 0.5s, Mukund Venkat lockup on charcoal background, antique brass accent</li>
+      <li>Don't add: emojis in captions, royalty-free music (use Mukund's voice + ambient)</li>
+      <li>Cuts: zoom in/out + B-roll insert every 5-7s for retention</li>
+      <li>End frame: hold the punchline / CTA for 1.5s before fade</li>
+    </ul>
+  </div>
+
+  <h3 style="margin-top:32px;font-size:24px">Batch shoot day workflow</h3>
+  <div class="prod-checklist" id="prodChecklist">
+    <label><input type="checkbox" data-id="prod-1"> <span><b>08:00 — </b>Charge phone, batteries, mic. Set up tripod + mic.</span></label>
+    <label><input type="checkbox" data-id="prod-2"> <span><b>09:00 — </b>Film YT long-form sections 1-5 (hook → 3 principles). 2-3 takes per section.</span></label>
+    <label><input type="checkbox" data-id="prod-3"> <span><b>10:30 — </b>Break + review hooks. Re-shoot any weak ones.</span></label>
+    <label><input type="checkbox" data-id="prod-4"> <span><b>11:00 — </b>Film YT long-form sections 6-10 (demo → CTA). Capture B-roll of demonstration.</span></label>
+    <label><input type="checkbox" data-id="prod-5"> <span><b>12:30 — </b>Lunch + review.</span></label>
+    <label><input type="checkbox" data-id="prod-6"> <span><b>13:30 — </b>Film 4-6 standalone skits. Each ~10 min including setup. Use real partners / son / clients.</span></label>
+    <label><input type="checkbox" data-id="prod-7"> <span><b>15:30 — </b>Film personal/family content (1 piece) + any event-recap b-roll.</span></label>
+    <label><input type="checkbox" data-id="prod-8"> <span><b>16:30 — </b>Upload all raw to shared drive. Send editor brief.</span></label>
+    <label><input type="checkbox" data-id="prod-9"> <span><b>17:00 — </b>Done. ~9 hr shoot day = 1 week of content.</span></label>
+  </div>
+
+  <h3 style="margin-top:32px;font-size:24px">Equipment checklist</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Already has ✓</h4>
+      <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+        <li>Phone (latest iPhone or similar)</li>
+        <li>Mic (lav or shotgun)</li>
+        <li>Camera</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Worth investing in (~£200 one-off)</h4>
+      <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+        <li>Two LED panels (key + fill light) — £80-150</li>
+        <li>Reflector + diffuser — £30</li>
+        <li>Tripod with phone mount — £40</li>
+        <li>External SSD for raw footage — £80</li>
+      </ul>
+      <p class="note">Studio not required. Natural-light gym shots are fine for skits. Lighting helps for the long-form talking-head sections only.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 10. Metrics dashboard -->
+<section id="metrics"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">10 — Metrics that matter</span><h2>Stop measuring views.</h2></div>
+    <p>The north-star metric is qualified sales conversations / week. Everything else is a lead indicator.</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Per-platform metrics (track weekly)</h4>
+      <table>
+        <thead><tr><th>Platform</th><th>Track</th></tr></thead>
+        <tbody>
+          <tr><td><b>YouTube</b></td><td>Views from search/suggested · Avg view duration · Description link clicks · Consultation bookings attributed</td></tr>
+          <tr><td><b>Instagram</b></td><td>Reel saves · Profile visits per Reel · Story replies · DMs from content · Booked calls from DMs</td></tr>
+          <tr><td><b>TikTok</b></td><td>Profile visits per post · Comment rate · Migrations to IG/YT · <b>Qualified leads</b> (NOT raw views)</td></tr>
+          <tr><td><b>LinkedIn</b></td><td>Profile views from content · Newsletter / lead magnet sign-ups · Inbound messages from professionals · Corporate enquiries</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h4>The North Star (weekly)</h4>
+      <div style="margin-top:10px;padding:18px;background:rgba(201,169,106,.06);border:1px solid rgba(201,169,106,.25);border-radius:var(--r);text-align:center">
+        <div style="font-family:var(--serif);font-size:32px;color:var(--accent);font-weight:500;line-height:1">Qualified sales conversations</div>
+        <div style="font-family:var(--mono);font-size:12px;color:var(--ink-mute);margin-top:6px">target: 5/week</div>
+      </div>
+      <h4 style="margin-top:18px">Lead indicators (in priority)</h4>
+      <ol style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:20px">
+        <li>Lead magnet opt-ins / week (target: 50+)</li>
+        <li>Application form starts / week (target: 15+)</li>
+        <li>Consultation show-up rate (target: 70%+)</li>
+        <li>Call-to-client close rate (target: 25-30%)</li>
+        <li>Revenue per 1k views by platform (informational)</li>
+      </ol>
+      <p class="note">Per Prompt 7: "the cheapest lever is rarely the ad platform — it's the application-to-booked-call rate." Same logic for content: don't measure reach, measure conversation flow.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h4>Vanity metrics to ignore</h4>
+    <div class="grid-3" style="margin-top:10px">
+      <div>
+        <span class="tag bad">Ignore</span>
+        <p style="font-size:12.5px;margin-top:8px"><b>Total view counts.</b> 100k views with 0 leads is a fail. 5k views with 5 qualified DMs is a win.</p>
+      </div>
+      <div>
+        <span class="tag bad">Ignore</span>
+        <p style="font-size:12.5px;margin-top:8px"><b>Follower count.</b> Mukund already has 29k. The next 1k followers don't move revenue. Focus on conversion of existing audience.</p>
+      </div>
+      <div>
+        <span class="tag bad">Ignore</span>
+        <p style="font-size:12.5px;margin-top:8px"><b>Likes.</b> Lowest algorithm weight. Cheap signal that doesn't correlate with revenue.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="container">
+  Built from 136 IG posts (2 years of data) · 30 Gemini-analysed reels · Prompts 1-10 deep research integration · 60-day audience classification.<br>
+  Companion to the strategic roadmap at <a href="index.html">index.html</a>.
+</div></footer>
+
+<script>
+// Long-form template data
+const lfSections = [
+  { num:'01', time:'0:00-0:20', name:'The Hook', purpose:'Stop-scroll psychological tune-in', reelCut:'Reel A: cliffhanger', detail:'Open with one of the 5 hook archetypes (see §06). Visual + verbal hook simultaneously. NO logos / intros. Tease the payoff. Direct ICP callout works best ("If you\'re a London exec who used to be fit but stopped..."). The hook also becomes a standalone Reel A — cut at the moment of curiosity peak.' },
+  { num:'02', time:'0:20-0:50', name:'The Promise', purpose:'Set the contract — what they\'ll learn + outcome', reelCut:'(YT only)', detail:'30-second promise. "By the end of this video, you\'ll know exactly..." or "I\'m going to give you the 3 things that..." Sets viewer expectation, increases watch time. NOT included in any reel cut — too contextual to YouTube.' },
+  { num:'03', time:'0:50-1:30', name:'Authority', purpose:'Mr. India + clients trained + 1-line story', reelCut:'Reel B: Mr. India hero', detail:'40 seconds of quiet credibility. "I\'m Mukund Venkat. Mr. India medallist. I\'ve coached 100+ clients across founders, executives, athletes from Chennai to London for 12 years..." Becomes a standalone Reel B — Mukund\'s authority hero, used as a brand-builder reel in its own right.' },
+  { num:'04', time:'1:30-3:00', name:'Why This Matters Now', purpose:'Cultural / market / scientific context', reelCut:'Reel C: insight/talking-head', detail:'90 seconds of context. Why is this video relevant in 2026? What\'s happening to busy professionals\' bodies right now? This is your "topical insight" reel — strong for talking-head shorts on Instagram. Often quotable.' },
+  { num:'05', time:'3:00-9:00', name:'The 3 Principles', purpose:'The substance — 3 actionable points', reelCut:'Reels D, E, F: 3 standalone shorts', detail:'2 minutes per principle = 6 minutes core teaching. Each principle = its own reel cut. Use frameworks ("Principle 1: minimum effective dose"), examples ("a typical client trains 4×/wk, 45 min..."), and contrarian beats ("most coaches will tell you the opposite — here\'s why they\'re wrong"). This is the MOST extractable section.' },
+  { num:'06', time:'9:00-11:30', name:'Demonstration', purpose:'Training / nutrition / framework live', reelCut:'Reel G: visual-heavy', detail:'2.5 min of demo. If training: actual lifts on camera. If nutrition: meal-prep walk-through. If framework: whiteboard / app screen recording. This becomes Reel G — visual-heavy with subtitles, no voice required. Strongest TikTok format.' },
+  { num:'07', time:'11:30-13:00', name:'A Client\'s Story', purpose:'Anonymised case study with permission', reelCut:'Reel H: transformation reveal', detail:'90 sec story-led case study. "James — 42, founder, was at 22% body fat. 16 weeks later..." With consent (compliance per Prompt 8). This is your highest-converting reel cut — transformation reveals are his top-performing format (1,920 avg views).' },
+  { num:'08', time:'13:00-14:00', name:'Common Mistakes', purpose:'Contrarian / "stop doing X" callout', reelCut:'Reel I: mistake callout', detail:'1 min on the 2-3 mistakes most viewers will be making. Specific, named. Contrarian framing performs well as a standalone reel — pattern interrupt + insight.' },
+  { num:'09', time:'14:00-14:30', name:'Action Steps', purpose:'What to do this week', reelCut:'(YT only)', detail:'30 sec specific actions. "Step 1: do X by tomorrow. Step 2: track Y. Step 3: review Z by Sunday." Specificity creates retention + makes the video feel useful, not just watchable. NOT cut as a standalone reel — only works in context.' },
+  { num:'10', time:'14:30-15:00', name:'CTAs', purpose:'Lead magnet → application → subscribe', reelCut:'(YT only)', detail:'Soft → strong CTA progression. (1) "Get the [magnet] in description." (2) "If you want me to coach you through this — apply via the link." (3) "Subscribe + see the next video where I cover..." Each CTA serves a different funnel stage.' },
+];
+
+const tl = document.getElementById('lfTimeline');
+tl.innerHTML = lfSections.map(s => `<div class="lf-section" data-section="${s.num}">
+  <div class="num">${s.num}</div>
+  <div>
+    <div class="time">${s.time}</div>
+    <div class="name">${s.name}<small>${s.purpose}</small></div>
+  </div>
+  <div class="purpose">${s.purpose}</div>
+  <div class="reel-cut ${s.reelCut.includes('YT only') ? 'none' : ''}">${s.reelCut}</div>
+  <div class="lf-detail">${s.detail}</div>
+</div>`).join('');
+tl.querySelectorAll('.lf-section').forEach(el => {
+  el.addEventListener('click', () => el.classList.toggle('expanded'));
+});
+
+// Skit formats
+const skitFormats = [
+  { label:'Format 01', name:'Training-partner observation', desc:'Comedic observation about typical training-partner behaviour. Hook = relatable scenario, payoff = punchline. Mukund\'s strongest skit format.', example:'"When your HYROX partner doesn\'t believe in recovery 🙃" — 2,214 views' },
+  { label:'Format 02', name:'Challenge / competition', desc:'Friendly competition with a partner / client / son. Comment-bait CTA: "Who did it better?" Drives engagement.', example:'"Box Jump Challenge — Stealth Mode 🥷 Comment who did it better" — 3,448 views' },
+  { label:'Format 03', name:'POV scenario', desc:'"POV: you\'re a busy exec who hasn\'t trained in 6 weeks." First-person framing puts the viewer in the scene. Strong for ICP callout.', example:'"POV: Friday 6pm, you\'ve missed every workout this week. Here\'s the 20-min reset."' },
+  { label:'Format 04', name:'Father–son / family', desc:'Mukund + his son training. Highest emotional engagement. Don\'t over-do (1×/wk max).', example:'"Time is the one thing no father gets back." — 2,074 views' },
+  { label:'Format 05', name:'Mistake callout', desc:'"Stop doing X." Pattern interrupt + contrarian insight. Works because it\'s educational disguised as comedy.', example:'"When your client tries to ego-lift — and the bar wins."' },
+  { label:'Format 06', name:'Day-in-life micro', desc:'15-30s slice of Mukund\'s actual day. Builds parasocial connection. Best for IG Stories → cross-post to Reels.', example:'"6am · client · 8am · own training · 10am · son\'s school"' },
+  { label:'Format 07', name:'Trainer reaction', desc:'Mukund reacts to a viral fitness trend / influencer claim. Authority + relevance combo.', example:'"My honest reaction to [trending fitness influencer\'s] new method."' },
+  { label:'Format 08', name:'Behind-the-set-up', desc:'Show what goes into a transformation — meal prep, programming, recovery — in 30s. Proof of method without selling.', example:'"How I plan a busy founder\'s week. 30 seconds. Save this."' },
+];
+
+document.getElementById('skitGrid').innerHTML = skitFormats.map(s => `<div class="skit-card">
+  <div class="label">${s.label}</div>
+  <h4>${s.name}</h4>
+  <p style="font-size:13px;color:var(--ink-dim);line-height:1.55;margin:0">${s.desc}</p>
+  <div class="ex">${s.example}</div>
+</div>`).join('');
+
+// 12-week calendar
+const calendar = [
+  { wk:1, pillar:'talking_head', pillarLabel:'Talking-head', title:'Why busy professionals train hard but don\'t transform', preview:'The 3 reasons 12-week attempts collapse. Pattern interrupt hook.', magnet:'12-Week Performance Audit', stage:'Problem-aware', sells:'£997 online' },
+  { wk:2, pillar:'transformation', pillarLabel:'Transformation', title:'How a Goldman trader lost 12kg in 16 weeks (working 80h/wk)', preview:'Story-led case study. Anonymised. Strongest converting format.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
+  { wk:3, pillar:'skit', pillarLabel:'Skit + talking-head', title:'3 mistakes London executives make in the gym', preview:'Direct ICP callout. Skit-style mistake callouts + serious teaching mid-section.', magnet:'12-Week Performance Audit', stage:'Problem-aware', sells:'£997 online' },
+  { wk:4, pillar:'transformation', pillarLabel:'Transformation', title:'The 12-week framework I use with founders + execs', preview:'Methodology reveal. Direct sale-aligned. End of validation sprint.', magnet:'Application directly', stage:'Product-aware', sells:'£997 online' },
+  { wk:5, pillar:'talking_head', pillarLabel:'Talking-head', title:'5 numbers I track for every client over 40', preview:'Data-driven trust. Builds authority. Methodology window.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
+  { wk:6, pillar:'event', pillarLabel:'HYROX', title:'Sub-90 HYROX with 3 sessions a week (busy professional plan)', preview:'HYROX-specific. Tied to London ExCeL events. Event-recap pillar.', magnet:'HYROX Readiness Scorecard', stage:'Solution-aware', sells:'Hybrid Signature' },
+  { wk:7, pillar:'personal', pillarLabel:'Personal', title:'Why I left India for London (and what I built when I got here)', preview:'Story-led: Chennai → Mr. India → London exec coach. Authority + emotion.', magnet:'(none — pillar 4, brand build)', stage:'Authority', sells:'Trust building' },
+  { wk:8, pillar:'transformation', pillarLabel:'Transformation', title:'My client\'s biggest physique transformation — what we actually did', preview:'Detailed case study. Before/after compliance-cleared. Methodology demonstrated.', magnet:'12-Week Performance Audit', stage:'Most-aware', sells:'£997 online' },
+  { wk:9, pillar:'talking_head', pillarLabel:'Talking-head', title:'Why I don\'t train clients more than 4 hours a week', preview:'Contrarian. Premium positioning ("less is more"). Methodology defence.', magnet:'Mr. India 7-Day Reset', stage:'Solution-aware', sells:'£997 online' },
+  { wk:10, pillar:'event', pillarLabel:'HYROX', title:'Doubles HYROX prep — what I learned at London Olympia', preview:'Race recap. Highest community engagement format. Tied to next race.', magnet:'HYROX Readiness Scorecard', stage:'Community', sells:'Hybrid Signature' },
+  { wk:11, pillar:'talking_head', pillarLabel:'Talking-head', title:'The 3 stages of building elite physique after 35', preview:'Framework reveal. "Phase 1 / Phase 2 / Phase 3" structure. Brand asset.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
+  { wk:12, pillar:'personal', pillarLabel:'Personal + transformation', title:'Father, founder, fit at 45 — the schedule', preview:'Lifestyle + methodology. Closes Q1. Identity content for ICP.', magnet:'Application directly', stage:'Most-aware', sells:'£997 online' },
+];
+
+document.getElementById('calendarGrid').innerHTML = calendar.map(c => `<div class="cal-week" data-wk="${c.wk}">
+  <div class="wk">Week ${c.wk}</div>
+  <div class="pillar ${c.pillar}">${c.pillarLabel}</div>
+  <h4>${c.title}</h4>
+  <div class="preview">${c.preview}</div>
+  <div class="magnet">→ ${c.magnet}</div>
+</div>`).join('');
+
+document.querySelectorAll('.cal-week').forEach(el => {
+  el.addEventListener('click', () => {
+    const wk = el.dataset.wk;
+    const c = calendar.find(x => x.wk == wk);
+    document.querySelectorAll('.cal-week').forEach(x => x.classList.remove('active'));
+    el.classList.add('active');
+    const detail = document.getElementById('calendarDetail');
+    detail.style.display = 'block';
+    document.getElementById('calendarDetailContent').innerHTML = `
+      <span class="tag acc">Week ${c.wk} · ${c.pillarLabel}</span>
+      <h3 style="margin:10px 0">${c.title}</h3>
+      <div class="grid-2" style="margin-top:14px">
+        <div>
+          <h4>Brief</h4>
+          <p style="font-size:13.5px">${c.preview}</p>
+          <p style="font-size:12.5px;color:var(--ink-mute);margin-top:8px"><b>Awareness stage:</b> ${c.stage}<br><b>Sells:</b> ${c.sells}<br><b>Lead magnet:</b> ${c.magnet}</p>
+        </div>
+        <div>
+          <h4>Production checklist</h4>
+          <ul style="font-size:12.5px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
+            <li>Mon: write 3 hook variations + outline 10 sections</li>
+            <li>Tue: batch shoot — long-form + 4-6 standalone skits</li>
+            <li>Wed: editor delivers polished cuts</li>
+            <li>Thu: publish YT + cut Reels/Shorts/TikTok</li>
+            <li>Fri: LinkedIn rewrite + Stories polls</li>
+            <li>Weekend: conversation layer + lead magnet push</li>
+          </ul>
+        </div>
+      </div>
+    `;
+    detail.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+});
+
+// Hook archetypes
+const hooks = [
+  { archetype:'Pattern interrupt', for:'High-performers who tune out generic fitness', example:'"I\'m not training to look good. I\'m training to live longer."', proof:'1,914 views' },
+  { archetype:'Avatar callout', for:'Direct ICP recognition', example:'"If you\'re a London exec who used to be fit but stopped — this video is for you."', proof:'Tested template' },
+  { archetype:'Contrarian truth', for:'Challenge a held belief', example:'"Stop training backwards. Cardio first is why you\'re stuck."', proof:'856 views (DSVc2E0DLSs)' },
+  { archetype:'Result tease', for:'Hint at the outcome', example:'"How my client lost 12kg while travelling 3 of the 16 weeks."', proof:'Story-format pattern' },
+  { archetype:'Question hook', for:'Problem-aware self-identification', example:'"Are you feeling stuck on your fat-loss journey?"', proof:'⭐ 6,747 views — his all-time #1' },
+];
+document.getElementById('hookGrid').innerHTML = hooks.map(h => `<div class="hook-card">
+  <div class="for">For ${h.for}</div>
+  <div class="archetype">${h.archetype}</div>
+  <div class="example">"${h.example}"</div>
+  <div class="proof">${h.proof}</div>
+</div>`).join('');
+
+// ICP playbook
+const icpActions = [
+  { title:'Bio rewrite', desc:'Current: "Helping High Performers Build Muscle & Confidence." Generic, no ICP signal. <b>New:</b> "Mukund Venkat — Performance Coach. Mr. India medallist 🇮🇳🇬🇧 Stage-ready physiques to everyday transformations. London. 📩 DM \'AUDIT\' for the 12-week scorecard."', signal:'Lifts: caption keyword density + ICP recognition + lead magnet trigger' },
+  { title:'Audience reset (the biggest single lever)', desc:'<b>15-20 fitness-creator peers</b> currently dominate his comments — they engage out of professional courtesy, not buying intent. Block / restrict the worst offenders. Engage actively with verified ICP accounts (founders / execs / pros). Within 4-6 weeks Meta\'s recommendation model rebuilds the audience map.', signal:'Lifts: ICP fit 1.11 → 3.0+ in 4 weeks (largest gain)' },
+  { title:'Caption SEO', desc:'Front-load value in the first 125 characters (caption truncation point). Always include 2-3 ICP keywords: <b>executive · London · founder · performance · transformation · professional · busy</b>. Don\'t write captions for your existing audience — write them for the ICP you want.', signal:'Lifts: keyword-based audience targeting (Meta uses caption tokens for recommendations)' },
+  { title:'Story polls (weekly demographic signal)', desc:'One poll per week designed to make Meta map his audience to professional demographics. "What\'s your role? Founder / Senior pro / Athlete / Other" — Meta uses poll responses to refine the audience model. 8-12 weeks of consistent polls = audience reclassification.', signal:'Lifts: explicit demographic signal (highest-quality audience telemetry)' },
+  { title:'Hashtag refinement (per §07)', desc:'Move from generic #fitness #motivation to the niche-precise tier. <b>5-6 ICP tags + 3 broad + 2 branded</b> = 10-11 total. Meta caps engagement signal at 11.', signal:'Lifts: discovery from ICP-specific hashtag feeds' },
+  { title:'Engagement quality optimisation', desc:'Saves > shares > comments > likes. Add "save this" CTAs to teaching content. Add "tag the friend who..." to skits. Reply to every comment in the first hour after posting (Meta weight peaks early).', signal:'Lifts: post-level signal quality (saves & shares from real ICP = strongest signal)' },
+  { title:'Cross-platform congruence', desc:'LinkedIn currently absent from his ecosystem. <b>Start now.</b> Same bio, same value prop, weekly post (1 short-form clip + 1 written post). LinkedIn presence + IG + YouTube triangulation tells the algorithm "this creator\'s audience is professional men." LinkedIn alone might add 3-5 ICP-fit points.', signal:'Lifts: ecosystem-level audience modelling (cross-platform consistency)' },
+];
+document.getElementById('icpList').innerHTML = icpActions.map(a => `<li>
+  <h4>${a.title}</h4>
+  <div class="desc">${a.desc}</div>
+  <div class="signal">→ ${a.signal}</div>
+</li>`).join('');
+
+// Distribution rhythm
+const dist = [
+  { day:'Mon', sub:'Plan', actions:'<b>Topic finalised</b> for Wednesday\'s YouTube long-form. Write 3 hook variations. Outline the 10 sections. Choose lead magnet.' },
+  { day:'Tue', sub:'Shoot', actions:'<b>Batch shoot day</b> — 1 long-form + 4-6 skits + 1 personal/family piece. ~9 hr total. Upload raw → editor brief sent.' },
+  { day:'Wed', sub:'Publish', actions:'<b>Editor delivers</b> polished cuts. Publish: YouTube long-form + 2-4 Shorts + 2 IG Reels + 1 TikTok-native + 1 LinkedIn vertical clip + 1 LinkedIn carousel post.' },
+  { day:'Thu', sub:'Distribute', actions:'<b>Skits go live</b> on IG Reels + TikTok. Stories: poll for the week. DMs to ICP accounts who engaged with Wed content.' },
+  { day:'Fri', sub:'Engage', actions:'<b>Conversation layer:</b> reply to all comments + DMs. LinkedIn comment engagement on 5-10 ICP posts. Stories Q&A.' },
+  { day:'Sat', sub:'Soft', actions:'1 standalone Reel cross-posted from skit batch. Lead magnet push via Stories ("Get the audit — link in bio").' },
+  { day:'Sun', sub:'Convert', actions:'<b>Email nurture sequence</b> sends to new opt-ins. Application form review (qualified leads). Schedule any consultation calls for the week ahead.' },
+];
+document.getElementById('distRhythm').innerHTML = dist.map(d => `<div class="dist-week">
+  <div class="day">${d.day}<small>${d.sub}</small></div>
+  <div class="actions">${d.actions}</div>
+</div>`).join('');
+
+// Production checklist localStorage
+const PROD_KEY = 'mukund-content-prod-checklist';
+let prodSaved = {};
+try { prodSaved = JSON.parse(localStorage.getItem(PROD_KEY) || '{}'); } catch (_) {}
+document.querySelectorAll('#prodChecklist input[type=checkbox]').forEach(cb => {
+  if (prodSaved[cb.dataset.id]) { cb.checked = true; cb.closest('label').classList.add('done'); }
+  cb.addEventListener('change', () => {
+    prodSaved[cb.dataset.id] = cb.checked;
+    try { localStorage.setItem(PROD_KEY, JSON.stringify(prodSaved)); } catch (_) {}
+    cb.closest('label').classList.toggle('done', cb.checked);
+  });
+});
+
+// Smooth-scroll TOC
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      try { history.replaceState(null, '', href); } catch (_) {}
+    });
+  });
+});
+
+// Active TOC
+const sectionIds = ['north','pillars','template','skits','calendar','hooks','meta','icp','production','metrics'];
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 120;
+  let active = sectionIds[0];
+  for (const id of sectionIds) {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= y) active = id;
+  }
+  document.querySelectorAll('.toc a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#'+active);
+  });
+});
+</script>
+</body>
+</html>
