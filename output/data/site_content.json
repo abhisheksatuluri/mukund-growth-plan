@@ -1,0 +1,114 @@
+{
+  "_source": "Extracted from https://v0-mukund-venkat-website.vercel.app/ on 2026-04-27 + revenue_model.json synthesised positioning",
+  "positioning": {
+    "headline": "The Performance Coach behind high-achieving men.",
+    "tagline": "Stage-ready physiques to everyday transformations.",
+    "secondary_tagline": "Strength as a system."
+  },
+  "bio": {
+    "name": "Mukund Venkat",
+    "location": "London",
+    "specialties": ["body transformation", "stage-ready physiques", "performance coaching"],
+    "credentials": [
+      { "label": "Mr. India Medallist", "evidence": "Deccan Chronicle 2019" },
+      { "label": "5+ Years Experience" },
+      { "label": "100+ Clients Transformed" },
+      { "label": "10+ Awards Won" }
+    ],
+    "background_arc": "Indian-born → studied in London → ran gyms in Chennai → returned to London → competition stage to client transformation",
+    "team": [
+      { "name": "Dr Neel Reddy", "role": "Clinical lead — bloodwork & biomarker analysis", "handle": "@dr.neelreddy" },
+      { "name": "Samuel Afriyie", "role": "Performance physiotherapist (Team GB)", "handle": "@sa4fitness" }
+    ]
+  },
+  "testimonials_real": [
+    { "name": "Haroon Awan", "tag": "Verified Client", "quote": "Expertise, motivation, and personalised approach helped me achieve fitness goals faster." },
+    { "name": "Caimin Collins", "tag": "2+ Years Training", "quote": "Made huge improvements to my workout with his guidance and positive reinforcement." },
+    { "name": "Satuluri", "tag": "Transformation Success", "quote": "His approach towards my goals is phenomenal. Highly recommend Mukund to everyone." },
+    { "name": "Daniel", "tag": "Complete Lifestyle Change", "quote": "Helped me get in shape, eat healthily, and understand smart body care practices." },
+    { "name": "Jenson", "tag": "Motivated & Consistent", "quote": "Friendly, experienced push to start or improve your fitness journey with enthusiasm." },
+    { "name": "Natalia Sharon", "tag": "Best PT Experience", "quote": "Listens to specific needs, adjusts workouts dynamically while constantly pushing goals." },
+    { "name": "Ben", "tag": "Professional Excellence", "quote": "True professional that pushes you at your pace with practical advice and genuine care." },
+    { "name": "Atif Akbar", "tag": "Mental & Physical Wellness", "quote": "Genuinely cares about your mental and physical wellbeing and achieving fitness goals." },
+    { "name": "Paul", "tag": "Industry Leading", "quote": "Personalised meal plans and workouts based on goals. One of the best in industry." },
+    { "name": "Rada", "tag": "Life-Changing Results", "quote": "Helped with diet program and body muscle development with amazing perspective." }
+  ],
+  "method_pillars": [
+    {
+      "title": "Data, not guesswork",
+      "body": "Bloodwork, biomarkers, and structured assessments — overseen by clinical partner Dr Neel Reddy — set the baseline. We treat the body like a system, not a hunch."
+    },
+    {
+      "title": "Stage-ready discipline",
+      "body": "Methods proven on the international physique stage — applied to busy professionals. Restraint over volume. Precision over noise."
+    },
+    {
+      "title": "Strength as the foundation",
+      "body": "Lean physique, athletic performance, and longevity all start with structural strength. We build the body that lets you do everything else better."
+    },
+    {
+      "title": "Coaching, not cheerleading",
+      "body": "You're already driven. You don't need motivation. You need a system, structured accountability, and someone who has done it himself — at the highest level."
+    }
+  ],
+  "offer_ladder": [
+    {
+      "tier": 1,
+      "name": "The Performance Audit",
+      "price": "£250",
+      "duration": "90-min consult + 14-day blueprint",
+      "description": "A diagnostic of your current state — physical, structural, and behavioural. You leave with a 14-day action plan, even if we never work together again.",
+      "best_for": "Anyone who wants the system without committing yet"
+    },
+    {
+      "tier": 2,
+      "name": "Online Transformation",
+      "price": "£997",
+      "duration": "12 weeks",
+      "description": "The signature programme. Custom training, nutrition, and weekly check-ins. Globally accessible. The most chosen tier — and the one most clients renew.",
+      "best_for": "Travel-heavy professionals, global clients, or anyone training in their own gym"
+    },
+    {
+      "tier": 3,
+      "name": "Hybrid Signature",
+      "price": "£499/mo",
+      "duration": "Rolling — minimum 3 months",
+      "description": "Online programme plus monthly in-person session in London. The 'best of both worlds' tier for high-accountability London-based professionals.",
+      "best_for": "London-based execs who need structure plus periodic in-person calibration",
+      "flagship": true
+    },
+    {
+      "tier": 4,
+      "name": "Full In-Person Transformation",
+      "price": "£2,400",
+      "duration": "12 weeks",
+      "description": "2-3 in-person sessions per week, full programming, nutrition, recovery oversight. The most intensive tier — a full body and lifestyle rebuild.",
+      "best_for": "London residents wanting the highest-touch experience"
+    }
+  ],
+  "contact": {
+    "instagram": "@fitwithmukundvenkat",
+    "youtube": "@fitwithmukundvenkat",
+    "form_label": "Apply for coaching"
+  },
+  "image_strategy_decision": {
+    "decision": "Use existing 17 curated images with editorial CSS treatments. NO face regeneration.",
+    "rationale": [
+      "Face drift risk is too high for a personal brand — even careful AI regen can subtly alter identity",
+      "Authentic photographs carry premium credibility for personal brand sites",
+      "Framing issues solvable via object-position, aspect-ratio, mask gradients, duotone overlays",
+      "5 hero candidates already score 8/10 — strong working set",
+      "The 1 discard candidate (mukund_coaching_client_2) gets dropped, not regenerated",
+      "Future shoot day: replace audit-flagged images with intentional studio shoot rather than AI regen"
+    ],
+    "css_treatments_to_use": [
+      "object-position: center top/bottom for tight crops",
+      "Duotone/desaturated overlay for tonal consistency",
+      "Subtle grain texture overlay for editorial feel",
+      "Linear-gradient bottom-fade so cropped subjects merge with section backgrounds",
+      "Aspect-ratio fixing via container — never stretch images",
+      "Ken burns + parallax animations for cinematic motion",
+      "Vignette overlays for hero shots"
+    ]
+  }
+}

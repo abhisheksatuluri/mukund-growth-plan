@@ -1,0 +1,117 @@
+{
+  "total": 17,
+  "by_shot_type": {
+    "composite": 2,
+    "full_body": 8,
+    "half_body": 7
+  },
+  "by_best_use": {
+    "proof_section": 2,
+    "secondary": 5,
+    "discard": 1,
+    "hero": 5,
+    "story_section": 4
+  },
+  "needs_regen_count": 12,
+  "avg_premium_score": 6.8,
+  "errored": [],
+  "discard_candidates": [
+    "mukund_coaching_client_2.jpeg"
+  ],
+  "hero_candidates": [
+    {
+      "file": "mukund_competition_stage.jpeg",
+      "score": 8
+    },
+    {
+      "file": "mukund_cycling_triumph.jpeg",
+      "score": 8
+    },
+    {
+      "file": "mukund_gym_dynamic.jpeg",
+      "score": 8
+    },
+    {
+      "file": "mukund_medals.jpeg",
+      "score": 8
+    },
+    {
+      "file": "mukund_portrait_boss.jpeg",
+      "score": 8
+    }
+  ],
+  "needs_regen": [
+    {
+      "file": "client_transformation_back.jpeg",
+      "score": 5,
+      "use": "proof_section",
+      "reason": "To improve image clarity, remove distracting background elements, enhance lighting, and create a more professional and impactful 'before & after' comparison."
+    },
+    {
+      "file": "client_transformation_front.jpeg",
+      "score": 5,
+      "use": "proof_section",
+      "reason": "The background in the 'after' shot (gym lockers) is distracting and does not convey a premium feel. The lighting could be more professional and flattering to highlight the transformation better."
+    },
+    {
+      "file": "mukund_coaching_client_1.jpeg",
+      "score": 6,
+      "use": "secondary",
+      "reason": "The framing is too tight, resulting in cropped limbs (hands and feet) for both subjects, which detracts from the overall presentation of a full-body shot."
+    },
+    {
+      "file": "mukund_coaching_client_2.jpeg",
+      "score": 4,
+      "use": "discard",
+      "reason": "The client's head is severely cropped, making the composition awkward and unprofessional for a premium brand."
+    },
+    {
+      "file": "mukund_editorial_singapore.jpeg",
+      "score": 7,
+      "use": "secondary",
+      "reason": "The subject is cropped at the top of the head and awkwardly at the waist. The background, while visually interesting, might not convey the desired premium personal trainer aesthetic for all uses."
+    },
+    {
+      "file": "mukund_family.jpeg",
+      "score": 6,
+      "use": "secondary",
+      "reason": "The image is a family selfie with minor cropping issues. While a lovely personal moment, it doesn't showcase Mukund in a professional capacity as a premium personal trainer or Mr. India medallist. Regeneration could improve framing if the goal is to keep this specific family moment, or a new image would be needed for professional branding."
+    },
+    {
+      "file": "mukund_mirror_gym.jpeg",
+      "score": 7,
+      "use": "story_section",
+      "reason": "Tight cropping on the subject's head and feet, and the presence of large black bars reducing the effective image area. A cleaner, less cluttered gym background would also enhance the premium feel."
+    },
+    {
+      "file": "mukund_portrait_casual.jpeg",
+      "score": 7,
+      "use": "story_section",
+      "reason": "The top of his head is slightly cropped, and the bottom crop feels a bit abrupt, cutting off his legs mid-thigh. A slightly wider shot would improve the overall balance and framing."
+    },
+    {
+      "file": "mukund_suit_fullbody.jpeg",
+      "score": 7,
+      "use": "story_section",
+      "reason": "The framing is too tight at the top and bottom, cropping his head and feet, which detracts from a full-body presentation."
+    },
+    {
+      "file": "mukund_suit_portrait.jpeg",
+      "score": 7,
+      "use": "secondary",
+      "reason": "The framing is too tight at the top, cutting off the subject's head, and the bottom crop is abrupt, making the overall composition feel constrained."
+    },
+    {
+      "file": "mukund_suit_side.jpeg",
+      "score": 7,
+      "use": "secondary",
+      "reason": "The current framing cuts off the subject awkwardly at the thighs, and the background, while interesting, is a bit distracting for a premium portrait. A full-body shot or a more intentional half-body crop would be better."
+    },
+    {
+      "file": "mukund_suit_smiling.jpeg",
+      "score": 7,
+      "use": "story_section",
+      "reason": "The framing is a bit tight at the top and awkwardly cropped at the bottom, which detracts from an otherwise strong image. A slightly wider shot would improve the composition."
+    }
+  ]
+}

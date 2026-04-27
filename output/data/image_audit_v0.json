@@ -1,0 +1,112 @@
+[
+  {
+    "filename": "v0_01.jpeg",
+    "size_kb": 157,
+    "subject": "Mukund Venkat",
+    "shot_type": "half_body",
+    "expression_pose": "Focused, serious expression, looking slightly off-camera to the right, flexing bicep and shoulder muscles, showcasing physique.",
+    "setting": "Gym interior with weight racks and other gym-goers in the blurred background.",
+    "premium_feel_score_0_10": 8,
+    "framing_issues": [
+      "Left arm slightly cropped at the elbow",
+      "Right hand cropped at the wrist"
+    ],
+    "best_use": "story_section",
+    "ideal_aspect_ratio": "4:5",
+    "duplicate_of_curated": "unique",
+    "notes": "Excellent image for showcasing physique and the professional gym environment. Good lighting highlights muscle definition. The slight cropping of limbs is minor but present. Could be used to demonstrate results or show him in his element."
+  },
+  {
+    "filename": "v0_02.jpeg",
+    "size_kb": 1426,
+    "subject": "Mukund Venkat",
+    "shot_type": "half_body",
+    "expression_pose": "Flexing biceps with a determined, slightly smiling expression, looking towards the right.",
+    "setting": "Gym with a large, colorful mural (possibly Marvel-themed) in the background.",
+    "premium_feel_score_0_10": 7,
+    "framing_issues": [
+      "Top of the image is very dark with a bright, overexposed light source in the top left corner.",
+      "Bottom of the subject's legs are cut off.",
+      "The mural in the background is cut off at the top and sides."
+    ],
+    "best_use": "story_section",
+    "ideal_aspect_ratio": "9:16",
+    "duplicate_of_curated": "unique",
+    "notes": "Strong pose showcasing physique and muscle definition. The lighting on the subject is good. However, the framing is a bit tight at the top, emphasizing the dark ceiling and a bright light source, and cuts off the bottom of the subject. A slightly wider shot or different angle could improve the overall composition for a 'hero' grade, but it's suitable for a 'story_section' to highlight strength or a specific workout."
+  },
+  {
+    "filename": "v0_03.jpeg",
+    "size_kb": 660,
+    "subject": "Mukund Venkat",
+    "shot_type": "composite",
+    "expression_pose": "Neutral expression, posing to showcase physique transformation (front and back views, before and after).",
+    "setting": "Two images in an indoor gym/locker room setting, two images outdoors against a dark wooden door.",
+    "premium_feel_score_0_10": 7,
+    "framing_issues": [],
+    "best_use": "proof_section",
+    "ideal_aspect_ratio": "1:1",
+    "duplicate_of_curated": "unique",
+    "notes": "This is a highly effective before-and-after composite showcasing a significant body transformation, ideal for demonstrating the trainer's results. The 'after' shots show excellent muscle definition and leanness."
+  },
+  {
+    "filename": "v0_04.jpeg",
+    "size_kb": 357,
+    "subject": "Mukund Venkat",
+    "shot_type": "full_body",
+    "expression_pose": "back pose, before and after comparison",
+    "setting": "plain white studio wall",
+    "premium_feel_score_0_10": 7,
+    "framing_issues": [
+      "none"
+    ],
+    "best_use": "proof_section",
+    "ideal_aspect_ratio": "3:2",
+    "duplicate_of_curated": "unique",
+    "notes": "Excellent before and after comparison showing significant back and waist transformation. Ideal for demonstrating results and progress. Clear visual proof of the trainer's effectiveness."
+  },
+  {
+    "filename": "v0_05.jpeg",
+    "size_kb": 840,
+    "subject": "Mukund Venkat",
+    "shot_type": "composite",
+    "expression_pose": "Left: relaxed, looking slightly away with mouth slightly open. Right: serious, direct gaze, flexing biceps.",
+    "setting": "Left: outdoor garden/backyard with trees and fence. Right: indoor gym changing room/facility with wooden lockers and tiled floor.",
+    "premium_feel_score_0_10": 5,
+    "framing_issues": [
+      "Subject cut off at mid-thigh/knees in both halves",
+      "Backgrounds are casual and not professionally styled"
+    ],
+    "best_use": "proof_section",
+    "ideal_aspect_ratio": "1:1",
+    "duplicate_of_curated": "unique",
+    "notes": "This is an effective before-and-after comparison showcasing physical transformation. While the settings are casual rather than professional studio quality, it adds authenticity to the transformation story. Excellent for demonstrating results and progress."
+  },
+  {
+    "filename": "v0_07.jpeg",
+    "size_kb": 1256,
+    "subject": "Mukund Venkat",
+    "shot_type": "full_body",
+    "expression_pose": "flexing back muscles, facing away",
+    "setting": "gym locker room",
+    "premium_feel_score_0_10": 6,
+    "framing_issues": [],
+    "best_use": "proof_section",
+    "ideal_aspect_ratio": "16:9",
+    "duplicate_of_curated": "unique",
+    "notes": "This is a clear progress shot, showing muscle development from the back. Ideal for demonstrating results in a 'proof' section. The setting is a gym locker room, providing an authentic feel. The image is a composite of two portrait shots side-by-side; its overall aspect ratio is approximately 2:1, making 16:9 the closest standard wide option from the given choices."
+  },
+  {
+    "filename": "v0_08.jpeg",
+    "size_kb": 1756,
+    "subject": "Mukund Venkat",
+    "shot_type": "composite",
+    "expression_pose": "Subject is seen from the back, flexing both biceps, in two side-by-side comparison shots.",
+    "setting": "Gym locker room with blue lockers and wooden benches.",
+    "premium_feel_score_0_10": 6,
+    "framing_issues": [],
+    "best_use": "proof_section",
+    "ideal_aspect_ratio": "3:2",
+    "duplicate_of_curated": "unique",
+    "notes": "This image is a good 'before and after' style comparison showing back and arm development. The setting is a standard gym locker room, which is functional but not particularly premium. The pose is effective for demonstrating physical change. It would be suitable for a 'proof' or 'results' section rather than a hero image due to the back view and locker room setting."
+  }
+]
