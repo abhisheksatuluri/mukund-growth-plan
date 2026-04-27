@@ -1,6 +1,13 @@
 {
   "version": 2,
-  "outputDirectory": "output",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/Website/index.html" },
+    { "source": "/strategy", "destination": "/output/index.html" },
+    { "source": "/content-strategy", "destination": "/output/content_strategy.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": false }
+  ]
 }
