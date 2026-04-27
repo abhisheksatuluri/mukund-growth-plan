@@ -175,52 +175,97 @@
     "hyrox_reconciliation_with_prompt5": "Both prompts agree HYROX-only at £997 fails standalone. Prompt 5 said HYROX as flagship differentiator INSIDE transformation works (Mukund's strongest organic content pillar). Prompt 10 confirms: HYROX cannot be primary £997 product, but the existing HYROX content remains the entry hook for the broader transformation/cultural offer. Net: keep HYROX content pillar, attach to Hybrid Signature offer (£499-549/mo) and £997 12-week, NOT as standalone product."
   },
   "synthesised_positioning_recommendation": {
-    "label": "Data-grounded positioning (Prompts 1, 2, 5, 6, 9 + scrape)",
-    "source": "Synthesis of all integrated research, 2026-04-26",
-    "headline": "London-based, Chennai-trained body transformation coach for high-performing Indian professionals worldwide.",
-    "biographical_context_prompt9": {
+    "label": "REVISED Data-grounded positioning (after 136-post analysis + user pushback)",
+    "source": "Synthesis of all integrated research + user strategic input + 136-post format analysis, 2026-04-27",
+    "user_pushback_note": "Earlier 'South Asian Professional Fitness Coach' was rejected — Indian buyers tend to be price-sensitive at premium tier (different from NRI/diaspora). Mr. India is treated as authority credential, not niche identity.",
+    "headline": "Mukund Venkat — The Performance Coach behind high-achieving men.",
+    "tagline": "Stage-ready physiques to everyday transformations.",
+    "secondary_tagline": "Strength as a system.",
+    "ideal_buyer_profile": {
+      "age": "35-50",
+      "gender": "primarily male (women welcome but not headline)",
+      "income": "£80k+ disposable",
+      "location": "London-first, expanding to UK + global English-speaking diaspora",
+      "psychographics": ["high-performer / founder / executive / senior pro", "image-conscious", "time-poor", "wants visible transformation + performance, not just abstract wellness"]
+    },
+    "biographical_context_verified": {
       "indian_born": true,
       "studied_in_london": true,
       "ran_gyms_in_chennai": true,
       "now_london_based": true,
-      "implication": "Mukund IS authentically one of the Indian-diaspora professional segment — not a London coach selling INTO it. Strongest possible authority signal."
+      "mr_india_medallist": "Verified via Deccan Chronicle 2019 — exact year/category pending confirmation from Mukund",
+      "team_associates_verified_via_co_author_tags": [
+        { "name": "Dr Neel Reddy", "handle": "@dr.neelreddy", "role": "London-based clinician — overseeing bloodwork/biomarker per existing Mukund site copy", "evidence": "Tagged as co-author in Mukund's IG posts" },
+        { "name": "Samuel Afriyie", "handle": "@sa4fitness", "role": "Per Mukund's existing site: Team GB coach, sports physio. 10 co-authored posts in scrape — relationship is real" }
+      ],
+      "implication": "Mr. India authority + verified clinical / Team GB physio team = unique premium positioning signals nobody else can replicate. Use these as authority assets in headline + bio sections, NOT as the niche definition."
+    },
+    "format_performance_v2": {
+      "source": "Re-analysis of 136 unique Mukund posts spanning 2024-04 to 2026-04 (102 reels)",
+      "format_avg_views_ranked": [
+        { "format": "transformation", "posts": 7, "avg_views": 1920, "note": "TOP performer — but only 7 posts in 2 years. MASSIVELY underused." },
+        { "format": "personal_family", "posts": 10, "avg_views": 850, "note": "High emotional resonance — 297 avg likes (highest), 15.8 avg comments" },
+        { "format": "skit", "posts": 28, "avg_views": 735, "note": "USER-CONFIRMED winning format — 28 posts is the largest category. Box Jump Challenge (3,448 views), HYROX recovery skit (2,214 views) are top performers." },
+        { "format": "event_recap", "posts": 4, "avg_views": 506, "note": "Highest avg comments (27.5) — strong community engagement signal" },
+        { "format": "mindset_motivation", "posts": 25, "avg_views": 465, "note": "OVERWEIGHT and underperforming — produces 18% of his content with mediocre returns" },
+        { "format": "talking_head", "posts": 19, "avg_views": 460, "note": "Standard educational — middle of pack" },
+        { "format": "training_demo", "posts": 8, "avg_views": 276, "note": "LOWEST performer — counterintuitively, training demos don't engage his audience" }
+      ],
+      "key_insights": [
+        "Skits work proven — 28 posts, 735 avg views, top 2 of his all-time best skits hit 2,214 + 3,448 views",
+        "Transformation reveals are the absolute top-performing format but criminally underused (7 posts in 2 years vs 25 mindset posts)",
+        "Mindset/motivation posts are filler — drop volume from 18% to 5%",
+        "Personal/family content has highest emotional engagement — keep but don't overdo",
+        "Training demos underperform — counterintuitive but data-clear. Use sparingly OR turn them into skit/scenario format",
+        "ZERO of his top 15 reels have a CTA — the conversion leak is real and consistent across 2 years"
+      ],
+      "recommended_format_mix_v2": {
+        "skit": "30%",
+        "transformation_reveal": "20%",
+        "talking_head": "20%",
+        "personal_family": "15%",
+        "event_recap": "10%",
+        "training_demo": "5% (but reframe as skits/scenarios)",
+        "mindset_pure": "0% (eliminate — content fluff)"
+      }
     },
     "evidence_stack": [
-      { "dimension": "Authority", "evidence": "Indian-born, Chennai gym ownership, London-based — IS the segment", "source": "Prompt 9 + 2016 Body Transformer article" },
-      { "dimension": "Audience reality", "evidence": "25-40% verified+inferred Indian/South Asian audience already engaged. Prompt 9 estimates 50-70% South Asia.", "source": "Scraped 80-commenter classification + Prompt 9" },
-      { "dimension": "Premium price tolerance", "evidence": "Bose Fitness proves South Asian segment buys 12-week transformation at premium with clients in 25+ countries", "source": "Prompt 2" },
-      { "dimension": "Cultural specificity", "evidence": "Solves 'generic fitness advice tone-deaf to Indian food / family / festivals' barrier — major buyer-psychology friction", "source": "Prompt 6" },
-      { "dimension": "London-still-works", "evidence": "In-person PT + corporate retainers continue with London clients (smaller stream, premium pricing)", "source": "Prompt 1" },
-      { "dimension": "HYROX overlap", "evidence": "London hosts biggest HYROX events globally; Indian audience increasingly engaged with hybrid as identity-driven challenge", "source": "Prompt 5" },
-      { "dimension": "Geographic flexibility", "evidence": "Online £997 sells globally; doesn't depend on UK organic audience growth (which is too small per scrape + Prompt 9)", "source": "Prompts 1, 2, 9" }
+      { "dimension": "Authority", "evidence": "Mr. India medallist (verified via Deccan Chronicle 2019) — unique credential nobody else has", "source": "Prompt 9 + Deccan Chronicle" },
+      { "dimension": "Tagline already proven", "evidence": "'Stage-ready physiques to everyday transformations' — used on existing v0 site, bridges his pageant pedigree with mass-market clients", "source": "v0 site audit" },
+      { "dimension": "Real testimonial base", "evidence": "10+ verified client testimonials from real clients (Haroon Awan, Caimin Collins, Daniel, Jenson, Natalia, Ben, Atif, Paul, Rada, Satuluri) on existing site", "source": "v0 site" },
+      { "dimension": "Verified team", "evidence": "Dr Neel Reddy + Samuel Afriyie are real associates (verified via co-author tags on IG)", "source": "136-post scrape" },
+      { "dimension": "Format mastery", "evidence": "Skits + transformation reveals are his proven winning formats. Skits get 735 avg views, transformations 1,920 avg.", "source": "136-post format analysis" },
+      { "dimension": "London-based premium", "evidence": "5+ years London experience, 100+ clients, 10+ awards per existing site", "source": "v0 site" },
+      { "dimension": "Geographic flexibility", "evidence": "Online programme can sell globally; in-person Premium PT + corporate stays London-anchored", "source": "Prompts 1, 2" }
     ],
     "alternatives_considered": [
-      { "position": "London body transformation coach (UK-first)", "verdict": "WEAK — only 21% verified UK audience; would need paid retargeting to build UK-only ICP" },
-      { "position": "HYROX performance coach (HYROX-only)", "verdict": "WEAK — HYROX bigger on social than as coaching market; F45/Les Mills commoditising basic programming; HYROX-specialist coaches will out-credential on race execution" },
-      { "position": "Executive performance coach (current website)", "verdict": "WEAK — too vague; doesn't differentiate; competes with thousands of executive coaches without the South Asian wedge" },
-      { "position": "South Asian / Indian-diaspora professional ⭐", "verdict": "STRONGEST — backed by Mukund's biography, audience composition, market evidence (Bose), buyer psychology, premium price tolerance" },
-      { "position": "Generic high-performer", "verdict": "MEDIUM — works but no differentiation moat" }
+      { "position": "London body transformation coach (UK-first)", "verdict": "STRONG — matches existing tagline + most direct conversion path. Risk: saturated market." },
+      { "position": "Performance Coach for High-Achieving Men ⭐", "verdict": "RECOMMENDED — bridges authority (Mr. India) with broad-enough TAM (high-achievers, not Indian-only). Avoids price-sensitive Indian market trap. Avoids over-narrow niche." },
+      { "position": "Executive Performance + Longevity (GPT Prompt 10 #1)", "verdict": "DECENT but compliance risk on longevity claims (Prompt 8). Demands medical credentials Mukund doesn't have." },
+      { "position": "South Asian Professional (Gemini Prompt 10 #1)", "verdict": "REJECTED by user — Indian buyers at premium tier are price-sensitive (vs NRI/diaspora segment which IS premium-tolerant). Niche too narrow + risks pigeonholing." },
+      { "position": "HYROX Performance Coach (HYROX-only)", "verdict": "WEAK — economic disconnect with £997 vs commoditised £40/mo apps from world champs" }
     ],
     "messaging_pillars": [
-      "Cultural fluency — fitness that fits Indian food, weddings, family meals, work travel",
-      "Performance + transformation — get leaner, stronger, fitter, optionally race-ready (HYROX as bonus pillar)",
-      "Identity respect — strength + structure WITHOUT rejecting culture",
-      "Global reach — clients across diaspora (mirror Bose Fitness 25+ countries claim once true)",
-      "London grounded — in-person + corporate available for those who want it"
+      "Stage-ready to everyday — bridges Mr. India pedigree with relatable transformation",
+      "Performance as a system — restraint, structure, not motivation",
+      "London-grounded global reach — in-person + corporate London; online globally",
+      "Authority signals — Mr. India medallist, 12+ years coaching, verified clinical team, 100+ clients",
+      "Premium without pretence — earn the result, not invitation-only theatre"
     ],
     "what_changes": [
-      "Bio rewrite: instead of abstract 'High Performers / Build Muscle / Confidence', try 'Body transformation for high-performing Indian professionals worldwide. Chennai-trained, London-based. DM ELITE to apply.'",
-      "Content pillars rebalance: 30% transformation case studies (favour visible Indian/diaspora clients) + 25% Indian-food-friendly nutrition + 20% HYROX/hybrid + 15% London + 10% personal/family",
-      "Lead magnet: 'South Asian Professional Fitness Audit' or '12-week reset for Indian professionals' (mirroring Bose Fitness clarity-call entry)",
-      "Testimonials: prioritise diverse names + cultural-context wins (e.g. 'lost 8kg without giving up roti')",
-      "Corporate angle: pivot from generic London corporate to multi-cultural UK firms with strong Indian/diaspora workforce"
+      "Bio rewrite from 'High Performers / Build Muscle' to 'Mukund Venkat — Performance Coach. Mr. India medallist. Stage-ready physiques to everyday transformations.'",
+      "Content format rebalance: 30% skits + 20% transformations + 20% talking-head + 15% personal/family + 10% event recap + 5% training demos. Drop pure mindset filler to 0%.",
+      "Lead magnet: 'The 12-week Performance Audit' (replaces South Asian audit) — broadly applicable scorecard tied to transformation methodology",
+      "Testimonials: USE THE REAL ONES on existing v0 site (Haroon, Caimin, Daniel, Jenson, Natalia, Ben, Atif, Paul, Rada). Get permission for surnames + photos.",
+      "Drop budget-gym contamination (Gym Group Walthamstow + Gumtree fitwithmukund) — premium brand needs clean separation"
     ],
     "what_stays": [
       "£997 / 12-week price (Prompt 2 verified premium tier)",
       "Hybrid Signature £499-549/mo (Prompt 1 missing-tier opportunity)",
       "London PT pricing lift £55→£85 (Prompt 1 verified mid-tier)",
-      "HYROX content as flagship differentiator (Prompt 5 verified pillar)",
-      "Application-form + instant-scheduler operational fixes (Prompt 7 critical lever)"
+      "HYROX content as flagship differentiator (Prompt 5)",
+      "Application-form + instant-scheduler operational fixes (Prompt 7)",
+      "Mr. India authority surfaced everywhere"
     ]
   },
   "recommended_commercial_architecture": {

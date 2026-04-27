@@ -1,0 +1,780 @@
+{
+  "generated_at": "2026-04-27T19:00:17.515Z",
+  "total_posts": 136,
+  "types": {
+    "image": 9,
+    "carousel": 25,
+    "reel": 102
+  },
+  "format_aggregates": [
+    {
+      "format_type": "transformation",
+      "posts": 7,
+      "avg_views": 1920,
+      "avg_likes": 143,
+      "avg_comments": 7.6
+    },
+    {
+      "format_type": "personal_family",
+      "posts": 10,
+      "avg_views": 850,
+      "avg_likes": 297,
+      "avg_comments": 15.8
+    },
+    {
+      "format_type": "skit",
+      "posts": 28,
+      "avg_views": 735,
+      "avg_likes": 112,
+      "avg_comments": 8.4
+    },
+    {
+      "format_type": "event_recap",
+      "posts": 4,
+      "avg_views": 506,
+      "avg_likes": 240,
+      "avg_comments": 27.5
+    },
+    {
+      "format_type": "mindset_motivation",
+      "posts": 25,
+      "avg_views": 465,
+      "avg_likes": 46,
+      "avg_comments": 2.8
+    },
+    {
+      "format_type": "talking_head",
+      "posts": 19,
+      "avg_views": 460,
+      "avg_likes": 43,
+      "avg_comments": 3.4
+    },
+    {
+      "format_type": "unclassified",
+      "posts": 35,
+      "avg_views": 456,
+      "avg_likes": 59,
+      "avg_comments": 2.9
+    },
+    {
+      "format_type": "training_demo",
+      "posts": 8,
+      "avg_views": 276,
+      "avg_likes": 76,
+      "avg_comments": 3.4
+    }
+  ],
+  "top_reels_by_views": [
+    {
+      "shortcode": "C-xvZJ-s1oO",
+      "views": 6747,
+      "likes": 387,
+      "comments": 5,
+      "duration_s": 54.5,
+      "timestamp": "2024-08-17",
+      "format": "transformation",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "Are You Feeling Stuck on Your Fat Loss Journey?🛑  I get it. You’ve made some positive changes, put in the effort, and started seeing some results. But then, you hit a wall. Suddenly, you’re overwhelm"
+    },
+    {
+      "shortcode": "DTx5Zj8jCCU",
+      "views": 3448,
+      "likes": 226,
+      "comments": 8,
+      "duration_s": 39.633,
+      "timestamp": "2026-01-21",
+      "format": "skit",
+      "topic": "hyrox_hybrid",
+      "cta": "none",
+      "caption_preview": "Box Jump Challenge 😂🤣😂🤣😂🤣   Who is Up next ! Stealth Mode ! 🥷   Comment Below who do you think did it better 🤣😂🤣😂  🏆💯😎Benefits of Box Jumps  Explosive power Builds fast-twitch muscle fib"
+    },
+    {
+      "shortcode": "DQC4wawDGt6",
+      "views": 3179,
+      "likes": 338,
+      "comments": 8,
+      "duration_s": 24.1,
+      "timestamp": "2025-10-20",
+      "format": "unclassified",
+      "topic": "lifestyle_personal",
+      "cta": "none",
+      "caption_preview": "Happy Diwali 🪔 🤩🙏"
+    },
+    {
+      "shortcode": "C5xfymrMA_d",
+      "views": 2291,
+      "likes": 263,
+      "comments": 36,
+      "duration_s": 181,
+      "timestamp": "2024-04-15",
+      "format": "transformation",
+      "topic": "hyrox_hybrid",
+      "cta": "none",
+      "caption_preview": "Discovering your “why” is the compass that guides you through life’s journey. It’s the reason behind every choice you make, every goal you pursue, and every dream you chase. Take a moment to reflect o"
+    },
+    {
+      "shortcode": "DVIhQzMApAK",
+      "views": 2214,
+      "likes": 100,
+      "comments": 1,
+      "duration_s": 13.333,
+      "timestamp": "2026-02-24",
+      "format": "skit",
+      "topic": "hyrox_hybrid",
+      "cta": "none",
+      "caption_preview": "When your HYROX partner don’t believe in recovery 🙃🙃🙃🙃🙃 zone 5 it is 😂😂😂😂  #hyrox #zone #fun #training"
+    },
+    {
+      "shortcode": "DVNxhZcjPBJ",
+      "views": 2074,
+      "likes": 166,
+      "comments": 22,
+      "duration_s": 58.333,
+      "timestamp": "2026-02-26",
+      "format": "skit",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "Time is the one thing no father gets back.  So when I’m with my son, I’m present. We train. We laugh. We fail. We try again.  This isn’t about muscles. It’s about shaping a man who is fearless, ground"
+    },
+    {
+      "shortcode": "DUQ-nozDNqd",
+      "views": 1914,
+      "likes": 173,
+      "comments": 10,
+      "duration_s": 16,
+      "timestamp": "2026-02-02",
+      "format": "personal_family",
+      "topic": "lifestyle_personal",
+      "cta": "none",
+      "caption_preview": "I don’t train just to look good. I train to live long. To stay strong. To play. To be present. This is the real return on fitness. Legacy over aesthetics."
+    },
+    {
+      "shortcode": "DVMjjAZDF_V",
+      "views": 1851,
+      "likes": 66,
+      "comments": 5,
+      "duration_s": 15.3,
+      "timestamp": "2026-02-25",
+      "format": "mindset_motivation",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "You wouldn’t buy a supercar and keep it in first gear forever. But that’s exactly how most people treat their bodies.  They move. They “work out.” They stay comfortable.  And then wonder why they feel"
+    },
+    {
+      "shortcode": "DN78MxijMM2",
+      "views": 1615,
+      "likes": 117,
+      "comments": 3,
+      "duration_s": 88.7,
+      "timestamp": "2025-08-29",
+      "format": "talking_head",
+      "topic": "nutrition",
+      "cta": "none",
+      "caption_preview": "Let’s Gooooo Team 5k   Blessed to be able to Run enjoy some rain some Sun and some sweat !   Beautiful day with some beautiful people !! Enjoy life to the fullest 😍💯👊🏆  I was today the Camera Man "
+    },
+    {
+      "shortcode": "DVBVI4mjF4Y",
+      "views": 1371,
+      "likes": 75,
+      "comments": 3,
+      "duration_s": 31.733,
+      "timestamp": "2026-02-21",
+      "format": "unclassified",
+      "topic": "lifestyle_personal",
+      "cta": "none",
+      "caption_preview": "Confident and Strong is how to Turn that Boy into a Man 😎🏆💯   Only @legiongrappling"
+    },
+    {
+      "shortcode": "DRfZcIrDN9b",
+      "views": 1349,
+      "likes": 104,
+      "comments": 7,
+      "duration_s": 78.466,
+      "timestamp": "2025-11-25",
+      "format": "mindset_motivation",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "3 Ways to Improve Grip Strength  (The Foundation of Real Strength)  1. Farmer’s Carry Builds crushing grip. Builds forearm strength. Builds full-body stability. Teaches your body to stay strong under "
+    },
+    {
+      "shortcode": "DSK9e8SDJUw",
+      "views": 1344,
+      "likes": 167,
+      "comments": 11,
+      "duration_s": 41.4,
+      "timestamp": "2025-12-12",
+      "format": "unclassified",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "The last Move shocked me and will shock You too 😅🤯🫡   Proud doesn’t even begin to describe it.  Just a kid enjoying movement. Not forced. Not rushed. Just encouraged.  Boxing and shadow boxing for "
+    },
+    {
+      "shortcode": "DRaRQhyjCEC",
+      "views": 959,
+      "likes": 110,
+      "comments": 11,
+      "duration_s": 48.866,
+      "timestamp": "2025-11-23",
+      "format": "talking_head",
+      "topic": "hyrox_hybrid",
+      "cta": "none",
+      "caption_preview": "Most people walk into the gym and start with the wrong focus. The truth is simple. Your foundation decides everything.  Start with flexibility so your joints move freely. Then build cardiovascular fit"
+    },
+    {
+      "shortcode": "DSVc2E0DLSs",
+      "views": 856,
+      "likes": 101,
+      "comments": 5,
+      "duration_s": 72.333,
+      "timestamp": "2025-12-16",
+      "format": "mindset_motivation",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "Stop training backwards.  Most people chase fat loss first. Cardio first. Abs First  Lift heavy first .  That’s why they stay stuck.  Build muscle first. Fix movement first. Get strong first.  Fat los"
+    },
+    {
+      "shortcode": "DPRl0lWjGa0",
+      "views": 792,
+      "likes": 53,
+      "comments": 2,
+      "duration_s": 42.2,
+      "timestamp": "2025-10-01",
+      "format": "unclassified",
+      "topic": "lifestyle_personal",
+      "cta": "none",
+      "caption_preview": "What are the 3 Most Important Metrics for Longevity ! 😇"
+    },
+    {
+      "shortcode": "DRAaA6QDOTw",
+      "views": 730,
+      "likes": 96,
+      "comments": 7,
+      "duration_s": 43.6,
+      "timestamp": "2025-11-13",
+      "format": "talking_head",
+      "topic": "hyrox_hybrid",
+      "cta": "none",
+      "caption_preview": "Most people only train HALF their body. And that’s why they stay weak, slow, and constantly injured.  Your muscles are made of two fibres:  Slow-twitch = endurance Fast-twitch = power  Most people onl"
+    },
+    {
+      "shortcode": "DPEJn3oDLU9",
+      "views": 704,
+      "likes": 112,
+      "comments": 5,
+      "duration_s": 55.566,
+      "timestamp": "2025-09-26",
+      "format": "mindset_motivation",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "We are back with another post focusing on losing body fat. Here are some 💎 to focus on to achieve just that   Calorie Deficit: burning more calories (energy) than consuming . This causes your body to"
+    },
+    {
+      "shortcode": "DRNY99djDPE",
+      "views": 669,
+      "likes": 93,
+      "comments": 5,
+      "duration_s": 67.466,
+      "timestamp": "2025-11-18",
+      "format": "skit",
+      "topic": "training_strength",
+      "cta": "dm",
+      "caption_preview": "What should you focus on when you start training? Lose fat first? Build muscle first? No wonder people feel confused.  Here’s the truth most coaches won’t tell you. You don’t need to choose.  The smar"
+    },
+    {
+      "shortcode": "DPmCNIuDFa6",
+      "views": 659,
+      "likes": 59,
+      "comments": 9,
+      "duration_s": 136.966,
+      "timestamp": "2025-10-09",
+      "format": "skit",
+      "topic": "nutrition",
+      "cta": "none",
+      "caption_preview": "Digest your Food More Efficiently !   Acid reflux isn’t always about what you eat… it’s how you eat. Most people rush through meals, scrolling on their phones or eating on the go.  When you don’t chew"
+    },
+    {
+      "shortcode": "DPJufuVjF8t",
+      "views": 656,
+      "likes": 47,
+      "comments": 5,
+      "duration_s": 85.666,
+      "timestamp": "2025-09-28",
+      "format": "skit",
+      "topic": "transformation",
+      "cta": "dm",
+      "caption_preview": "Guys if you’re looking for an easy workout with the best results… we got you 😇💯🏆  DM us to build you the Blueprint — the Master Plan that takes you straight to the top 🤩💪🏆  I promise you… it’s s"
+    },
+    {
+      "shortcode": "DURCNgbDGWu",
+      "views": 636,
+      "likes": 34,
+      "comments": 1,
+      "duration_s": 32.333,
+      "timestamp": "2026-02-02",
+      "format": "unclassified",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "Most people think mobility needs an hour in the gym. It doesn’t. It needs movement through the day.  Get up. Change positions. Squat. Rotate. Balance on one leg.  Your body is designed to move often, "
+    },
+    {
+      "shortcode": "DPhB9JDDPA9",
+      "views": 600,
+      "likes": 52,
+      "comments": 1,
+      "duration_s": 118.833,
+      "timestamp": "2025-10-07",
+      "format": "skit",
+      "topic": "nutrition",
+      "cta": "none",
+      "caption_preview": "The Metrics that you should be focused on for longevity 😎💯🏆   Explained in detail what we should be focusing on and not just dropping weight and m the scale !   Eat well get strong 💪 live the best"
+    },
+    {
+      "shortcode": "DOREG4_jEqu",
+      "views": 559,
+      "likes": 52,
+      "comments": 8,
+      "duration_s": 40.833,
+      "timestamp": "2025-09-06",
+      "format": "skit",
+      "topic": "mindset_motivation",
+      "cta": "none",
+      "caption_preview": "The last takedown was the Silliest 😂🤣😂🤣  If you are not willing to fall, then how will you ever learn?  Every throw, every takedown, every fall teaches you something new. It humbles you. It builds"
+    },
+    {
+      "shortcode": "DRnHBCujL74",
+      "views": 547,
+      "likes": 42,
+      "comments": 1,
+      "duration_s": 46.133,
+      "timestamp": "2025-11-28",
+      "format": "talking_head",
+      "topic": "training_strength",
+      "cta": "dm",
+      "caption_preview": "Everyone says the same thing. “I want to lose fat.” “I want to build muscle.”  But here’s the truth no one talks about.  Most people don’t actually need what they think they need. They need stronger h"
+    },
+    {
+      "shortcode": "DOS0esujIr1",
+      "views": 519,
+      "likes": 51,
+      "comments": 2,
+      "duration_s": 30.433,
+      "timestamp": "2025-09-07",
+      "format": "skit",
+      "topic": "lifestyle_personal",
+      "cta": "none",
+      "caption_preview": "We just can’t have a Probelm Mate 😂🤣😂🤣🤣  Happy Sunday Guys Smile be Happy enjoy your day like it was your last 😎🏆💯"
+    },
+    {
+      "shortcode": "DTx4gazDHNw",
+      "views": 506,
+      "likes": 81,
+      "comments": 6,
+      "duration_s": 54.333,
+      "timestamp": "2026-01-21",
+      "format": "personal_family",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "If I told you I dreamt of having the perfect gym partner… And that dream became reality… Would you believe me?  This isn’t about reps or weights. This is about legacy.  I’m not teaching him with words"
+    },
+    {
+      "shortcode": "DSIneaTjOb3",
+      "views": 506,
+      "likes": 86,
+      "comments": 15,
+      "duration_s": 95.766,
+      "timestamp": "2025-12-11",
+      "format": "event_recap",
+      "topic": "hyrox_hybrid",
+      "cta": "apply",
+      "caption_preview": "Two brothers. One challenge. One lesson for you: You are capable of far more than you think.  We stepped into HYROX London with no special prep. Just discipline. Heart rates at 180 BPM. Full commitmen"
+    },
+    {
+      "shortcode": "DQZ2RIGDGqs",
+      "views": 502,
+      "likes": 74,
+      "comments": 6,
+      "duration_s": 29.166,
+      "timestamp": "2025-10-29",
+      "format": "mindset_motivation",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "Explosive legs = athletic power. ⚡️ Box jumps aren’t just about jumping high — they teach your body to produce force fast. That means more speed, stronger lifts, better balance, and bulletproof knees."
+    },
+    {
+      "shortcode": "DUJKcjCjAk7",
+      "views": 500,
+      "likes": 55,
+      "comments": 4,
+      "duration_s": 42.533,
+      "timestamp": "2026-01-30",
+      "format": "unclassified",
+      "topic": "hyrox_hybrid",
+      "cta": "none",
+      "caption_preview": "Boxing isn’t about hitting hard. It’s about moving well under fatigue.  Every round trains your heart, lungs, and nervous system. That’s real conditioning.  Footwork matters more than power. Strong le"
+    },
+    {
+      "shortcode": "DQ7UL7LDAoC",
+      "views": 500,
+      "likes": 36,
+      "comments": 2,
+      "duration_s": 68.066,
+      "timestamp": "2025-11-11",
+      "format": "mindset_motivation",
+      "topic": "training_strength",
+      "cta": "none",
+      "caption_preview": "Chilling with my Bro at the Bar 😇💪💯🏆  WHY IT’S THE #1 PULLING EXERCISE Because it does exactly what the body was built to do — pull its own weight through space with strength, control, and power. "
+    }
+  ],
+  "top_by_format": {
+    "personal_family": [
+      {
+        "shortcode": "DUQ-nozDNqd",
+        "views": 1914,
+        "likes": 173,
+        "comments": 10,
+        "timestamp": "2026-02-02",
+        "topic": "lifestyle_personal",
+        "cta": "none",
+        "caption_preview": "I don’t train just to look good. I train to live long. To stay strong. To play. To be present. This is the real return on fitness. Legacy ov"
+      },
+      {
+        "shortcode": "DTx4gazDHNw",
+        "views": 506,
+        "likes": 81,
+        "comments": 6,
+        "timestamp": "2026-01-21",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "If I told you I dreamt of having the perfect gym partner… And that dream became reality… Would you believe me?  This isn’t about reps or wei"
+      },
+      {
+        "shortcode": "DQRpw3pDGgy",
+        "views": 130,
+        "likes": 22,
+        "comments": 0,
+        "timestamp": "2025-10-26",
+        "topic": "nutrition",
+        "cta": "none",
+        "caption_preview": "4 Pillars to beat insulin Resistance 🤩🏆💯  The tastiest snacks that you should be consuming on a daily without fail … all here in this vid"
+      }
+    ],
+    "skit": [
+      {
+        "shortcode": "DTx5Zj8jCCU",
+        "views": 3448,
+        "likes": 226,
+        "comments": 8,
+        "timestamp": "2026-01-21",
+        "topic": "hyrox_hybrid",
+        "cta": "none",
+        "caption_preview": "Box Jump Challenge 😂🤣😂🤣😂🤣   Who is Up next ! Stealth Mode ! 🥷   Comment Below who do you think did it better 🤣😂🤣😂  🏆💯😎Benefits"
+      },
+      {
+        "shortcode": "DVIhQzMApAK",
+        "views": 2214,
+        "likes": 100,
+        "comments": 1,
+        "timestamp": "2026-02-24",
+        "topic": "hyrox_hybrid",
+        "cta": "none",
+        "caption_preview": "When your HYROX partner don’t believe in recovery 🙃🙃🙃🙃🙃 zone 5 it is 😂😂😂😂  #hyrox #zone #fun #training"
+      },
+      {
+        "shortcode": "DVNxhZcjPBJ",
+        "views": 2074,
+        "likes": 166,
+        "comments": 22,
+        "timestamp": "2026-02-26",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Time is the one thing no father gets back.  So when I’m with my son, I’m present. We train. We laugh. We fail. We try again.  This isn’t abo"
+      },
+      {
+        "shortcode": "DRNY99djDPE",
+        "views": 669,
+        "likes": 93,
+        "comments": 5,
+        "timestamp": "2025-11-18",
+        "topic": "training_strength",
+        "cta": "dm",
+        "caption_preview": "What should you focus on when you start training? Lose fat first? Build muscle first? No wonder people feel confused.  Here’s the truth most"
+      },
+      {
+        "shortcode": "DPmCNIuDFa6",
+        "views": 659,
+        "likes": 59,
+        "comments": 9,
+        "timestamp": "2025-10-09",
+        "topic": "nutrition",
+        "cta": "none",
+        "caption_preview": "Digest your Food More Efficiently !   Acid reflux isn’t always about what you eat… it’s how you eat. Most people rush through meals, scrolli"
+      }
+    ],
+    "event_recap": [
+      {
+        "shortcode": "DSIneaTjOb3",
+        "views": 506,
+        "likes": 86,
+        "comments": 15,
+        "timestamp": "2025-12-11",
+        "topic": "hyrox_hybrid",
+        "cta": "apply",
+        "caption_preview": "Two brothers. One challenge. One lesson for you: You are capable of far more than you think.  We stepped into HYROX London with no special p"
+      }
+    ],
+    "unclassified": [
+      {
+        "shortcode": "DQC4wawDGt6",
+        "views": 3179,
+        "likes": 338,
+        "comments": 8,
+        "timestamp": "2025-10-20",
+        "topic": "lifestyle_personal",
+        "cta": "none",
+        "caption_preview": "Happy Diwali 🪔 🤩🙏"
+      },
+      {
+        "shortcode": "DVBVI4mjF4Y",
+        "views": 1371,
+        "likes": 75,
+        "comments": 3,
+        "timestamp": "2026-02-21",
+        "topic": "lifestyle_personal",
+        "cta": "none",
+        "caption_preview": "Confident and Strong is how to Turn that Boy into a Man 😎🏆💯   Only @legiongrappling"
+      },
+      {
+        "shortcode": "DSK9e8SDJUw",
+        "views": 1344,
+        "likes": 167,
+        "comments": 11,
+        "timestamp": "2025-12-12",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "The last Move shocked me and will shock You too 😅🤯🫡   Proud doesn’t even begin to describe it.  Just a kid enjoying movement. Not forced."
+      },
+      {
+        "shortcode": "DPRl0lWjGa0",
+        "views": 792,
+        "likes": 53,
+        "comments": 2,
+        "timestamp": "2025-10-01",
+        "topic": "lifestyle_personal",
+        "cta": "none",
+        "caption_preview": "What are the 3 Most Important Metrics for Longevity ! 😇"
+      },
+      {
+        "shortcode": "DURCNgbDGWu",
+        "views": 636,
+        "likes": 34,
+        "comments": 1,
+        "timestamp": "2026-02-02",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Most people think mobility needs an hour in the gym. It doesn’t. It needs movement through the day.  Get up. Change positions. Squat. Rotate"
+      }
+    ],
+    "training_demo": [
+      {
+        "shortcode": "DVG9Mx-jAzz",
+        "views": 425,
+        "likes": 32,
+        "comments": 6,
+        "timestamp": "2026-02-23",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "God doesn’t build weak men. He breaks you first.  Pain strips ego. Suffering forges discipline. Tests reveal who you really are.  Only then "
+      },
+      {
+        "shortcode": "DUjEQntDAWv",
+        "views": 317,
+        "likes": 36,
+        "comments": 2,
+        "timestamp": "2026-02-09",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Training and nutrition should feel effortless to execute. Simple to follow. Low on decisions. High on consistency.  When complexity drops, c"
+      },
+      {
+        "shortcode": "DP3-1F5DOCT",
+        "views": 204,
+        "likes": 36,
+        "comments": 3,
+        "timestamp": "2025-10-16",
+        "topic": "transformation",
+        "cta": "none",
+        "caption_preview": "Fully Body workout   If you don’t have a plan you will never get anywhere ! It’s not about fancy workouts the  basics you double down on it’"
+      },
+      {
+        "shortcode": "DPv_MPcjNt_",
+        "views": 158,
+        "likes": 22,
+        "comments": 0,
+        "timestamp": "2025-10-13",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Build these 5 Habits to Finish the Year off with a Win  😇💯🏆  Unless you choose to be a loser and Lazy not willing to take action !   Slee"
+      }
+    ],
+    "mindset_motivation": [
+      {
+        "shortcode": "DVMjjAZDF_V",
+        "views": 1851,
+        "likes": 66,
+        "comments": 5,
+        "timestamp": "2026-02-25",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "You wouldn’t buy a supercar and keep it in first gear forever. But that’s exactly how most people treat their bodies.  They move. They “work"
+      },
+      {
+        "shortcode": "DRfZcIrDN9b",
+        "views": 1349,
+        "likes": 104,
+        "comments": 7,
+        "timestamp": "2025-11-25",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "3 Ways to Improve Grip Strength  (The Foundation of Real Strength)  1. Farmer’s Carry Builds crushing grip. Builds forearm strength. Builds "
+      },
+      {
+        "shortcode": "DSVc2E0DLSs",
+        "views": 856,
+        "likes": 101,
+        "comments": 5,
+        "timestamp": "2025-12-16",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Stop training backwards.  Most people chase fat loss first. Cardio first. Abs First  Lift heavy first .  That’s why they stay stuck.  Build "
+      },
+      {
+        "shortcode": "DPEJn3oDLU9",
+        "views": 704,
+        "likes": 112,
+        "comments": 5,
+        "timestamp": "2025-09-26",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "We are back with another post focusing on losing body fat. Here are some 💎 to focus on to achieve just that   Calorie Deficit: burning more"
+      },
+      {
+        "shortcode": "DQZ2RIGDGqs",
+        "views": 502,
+        "likes": 74,
+        "comments": 6,
+        "timestamp": "2025-10-29",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Explosive legs = athletic power. ⚡️ Box jumps aren’t just about jumping high — they teach your body to produce force fast. That means more s"
+      }
+    ],
+    "transformation": [
+      {
+        "shortcode": "C-xvZJ-s1oO",
+        "views": 6747,
+        "likes": 387,
+        "comments": 5,
+        "timestamp": "2024-08-17",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Are You Feeling Stuck on Your Fat Loss Journey?🛑  I get it. You’ve made some positive changes, put in the effort, and started seeing some r"
+      },
+      {
+        "shortcode": "C5xfymrMA_d",
+        "views": 2291,
+        "likes": 263,
+        "comments": 36,
+        "timestamp": "2024-04-15",
+        "topic": "hyrox_hybrid",
+        "cta": "none",
+        "caption_preview": "Discovering your “why” is the compass that guides you through life’s journey. It’s the reason behind every choice you make, every goal you p"
+      },
+      {
+        "shortcode": "DTx26wJDB8C",
+        "views": 210,
+        "likes": 19,
+        "comments": 2,
+        "timestamp": "2026-01-21",
+        "topic": "transformation",
+        "cta": "none",
+        "caption_preview": "You can train hard. Eat clean. Show up daily.  But if stress is high Fat loss stalls. Recovery crashes. Hormones drift. Motivation disappear"
+      },
+      {
+        "shortcode": "DPRkUSBDGyR",
+        "views": 182,
+        "likes": 28,
+        "comments": 0,
+        "timestamp": "2025-10-01",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Do it Any way !! You feel the Best After#noexcuses 😇🏆💯💪#noexcuses #fitnessjourney #highperformance #disciplineequalsfreedom #consistency"
+      },
+      {
+        "shortcode": "DTNuP1aDEh2",
+        "views": 172,
+        "likes": 14,
+        "comments": 4,
+        "timestamp": "2026-01-07",
+        "topic": "hyrox_hybrid",
+        "cta": "none",
+        "caption_preview": "Your body follows orders. Your life follows standards. Both are controlled by the mind.  I’ve seen strong bodies trapped in weak thinking. A"
+      }
+    ],
+    "talking_head": [
+      {
+        "shortcode": "DN78MxijMM2",
+        "views": 1615,
+        "likes": 117,
+        "comments": 3,
+        "timestamp": "2025-08-29",
+        "topic": "nutrition",
+        "cta": "none",
+        "caption_preview": "Let’s Gooooo Team 5k   Blessed to be able to Run enjoy some rain some Sun and some sweat !   Beautiful day with some beautiful people !! Enj"
+      },
+      {
+        "shortcode": "DRaRQhyjCEC",
+        "views": 959,
+        "likes": 110,
+        "comments": 11,
+        "timestamp": "2025-11-23",
+        "topic": "hyrox_hybrid",
+        "cta": "none",
+        "caption_preview": "Most people walk into the gym and start with the wrong focus. The truth is simple. Your foundation decides everything.  Start with flexibili"
+      },
+      {
+        "shortcode": "DRAaA6QDOTw",
+        "views": 730,
+        "likes": 96,
+        "comments": 7,
+        "timestamp": "2025-11-13",
+        "topic": "hyrox_hybrid",
+        "cta": "none",
+        "caption_preview": "Most people only train HALF their body. And that’s why they stay weak, slow, and constantly injured.  Your muscles are made of two fibres:  "
+      },
+      {
+        "shortcode": "DRnHBCujL74",
+        "views": 547,
+        "likes": 42,
+        "comments": 1,
+        "timestamp": "2025-11-28",
+        "topic": "training_strength",
+        "cta": "dm",
+        "caption_preview": "Everyone says the same thing. “I want to lose fat.” “I want to build muscle.”  But here’s the truth no one talks about.  Most people don’t a"
+      },
+      {
+        "shortcode": "DURAmlojGvU",
+        "views": 484,
+        "likes": 23,
+        "comments": 3,
+        "timestamp": "2026-02-02",
+        "topic": "training_strength",
+        "cta": "none",
+        "caption_preview": "Why This Combo Works One trains unilateral control. One trains bilateral power. Together they build strength, symmetry, and resilience. This"
+      }
+    ]
+  },
+  "posts_with_cta": 9,
+  "cta_rate_pct": 6.6,
+  "likes_hidden_count": 0
+}
