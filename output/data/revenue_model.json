@@ -8,12 +8,12 @@
     "notes": [
       "All assumptions are editable. Cash collected ≠ recognised monthly revenue.",
       "Online coaching: £997 / 3 months → £332.33/month recognised, or £997 cash if paid upfront.",
-      "Significantly upgraded 2026-04-26 with verified data from Prompt 1 (London PT market) + Prompt 2 (online coaching economics) + commenter audience classification + 4 competitor scrapes."
+      "Significantly upgraded 2026-04-26 with verified data from PT-market research (London PT market) + online-coaching benchmarks (online coaching economics) + commenter audience classification + 4 competitor scrapes."
     ]
   },
   "positioning_validation_prompt10": {
-    "label": "Positioning A/B Validation (Gemini + GPT Deep Research, Prompt 10)",
-    "source": "Two independent deep-research engines ran Prompt 10. Gemini ranked D first; GPT ranked C first. The methodological disagreement is the most useful diagnostic — Gemini surfaced biographical authority (Mr. India + Chennai) that GPT missed; GPT weighted Mukund's website framing more heavily. The right move is a 3-way A/B test (D vs C vs A) before any permanent rebrand.",
+    "label": "Positioning A/B Validation (Gemini + GPT Deep Research, positioning research)",
+    "source": "Two independent deep-research engines ran positioning research. Gemini ranked D first; GPT ranked C first. The methodological disagreement is the most useful diagnostic — Gemini surfaced biographical authority (Mr. India + Chennai) that GPT missed; GPT weighted Mukund's website framing more heavily. The right move is a 3-way A/B test (D vs C vs A) before any permanent rebrand.",
     "engine_disagreement": {
       "gemini_top_pick": "D — South Asian Professional Fitness Coach",
       "gpt_top_pick": "C — Executive Performance + Longevity Coach",
@@ -39,11 +39,11 @@
     },
     "ab_test_revised_3_way": {
       "candidates": ["D — South Asian Professional", "C — Executive Performance + Longevity", "A — London Body Transformation"],
-      "budget_split": "~£750/month each on Meta warm + landing pages = ~£2,250/month total. Sits within Phase 1 paid budget per Prompt 7.",
+      "budget_split": "~£750/month each on Meta warm + landing pages = ~£2,250/month total. Sits within Phase 1 paid budget per paid-acquisition research.",
       "duration": "60 days",
       "decision_matrix": [
         { "outcome": "D wins on CAC + show rate + close rate", "action": "Permanent pivot to South Asian Professional. Update bio + site." },
-        { "outcome": "C wins", "action": "Pivot to Executive Performance + Longevity. CRITICAL: address compliance risk by using 'energy/structure/strength' framing NOT 'cellular/longevity' claims (Prompt 8 medical-claim rules)." },
+        { "outcome": "C wins", "action": "Pivot to Executive Performance + Longevity. CRITICAL: address compliance risk by using 'energy/structure/strength' framing NOT 'cellular/longevity' claims (UK compliance research medical-claim rules)." },
         { "outcome": "A wins", "action": "Sharpen body-transformation messaging; use Mr. India authority as differentiator inside that frame." },
         { "outcome": "Mixed signals", "action": "30 more days with refined creative; consider hybrid 'Elite Body Transformation for South Asian Professionals in London'." }
       ]
@@ -82,7 +82,7 @@
       { "rank": 2, "candidate": "A — London Body Transformation Coach for Busy Professionals", "verdict": "Highly Viable", "concern": "Saturated London market; competing against Ultimate Performance + Fitness Lab + Third Space institutional budgets" },
       { "rank": 3, "candidate": "C — Executive Performance + Longevity Coach", "verdict": "Conceptually Strong, Operationally Misaligned", "concern": "Trust barrier — target demands medical/PhD credentials; current content has no utility for this positioning" },
       { "rank": 4, "candidate": "E — High-Performer Strength & Confidence Coach (current bio)", "verdict": "Baseline Status Quo (insufficient)", "concern": "Extreme price elasticity; intangible deliverables block £1k+ sales; commoditised market noise" },
-      { "rank": 5, "candidate": "B — Hybrid Athlete / HYROX Performance Coach", "verdict": "Economically Inviable as standalone", "concern": "World champions sell HYROX programmes at £34-90/mo — £997 catastrophically out-of-market UNLESS premium in-person facility access; reconcile with Prompt 5 = HYROX as differentiator INSIDE transformation, NOT product" }
+      { "rank": 5, "candidate": "B — Hybrid Athlete / HYROX Performance Coach", "verdict": "Economically Inviable as standalone", "concern": "World champions sell HYROX programmes at £34-90/mo — £997 catastrophically out-of-market UNLESS premium in-person facility access; reconcile with HYROX research = HYROX as differentiator INSIDE transformation, NOT product" }
     ],
     "candidate_copy_templates": {
       "D_south_asian_professional_RECOMMENDED": {
@@ -169,10 +169,10 @@
     ],
     "named_direct_competitors_south_asian_niche": [
       { "name": "PersonalTrainerXP", "model": "Multi-page service architecture (NRIs, British Indians London, PCOS South Asian Women, Heart Health, Yoga+Strength Indians, Indians in Canada)", "implication": "Niche supports multiple sub-segment landing pages — Mukund could replicate" },
-      { "name": "Bose Fitness", "model": "Free 30-min clarity call, clients in 25+ countries, NRI focus", "implication": "Already known from Prompt 2; closest model to Mukund's potential offer" },
+      { "name": "Bose Fitness", "model": "Free 30-min clarity call, clients in 25+ countries, NRI focus", "implication": "Already known from online-coaching benchmarks; closest model to Mukund's potential offer" },
       { "name": "RNT Fitness (Akash Vaghela)", "model": "Mandates MINIMUM 12-month commitment — extremely high LTV", "implication": "Proves segment will commit long-term at premium pricing — Mukund could test 12-month renewal pathway after £997 12-week" }
     ],
-    "hyrox_reconciliation_with_prompt5": "Both prompts agree HYROX-only at £997 fails standalone. Prompt 5 said HYROX as flagship differentiator INSIDE transformation works (Mukund's strongest organic content pillar). Prompt 10 confirms: HYROX cannot be primary £997 product, but the existing HYROX content remains the entry hook for the broader transformation/cultural offer. Net: keep HYROX content pillar, attach to Hybrid Signature offer (£499-549/mo) and £997 12-week, NOT as standalone product."
+    "hyrox_reconciliation_with_prompt5": "Both prompts agree HYROX-only at £997 fails standalone. HYROX research said HYROX as flagship differentiator INSIDE transformation works (Mukund's strongest organic content pillar). positioning research confirms: HYROX cannot be primary £997 product, but the existing HYROX content remains the entry hook for the broader transformation/cultural offer. Net: keep HYROX content pillar, attach to Hybrid Signature offer (£499-549/mo) and £997 12-week, NOT as standalone product."
   },
   "synthesised_positioning_recommendation": {
     "label": "REVISED Data-grounded positioning (after 136-post analysis + user pushback)",
@@ -251,19 +251,19 @@
       }
     },
     "evidence_stack": [
-      { "dimension": "Authority", "evidence": "Mr. India medallist (verified via Deccan Chronicle 2019) — unique credential nobody else has", "source": "Prompt 9 + Deccan Chronicle" },
+      { "dimension": "Authority", "evidence": "Mr. India medallist (verified via Deccan Chronicle 2019) — unique credential nobody else has", "source": "audience-geography research + Deccan Chronicle" },
       { "dimension": "Tagline already proven", "evidence": "'Stage-ready physiques to everyday transformations' — used on existing v0 site, bridges his pageant pedigree with mass-market clients", "source": "v0 site audit" },
       { "dimension": "Real testimonial base", "evidence": "10+ verified client testimonials from real clients (Haroon Awan, Caimin Collins, Daniel, Jenson, Natalia, Ben, Atif, Paul, Rada, Satuluri) on existing site", "source": "v0 site" },
       { "dimension": "Verified team", "evidence": "Dr Neel Reddy + Samuel Afriyie are real associates (verified via co-author tags on IG)", "source": "136-post scrape" },
       { "dimension": "Format mastery", "evidence": "Skits + transformation reveals are his proven winning formats. Skits get 735 avg views, transformations 1,920 avg.", "source": "136-post format analysis" },
       { "dimension": "London-based premium", "evidence": "5+ years London experience, 100+ clients, 10+ awards per existing site", "source": "v0 site" },
-      { "dimension": "Geographic flexibility", "evidence": "Online programme can sell globally; in-person Premium PT + corporate stays London-anchored", "source": "Prompts 1, 2" }
+      { "dimension": "Geographic flexibility", "evidence": "Online programme can sell globally; in-person Premium PT + corporate stays London-anchored", "source": "PT-market research, 2" }
     ],
     "alternatives_considered": [
       { "position": "London body transformation coach (UK-first)", "verdict": "STRONG — matches existing tagline + most direct conversion path. Risk: saturated market." },
       { "position": "Performance Coach for High-Achieving Men ⭐", "verdict": "RECOMMENDED — bridges authority (Mr. India) with broad-enough TAM (high-achievers, not Indian-only). Avoids price-sensitive Indian market trap. Avoids over-narrow niche." },
-      { "position": "Executive Performance + Longevity (GPT Prompt 10 #1)", "verdict": "DECENT but compliance risk on longevity claims (Prompt 8). Demands medical credentials Mukund doesn't have." },
-      { "position": "South Asian Professional (Gemini Prompt 10 #1)", "verdict": "REJECTED by user — Indian buyers at premium tier are price-sensitive (vs NRI/diaspora segment which IS premium-tolerant). Niche too narrow + risks pigeonholing." },
+      { "position": "Executive Performance + Longevity (GPT positioning research #1)", "verdict": "DECENT but compliance risk on longevity claims (UK compliance research). Demands medical credentials Mukund doesn't have." },
+      { "position": "South Asian Professional (Gemini positioning research #1)", "verdict": "REJECTED by user — Indian buyers at premium tier are price-sensitive (vs NRI/diaspora segment which IS premium-tolerant). Niche too narrow + risks pigeonholing." },
       { "position": "HYROX Performance Coach (HYROX-only)", "verdict": "WEAK — economic disconnect with £997 vs commoditised £40/mo apps from world champs" }
     ],
     "messaging_pillars": [
@@ -281,16 +281,16 @@
       "Drop budget-gym contamination (Gym Group Walthamstow + Gumtree fitwithmukund) — premium brand needs clean separation"
     ],
     "what_stays": [
-      "£997 / 12-week price (Prompt 2 verified premium tier)",
-      "Hybrid Signature £499-549/mo (Prompt 1 missing-tier opportunity)",
-      "London PT pricing lift £55→£85 (Prompt 1 verified mid-tier)",
-      "HYROX content as flagship differentiator (Prompt 5)",
-      "Application-form + instant-scheduler operational fixes (Prompt 7)",
+      "£997 / 12-week price (online-coaching benchmarks verified premium tier)",
+      "Hybrid Signature £499-549/mo (PT-market research missing-tier opportunity)",
+      "London PT pricing lift £55→£85 (PT-market research verified mid-tier)",
+      "HYROX content as flagship differentiator (HYROX research)",
+      "Application-form + instant-scheduler operational fixes (paid-acquisition research)",
       "Mr. India authority surfaced everywhere"
     ]
   },
   "recommended_commercial_architecture": {
-    "source": "Prompt 1 deep research, 2026-04-26 — confidence: high on ranges, directional on Mukund-specific application",
+    "source": "PT-market research deep research, 2026-04-26 — confidence: high on ranges, directional on Mukund-specific application",
     "core_thesis": "Don't lower £997 — make it more obviously premium. Put a stronger hybrid flagship ABOVE it. Sell 'less time, more structure' to affluent professionals, not more hours at mid-market hourly. With 25-30 PT hrs/wk, no upside on budget economics.",
     "offers": [
       { "offer": "1:1 in-person PT (new clients)", "price": "£85-£100/session (£95-£110 if central / specialist)", "rationale": "Aligns with verified premium independents (Trang £80-£90, City of London PT, No Shane No Gain Mayfair £90). Mukund's £55 is at top of Budget tier — material headroom." },
@@ -316,13 +316,13 @@
         "name": "Lift new-client rate £55→£85 (mid-range London tier)",
         "delta_per_month_steady": 3247.5,
         "retention_risk": "low (grandfather existing clients at £55)",
-        "evidence": "Verified Prompt 1: London mid PT £55-£75, premium £80-£100. Mukund at £55 sits at top of budget tier — material headroom."
+        "evidence": "Verified PT-market research: London mid PT £55-£75, premium £80-£100. Mukund at £55 sits at top of budget tier — material headroom."
       },
       {
         "name": "Sell 6 clients into 12-week transformation pkg @ £2,150-£2,400",
         "delta_per_month": 1075,
         "retention_risk": "low",
-        "evidence": "Verified Prompt 1: PT 1to1 £2,150/3mo, Minimal FIT £2,995, Fitting Rooms £1,299/6wk 1:1. Replaces £1,500 placeholder with verified market range."
+        "evidence": "Verified PT-market research: PT 1to1 £2,150/3mo, Minimal FIT £2,995, Fitting Rooms £1,299/6wk 1:1. Replaces £1,500 placeholder with verified market range."
       },
       {
         "name": "Add 3 × 2:1 small-group sessions/week at £45pp",
@@ -339,7 +339,7 @@
       }
     ],
     "benchmarks_verified": {
-      "source": "Prompt 1 deep research, 2026-04-26 — confidence: high",
+      "source": "PT-market research deep research, 2026-04-26 — confidence: high",
       "tiers": [
         { "tier": "Budget", "range": "£30-£45/session", "examples": ["PT 1to1 from £30", "Blueprint £35", "Equals Results £40 trial"] },
         { "tier": "Mid", "range": "£55-£75/session", "examples": ["Hybrid Trainer £55 PAYG", "MotivatePT Whitechapel £62", "London Trainer £70", "Minimal FIT £70", "The Workout Network £75"] },
@@ -349,7 +349,7 @@
       "mukund_position": "£55 = top of Budget tier. Recommended: £85-£100 (Premium tier) for new clients."
     },
     "transformation_package_market": {
-      "source": "Prompt 1 deep research, 2026-04-26",
+      "source": "PT-market research deep research, 2026-04-26",
       "comps": [
         { "provider": "The Fitting Rooms (shared)", "price_gbp": 539, "duration": "6 weeks" },
         { "provider": "The Fitting Rooms (1:1)", "price_gbp": 1299, "duration": "6 weeks" },
@@ -361,8 +361,8 @@
     }
   },
   "hybrid_coaching": {
-    "label": "Stream 1b — Hybrid (NEW from Prompt 1) — online + in-person",
-    "rationale": "Verified Prompt 1: hybrid is a separate market product, not a discount PT. Premium London hybrid £429/month (Espinosa Physiques) for 1 PT/week + app.",
+    "label": "Stream 1b — Hybrid (NEW from PT-market research) — online + in-person",
+    "rationale": "Verified PT-market research: hybrid is a separate market product, not a discount PT. Premium London hybrid £429/month (Espinosa Physiques) for 1 PT/week + app.",
     "tiers": [
       { "tier": "Hybrid Light", "monthly_gbp": "£399-£449", "twelve_week_gbp": "£1,197-£1,347", "spec": "Online programme + 1 in-person session/month" },
       { "tier": "Hybrid Signature ⭐", "monthly_gbp": "£499-£549", "twelve_week_gbp": "£1,497-£1,647", "spec": "Online programme + 2-3 in-person/month or weekly check-in. Best-fit flagship for affluent London professionals." }
@@ -445,10 +445,10 @@
       "leads": 315,
       "profile_to_lead_rate": 0.2,
       "profile_visits": 1575,
-      "_note": "These are mid-range planning defaults. See funnel_benchmarks_verified for low/mid/high ranges from Prompt 2 deep research."
+      "_note": "These are mid-range planning defaults. See funnel_benchmarks_verified for low/mid/high ranges from online-coaching benchmarks deep research."
     },
     "funnel_benchmarks_verified": {
-      "source": "Prompt 2 deep research, 2026-04-26",
+      "source": "online-coaching benchmarks deep research, 2026-04-26",
       "stages": [
         { "stage": "Profile / bio visitor → lead", "low": 0.10, "mid": 0.25, "high": 0.45, "confidence": "low — public data thin" },
         { "stage": "Lead → completed application", "low": 0.20, "mid": 0.35, "high": 0.50, "confidence": "medium" },
@@ -479,7 +479,7 @@
       "total_per_month": 5
     },
     "deliverables_recommended": {
-      "source": "Prompt 2 deep research, 2026-04-26 — confidence 7/10 on overall structure",
+      "source": "online-coaching benchmarks deep research, 2026-04-26 — confidence 7/10 on overall structure",
       "core_principle": "High-touch feel, app-first systems. NOT always-on concierge. Stays profitable at 15-25 active clients.",
       "components": [
         { "component": "Positioning", "spec": "ONE clear niche + outcome (e.g. busy professional fat loss, postpartum, South Asian body transformation)" },
@@ -495,7 +495,7 @@
       ]
     },
     "pricing_validation": {
-      "source": "Prompt 2 deep research, 2026-04-26 — confidence 7/10",
+      "source": "online-coaching benchmarks deep research, 2026-04-26 — confidence 7/10",
       "verdict": "PREMIUM in UK, upper-mid to entry-premium internationally",
       "tier_framework": [
         { "tier": "Low", "range_12wk": "under £450", "examples": ["Jamie Price PT £300", "TJ £299", "NKPT £399", "Achieve £430"] },
@@ -507,8 +507,8 @@
     }
   },
   "corporate": {
-    "label": "Stream 3 — Corporate Wellness (UPDATED via Prompt 3 verified data)",
-    "source_update": "Prompt 3 deep research, 2026-04-26 — anchored in ONS/Nomis 2025 + CIPD 2025 + 14+ named provider pricing pages",
+    "label": "Stream 3 — Corporate Wellness (UPDATED via corporate-wellness research verified data)",
+    "source_update": "corporate-wellness research deep research, 2026-04-26 — anchored in ONS/Nomis 2025 + CIPD 2025 + 14+ named provider pricing pages",
     "market_sizing_verified": {
       "uk_total_businesses_2025": 2730000,
       "uk_small_10_to_49": 241185,
@@ -693,8 +693,8 @@
     }
   },
   "paid_acquisition": {
-    "label": "Paid Acquisition Benchmarks (Prompt 7)",
-    "source": "Prompt 7 deep research, 2026-04-26",
+    "label": "Paid Acquisition Benchmarks (paid-acquisition research)",
+    "source": "paid-acquisition research deep research, 2026-04-26",
     "channel_cpl_bands": [
       { "channel": "Meta ads → application", "low_gbp": 25, "mid_gbp": 35, "high_gbp": 60, "note": "WordStream Health/Fitness $52.98 = ~£39 mid; warm Meta is cheapest controllable lead source" },
       { "channel": "Instagram DM funnel → application", "low_gbp": 15, "mid_gbp": 25, "high_gbp": 45, "note": "Meta cites 62% more leads via business messaging vs legacy. Mukund's strongest match — already has IG audience" },
@@ -745,8 +745,8 @@
     }
   },
   "audience_psychology": {
-    "label": "Buyer Psychology by Segment (Prompt 6)",
-    "source": "Prompt 6 deep research, 2026-04-26",
+    "label": "Buyer Psychology by Segment (buyer-psychology research)",
+    "source": "buyer-psychology research deep research, 2026-04-26",
     "core_thesis": "People struggle less from ignorance than from friction. Premium coaching is bought when it removes friction better than cheaper options.",
     "what_they_buy": [
       { "thing": "Implementation certainty", "definition": "Translation of general advice into a routine compatible with commuting, childcare, deadlines, travel, cultural food" },
@@ -770,8 +770,8 @@
     ]
   },
   "hyrox_market": {
-    "label": "HYROX & Hybrid Training Market (Prompt 5)",
-    "source": "Prompt 5 deep research, 2026-04-26",
+    "label": "HYROX & Hybrid Training Market (HYROX research)",
+    "source": "HYROX research deep research, 2026-04-26",
     "strategic_verdict": "HYROX is a strong demand wedge but NOT the safest standalone niche unless Mukund wants to be a HYROX-only specialist. Best play: HYROX as flagship differentiator INSIDE a broader busy-professional transformation offer. 'Get leaner, stronger, fitter, and optionally race-ready.'",
     "uk_market_scale": {
       "uk_participants_2021_22": 7400,
@@ -855,8 +855,8 @@
     ]
   },
   "uk_compliance": {
-    "label": "UK Compliance Framework (Prompt 8)",
-    "source": "Prompt 8 deep research, 2026-04-26 — anchored in CAP, ASA, ICO, HCPC, BDA, FSA, MHRA",
+    "label": "UK Compliance Framework (UK compliance research)",
+    "source": "UK compliance research deep research, 2026-04-26 — anchored in CAP, ASA, ICO, HCPC, BDA, FSA, MHRA",
     "snapshot": "Biggest legal risks aren't training content — they're the claims around it. Safest posture: market process/support/habit-building, NOT guaranteed physiological outcomes.",
     "rules_ranked": [
       { "rule": "No objective transformation claims without robust evidence", "source": "CAP §3" },
@@ -926,8 +926,8 @@
     ]
   },
   "creator_monetisation": {
-    "label": "UK Fitness Creator Monetisation (Prompt 4)",
-    "source": "Prompt 4 deep research, 2026-04-26",
+    "label": "UK Fitness Creator Monetisation (creator-monetisation research)",
+    "source": "creator-monetisation research deep research, 2026-04-26",
     "platform_ranking": [
       { "rank": 1, "platform": "YouTube", "role": "Trust + conversion channel", "why": "Long-form authority builds toward booked calls. Highest sponsor pricing. Demand Gen replaces Video Action Campaigns." },
       { "rank": 2, "platform": "Instagram", "role": "Discovery + DM lead channel", "why": "Reels for non-follower discovery. Messaging layer is natural progression to 'DM me for audit/checklist/plan'." },

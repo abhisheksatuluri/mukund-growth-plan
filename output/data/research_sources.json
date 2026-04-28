@@ -19,11 +19,11 @@
     {
       "id": "london-pt-tiers-prompt1-verified",
       "claim": "London 1:1 PT 2025-26: Budget £30-£45 (PT 1to1 £30, Blueprint £35); Mid £55-£75 (Hybrid Trainer £55, MotivatePT £62, London Trainer £70, Minimal FIT £70, Workout Network £75); Premium £80-£100 (Trang £80-£90, Fitness Guru £100, No Shane No Gain Mayfair £70-£90); Elite/Specialist £95-£120+ (Trang founder £95, NRPT Mayfair £90-£100, Superprof £120).",
-      "source": "Prompt 1 deep research — synthesis of 8 named UK coach pages",
+      "source": "PT-market research deep research — synthesis of 8 named UK coach pages",
       "url": "https://trang-fitness.co.uk/personal-training-price",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 1 deep research delivered 2026-04-26 (ChatGPT)",
+      "verified_by": "PT-market research deep research delivered 2026-04-26 (ChatGPT)",
       "use_in_roadmap": "Mukund's £55 = top of Budget tier. Recommended new-client rate £85-£100 (Premium tier) per deep research."
     },
     {
@@ -33,7 +33,7 @@
       "url": "https://www.personaltraining1to1.co.uk/services/body-transformation/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 1 deep research delivered 2026-04-26",
+      "verified_by": "PT-market research deep research delivered 2026-04-26",
       "use_in_roadmap": "Effective £700-£1,000/month for serious 12-week work is market-accepted. Mukund could productise a £2,100-£2,700 12-week in-person transformation tier."
     },
     {
@@ -43,7 +43,7 @@
       "url": "https://www.espinosaphysiques.co.uk/services/hybrid-coaching",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 1 deep research delivered 2026-04-26",
+      "verified_by": "PT-market research deep research delivered 2026-04-26",
       "use_in_roadmap": "Hybrid is a separate market product, not a discount PT. Mukund's missing tier — recommended Hybrid Light £399-£449/mo and Hybrid Signature £499-£549/mo flagship."
     },
     {
@@ -53,7 +53,7 @@
       "url": "https://www.thirdspace.london/membership/",
       "evidence_quality": "directional",
       "confidence_0_10": 7,
-      "verified_by": "Prompt 1 deep research, 2026-04-26",
+      "verified_by": "PT-market research deep research, 2026-04-26",
       "use_in_roadmap": "Defines the affluent London professional spend ceiling. Mukund's hybrid signature at £499-£549/mo is significantly under this ceiling — affordable to ICP."
     },
     {
@@ -63,7 +63,7 @@
       "url": "https://www.sportsmanagement.co.uk/Sports-news/latest/UKs-boutique-fitness-market-finding-its-feet-again-with-record-high-number-of-sites-in-London/352140",
       "evidence_quality": "directional",
       "confidence_0_10": 7,
-      "verified_by": "Prompt 1 deep research, 2026-04-26",
+      "verified_by": "PT-market research deep research, 2026-04-26",
       "use_in_roadmap": "Dense competitive supply but entrenched consumer demand for specialist formats. Mukund must clearly differentiate — generic London PT positioning won't survive."
     },
     {
@@ -73,7 +73,7 @@
       "url": "https://insider.fitt.co/third-space-preps-london-mega-gym/",
       "evidence_quality": "directional",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 1 deep research, 2026-04-26",
+      "verified_by": "PT-market research deep research, 2026-04-26",
       "use_in_roadmap": "Strong signal that affluent Londoners are actively buying premium fitness access. Pricing power exists at the top of the market."
     }
   ],
@@ -85,7 +85,7 @@
       "url": "https://www.nomisweb.co.uk/datasets/idbr",
       "evidence_quality": "verified",
       "confidence_0_10": 10,
-      "verified_by": "Prompt 3 deep research, 2026-04-26",
+      "verified_by": "corporate-wellness research deep research, 2026-04-26",
       "use_in_roadmap": "Mukund needs only 0.05% market share for 25 retained accounts — TAM is more than sufficient."
     },
     {
@@ -95,7 +95,7 @@
       "url": "https://www.cipd.org/uk/knowledge/reports/health-well-being-work/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 3 deep research, 2026-04-26",
+      "verified_by": "corporate-wellness research deep research, 2026-04-26",
       "use_in_roadmap": "Targeting cue: 50-249 firms more likely to buy structured programme; 20-49 firms more likely to buy simple pilot. Lead with 50-249 for retainers; 20-49 for one-off workshops."
     },
     {
@@ -105,7 +105,7 @@
       "url": "https://www.london.gov.uk/business-and-economy/economic-data",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 3 deep research, 2026-04-26",
+      "verified_by": "corporate-wellness research deep research, 2026-04-26",
       "use_in_roadmap": "Justifies sector ranking: Professional services > Tech > Finance/Insurance > Agencies."
     },
     {
@@ -115,7 +115,7 @@
       "url": "https://www.cityoflondon.gov.uk/",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 3 deep research, 2026-04-26",
+      "verified_by": "corporate-wellness research deep research, 2026-04-26",
       "use_in_roadmap": "Specific micro+small+medium counts per sector — direct prospecting universe for cold outreach."
     },
     {
@@ -125,7 +125,7 @@
       "url": "https://www.wellbeingpeople.com/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 3 deep research, 2026-04-26",
+      "verified_by": "corporate-wellness research deep research, 2026-04-26",
       "use_in_roadmap": "DOWNWARD CORRECTION on retainer pricing. Lunch-and-learn / workshop entry tier well-evidenced. 4-week + 8-week pilots have weaker public pricing — bespoke selling normal."
     },
     {
@@ -135,7 +135,7 @@
       "url": "https://www.britsafe.org/",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 3 deep research, 2026-04-26",
+      "verified_by": "corporate-wellness research deep research, 2026-04-26",
       "use_in_roadmap": "People Ops buyers prioritise vendors who can show visible employee participation. Mukund's testimonial/attendance data + post-programme reports differentiate."
     },
     {
@@ -145,7 +145,7 @@
       "url": "https://www.bupa.co.uk/",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 3 deep research, 2026-04-26",
+      "verified_by": "corporate-wellness research deep research, 2026-04-26",
       "use_in_roadmap": "Younger workforce stat justifies hybrid + RTO + connection content angles."
     }
   ],
@@ -189,7 +189,7 @@
       "url": "https://www.acsm.org/top-fitness-trends-2025/",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 1 deep research, 2026-04-26",
+      "verified_by": "PT-market research deep research, 2026-04-26",
       "use_in_roadmap": "Validates Mukund's strength + weight-loss focus. Underweighted areas: longevity / older-adult / wellness coaching are top trends Mukund could lean into for differentiation."
     },
     {
@@ -199,7 +199,7 @@
       "url": "https://hyrox.com/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 1 deep research, 2026-04-26",
+      "verified_by": "PT-market research deep research, 2026-04-26",
       "use_in_roadmap": "Validates Mukund's HYROX content as the strongest organic pillar. London hosts the biggest event globally — perfect alignment with audience interest."
     },
     {
@@ -209,7 +209,7 @@
       "url": "https://www.sportengland.org/research-and-data/data/active-lives/active-lives-data-tables",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 1 deep research, 2026-04-26",
+      "verified_by": "PT-market research deep research, 2026-04-26",
       "use_in_roadmap": "Active adults are more coachable than inactive — broader market in 2026 than 2024."
     },
     {
@@ -219,39 +219,39 @@
       "url": "https://www.cbre.co.uk/insights/articles/are-premium-gyms-the-new-craze-in-the-uk",
       "evidence_quality": "directional",
       "confidence_0_10": 7,
-      "verified_by": "Prompt 1 deep research, 2026-04-26",
+      "verified_by": "PT-market research deep research, 2026-04-26",
       "use_in_roadmap": "Premium / boutique demand strong — especially relevant to women's, mobility and longevity-adjacent positioning."
     }
   ],
   "online_coaching_comps": [
     {
       "id": "uk-online-coaching-pricing-prompt2",
-      "claim": "UK online coaching pricing (verified Prompt 2): TJ £299/12wk, Jamie Price £300/12wk, NKPT £399/3mo, Achieve £430/12wk, Chris Ashford £450-£525/3mo, Simon Graham £597/12wk, Sarah Louise £567-£777/12wk. £997 sits ABOVE this entire transparent UK comparison set.",
-      "source": "Prompt 2 deep research — synthesis of 7 UK coach pricing pages",
+      "claim": "UK online coaching pricing (verified online-coaching benchmarks): TJ £299/12wk, Jamie Price £300/12wk, NKPT £399/3mo, Achieve £430/12wk, Chris Ashford £450-£525/3mo, Simon Graham £597/12wk, Sarah Louise £567-£777/12wk. £997 sits ABOVE this entire transparent UK comparison set.",
+      "source": "online-coaching benchmarks deep research — synthesis of 7 UK coach pricing pages",
       "url": "https://www.fitnesswithtj.co.uk/online-personal-training/12-week-online-coaching-program",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 2 deep research, 2026-04-26",
+      "verified_by": "online-coaching benchmarks deep research, 2026-04-26",
       "use_in_roadmap": "Tier framework: Low <£450, Mid £450-£800, Premium £800-£1,500, Ultra-premium £1,500+. Mukund's £997 = Premium tier."
     },
     {
       "id": "us-online-coaching-pricing-prompt2",
       "claim": "US/wider English-speaking online coaching: Future / Caliber ~$199-200/mo (~$600/12-wk); Trainerize examples $159-$699/mo; Gauge Girl Training $3,900-$4,350 / 12-wk custom (premium).",
-      "source": "Prompt 2 deep research",
+      "source": "online-coaching benchmarks deep research",
       "url": "https://gaugegirltraining.com/collections/custom-plans",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 2 deep research, 2026-04-26",
+      "verified_by": "online-coaching benchmarks deep research, 2026-04-26",
       "use_in_roadmap": "£997 = upper-mid to entry-premium against US benchmarks. Not top-of-market."
     },
     {
       "id": "successful-12wk-comps-prompt2",
       "claim": "3 named successful 12-week transformation programmes: Michelle Bridges 12WBT (Australia, 15 yrs, cohort-led, community-centred); Kaushik Bose 12-Week Body Transformation (South Asian niche, clients in 25+ countries, free 30-min clarity call entry); Matt Justice 12-Week Body Transformation (UK, 200+ clients transformed, app + weekly check-ins + monthly form review).",
-      "source": "Prompt 2 deep research — 3 verified competitor pages",
+      "source": "online-coaching benchmarks deep research — 3 verified competitor pages",
       "url": "https://www.bosefitness.com/twelve-week-body-transformation-program",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 2 deep research, 2026-04-26",
+      "verified_by": "online-coaching benchmarks deep research, 2026-04-26",
       "use_in_roadmap": "Bose is the most relevant — South Asian niche validates Mukund's 15% verified Indian audience as a paying segment. Matt Justice is the closest UK mid-premium format. 12WBT proves cohort/community model works at scale."
     }
   ],
@@ -263,7 +263,7 @@
       "url": "https://www.zuko.io/benchmarking/form-type-benchmarking",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 2 deep research, 2026-04-26",
+      "verified_by": "online-coaching benchmarks deep research, 2026-04-26",
       "use_in_roadmap": "Plan Mukund's application form for 45-55% completion. Below = friction, weak motivation, too many fields, poor mobile UX."
     },
     {
@@ -273,7 +273,7 @@
       "url": "https://joannalottcoaching.com/how-many-discovery-calls-do-you-need-to-hit-your-coaching-income-goal/",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 2 deep research, 2026-04-26",
+      "verified_by": "online-coaching benchmarks deep research, 2026-04-26",
       "use_in_roadmap": "25-40% close rate = strong but realistic. Below 20% = warning. Mukund should track this from week 1."
     },
     {
@@ -283,7 +283,7 @@
       "url": "https://www.hyperbound.ai/blog/discovery-call-coaching",
       "evidence_quality": "verified",
       "confidence_0_10": 7,
-      "verified_by": "Prompt 2 deep research, 2026-04-26",
+      "verified_by": "online-coaching benchmarks deep research, 2026-04-26",
       "use_in_roadmap": "Strong case for a disciplined consultation script vs 'friendly chat'. Easy ROI — script template + practice."
     },
     {
@@ -293,7 +293,7 @@
       "url": "https://www.mypthub.net/blog/how-to-retain-personal-training-clients-8-essential-tips-for-coaches/",
       "evidence_quality": "directional",
       "confidence_0_10": 6,
-      "verified_by": "Prompt 2 deep research, 2026-04-26",
+      "verified_by": "online-coaching benchmarks deep research, 2026-04-26",
       "use_in_roadmap": "Plan for 30-50% renewal. Build a step-down £299-£349/month continuity offer to capture this."
     }
   ],
@@ -347,7 +347,7 @@
       "url": "https://www.theguardian.com/lifeandstyle/2025/aug/26/gym-goers-ditch-morning-jog-for-fitness-events",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 5 deep research, 2026-04-26",
+      "verified_by": "HYROX research deep research, 2026-04-26",
       "use_in_roadmap": "13× UK growth + sold-out events validates HYROX as Mukund's strongest pillar (3 of top 6 posts). Demand >> supply in London especially."
     },
     {
@@ -357,7 +357,7 @@
       "url": "https://www.hyresult.com/event/s7-2025-london",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 5 deep research, 2026-04-26",
+      "verified_by": "HYROX research deep research, 2026-04-26",
       "use_in_roadmap": "London hosts multiple HYROX events with 70K+ ballot demand for 16K slots. Mukund is in the right city."
     },
     {
@@ -367,17 +367,17 @@
       "url": "https://hyrox.com/",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 5 deep research, 2026-04-26",
+      "verified_by": "HYROX research deep research, 2026-04-26",
       "use_in_roadmap": "Age 25-39 + mixed gender + urban white-collar perfectly overlaps Mukund's busy-pro target. 57% female busts 'bro-only' assumption."
     },
     {
       "id": "hyrox-uk-pricing-tiers",
       "claim": "UK HYROX pricing tiers: Digital/community £33-£60/mo (Aaron Woodman £39.99, ONE LDN Unbeatable £33, Endurance Vault £60, Jade Skillen £1+£59); Fixed race-prep blocks £80-£149 (MARCHON £149, BOX Nutrition £149, Heather £80/8wk); Premium in-person London £280-£960/mo (Luke Kelly £280-£960; Jonno PT £500/10 sessions).",
-      "source": "Prompt 5 — synthesis of 12 UK HYROX coach pages",
+      "source": "HYROX research — synthesis of 12 UK HYROX coach pages",
       "url": "https://www.lukekellypersonaltraining.co.uk/hyrox-coaching",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 5 deep research, 2026-04-26",
+      "verified_by": "HYROX research deep research, 2026-04-26",
       "use_in_roadmap": "Three clear tiers. Mukund's recommended Hybrid Signature (£499-549/mo) sits ABOVE digital comp but BELOW Luke Kelly's premium in-person ceiling."
     },
     {
@@ -387,7 +387,7 @@
       "url": "https://www.thegymgroup.com/blog/britain-2025-fitness-trends",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 5 deep research, 2026-04-26",
+      "verified_by": "HYROX research deep research, 2026-04-26",
       "use_in_roadmap": "Mainstream gyms commoditising HYROX-style programming. Risk: HYROX-only coaching gets squeezed; Mukund must differentiate (transformation + community, not just race prep)."
     }
   ],
@@ -395,11 +395,11 @@
     {
       "id": "platform-ranking-prompt4",
       "claim": "Platform ranking for £997 fitness coach: 1) YouTube (trust+conversion), 2) Instagram (discovery+DM), 3) LinkedIn (corporate+executive), 4) TikTok (reach). Coaching sales > affiliate > sponsorship > native payouts.",
-      "source": "Prompt 4 deep research synthesis",
+      "source": "creator-monetisation research deep research synthesis",
       "url": "https://support.google.com/youtube/answer/72851",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 4 deep research, 2026-04-26",
+      "verified_by": "creator-monetisation research deep research, 2026-04-26",
       "use_in_roadmap": "Confirms platform priority. YouTube long-form is the source content; Instagram is conversion; LinkedIn opens corporate; TikTok reach only."
     },
     {
@@ -409,18 +409,18 @@
       "url": "https://support.tiktok.com/en/business-and-creator/creator-rewards-program/creator-rewards-program",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 4 deep research, 2026-04-26",
+      "verified_by": "creator-monetisation research deep research, 2026-04-26",
       "use_in_roadmap": "Mukund at 29K IG = qualified for sponsorship by reach (micro tier 10-100K) but engagement is the gap (0.44% vs benchmark)."
     },
     {
       "id": "named-uk-creators-prompt4",
       "claim": "Named UK fitness creator funnels: Andy Griffiths £195-£255/mo online coaching (long-form authority funnel); Luke Mitchell £25.99/mo community + 6-week programme (multi-step lead-magnet funnel); Scott Laidler invitation-only online PT (consultation-led busy-professional funnel); Coach Adam James from £99/mo (calculator/tools entry funnel).",
-      "source": "Prompt 4 deep research — 4 verified UK coach pages",
+      "source": "creator-monetisation research deep research — 4 verified UK coach pages",
       "url": "https://expertpt.co.uk/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 4 deep research, 2026-04-26",
-      "use_in_roadmap": "Scott Laidler is closest to Mukund's busy-pro architecture. Andy Griffiths' £195-£255 triangulates Prompt 1's premium-online tier. Adam James proves calculator-as-lead-magnet works."
+      "verified_by": "creator-monetisation research deep research, 2026-04-26",
+      "use_in_roadmap": "Scott Laidler is closest to Mukund's busy-pro architecture. Andy Griffiths' £195-£255 triangulates PT-market research's premium-online tier. Adam James proves calculator-as-lead-magnet works."
     }
   ],
   "positioning_validation_prompt10": [
@@ -431,7 +431,7 @@
       "url": "https://www.deccanchronicle.com/lifestyle/health-and-wellbeing/261119/boys-on-the-runway.html",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Gemini Prompt 10 deep research, 2026-04-26",
+      "verified_by": "Gemini positioning research deep research, 2026-04-26",
       "use_in_roadmap": "STRONGEST unmonetised authority asset. Surface in bio + landing page hero + every sales touch. Pageant credentials are nearly impossible to fake."
     },
     {
@@ -441,7 +441,7 @@
       "url": "https://personaltrainerxp.com/personal-trainer-british-indians-london/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Gemini Prompt 10 deep research, 2026-04-26",
+      "verified_by": "Gemini positioning research deep research, 2026-04-26",
       "use_in_roadmap": "Most direct strategic competitor. Proves niche supports 6+ sub-segment landing pages. Mukund could replicate (Indian Pros London + NRI Coaching + British Asian Executive Transformation)."
     },
     {
@@ -451,7 +451,7 @@
       "url": "https://www.rntfitness.co.uk/team/akash-vaghela/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Gemini Prompt 10 deep research, 2026-04-26",
+      "verified_by": "Gemini positioning research deep research, 2026-04-26",
       "use_in_roadmap": "Proves segment commits long-term at premium. High LTV. Mukund could test 12-month renewal pathway after £997 12-week intro. Replicable founder-as-segment-member pattern (RNT Akash, Mukund Mr. India)."
     },
     {
@@ -461,18 +461,18 @@
       "url": "https://bmjopen.bmj.com/content/15/2/e097268",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Gemini Prompt 10 deep research, 2026-04-26",
+      "verified_by": "Gemini positioning research deep research, 2026-04-26",
       "use_in_roadmap": "Hard biological grounding for the niche. Lets Mukund speak with clinical specificity (NOT medical claims) about why generic Western fitness fails the segment."
     },
     {
       "id": "platinum-training-london-pricing",
-      "claim": "Platinum Training London: £2,150 / 3-Month PT · £4,000 / 6-Month Ultimate Transformation. Triangulates Prompts 1, 2, 10.",
+      "claim": "Platinum Training London: £2,150 / 3-Month PT · £4,000 / 6-Month Ultimate Transformation. Triangulates PT-market research, 2, 10.",
       "source": "Platinum Training London",
       "url": "https://www.platinumtraining.co.uk/personal-training-price-list/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Gemini Prompt 10 deep research, 2026-04-26",
-      "use_in_roadmap": "Re-confirms Prompt 1's London transformation tier. Mukund's £997 online at half the price of Platinum 3-month = strong value perception."
+      "verified_by": "Gemini positioning research deep research, 2026-04-26",
+      "use_in_roadmap": "Re-confirms PT-market research's London transformation tier. Mukund's £997 online at half the price of Platinum 3-month = strong value perception."
     },
     {
       "id": "mukund-budget-gym-contamination",
@@ -481,7 +481,7 @@
       "url": "https://www.thegymgroup.com/gym-classes/classes-timetable/london-walthamstow-classes/",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Gemini Prompt 10 deep research, 2026-04-26",
+      "verified_by": "Gemini positioning research deep research, 2026-04-26",
       "use_in_roadmap": "CRITICAL OPERATIONAL RISK: budget-gym anchor + Gumtree presence psychologically contradicts £997 premium positioning. Phase out OR maintain strict brand separation between Gym Group brand and Elite £997 brand."
     }
   ],
@@ -493,27 +493,27 @@
       "url": "https://www.newindianexpress.com/lifestyle/health/2016/Apr/23/the-body-transformer-928149.html",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 9 deep research, 2026-04-26",
+      "verified_by": "audience-geography research deep research, 2026-04-26",
       "use_in_roadmap": "CRITICAL — Mukund IS authentically the Indian-diaspora professional segment, not a London coach selling into it. Strongest possible authority signal for that niche. Justifies the synthesised positioning recommendation."
     },
     {
       "id": "audience-geography-estimate-prompt9",
       "claim": "Geography estimate (low confidence): ~50-70% South Asia, ~10-20% UK/Europe, ~5-15% North America, balance other. Triangulates with own scrape: 21% verified UK / 15% verified India / 39% Unknown / 25% other in top 80 commenters.",
-      "source": "Prompt 9 deep research + DataReportal Instagram global stats",
+      "source": "audience-geography research deep research + DataReportal Instagram global stats",
       "url": "https://datareportal.com/essential-instagram-stats",
       "evidence_quality": "directional",
       "confidence_0_10": 5,
-      "verified_by": "Prompt 9 deep research, 2026-04-26",
-      "use_in_roadmap": "Both Prompt 9 and own scrape independently contradict UK-first thesis. Reasonable working assumption: ~20-30% UK, ~25-40% Indian/South Asian, balance unknown — diaspora is largest single ethnic cluster."
+      "verified_by": "audience-geography research deep research, 2026-04-26",
+      "use_in_roadmap": "Both audience-geography research and own scrape independently contradict UK-first thesis. Reasonable working assumption: ~20-30% UK, ~25-40% Indian/South Asian, balance unknown — diaspora is largest single ethnic cluster."
     },
     {
       "id": "audience-occupation-prompt9",
       "claim": "Occupation estimate (medium confidence): ~30-40% fitness/health, ~20-30% tech or finance professionals, ~10-15% other corporate, ~5-10% students/misc. Mukund's own LinkedIn explicitly targets 'executives, entrepreneurs, and leaders'.",
-      "source": "Prompt 9 + Mukund LinkedIn",
+      "source": "audience-geography research + Mukund LinkedIn",
       "url": "https://www.linkedin.com/posts/mukund-venkat-69272028b_legacy-fatherhood-highperformance-activity-7295362154042392578--JkC",
       "evidence_quality": "directional",
       "confidence_0_10": 6,
-      "verified_by": "Prompt 9 deep research, 2026-04-26",
+      "verified_by": "audience-geography research deep research, 2026-04-26",
       "use_in_roadmap": "Confirms my own scrape (19% fitness pros, 11% corporate). Heavy fitness-pro overlap = inflated engagement metrics. Real buyer audience is the 30-45% combined corporate/tech/finance share."
     }
   ],
@@ -525,7 +525,7 @@
       "url": "https://www.researchgate.net/profile/Franziska-Schoelmerich-2/publication/331294046_The_relationship_between_working_alliance_and_client_outcomes_in_coaching_A_meta-analysis",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 6 deep research, 2026-04-26",
+      "verified_by": "buyer-psychology research deep research, 2026-04-26",
       "use_in_roadmap": "Frame all messaging around the 3 buying pillars. Working alliance signals (responsiveness, collaborative tone) directly improve outcomes."
     },
     {
@@ -535,7 +535,7 @@
       "url": "https://www.ethnicity-facts-figures.service.gov.uk/health/diet-and-exercise/physical-activity/latest/",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 6 deep research, 2026-04-26",
+      "verified_by": "buyer-psychology research deep research, 2026-04-26",
       "use_in_roadmap": "DIRECTLY relevant: Mukund's 15% verified Indian audience + likely diaspora overlap. Bose Fitness validates segment buys at premium. Messaging: 'fitness that fits Indian food and real family life'."
     },
     {
@@ -545,7 +545,7 @@
       "url": "https://www.asa.org.uk/advice-online/before-and-after-photos.html",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 6 deep research, 2026-04-26",
+      "verified_by": "buyer-psychology research deep research, 2026-04-26",
       "use_in_roadmap": "All transformation imagery + testimonials need ASA-compliant captioning. Use real capacity-based urgency. No medical claims."
     }
   ],
@@ -557,7 +557,7 @@
       "url": "https://www.wordstream.com/blog/facebook-ads-benchmarks-2025",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 7 deep research, 2026-04-26",
+      "verified_by": "paid-acquisition research deep research, 2026-04-26",
       "use_in_roadmap": "Use £35 CPL as Mukund's planning mid-band for Meta acquisition. Phase 1 budget £900-£1,500 = ~25-40 applications/month at this CPL."
     },
     {
@@ -567,7 +567,7 @@
       "url": "https://ppcchief.com/google-ads-cost/personal-services/london",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 7 deep research, 2026-04-26",
+      "verified_by": "paid-acquisition research deep research, 2026-04-26",
       "use_in_roadmap": "Google Search 'PT London' = high intent but expensive (£55-£85 CPL). Reserve for Phase 3 after warm-funnel proven."
     },
     {
@@ -577,7 +577,7 @@
       "url": "https://www.chilipiper.com/post/form-conversion-rate-benchmark-report",
       "evidence_quality": "verified",
       "confidence_0_10": 8,
-      "verified_by": "Prompt 7 deep research, 2026-04-26",
+      "verified_by": "paid-acquisition research deep research, 2026-04-26",
       "use_in_roadmap": "BIGGEST lever in the funnel. Instant scheduler post-application is non-negotiable. Manual follow-up costs 30-40 percentage points of conversion."
     },
     {
@@ -587,17 +587,17 @@
       "url": "https://unbounce.com/conversion-benchmark-report/healthcare-wellness-conversion-rate/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 7 deep research, 2026-04-26",
+      "verified_by": "paid-acquisition research deep research, 2026-04-26",
       "use_in_roadmap": "Plan visit-to-application at 5-10% (mid 8%). Mobile penalty implies short, mobile-first form is critical."
     },
     {
       "id": "cac-break-even-997",
       "claim": "£997 offer break-even: after 15% refund/churn/failed-payment buffer = £847.45; after 3% payment processing = £817.54. Healthy paid acquisition wants substantial headroom below this.",
-      "source": "Synthesis from Prompt 7 modelling",
+      "source": "Synthesis from paid-acquisition research modelling",
       "url": "https://www.chilipiper.com/post/form-conversion-rate-benchmark-report",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 7 deep research, 2026-04-26",
+      "verified_by": "paid-acquisition research deep research, 2026-04-26",
       "use_in_roadmap": "Hard CAC ceiling = £817. Healthy targets: <£300/sale (warm) to <£600/sale (blended). Anything above £600/sale = funnel needs fixing."
     }
   ],
@@ -649,7 +649,7 @@
       "url": "https://www.asa.org.uk/type/non_broadcast/code_section/13.html",
       "evidence_quality": "verified",
       "confidence_0_10": 10,
-      "verified_by": "Prompt 8 deep research, 2026-04-26",
+      "verified_by": "UK compliance research deep research, 2026-04-26",
       "use_in_roadmap": "Hard rule. Audit Mukund's last 200 posts for any precise outcome claims before scaling content/ads."
     },
     {
@@ -659,7 +659,7 @@
       "url": "https://www.asa.org.uk/advice-online/before-and-after-photos.html",
       "evidence_quality": "verified",
       "confidence_0_10": 10,
-      "verified_by": "Prompt 8 deep research, 2026-04-26 (page dated 5 Jun 2025)",
+      "verified_by": "UK compliance research deep research, 2026-04-26 (page dated 5 Jun 2025)",
       "use_in_roadmap": "If/when Mukund publishes before/after content: written permission + 'one client's experience, not a promise of typical results' wording adjacent to image."
     },
     {
@@ -669,7 +669,7 @@
       "url": "https://www.asa.org.uk/type/non_broadcast/code_section/15.html",
       "evidence_quality": "verified",
       "confidence_0_10": 10,
-      "verified_by": "Prompt 8 deep research, 2026-04-26",
+      "verified_by": "UK compliance research deep research, 2026-04-26",
       "use_in_roadmap": "If Mukund discusses nutrition, all health-outcome claims need to be on GB register. 'Sick people are profitable' / 'ultra-processed food keeps you addicted' style framing is borderline — needs review."
     },
     {
@@ -679,7 +679,7 @@
       "url": "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-direct-marketing-using-electronic-mail/",
       "evidence_quality": "verified",
       "confidence_0_10": 9,
-      "verified_by": "Prompt 8 deep research, 2026-04-26 (under review post-DUAA 2025)",
+      "verified_by": "UK compliance research deep research, 2026-04-26 (under review post-DUAA 2025)",
       "use_in_roadmap": "Use 'Comment X for details' (solicited) instead of cold-DM'ing public commenters. Mukund's warm-DM funnel needs solicitation upstream."
     },
     {
@@ -689,8 +689,8 @@
       "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/a-guide-to-lawful-basis/special-category-data/",
       "evidence_quality": "verified",
       "confidence_0_10": 10,
-      "verified_by": "Prompt 8 deep research, 2026-04-26",
-      "use_in_roadmap": "Mukund's application form must have separate explicit consent for health-data processing, NOT bundled with general T&Cs. Use the verbatim wording in Prompt 8 report."
+      "verified_by": "UK compliance research deep research, 2026-04-26",
+      "use_in_roadmap": "Mukund's application form must have separate explicit consent for health-data processing, NOT bundled with general T&Cs. Use the verbatim wording in UK compliance research report."
     },
     {
       "id": "hcpc-protected-titles",
@@ -699,7 +699,7 @@
       "url": "https://www.hcpc-uk.org/about-us/who-we-regulate/the-professions/",
       "evidence_quality": "verified",
       "confidence_0_10": 10,
-      "verified_by": "Prompt 8 deep research, 2026-04-26",
+      "verified_by": "UK compliance research deep research, 2026-04-26",
       "use_in_roadmap": "Add scope-of-practice copy: 'General exercise and lifestyle coaching for healthy adults. Not physiotherapy, dietetic treatment or medical advice.'"
     }
   ]
