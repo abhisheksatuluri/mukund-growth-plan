@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#0a0a0b" />
-<title>Mukund Venkat — The Performance Coach behind high-achieving men</title>
+<title>Mukund Venkat, The Performance Coach behind high-achieving men</title>
 <meta name="description" content="Stage-ready physiques to everyday transformations. British Pro Champion 2019. London-based, 14 years coaching. 1000+ clients. Apply for online or in-person coaching." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Mukund Venkat — The Performance Coach behind high-achieving men" />
+<meta property="og:title" content="Mukund Venkat, The Performance Coach behind high-achieving men" />
 <meta property="og:description" content="Stage-ready physiques to everyday transformations. British Pro Champion 2019. London-based." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0b'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23B8945A' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
 
@@ -46,7 +46,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; transition: opacity .3s var(--ease), color .3s var(--ease); }
 button { font-family: inherit; cursor: pointer; }
 
-/* Film grain overlay — adds editorial texture */
+/* Film grain overlay, adds editorial texture */
 body::before {
   content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='1'/></svg>");
@@ -136,15 +136,21 @@ nav.top.compact { padding: 14px 24px; }
 .hero-bg img {
   width: 100%; height: 100%; object-fit: cover;
   object-position: center 18%;
-  filter: brightness(0.75) contrast(1.08) saturate(0.85);
+  filter: brightness(0.72) contrast(1.08) saturate(0.85);
   animation: kenburns 24s var(--ease) infinite alternate;
+  will-change: transform;
 }
-/* on landscape viewports the portrait hero image needs the head pulled into view */
+/* parallax + scale-out as user scrolls past hero (driven by --scroll-y) */
+.hero-bg {
+  transform: translate3d(0, calc(var(--scroll-y, 0) * 0.18px), 0) scale(calc(1 + var(--scroll-y, 0) * 0.00015));
+  transition: transform 0.05s linear;
+}
+/* on landscape viewports we shift subject right so the headline gets clean negative space on the left */
 @media (min-width: 900px) {
-  .hero-bg img { object-position: center 8%; }
+  .hero-bg img { object-position: 72% 8%; }
 }
 @media (min-width: 1280px) {
-  .hero-bg img { object-position: center 5%; }
+  .hero-bg img { object-position: 70% 5%; }
 }
 @keyframes kenburns {
   0% { transform: scale(1.08) translate(0, 0); }
@@ -153,8 +159,16 @@ nav.top.compact { padding: 14px 24px; }
 .hero-veil {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    linear-gradient(to bottom, rgba(10,10,11,.45) 0%, rgba(10,10,11,0) 30%, rgba(10,10,11,0) 60%, rgba(10,10,11,.95) 100%),
-    radial-gradient(ellipse at 50% 60%, rgba(10,10,11,0) 0%, rgba(10,10,11,.55) 90%);
+    linear-gradient(to bottom, rgba(10,10,11,.55) 0%, rgba(10,10,11,0) 35%, rgba(10,10,11,0) 55%, rgba(10,10,11,.95) 100%),
+    radial-gradient(ellipse at 30% 60%, rgba(10,10,11,.45) 0%, rgba(10,10,11,0) 70%);
+}
+/* on desktop add a left-side darkening band so headline reads cleanly against any image content */
+@media (min-width: 900px) {
+  .hero-veil {
+    background:
+      linear-gradient(to right, rgba(10,10,11,.85) 0%, rgba(10,10,11,.55) 30%, rgba(10,10,11,.15) 55%, rgba(10,10,11,0) 75%),
+      linear-gradient(to bottom, rgba(10,10,11,.35) 0%, rgba(10,10,11,0) 30%, rgba(10,10,11,0) 60%, rgba(10,10,11,.95) 100%);
+  }
 }
 .hero-content {
   position: relative; z-index: 2;
@@ -215,7 +229,41 @@ nav.top.compact { padding: 14px 24px; }
   100% { transform: scaleY(0.2); transform-origin: bottom; }
 }
 
-/* ============ MARQUEE / AUTHORITY STRIP ============ */
+/* ============ ACCOLADES MARQUEE ============ */
+.marquee {
+  position: relative; overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--ink);
+  padding: 18px 0;
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee-track {
+  display: flex; gap: 56px; width: max-content;
+  animation: marqueeScroll 56s linear infinite;
+  align-items: center;
+}
+.marquee-item {
+  font-family: var(--serif); font-size: clamp(24px, 3vw, 40px);
+  font-weight: 400; font-style: italic; letter-spacing: -0.01em;
+  color: var(--cream-2); white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 56px;
+}
+.marquee-item::after {
+  content: ''; display: inline-block; width: 8px; height: 8px;
+  background: var(--brass); border-radius: 50%; vertical-align: middle;
+}
+.marquee-item:last-child::after { display: none; }
+@keyframes marqueeScroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* ============ AUTHORITY STRIP ============ */
 .authority-strip {
   padding: 64px 0;
   border-top: 1px solid var(--line);
@@ -317,18 +365,76 @@ nav.top.compact { padding: 14px 24px; }
 /* duotone for editorial consistency */
 .duo img { filter: brightness(0.85) contrast(1.1) saturate(0.7) sepia(0.12); }
 
-/* ============ METHOD GRID ============ */
-.method-grid {
-  display: grid; grid-template-columns: 1fr; gap: 1px;
-  background: var(--line); border: 1px solid var(--line); margin-top: 64px;
+/* ============ METHOD: PINNED PILLARS ============ */
+.method-pin {
+  margin-top: 64px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
-@media (min-width: 768px) { .method-grid { grid-template-columns: 1fr 1fr; } }
-.method-item {
-  background: var(--ink); padding: 32px 24px; min-height: 240px;
-  display: flex; flex-direction: column; justify-content: space-between;
-  transition: background .4s var(--ease);
+.method-pin-grid {
+  display: grid; grid-template-columns: 1fr; gap: 0;
+  position: relative;
+  max-width: 1320px; margin: 0 auto;
 }
-@media (min-width: 768px) { .method-item { padding: 48px 40px; min-height: 280px; } }
+.method-pin-image {
+  position: relative; aspect-ratio: 4/5;
+  overflow: hidden; background: var(--ink-3);
+}
+.method-pin-image img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.78) contrast(1.05) saturate(0.92);
+  transition: filter .8s var(--ease);
+}
+.method-pin-image::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(10,10,11,0) 50%, rgba(10,10,11,0.6) 100%);
+}
+.method-pin-image .pin-counter {
+  position: absolute; bottom: 32px; left: 32px; z-index: 2;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--brass);
+}
+.method-pin-image .pin-counter b {
+  font-family: var(--serif); font-size: 64px; font-style: italic;
+  color: var(--cream); font-weight: 400; display: block; margin-bottom: 8px;
+  line-height: 0.9; letter-spacing: -0.02em;
+}
+.method-pin-pillars { display: flex; flex-direction: column; }
+.method-pillar {
+  padding: 56px 24px; border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; justify-content: center;
+  transition: opacity .6s var(--ease);
+  opacity: 0.5;
+}
+.method-pillar.in-view { opacity: 1; }
+.method-pillar:last-child { border-bottom: none; }
+.method-pillar .num {
+  font-family: var(--mono); font-size: 11px; color: var(--brass);
+  letter-spacing: 0.22em; margin-bottom: 14px;
+}
+.method-pillar h3 {
+  font-size: clamp(28px, 3vw, 38px); margin-bottom: 18px;
+  line-height: 1.1; max-width: 18ch;
+}
+.method-pillar p {
+  font-size: 16px; line-height: 1.65; color: var(--cream-2); max-width: 52ch;
+}
+
+@media (min-width: 1024px) {
+  .method-pin-grid { grid-template-columns: 1fr 1fr; }
+  .method-pin-image {
+    position: sticky; top: 0; height: 100vh;
+    aspect-ratio: auto;
+    align-self: start;
+  }
+  .method-pin-image .pin-counter { bottom: 48px; left: 48px; }
+  .method-pin-image .pin-counter b { font-size: 96px; }
+  .method-pillar {
+    min-height: 100vh; padding: 0 56px;
+    border-bottom: none;
+    border-left: 1px solid var(--line);
+  }
+}
 .method-item:hover { background: var(--ink-2); }
 .method-num {
   font-family: var(--mono); font-size: 11px; color: var(--brass);
@@ -523,7 +629,7 @@ nav.top.compact { padding: 14px 24px; }
   display: flex; align-items: flex-start; gap: 12px;
 }
 .apply-side li::before {
-  content: '—'; color: var(--brass); font-weight: 500;
+  content: '·'; color: var(--brass); font-weight: 500;
 }
 
 /* ============ FOOTER ============ */
@@ -568,6 +674,22 @@ footer.foot {
   transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* word-by-word headline reveal, cinematic editorial */
+h2.reveal-words { overflow: visible; }
+h2.reveal-words .rw {
+  display: inline-block; overflow: hidden; vertical-align: top;
+  padding-bottom: 0.15em; margin-bottom: -0.15em;
+}
+h2.reveal-words .rw-i {
+  display: inline-block; transform: translate3d(0, 105%, 0);
+  transition: transform 1s var(--ease);
+  transition-delay: var(--d, 0s);
+}
+h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
+@media (prefers-reduced-motion: reduce) {
+  h2.reveal-words .rw-i { transform: none; transition: none; }
+}
 .reveal-stagger > * { opacity: 0; transform: translateY(30px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
 .reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
 .reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: .1s; }
@@ -640,7 +762,7 @@ footer.foot {
       </h1>
       <p class="hero-sub">
         Stage-ready physiques to everyday transformations.
-        Strength as a system — not a season.
+        Strength as a system, not a season.
       </p>
       <div class="hero-meta">
         <a href="#apply" class="hero-cta">Apply for coaching <span class="arrow">→</span></a>
@@ -650,6 +772,27 @@ footer.foot {
   </div>
   <div class="scroll-cue">Scroll</div>
 </header>
+
+<!-- ========= ACCOLADES MARQUEE ========= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">2 Bros Pro British Champion · 2019</span>
+    <span class="marquee-item">PCA British Pro · 2nd, Jersey</span>
+    <span class="marquee-item">Asia Fitness Model Search · Singapore 2016, 2nd</span>
+    <span class="marquee-item">Asia Fitness Model Search · 2017, 3rd</span>
+    <span class="marquee-item">Mr Tamil Nadu · 2nd</span>
+    <span class="marquee-item">14 years coaching</span>
+    <span class="marquee-item">1000+ clients transformed</span>
+    <!-- duplicated for seamless loop -->
+    <span class="marquee-item">2 Bros Pro British Champion · 2019</span>
+    <span class="marquee-item">PCA British Pro · 2nd, Jersey</span>
+    <span class="marquee-item">Asia Fitness Model Search · Singapore 2016, 2nd</span>
+    <span class="marquee-item">Asia Fitness Model Search · 2017, 3rd</span>
+    <span class="marquee-item">Mr Tamil Nadu · 2nd</span>
+    <span class="marquee-item">14 years coaching</span>
+    <span class="marquee-item">1000+ clients transformed</span>
+  </div>
+</div>
 
 <!-- ========= AUTHORITY STRIP ========= -->
 <section class="authority-strip" style="padding: 64px 0;">
@@ -669,9 +812,9 @@ footer.foot {
     <div class="split wide">
       <div class="copy reveal">
         <span class="eyebrow eyebrow-line">The Story</span>
-        <h2>From the international stage to <em>the everyday transformation</em>.</h2>
+        <h2 class="reveal-words">From the international stage to <em>the everyday transformation</em>.</h2>
         <p>
-          Born in India. Studied in London. Ran gyms in Chennai. Returned to London —
+          Born in India. Studied in London. Ran gyms in Chennai. Returned to London ·
           where the same discipline behind a <strong>British Pro Champion title</strong>
           now shapes the physiques and performance of founders, executives, and ambitious professionals.
         </p>
@@ -683,13 +826,13 @@ footer.foot {
           MR TAMIL NADU · 2ND PLACE
         </p>
         <p>
-          The premise is simple: <strong>if it works on the international pro stage —
-          where there is no margin for error — it works for the everyday transformation</strong>.
+          The premise is simple: <strong>if it works on the international pro stage ·
+          where there is no margin for error, it works for the everyday transformation</strong>.
           What changes isn't the science. What changes is the dose.
         </p>
         <p>
           You don't need motivation. You don't need another transformation challenge.
-          You need <em>structure, evidence, and someone who has done it himself</em> — at the highest level.
+          You need <em>structure, evidence, and someone who has done it himself</em>, at the highest level.
         </p>
       </div>
       <div class="visual tall reveal">
@@ -708,9 +851,9 @@ footer.foot {
     <div class="reveal" style="max-width: 1000px; margin: 0 auto; text-align: center;">
       <h2 style="font-size: clamp(32px, 4.5vw, 60px); line-height: 1.15; font-weight: 300; letter-spacing: -0.02em;">
         "You don't need another <em style="color: var(--brass-2); font-style: italic;">six-week challenge</em>.<br>
-        You need a system that builds you the body — and the discipline — that lasts a decade."
+        You need a system that builds you the body, and the discipline, that lasts a decade."
       </h2>
-      <span class="eyebrow" style="margin-top: 32px; display: block;">— Mukund Venkat</span>
+      <span class="eyebrow" style="margin-top: 32px; display: block;">Mukund Venkat</span>
     </div>
   </div>
 </section>
@@ -723,9 +866,9 @@ footer.foot {
     <div class="split">
       <div class="copy reveal">
         <span class="eyebrow eyebrow-line">The Method</span>
-        <h2>Four principles. <em>No fluff.</em></h2>
+        <h2 class="reveal-words">Four principles. <em>No fluff.</em></h2>
         <p>
-          What makes Mukund's coaching different isn't a gimmick. It's the operating system —
+          What makes Mukund's coaching different isn't a gimmick. It's the operating system ·
           built from over a decade of stage prep, clinical partnerships, and 100+ private transformations.
         </p>
         <p style="color: var(--cream-3);">Every client journey runs on the same four principles.</p>
@@ -735,32 +878,42 @@ footer.foot {
           src="assets/final/discipline_routine.mp4"
           poster="assets/final/mukund_mirror_gym.jpeg"
           muted autoplay loop playsinline preload="metadata"
-          aria-label="Discipline routine — 6 second loop">
+          aria-label="Discipline routine, 6 second loop">
         </video>
         <span class="caption">Discipline · daily</span>
       </div>
     </div>
 
-    <div class="method-grid reveal-stagger">
-      <div class="method-item">
-        <span class="method-num">01</span>
-        <h3>Data, not guesswork.</h3>
-        <p>Structured assessments, measurable benchmarks, and outcome tracking. For top-tier clients we layer in third-party bloodwork &amp; biomarker testing through our clinical partners — so we treat the body like a system, not a hunch.</p>
+  </div>
+
+  <!-- Pinned 4-pillar experience: image sticks while pillars scroll past -->
+  <div class="method-pin">
+    <div class="method-pin-grid">
+      <div class="method-pin-image">
+        <img src="assets/final/mukund_medals.jpeg" alt="Pro stage record" loading="lazy" />
+        <div class="pin-counter"><b id="pinNum">01</b><span id="pinTotal">/ 04 PRINCIPLES</span></div>
       </div>
-      <div class="method-item">
-        <span class="method-num">02</span>
-        <h3>Stage-ready discipline.</h3>
-        <p>Methods proven on the international physique stage — applied to busy professionals. Restraint over volume. Precision over noise. The minimum effective dose, applied with maximum intent.</p>
-      </div>
-      <div class="method-item">
-        <span class="method-num">03</span>
-        <h3>Strength as foundation.</h3>
-        <p>Lean physique, athletic performance, and longevity all start with structural strength. We build the body that lets you do everything else better — for the next decade, not the next quarter.</p>
-      </div>
-      <div class="method-item">
-        <span class="method-num">04</span>
-        <h3>Coaching, not cheerleading.</h3>
-        <p>You're already driven. You don't need motivation. You need a system, structured accountability, and someone who has done it himself — at the highest level.</p>
+      <div class="method-pin-pillars">
+        <div class="method-pillar" data-pin="01">
+          <span class="num">PRINCIPLE 01</span>
+          <h3>Data, not guesswork.</h3>
+          <p>Structured assessments, measurable benchmarks, and outcome tracking. For top-tier clients we layer in third-party bloodwork &amp; biomarker testing through our clinical partners, so we treat the body like a system, not a hunch.</p>
+        </div>
+        <div class="method-pillar" data-pin="02">
+          <span class="num">PRINCIPLE 02</span>
+          <h3>Stage-ready discipline.</h3>
+          <p>Methods proven on the international physique stage, applied to busy professionals. Restraint over volume. Precision over noise. The minimum effective dose, applied with maximum intent.</p>
+        </div>
+        <div class="method-pillar" data-pin="03">
+          <span class="num">PRINCIPLE 03</span>
+          <h3>Strength as foundation.</h3>
+          <p>Lean physique, athletic performance, and longevity all start with structural strength. We build the body that lets you do everything else better, for the next decade, not the next quarter.</p>
+        </div>
+        <div class="method-pillar" data-pin="04">
+          <span class="num">PRINCIPLE 04</span>
+          <h3>Coaching, not cheerleading.</h3>
+          <p>You're already driven. You don't need motivation. You need a system, structured accountability, and someone who has done it himself, at the highest level.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -774,8 +927,8 @@ footer.foot {
     <div class="split">
       <div class="copy reveal">
         <span class="eyebrow eyebrow-line">The Team</span>
-        <h2>Coaching is a <em>multi-disciplinary</em> craft.</h2>
-        <p>Mukund leads the system. When a client's commitment justifies it, the bench expands — clinical longevity oversight, structural physio, and dedicated mindset coaching.</p>
+        <h2 class="reveal-words">Coaching is a <em>multi-disciplinary</em> craft.</h2>
+        <p>Mukund leads the system. When a client's commitment justifies it, the bench expands, clinical longevity oversight, structural physio, and dedicated mindset coaching.</p>
         <p style="color: var(--cream-3);">Available on serious-tier programmes by request, never bundled by default.</p>
       </div>
       <div class="visual tall reveal">
@@ -788,18 +941,18 @@ footer.foot {
       <div class="team-card">
         <h4>Dr Neel Reddy</h4>
         <span class="role">Longevity &amp; Clinical Health · 20 yrs London</span>
-        <p>London-based clinician with two decades in the medical industry, specialising in longevity healthcare. Available on top-tier programmes by request — clinical input matched to client commitment, not bundled by default.</p>
+        <p>London-based clinician with two decades in the medical industry, specialising in longevity healthcare. Available on top-tier programmes by request, clinical input matched to client commitment, not bundled by default.</p>
       </div>
       <div class="team-card">
         <h4>Samuel Afriyie</h4>
         <span class="role">Physiotherapist · Personal Trainer · Coach</span>
-        <p>Structural performance, recovery, and movement quality. Brings physio depth to the training side — particularly for clients training around injury history or wanting to maximise output without breakdown.</p>
+        <p>Structural performance, recovery, and movement quality. Brings physio depth to the training side, particularly for clients training around injury history or wanting to maximise output without breakdown.</p>
         <span class="handle">@sa4fitness</span>
       </div>
       <div class="team-card">
         <h4>Andras Thamas</h4>
         <span class="role">Mindset Coach · By Request</span>
-        <p>For clients who want dedicated mindset work alongside the physical programme — discipline, identity, the psychology of holding standards under pressure. Available by request, additional fee.</p>
+        <p>For clients who want dedicated mindset work alongside the physical programme, discipline, identity, the psychology of holding standards under pressure. Available by request, additional fee.</p>
       </div>
     </div>
   </div>
@@ -812,8 +965,8 @@ footer.foot {
   <div class="wrap">
     <div class="section-head reveal" style="max-width: 900px;">
       <span class="eyebrow eyebrow-line">Work With Mukund</span>
-      <h2>Four ways in. <em>One standard.</em></h2>
-      <p class="lede">No matter the tier, the system is the same. The difference is how much of it you want delivered in person — and how fast.</p>
+      <h2 class="reveal-words">Four ways in. <em>One standard.</em></h2>
+      <p class="lede">No matter the tier, the system is the same. The difference is how much of it you want delivered in person, and how fast.</p>
     </div>
 
     <div class="ladder reveal-stagger">
@@ -823,8 +976,8 @@ footer.foot {
         <h4>The Performance Audit</h4>
         <span class="tier-duration">90-min consult · 14-day plan</span>
         <div class="tier-price">£250</div>
-        <p class="tier-desc">A diagnostic of your current state — physical, structural, behavioural. You leave with a 14-day action plan. Even if we never work together again, you walk away with the system.</p>
-        <div class="tier-best"><strong>Best for:</strong> Anyone serious about getting started — without committing yet.</div>
+        <p class="tier-desc">A diagnostic of your current state, physical, structural, behavioural. You leave with a 14-day action plan. Even if we never work together again, you walk away with the system.</p>
+        <div class="tier-best"><strong>Best for:</strong> Anyone serious about getting started, without committing yet.</div>
       </div>
 
       <div class="tier">
@@ -832,7 +985,7 @@ footer.foot {
         <h4>Online Transformation</h4>
         <span class="tier-duration">12 weeks · global</span>
         <div class="tier-price">£997</div>
-        <p class="tier-desc">The signature programme. Custom training, evidence-led nutrition, weekly check-ins. Globally accessible. The most chosen tier — and the one most clients renew.</p>
+        <p class="tier-desc">The signature programme. Custom training, evidence-led nutrition, weekly check-ins. Globally accessible. The most chosen tier, and the one most clients renew.</p>
         <div class="tier-best"><strong>Best for:</strong> Travel-heavy professionals or anyone with their own gym.</div>
       </div>
 
@@ -841,7 +994,7 @@ footer.foot {
         <h4>Hybrid Signature</h4>
         <span class="tier-duration">Min. 3 months · London</span>
         <div class="tier-price">£499<span style="font-size:24px;color:var(--cream-3);">/mo</span></div>
-        <p class="tier-desc">Online programme + monthly in-person session in London. The "best of both worlds" tier — built for high-accountability London-based professionals who want recalibration without the daily PT cost.</p>
+        <p class="tier-desc">Online programme + monthly in-person session in London. The "best of both worlds" tier, built for high-accountability London-based professionals who want recalibration without the daily PT cost.</p>
         <div class="tier-best"><strong>Best for:</strong> London execs who need structure plus periodic in-person calibration.</div>
       </div>
 
@@ -850,7 +1003,7 @@ footer.foot {
         <h4>Full In-Person</h4>
         <span class="tier-duration">12 weeks · London only</span>
         <div class="tier-price">£2,400</div>
-        <p class="tier-desc">2–3 in-person sessions per week. Full programming, nutrition, recovery oversight. The most intensive tier — a complete rebuild of body, energy, and routine.</p>
+        <p class="tier-desc">2–3 in-person sessions per week. Full programming, nutrition, recovery oversight. The most intensive tier, a complete rebuild of body, energy, and routine.</p>
         <div class="tier-best"><strong>Best for:</strong> London residents wanting the highest-touch experience.</div>
       </div>
 
@@ -865,37 +1018,37 @@ footer.foot {
   <div class="wrap">
     <div class="section-head reveal" style="max-width: 800px;">
       <span class="eyebrow eyebrow-line">The Proof</span>
-      <h2>Outcomes you can see. Outcomes you can <em>measure</em>.</h2>
-      <p class="lede">Names below are real. Most preferred to share by first name only. Photos and full names available on request — confidentiality is the default.</p>
+      <h2 class="reveal-words">Outcomes you can see. Outcomes you can <em>measure</em>.</h2>
+      <p class="lede">Names below are real. Most preferred to share by first name only. Photos and full names available on request, confidentiality is the default.</p>
     </div>
 
     <div class="proof-gallery reveal-stagger">
       <div class="proof-item">
-        <img src="assets/final/from-v0/v0_04.jpeg" alt="Body transformation — back view comparison" loading="lazy" />
+        <img src="assets/final/from-v0/v0_04.jpeg" alt="Body transformation, back view comparison" loading="lazy" />
         <div class="proof-tag">
           <span class="week">Stage Prep · Back</span>
-          <div class="name">Mukund — Own Transformation</div>
+          <div class="name">Mukund, Own Transformation</div>
         </div>
       </div>
       <div class="proof-item">
-        <img src="assets/final/client_transformation_front.jpeg" alt="Client transformation — front view" loading="lazy" />
+        <img src="assets/final/client_transformation_front.jpeg" alt="Client transformation, front view" loading="lazy" />
         <div class="proof-tag">
           <span class="week">16 Weeks · Front</span>
           <div class="name">Client A</div>
         </div>
       </div>
       <div class="proof-item">
-        <img src="assets/final/client_transformation_back.jpeg" alt="Client transformation — back view" loading="lazy" />
+        <img src="assets/final/client_transformation_back.jpeg" alt="Client transformation, back view" loading="lazy" />
         <div class="proof-tag">
           <span class="week">12 Weeks · Back</span>
           <div class="name">Client B</div>
         </div>
       </div>
       <div class="proof-item">
-        <img src="assets/final/from-v0/v0_03.jpeg" alt="Body transformation — composite comparison" loading="lazy" />
+        <img src="assets/final/from-v0/v0_03.jpeg" alt="Body transformation, composite comparison" loading="lazy" />
         <div class="proof-tag">
           <span class="week">Front + Back</span>
-          <div class="name">Mukund — 4-View Composite</div>
+          <div class="name">Mukund, 4-View Composite</div>
         </div>
       </div>
       <div class="proof-item">
@@ -973,7 +1126,7 @@ footer.foot {
         Discipline isn't a feeling. <em style="color: var(--brass-2); font-style: italic;">It's a structure.</em>
       </h2>
       <p style="font-size: clamp(18px, 1.6vw, 22px); color: var(--cream-2); line-height: 1.5; max-width: 50ch;">
-        The body adapts to whatever you keep doing. The work is to keep doing the right thing —
+        The body adapts to whatever you keep doing. The work is to keep doing the right thing ·
         on the days you don't feel like it. That's what we build.
       </p>
     </div>
@@ -987,7 +1140,7 @@ footer.foot {
   <div class="wrap">
     <div class="section-head reveal" style="max-width: 800px;">
       <span class="eyebrow eyebrow-line">Apply</span>
-      <h2>Coaching with Mukund is by <em>application</em>.</h2>
+      <h2 class="reveal-words">Coaching with Mukund is by <em>application</em>.</h2>
       <p class="lede">Tell me a little about where you are and what you want. I read every application personally and reply within 48 hours. If we're a fit, we'll book a call.</p>
     </div>
 
@@ -1006,9 +1159,9 @@ footer.foot {
           <select id="f-tier" name="tier">
             <option value="audit">The Performance Audit (£250)</option>
             <option value="online" selected>Online Transformation (£997)</option>
-            <option value="hybrid">Hybrid Signature (£499/mo) — flagship</option>
+            <option value="hybrid">Hybrid Signature (£499/mo), flagship</option>
             <option value="inperson">Full In-Person (£2,400)</option>
-            <option value="unsure">Not sure yet — recommend me</option>
+            <option value="unsure">Not sure yet, recommend me</option>
           </select>
         </div>
         <div class="field">
@@ -1026,13 +1179,13 @@ footer.foot {
       <aside class="apply-side reveal">
         <h3>What happens next.</h3>
         <ul>
-          <li>I read every application personally — usually within 48 hours.</li>
+          <li>I read every application personally, usually within 48 hours.</li>
           <li>If we're a fit, we book a 30-minute discovery call.</li>
-          <li>You leave the call with a specific recommendation — even if we don't end up working together.</li>
-          <li>Confidentiality is the default. Names, photos, results — never shared without your permission.</li>
+          <li>You leave the call with a specific recommendation, even if we don't end up working together.</li>
+          <li>Confidentiality is the default. Names, photos, results, never shared without your permission.</li>
         </ul>
         <p style="margin-top: 32px; font-style: italic; color: var(--cream-3); font-family: var(--serif); font-size: 18px; line-height: 1.5;">
-          "If you're sending this — you've already done the hardest part. Most people just keep scrolling."
+          "If you're sending this, you've already done the hardest part. Most people just keep scrolling."
         </p>
       </aside>
     </div>
@@ -1114,14 +1267,66 @@ footer.foot {
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el));
 
-  // ---- Nav compact on scroll ----
+  // ---- Method pinned: active pillar tracking + counter ----
+  const pillars = document.querySelectorAll('.method-pillar');
+  const pinNum = document.getElementById('pinNum');
+  if (pillars.length && pinNum) {
+    const pinIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          pillars.forEach(p => p.classList.remove('in-view'));
+          e.target.classList.add('in-view');
+          pinNum.textContent = e.target.getAttribute('data-pin') || '01';
+        }
+      });
+    }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+    pillars.forEach(p => pinIo.observe(p));
+  }
+
+  // ---- Word-by-word reveal on H2s ----
+  document.querySelectorAll('h2.reveal-words').forEach((h2) => {
+    const html = h2.innerHTML;
+    // Tokenise but preserve <em>, <strong>, <br> tags by treating them as atomic
+    const tokens = html.split(/(<\/?[a-z][^>]*>|\s+)/i).filter(Boolean);
+    let depth = 0;
+    let output = '';
+    let wordIndex = 0;
+    for (const t of tokens) {
+      if (/^<[^/]/.test(t)) { output += t; if (!/\/>$/.test(t)) depth++; continue; }
+      if (/^<\//.test(t)) { output += t; depth--; continue; }
+      if (/^\s+$/.test(t)) { output += t; continue; }
+      // it's a word
+      output += `<span class="rw" style="--d:${wordIndex * 0.045}s"><span class="rw-i">${t}</span></span>`;
+      wordIndex++;
+    }
+    h2.innerHTML = output;
+  });
+  const wordIo = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('words-in'); wordIo.unobserve(e.target); }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('h2.reveal-words').forEach((el) => wordIo.observe(el));
+
+  // ---- Nav compact + hero parallax on scroll ----
   const nav = document.querySelector('nav.top');
-  let lastY = 0;
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y > 80) nav.classList.add('compact'); else nav.classList.remove('compact');
-    lastY = y;
-  }, { passive: true });
+  const heroBg = document.querySelector('.hero-bg');
+  const root = document.documentElement;
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if (y > 80) nav.classList.add('compact'); else nav.classList.remove('compact');
+      // expose scroll-y to CSS but cap at viewport height for hero parallax
+      const cap = Math.min(y, window.innerHeight);
+      root.style.setProperty('--scroll-y', cap);
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   // ---- Mobile menu ----
   const open = document.getElementById('menuOpen');
@@ -1148,13 +1353,13 @@ footer.foot {
         if (msg) { msg.textContent = 'Please fill name, email, and your 12-week goal.'; msg.style.display = 'block'; msg.style.color = '#ff7d6b'; }
         return;
       }
-      const subject = encodeURIComponent(`Coaching application — ${name}`);
+      const subject = encodeURIComponent(`Coaching application, ${name}`);
       const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nTier: ${tier}\n\n12-week goal:\n${goal}\n\nContext:\n${context}\n`
       );
       window.location.href = `mailto:hello@mukundvenkat.com?subject=${subject}&body=${body}`;
       if (msg) {
-        msg.textContent = 'Opening your email — please send to complete the application.';
+        msg.textContent = 'Opening your email, please send to complete the application.';
         msg.style.display = 'block';
         msg.style.color = 'var(--brass)';
       }
