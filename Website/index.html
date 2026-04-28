@@ -272,16 +272,22 @@ nav.top.compact { padding: 14px 24px; }
   position: relative; aspect-ratio: 4/5; overflow: hidden;
   background: var(--ink-3);
 }
-.visual img {
+.visual img,
+.visual video {
   width: 100%; height: 100%; object-fit: cover;
   filter: brightness(0.92) contrast(1.05) saturate(0.92);
   transition: transform 1.2s var(--ease);
+  display: block;
 }
-.visual:hover img { transform: scale(1.04); }
+.visual:hover img,
+.visual:hover video { transform: scale(1.04); }
 .visual::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(180deg, rgba(10,10,11,0) 60%, rgba(10,10,11,0.5) 100%);
 }
+/* vertical video fills the tall .visual without distortion */
+.visual.vid { aspect-ratio: 3/4.6; }
+@media (min-width: 1024px) { .visual.vid { aspect-ratio: 9/16; max-height: 720px; } }
 .visual .caption {
   position: absolute; bottom: 24px; left: 24px; z-index: 2;
   font-family: var(--mono); font-size: 10px; text-transform: uppercase;
@@ -717,8 +723,14 @@ footer.foot {
         </p>
         <p style="color: var(--cream-3);">Every client journey runs on the same four principles.</p>
       </div>
-      <div class="visual tall reveal">
-        <img src="assets/final/mukund_mirror_gym.jpeg" alt="Mukund training" loading="lazy" />
+      <div class="visual vid reveal">
+        <video
+          src="assets/final/discipline_routine.mp4"
+          poster="assets/final/mukund_mirror_gym.jpeg"
+          muted autoplay loop playsinline preload="metadata"
+          aria-label="Discipline routine — 6 second loop">
+        </video>
+        <span class="caption">Discipline · daily</span>
       </div>
     </div>
 

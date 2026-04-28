@@ -1,0 +1,130 @@
+[
+  {
+    "shortcode": "DVtz6SijiHB",
+    "video_aspect": "9:16_vertical",
+    "has_text_overlays": true,
+    "text_overlay_severity": "minimal",
+    "has_audio_dialogue": false,
+    "main_subject": "A man demonstrating various fitness activities and personal moments",
+    "action_moments_with_timestamps": [
+      "0:00-0:01 man walking in the dark",
+      "0:01-0:02 man walking in a large hall/station",
+      "0:02-0:03 two men grappling/wrestling",
+      "0:03-0:04 man performing heavy deadlifts",
+      "0:04-0:05 man pulling another person on the ground",
+      "0:05-0:06 man hugging a child"
+    ],
+    "best_clip_for_silent_background_loop": {
+      "start_seconds": 3,
+      "end_seconds": 4,
+      "what_happens": "Man performing heavy deadlifts in a gym.",
+      "why_this_works": "It's a clear, dynamic fitness action, visually engaging, and doesn't rely on sound. It demonstrates strength and dedication, fitting for a personal trainer website."
+    },
+    "website_fit_score_0_10": 8,
+    "recommended_role": "story_section",
+    "blockers": [],
+    "intended_goal": "hero or mindset break — 6s montage of disciplined routine"
+  },
+  {
+    "shortcode": "DUEH7-CjCDt",
+    "video_aspect": "9:16_vertical",
+    "has_text_overlays": true,
+    "text_overlay_severity": "heavy",
+    "has_audio_dialogue": true,
+    "main_subject": "A man performing a box jump in a gym.",
+    "action_moments_with_timestamps": [
+      "0:07-0:15 box jump"
+    ],
+    "best_clip_for_silent_background_loop": {
+      "start_seconds": 7,
+      "end_seconds": 15,
+      "what_happens": "A man squats down and performs a box jump onto a black plyo box.",
+      "why_this_works": "This segment clearly shows the main action of the video (the box jump) without the initial text overlay. It's a dynamic and visually engaging movement that can loop well silently."
+    },
+    "website_fit_score_0_10": 7,
+    "recommended_role": "story_section",
+    "blockers": [
+      "heavy text overlay at the beginning",
+      "prominent audio dialogue that may not suit all silent background contexts"
+    ],
+    "intended_goal": "hero or method — high box jump action"
+  },
+  {
+    "shortcode": "DUQ-nozDNqd",
+    "video_aspect": "9:16_vertical",
+    "has_text_overlays": false,
+    "text_overlay_severity": "none",
+    "has_audio_dialogue": false,
+    "main_subject": "A man swinging a child by their arms on a wooden boardwalk by the water",
+    "action_moments_with_timestamps": [
+      "0:00-0:11 man swinging child in circles",
+      "0:11-0:15 child smiling at camera"
+    ],
+    "best_clip_for_silent_background_loop": {
+      "start_seconds": 0,
+      "end_seconds": 10,
+      "what_happens": "A man swings a child around by their arms on a wooden boardwalk next to a body of water.",
+      "why_this_works": "The continuous swinging motion is dynamic and visually engaging, creating a sense of fun and activity. It's a clear, repetitive action that loops well."
+    },
+    "website_fit_score_0_10": 4,
+    "recommended_role": "mindset_break",
+    "blockers": [
+      "Audio is not suitable for a professional website (non-English, upbeat pop music).",
+      "Content is more family-fun oriented than direct personal training or fitness instruction.",
+      "Child's face is clearly visible, requiring explicit consent for commercial use."
+    ],
+    "intended_goal": "story/personal — swinging son by water at golden hour"
+  },
+  {
+    "shortcode": "DVIhQzMApAK",
+    "video_aspect": "9:16_vertical",
+    "has_text_overlays": true,
+    "text_overlay_severity": "heavy",
+    "has_audio_dialogue": true,
+    "main_subject": "Men exercising on rowing machines, followed by meme cats in pilot helmets",
+    "action_moments_with_timestamps": [
+      "0:00-0:05 men on rowing machines",
+      "0:06-0:13 meme cats in pilot helmets"
+    ],
+    "best_clip_for_silent_background_loop": {
+      "start_seconds": 0,
+      "end_seconds": 5,
+      "what_happens": "Men exercising on rowing machines",
+      "why_this_works": "Shows physical activity relevant to fitness, but contains text overlays and informal language which are problematic for a premium website."
+    },
+    "website_fit_score_0_10": 1,
+    "recommended_role": "skip",
+    "blockers": [
+      "Heavy and informal text overlays ('bro')",
+      "Meme content (cats in pilot helmets) completely unrelated to personal training or a premium website aesthetic",
+      "Audio dialogue (music and voiceover) not suitable for a silent background loop"
+    ],
+    "intended_goal": "mindset break / HYROX section — rowing machine partner"
+  },
+  {
+    "shortcode": "DVLHA2WjF6x",
+    "video_aspect": "9:16_vertical",
+    "has_text_overlays": true,
+    "text_overlay_severity": "heavy",
+    "has_audio_dialogue": false,
+    "main_subject": "young boy performing exercises in a gym",
+    "action_moments_with_timestamps": [
+      "0:01-0:06 boy prepares for box jump",
+      "0:06-0:08 boy performs box jump",
+      "0:08-0:13 boy stands on box and makes a 'shush' gesture"
+    ],
+    "best_clip_for_silent_background_loop": {
+      "start_seconds": 6,
+      "end_seconds": 8,
+      "what_happens": "boy jumps onto a box",
+      "why_this_works": "It's a clear, dynamic action that is visually engaging and doesn't require audio to understand."
+    },
+    "website_fit_score_0_10": 4,
+    "recommended_role": "skip",
+    "blockers": [
+      "heavy text overlay that obscures the video content and is not customizable",
+      "informal 'shush' gesture at the end may not align with a premium brand"
+    ],
+    "intended_goal": "story/personal — son box jump emotional moment"
+  }
+]
