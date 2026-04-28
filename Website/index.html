@@ -368,13 +368,16 @@ nav.top.compact { padding: 14px 24px; }
 /* ============ METHOD: PINNED PILLARS ============ */
 .method-pin {
   margin-top: 64px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  padding: 0 24px;
 }
+@media (min-width: 768px) { .method-pin { padding: 0 56px; } }
+@media (min-width: 1280px) { .method-pin { padding: 0 72px; } }
 .method-pin-grid {
   display: grid; grid-template-columns: 1fr; gap: 0;
   position: relative;
   max-width: 1320px; margin: 0 auto;
+  border: 1px solid var(--line);
+  background: var(--ink-2);
 }
 .method-pin-image {
   position: relative; aspect-ratio: 4/5;
@@ -382,29 +385,30 @@ nav.top.compact { padding: 14px 24px; }
 }
 .method-pin-image img {
   width: 100%; height: 100%; object-fit: cover;
-  filter: brightness(0.78) contrast(1.05) saturate(0.92);
+  filter: brightness(0.82) contrast(1.05) saturate(0.92);
   transition: filter .8s var(--ease);
 }
 .method-pin-image::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(10,10,11,0) 50%, rgba(10,10,11,0.6) 100%);
+  background: linear-gradient(180deg, rgba(10,10,11,0) 55%, rgba(10,10,11,0.7) 100%);
 }
 .method-pin-image .pin-counter {
-  position: absolute; bottom: 32px; left: 32px; z-index: 2;
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+  position: absolute; bottom: 24px; left: 24px; z-index: 2;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--brass);
 }
 .method-pin-image .pin-counter b {
-  font-family: var(--serif); font-size: 64px; font-style: italic;
-  color: var(--cream); font-weight: 400; display: block; margin-bottom: 8px;
+  font-family: var(--serif); font-size: 56px; font-style: italic;
+  color: var(--cream); font-weight: 400; display: block; margin-bottom: 6px;
   line-height: 0.9; letter-spacing: -0.02em;
+  transition: opacity .3s var(--ease);
 }
 .method-pin-pillars { display: flex; flex-direction: column; }
 .method-pillar {
-  padding: 56px 24px; border-bottom: 1px solid var(--line);
+  padding: 48px 28px; border-bottom: 1px solid var(--line);
   display: flex; flex-direction: column; justify-content: center;
   transition: opacity .6s var(--ease);
-  opacity: 0.5;
+  opacity: 0.45;
 }
 .method-pillar.in-view { opacity: 1; }
 .method-pillar:last-child { border-bottom: none; }
@@ -413,27 +417,31 @@ nav.top.compact { padding: 14px 24px; }
   letter-spacing: 0.22em; margin-bottom: 14px;
 }
 .method-pillar h3 {
-  font-size: clamp(28px, 3vw, 38px); margin-bottom: 18px;
-  line-height: 1.1; max-width: 18ch;
+  font-size: clamp(26px, 2.6vw, 34px); margin-bottom: 16px;
+  line-height: 1.15; max-width: 18ch;
 }
 .method-pillar p {
-  font-size: 16px; line-height: 1.65; color: var(--cream-2); max-width: 52ch;
+  font-size: 15.5px; line-height: 1.65; color: var(--cream-2); max-width: 52ch;
 }
 
 @media (min-width: 1024px) {
-  .method-pin-grid { grid-template-columns: 1fr 1fr; }
+  .method-pin-grid { grid-template-columns: 1.05fr 1fr; }
   .method-pin-image {
-    position: sticky; top: 0; height: 100vh;
+    position: sticky; top: 90px;
+    height: calc(100vh - 130px);
+    max-height: 760px;
     aspect-ratio: auto;
     align-self: start;
   }
-  .method-pin-image .pin-counter { bottom: 48px; left: 48px; }
-  .method-pin-image .pin-counter b { font-size: 96px; }
+  .method-pin-image .pin-counter { bottom: 40px; left: 40px; }
+  .method-pin-image .pin-counter b { font-size: 88px; }
   .method-pillar {
-    min-height: 100vh; padding: 0 56px;
-    border-bottom: none;
-    border-left: 1px solid var(--line);
+    min-height: calc(100vh - 130px);
+    max-height: 760px;
+    padding: 0 56px;
+    border-bottom: 1px solid var(--line);
   }
+  .method-pillar:last-child { border-bottom: none; }
 }
 .method-item:hover { background: var(--ink-2); }
 .method-num {
@@ -928,8 +936,8 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
       <div class="copy reveal">
         <span class="eyebrow eyebrow-line">The Team</span>
         <h2 class="reveal-words">Coaching is a <em>multi-disciplinary</em> craft.</h2>
-        <p>Mukund leads the system. When a client's commitment justifies it, the bench expands, clinical longevity oversight, structural physio, and dedicated mindset coaching.</p>
-        <p style="color: var(--cream-3);">Available on serious-tier programmes by request, never bundled by default.</p>
+        <p>Mukund leads the system. For top-tier clients we layer in clinical longevity oversight and structural physiotherapy, so the work is matched by the right specialist when it matters.</p>
+        <p style="color: var(--cream-3);">Available by request on serious-tier programmes, never bundled by default.</p>
       </div>
       <div class="visual tall reveal">
         <img src="assets/final/mukund_coaching_client_1.jpeg" alt="Mukund coaching a client" loading="lazy" />
@@ -937,7 +945,7 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
       </div>
     </div>
 
-    <div class="team-grid reveal-stagger team-3" style="margin-top: 64px;">
+    <div class="team-grid reveal-stagger" style="margin-top: 64px;">
       <div class="team-card">
         <h4>Dr Neel Reddy</h4>
         <span class="role">Longevity &amp; Clinical Health · 20 yrs London</span>
@@ -948,11 +956,6 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
         <span class="role">Physiotherapist · Personal Trainer · Coach</span>
         <p>Structural performance, recovery, and movement quality. Brings physio depth to the training side, particularly for clients training around injury history or wanting to maximise output without breakdown.</p>
         <span class="handle">@sa4fitness</span>
-      </div>
-      <div class="team-card">
-        <h4>Andras Thamas</h4>
-        <span class="role">Mindset Coach · By Request</span>
-        <p>For clients who want dedicated mindset work alongside the physical programme, discipline, identity, the psychology of holding standards under pressure. Available by request, additional fee.</p>
       </div>
     </div>
   </div>
@@ -1267,20 +1270,34 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el));
 
-  // ---- Method pinned: active pillar tracking + counter ----
+  // ---- Method pinned: active pillar = whichever is closest to viewport center ----
   const pillars = document.querySelectorAll('.method-pillar');
   const pinNum = document.getElementById('pinNum');
   if (pillars.length && pinNum) {
-    const pinIo = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          pillars.forEach(p => p.classList.remove('in-view'));
-          e.target.classList.add('in-view');
-          pinNum.textContent = e.target.getAttribute('data-pin') || '01';
+    let pinTicking = false;
+    function updatePin() {
+      if (pinTicking) return;
+      pinTicking = true;
+      requestAnimationFrame(() => {
+        const center = window.innerHeight / 2;
+        let best = null, bestDist = Infinity;
+        pillars.forEach((p) => {
+          const r = p.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > window.innerHeight) return;
+          const pCenter = r.top + r.height / 2;
+          const dist = Math.abs(pCenter - center);
+          if (dist < bestDist) { bestDist = dist; best = p; }
+        });
+        if (best) {
+          pillars.forEach((p) => p.classList.toggle('in-view', p === best));
+          pinNum.textContent = best.getAttribute('data-pin') || '01';
         }
+        pinTicking = false;
       });
-    }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
-    pillars.forEach(p => pinIo.observe(p));
+    }
+    window.addEventListener('scroll', updatePin, { passive: true });
+    window.addEventListener('resize', updatePin);
+    updatePin();
   }
 
   // ---- Word-by-word reveal on H2s ----
