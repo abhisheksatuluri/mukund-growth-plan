@@ -144,9 +144,22 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-size:12px}
 .skit-card .ex{font-size:12px;color:var(--ink-mute);font-style:italic;margin-top:10px;padding-top:10px;border-top:1px solid var(--line-2)}
 
 /* Hook archetypes */
-.hook-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:18px}
-@media (max-width:1024px){.hook-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.hook-grid{grid-template-columns:1fr}}
+.hook-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+@media (max-width:900px){.hook-grid{grid-template-columns:1fr}}
+.hook-card{background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s ease}
+.hook-card:hover{border-color:var(--accent)}
+.hook-card .num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.18em;font-weight:500}
+.hook-card .archetype{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink);letter-spacing:-.01em;line-height:1.15;margin:0}
+.hook-card .mechanism{font-size:13px;color:var(--ink-dim);line-height:1.55;border-left:2px solid var(--accent);padding-left:12px;background:rgba(201,169,106,.04)}
+.hook-card .mechanism b{color:var(--ink)}
+.hook-card .formula{font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);background:var(--bg-3);padding:10px 12px;border-radius:var(--r);border:1px solid var(--line-2);line-height:1.55}
+.hook-card .formula b{color:var(--accent);font-weight:500}
+.hook-card .examples{display:flex;flex-direction:column;gap:8px}
+.hook-card .examples .ex-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-mute);margin-bottom:2px;font-weight:500}
+.hook-card .examples .ex{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);line-height:1.4;padding:8px 0;border-bottom:1px dashed var(--line-2)}
+.hook-card .examples .ex:last-child{border-bottom:none}
+.hook-card .when{font-size:12.5px;color:var(--ink-dim);padding-top:10px;border-top:1px solid var(--line-2);line-height:1.55}
+.hook-card .when b{color:var(--ink)}
 .hook-card{padding:18px;background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);display:flex;flex-direction:column;gap:8px}
 .hook-card .archetype{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:500}
 .hook-card .for{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
@@ -172,13 +185,33 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-size:12px}
 .cal-week .magnet{font-size:10.5px;color:var(--accent);margin-top:8px;padding-top:8px;border-top:1px solid var(--line-2);font-family:var(--mono)}
 
 /* ICP playbook (numbered list) */
-.icp-list{counter-reset:icp;list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:14px}
-.icp-list li{counter-increment:icp;display:grid;grid-template-columns:50px 1fr;gap:16px;padding:18px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);align-items:start}
-.icp-list li::before{content:counter(icp,decimal-leading-zero);font-family:var(--serif);font-size:32px;color:var(--accent);font-weight:500;line-height:1}
-.icp-list h4{margin:0 0 6px}
-.icp-list .desc{font-size:13px;color:var(--ink-dim);line-height:1.55}
+/* ICP playbook — card-grid + progression strip */
+.icp-progression{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr;gap:0;align-items:stretch;margin:24px 0 8px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.icp-progression .stage{padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.icp-progression .stage.now{background:rgba(214,138,138,.06)}
+.icp-progression .stage.mid{background:rgba(214,192,138,.05)}
+.icp-progression .stage.target{background:rgba(127,185,140,.06)}
+.icp-progression .arrow{display:flex;align-items:center;justify-content:center;color:var(--ink-mute);font-size:18px}
+.icp-progression .v{font-family:var(--serif);font-size:32px;font-weight:500;line-height:1;letter-spacing:-.02em}
+.icp-progression .v.bad{color:var(--bad)}
+.icp-progression .v.warn{color:var(--warn)}
+.icp-progression .v.good{color:var(--good)}
+.icp-progression .l{font-size:10px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.14em;font-weight:500}
+.icp-progression .when{font-family:var(--mono);font-size:10.5px;color:var(--ink-dim);letter-spacing:.04em}
+@media (max-width:760px){.icp-progression{grid-template-columns:1fr;gap:0}.icp-progression .arrow{display:none}.icp-progression .stage{border-bottom:1px solid var(--line-2)}}
+
+.icp-list{counter-reset:icp;list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:900px){.icp-list{grid-template-columns:1fr}}
+.icp-list li{counter-increment:icp;display:flex;flex-direction:column;gap:10px;padding:22px;background:linear-gradient(180deg,var(--bg-2),#0f0f12);border:1px solid var(--line);border-radius:var(--r-lg);position:relative;transition:border-color .2s ease}
+.icp-list li:hover{border-color:var(--accent)}
+.icp-list li::before{content:counter(icp,decimal-leading-zero);position:absolute;top:18px;right:20px;font-family:var(--serif);font-size:38px;color:var(--accent);font-weight:500;line-height:1;opacity:.35}
+.icp-list .lever{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-weight:500}
+.icp-list .lever.flagship{color:var(--good)}
+.icp-list h4{margin:0;padding-right:48px;font-size:18px}
+.icp-list .desc{font-size:13px;color:var(--ink-dim);line-height:1.6}
 .icp-list .desc b{color:var(--ink)}
-.icp-list .signal{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:8px;padding-top:8px;border-top:1px solid var(--line-2)}
+.icp-list .signal{font-family:var(--mono);font-size:10.5px;color:var(--accent);margin-top:auto;padding-top:12px;border-top:1px solid var(--line-2);line-height:1.5;letter-spacing:.02em}
+.icp-list .signal::before{content:'→ ';color:var(--accent)}
 
 /* Hashtag tiers */
 .hash-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
@@ -318,7 +351,7 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
       <div class="name">Talking-head<small>20% · 1-2/wk</small></div>
       <div>
         <div class="meter"><div class="fill" style="width:50%"></div></div>
-        <div class="desc"><b>Trust + authority engine.</b> This is where the YouTube long-form lives. 30-90s reels for IG; 8-15min episodes for YouTube. Methodology, contrarian truths, frameworks. Cuttable into multiple reels per long-form.</div>
+        <div class="desc"><b>Trust + authority engine.</b> This is where the YouTube long-form lives. 30-90s reels for IG; <b>12-25 min episodes for YouTube</b> (length varies by content type — see section 03 for the variants matrix). Methodology, contrarian truths, frameworks. Cuttable into multiple reels per long-form.</div>
       </div>
       <div class="v">460<small style="display:block;font-family:var(--sans);color:var(--ink-mute);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-top:3px">avg views</small></div>
     </div>
@@ -354,11 +387,58 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
 <!-- 3. Sectioned long-form template -->
 <section id="template"><div class="container">
   <div class="section-head">
-    <div><span class="eyebrow">03 — The sectioned long-form template</span><h2>One skeleton. Used every video.</h2></div>
-    <p>10 named sections. Each becomes a YouTube chapter AND a self-contained reel cut. Click any section to see the prompts + reel cut spec.</p>
+    <div><span class="eyebrow">03 — The sectioned long-form template</span><h2>One skeleton. Five lengths.</h2></div>
+    <p>10 named sections. Each becomes a YouTube chapter AND a self-contained reel cut. The skeleton flexes — typical episode is 12–18 min, but methodology deep-dives can run 25 min, Q&amp;As 30–40 min. Click any section to see the prompts + reel cut spec.</p>
   </div>
   <div class="lf-timeline" id="lfTimeline"></div>
-  <div class="card" style="margin-top:24px">
+  <p class="note" style="margin-top:14px;font-size:12px;color:var(--ink-mute);text-align:center">Times shown are typical for a 15-min build. Each section flexes — see length variants below.</p>
+
+  <!-- Length variants matrix -->
+  <div class="card" style="margin-top:28px">
+    <h4>Length variants — same skeleton, different runtime</h4>
+    <p style="font-size:13px;margin-bottom:14px">Optimise for retention, not duration. YouTube's algorithm rewards videos that hold attention regardless of length. The 8-min mark unlocks mid-roll ads; everything above is content-driven.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Content type</th><th>Target length</th><th>How the skeleton flexes</th><th>Cadence (suggested)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Talking-head educational</b><br><small style="color:var(--ink-mute)">"3 mistakes London executives make in the gym"</small></td>
+            <td><span class="mono" style="color:var(--accent)">12–15 min</span></td>
+            <td>Standard 10-section build. 3 principles × 2 min.</td>
+            <td>2× per month</td>
+          </tr>
+          <tr>
+            <td><b>Methodology deep-dive</b><br><small style="color:var(--ink-mute)">"The 12-week framework, beat-by-beat"</small></td>
+            <td><span class="mono" style="color:var(--accent)">18–25 min</span></td>
+            <td>5–7 principles × 2–3 min. Demo expanded to 4–6 min. Add a short FAQ.</td>
+            <td>1× per month</td>
+          </tr>
+          <tr>
+            <td><b>Client case study</b><br><small style="color:var(--ink-mute)">"How K. lost 12kg in 16 weeks (working 80h/wk)"</small></td>
+            <td><span class="mono" style="color:var(--accent)">15–22 min</span></td>
+            <td>Story section becomes the spine — 8–12 min instead of 90s. Drop Demonstration. Add 3 turning-point beats.</td>
+            <td>1× per month</td>
+          </tr>
+          <tr>
+            <td><b>Q&amp;A / multi-question</b><br><small style="color:var(--ink-mute)">"Subscribers' top 8 questions answered"</small></td>
+            <td><span class="mono" style="color:var(--accent)">25–40 min</span></td>
+            <td>Drops the 10-section build. Chapter-per-question format. Each Q = 3–5 min. Pin chapter timestamps in description.</td>
+            <td>1× per quarter</td>
+          </tr>
+          <tr>
+            <td><b>Skit-extended</b><br><small style="color:var(--ink-mute)">The long video IS a long skit (multi-character, narrative)</small></td>
+            <td><span class="mono" style="color:var(--accent)">8–12 min</span></td>
+            <td>Cut Promise + Action Steps. Story is the spine. Punchline = the takeaway.</td>
+            <td>Occasional / experimental</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
     <h4>Why this template works</h4>
     <div class="grid-3" style="margin-top:10px">
       <div>
@@ -416,7 +496,7 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
 <section id="calendar"><div class="container">
   <div class="section-head">
     <div><span class="eyebrow">05 — 12-week content calendar</span><h2>The 12 long-forms, pre-locked.</h2></div>
-    <p>One YouTube long-form per week. Pillar + lead magnet + ICP segment all mapped. Click any week to see the brief.</p>
+    <p>One YouTube long-form per week. Pillar + length + lead magnet + ICP segment all mapped. Length is matched to content type, not arbitrary. Click any week to see the brief.</p>
   </div>
   <div class="calendar" id="calendarGrid"></div>
   <div class="card" id="calendarDetail" style="margin-top:18px;display:none">
@@ -428,30 +508,33 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
 <!-- 6. Psychological hooks -->
 <section id="hooks"><div class="container">
   <div class="section-head">
-    <div><span class="eyebrow">06 — Psychological hooks</span><h2>5 archetypes that stop the scroll.</h2></div>
-    <p>The first 3 seconds decide whether his ICP — high-achieving men 35-50 — tunes in or scrolls past. These five archetypes are pulled from his proven winners.</p>
+    <div><span class="eyebrow">06 — Psychological hooks</span><h2>7 archetypes that stop the scroll.</h2></div>
+    <p>The first <b style="color:var(--ink)">1.3 seconds</b> decide whether his ICP — high-achievers 35-50 — tunes in or thumb-scrolls past. Each archetype below has a mechanism (<i>why</i> it works), a formula, three examples written for Mukund's brand, and explicit guidance on when to use it. Built from the patterns Hormozi, Brunson, Welsh, and the top fitness creators (Nippard, Israetel, Syatt) systematically use to open content.</p>
   </div>
   <div class="hook-grid" id="hookGrid"></div>
-  <div class="card" style="margin-top:18px">
-    <h4>Hook construction rules</h4>
-    <div class="grid-2" style="margin-top:10px">
+
+  <!-- Deployment notes -->
+  <div class="card" style="margin-top:24px">
+    <h4>Deployment notes — these matter more than the hook itself</h4>
+    <div class="grid-2" style="margin-top:14px">
       <div>
-        <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px;margin:0">
-          <li><b style="color:var(--ink)">First 3 seconds = visual + verbal hook simultaneously.</b> Don't waste them on logos or intro.</li>
-          <li><b style="color:var(--ink)">Speak directly to the avatar.</b> "If you're a London exec who..." beats "many people don't know that..."</li>
-          <li><b style="color:var(--ink)">Question hooks outperform statements</b> — his #1 ever was a question ("Are you feeling stuck on your fat-loss journey?").</li>
-          <li><b style="color:var(--ink)">Numbers create specificity.</b> "3 mistakes" beats "some mistakes" beats "common mistakes."</li>
-        </ul>
+        <span class="tag good">The 1.3-second test</span>
+        <p style="font-size:13px;margin-top:8px;color:var(--ink-dim);line-height:1.6">Record the hook, mute the audio, watch only frames 0–40. If it doesn't communicate authority + tension <i>visually</i> in that window, the verbal hook won't save it. Mukund's physique + a London backdrop + an unexpected on-screen text caption is the visual hook stack.</p>
       </div>
       <div>
-        <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px;margin:0">
-          <li><b style="color:var(--ink)">Negation creates intrigue.</b> "I'm not training to look good. I'm training to live longer." (1,914 views)</li>
-          <li><b style="color:var(--ink)">Tease the payoff, deliver it within 30s</b> on reels. Long-forms can hold longer — but never beyond 60s without paying off.</li>
-          <li><b style="color:var(--ink)">Avoid generic openers</b> like "Today I'm going to talk about..." or "Here's what most people..." — algorithmic poison.</li>
-          <li><b style="color:var(--ink)">Test 3 hooks per video</b> — film 3 versions of the first 5s, A/B test as separate reels (Meta will surface the winner).</li>
-        </ul>
+        <span class="tag good">Caption-hook discipline</span>
+        <p style="font-size:13px;margin-top:8px;color:var(--ink-dim);line-height:1.6">~60% of Reels viewers in the 35–50 segment scroll <b style="color:var(--ink)">muted</b> (2025 Meta data). The caption is a second hook, not a recap. First line of caption should be a <i>different</i> archetype than the spoken one — addresses sound-off viewers.</p>
+      </div>
+      <div>
+        <span class="tag good">Cadence rule</span>
+        <p style="font-size:13px;margin-top:8px;color:var(--ink-dim);line-height:1.6">Rotate archetypes across any 7-post window. The algorithm signals diversity in opening patterns; viewer fatigue accelerates when one archetype dominates. Don't ship two False-Belief Kills back-to-back.</p>
+      </div>
+      <div>
+        <span class="tag good">Hook A/B testing</span>
+        <p style="font-size:13px;margin-top:8px;color:var(--ink-dim);line-height:1.6">Film <b style="color:var(--ink)">3 hooks</b> per long-form. Cut each as a separate Reel from the same content. Whichever gets the strongest first-1-hour engagement wins — Meta surfaces it. The losing hooks become Stories (recovery use) or get archived.</p>
       </div>
     </div>
+    <p class="note" style="margin-top:18px;border-top:1px solid var(--line);padding-top:14px"><b style="color:var(--ink)">What's been retired:</b> "pattern_interrupt" (too generic) and "question_hook" (too easy to mentally answer + scroll). The 7 above absorb their function with sharper mechanisms — Question becomes <i>Diagnostic Question</i> with an unfindable benchmark; Pattern Interrupt becomes <i>Authority Inversion</i> with a credential anchor.</p>
   </div>
 </div></section>
 
@@ -536,15 +619,39 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
 <!-- 8. ICP fit playbook -->
 <section id="icp"><div class="container">
   <div class="section-head">
-    <div><span class="eyebrow">08 — ICP fit improvement playbook</span><h2>1.11/10 → 5+/10 in 90 days.</h2></div>
-    <p>Mukund's audience is currently polluted with fitness-creator peers (19% of top engagers) and broad fitness fans. These 7 actions reset the algo + audience to actual ICP.</p>
+    <div><span class="eyebrow">08 — ICP fit improvement playbook</span><h2>From <em style="color:var(--bad);font-style:italic">1.11/10</em> to <em style="color:var(--good);font-style:italic">5+/10</em> in 90 days.</h2></div>
+    <p>The current audience is polluted with fitness-creator peers (~19% of top engagers) and broad fitness fans — they engage out of professional courtesy, not buying intent. The 7 actions below reset the algorithm + audience composition to actual ICP. The audience reset (action 02) is the largest single lever.</p>
   </div>
+
+  <!-- Progression visualisation -->
+  <div class="icp-progression">
+    <div class="stage now">
+      <div class="l">Today</div>
+      <div class="v bad">1.11<span style="font-size:14px;color:var(--ink-mute)">/10</span></div>
+      <div class="when">Audience contaminated</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="stage mid">
+      <div class="l">Week 4 target</div>
+      <div class="v warn">3.0<span style="font-size:14px;color:var(--ink-mute)">/10</span></div>
+      <div class="when">After audience reset + bio rewrite + caption SEO</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="stage target">
+      <div class="l">Week 12 target</div>
+      <div class="v good">5+<span style="font-size:14px;color:var(--ink-mute)">/10</span></div>
+      <div class="when">All 7 actions compounding · re-scrape every 4 wks</div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:8px;text-align:center">Tracked via the audience-composition scrape — re-run every 4 weeks to verify lift.</p>
+
   <ol class="icp-list" id="icpList"></ol>
-  <div class="card" style="margin-top:24px">
-    <h4>Why this lifts ICP fit (the algorithm logic)</h4>
-    <p style="font-size:13.5px">Meta + Instagram's recommendation models look at WHO engages with content (not just how much). When the engagement comes from professional / founder accounts in the right age/location bucket, the algo concludes "this creator's audience is X" and pushes future content to similar profiles.</p>
-    <p style="font-size:13.5px">Currently Mukund's content reaches a lot of fitness creators because they engage out of professional courtesy. That contaminates the audience signal. The audience reset (action 1) is the biggest single lever — it removes the wrong signals so the right ones can dominate.</p>
-    <p style="font-size:13.5px">Expected lift: <b>1.11/10 → 3.0/10 by week 4 → 5+/10 by week 12</b>. Track via the audience composition scrape we ran (re-run every 4 weeks).</p>
+
+  <div class="card" style="margin-top:28px">
+    <h4>Why this lifts ICP fit — the algorithm logic</h4>
+    <p style="font-size:13.5px">Meta + Instagram's recommendation models look at <b style="color:var(--ink)">WHO engages</b> with content, not just how much. When engagement comes from professional / founder accounts in the right age/location bucket, the algo concludes "this creator's audience is X" and pushes future content to similar profiles.</p>
+    <p style="font-size:13.5px">Currently Mukund's content reaches a lot of fitness creators because they engage out of professional courtesy. That contaminates the audience signal. <b style="color:var(--ink)">The audience reset (action 02) is the biggest single lever</b> — it removes the wrong signals so the right ones can dominate.</p>
+    <p style="font-size:13.5px;margin-bottom:0">Expected lift: <b style="color:var(--bad)">1.11/10</b> → <b style="color:var(--warn)">3.0/10 by week 4</b> → <b style="color:var(--good)">5+/10 by week 12</b>. The compounding effect comes from cross-action reinforcement: better bio + better captions + reset audience = each post lifts the model faster than any one action would alone.</p>
   </div>
 </div></section>
 
@@ -562,7 +669,7 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
   <div class="card" style="margin-top:14px">
     <h4>What you receive each week (Tuesday)</h4>
     <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px">
-      <li>1 long-form raw cut (12-18 min)</li>
+      <li>1 long-form raw cut (12-25 min — match content type)</li>
       <li>4-6 standalone skit raw clips (30-60s each)</li>
       <li>Section timestamps for the long-form</li>
       <li>Reel cut spec (which 6-8 segments to extract)</li>
@@ -686,25 +793,26 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
 </div></footer>
 
 <script>
-// Long-form template data
+// Long-form template data — times shown are TYPICAL for a 15-min build.
+// Each section has a `range` to show how it flexes for shorter (12-min talking-head) or longer (25-min deep-dive) episodes.
 const lfSections = [
-  { num:'01', time:'0:00-0:20', name:'The Hook', purpose:'Stop-scroll psychological tune-in', reelCut:'Reel A: cliffhanger', detail:'Open with one of the 5 hook archetypes (see §06). Visual + verbal hook simultaneously. NO logos / intros. Tease the payoff. Direct ICP callout works best ("If you\'re a London exec who used to be fit but stopped..."). The hook also becomes a standalone Reel A — cut at the moment of curiosity peak.' },
-  { num:'02', time:'0:20-0:50', name:'The Promise', purpose:'Set the contract — what they\'ll learn + outcome', reelCut:'(YT only)', detail:'30-second promise. "By the end of this video, you\'ll know exactly..." or "I\'m going to give you the 3 things that..." Sets viewer expectation, increases watch time. NOT included in any reel cut — too contextual to YouTube.' },
-  { num:'03', time:'0:50-1:30', name:'Authority', purpose:'Pro stage record + clients trained + 1-line story', reelCut:'Reel B: British Pro Champion hero', detail:'40 seconds of quiet credibility. "I\'m Mukund Venkat. 2 Bros Pro British Champion. I\'ve coached over a thousand clients — founders, executives, athletes from Chennai to London — for 14 years..." Becomes a standalone Reel B — Mukund\'s authority hero, used as a brand-builder reel in its own right.' },
-  { num:'04', time:'1:30-3:00', name:'Why This Matters Now', purpose:'Cultural / market / scientific context', reelCut:'Reel C: insight/talking-head', detail:'90 seconds of context. Why is this video relevant in 2026? What\'s happening to busy professionals\' bodies right now? This is your "topical insight" reel — strong for talking-head shorts on Instagram. Often quotable.' },
-  { num:'05', time:'3:00-9:00', name:'The 3 Principles', purpose:'The substance — 3 actionable points', reelCut:'Reels D, E, F: 3 standalone shorts', detail:'2 minutes per principle = 6 minutes core teaching. Each principle = its own reel cut. Use frameworks ("Principle 1: minimum effective dose"), examples ("a typical client trains 4×/wk, 45 min..."), and contrarian beats ("most coaches will tell you the opposite — here\'s why they\'re wrong"). This is the MOST extractable section.' },
-  { num:'06', time:'9:00-11:30', name:'Demonstration', purpose:'Training / nutrition / framework live', reelCut:'Reel G: visual-heavy', detail:'2.5 min of demo. If training: actual lifts on camera. If nutrition: meal-prep walk-through. If framework: whiteboard / app screen recording. This becomes Reel G — visual-heavy with subtitles, no voice required. Strongest TikTok format.' },
-  { num:'07', time:'11:30-13:00', name:'A Client\'s Story', purpose:'Anonymised case study with permission', reelCut:'Reel H: transformation reveal', detail:'90 sec story-led case study. "James — 42, founder, was at 22% body fat. 16 weeks later..." With written consent (UK ASA compliance). This is your highest-converting reel cut — transformation reveals are his top-performing format (1,920 avg views).' },
-  { num:'08', time:'13:00-14:00', name:'Common Mistakes', purpose:'Contrarian / "stop doing X" callout', reelCut:'Reel I: mistake callout', detail:'1 min on the 2-3 mistakes most viewers will be making. Specific, named. Contrarian framing performs well as a standalone reel — pattern interrupt + insight.' },
-  { num:'09', time:'14:00-14:30', name:'Action Steps', purpose:'What to do this week', reelCut:'(YT only)', detail:'30 sec specific actions. "Step 1: do X by tomorrow. Step 2: track Y. Step 3: review Z by Sunday." Specificity creates retention + makes the video feel useful, not just watchable. NOT cut as a standalone reel — only works in context.' },
-  { num:'10', time:'14:30-15:00', name:'CTAs', purpose:'Lead magnet → application → subscribe', reelCut:'(YT only)', detail:'Soft → strong CTA progression. (1) "Get the [magnet] in description." (2) "If you want me to coach you through this — apply via the link." (3) "Subscribe + see the next video where I cover..." Each CTA serves a different funnel stage.' },
+  { num:'01', time:'0:00-0:20', range:'15-45s', name:'The Hook', purpose:'Stop-scroll psychological tune-in', reelCut:'Reel A: cliffhanger', detail:'Open with one of the 5 hook archetypes (see §06). Visual + verbal hook simultaneously. NO logos / intros. Tease the payoff. Direct ICP callout works best ("If you\'re a London exec who used to be fit but stopped..."). The hook also becomes a standalone Reel A — cut at the moment of curiosity peak.' },
+  { num:'02', time:'0:20-0:50', range:'20-60s', name:'The Promise', purpose:'Set the contract — what they\'ll learn + outcome', reelCut:'(YT only)', detail:'30-second promise. "By the end of this video, you\'ll know exactly..." or "I\'m going to give you the 3 things that..." Sets viewer expectation, increases watch time. NOT included in any reel cut — too contextual to YouTube.' },
+  { num:'03', time:'0:50-1:30', range:'30-90s', name:'Authority', purpose:'Pro stage record + clients trained + 1-line story', reelCut:'Reel B: British Pro Champion hero', detail:'40 seconds of quiet credibility. "I\'m Mukund Venkat. 2 Bros Pro British Champion. I\'ve coached over a thousand clients — founders, executives, athletes from Chennai to London — for 14 years..." Becomes a standalone Reel B — Mukund\'s authority hero, used as a brand-builder reel in its own right.' },
+  { num:'04', time:'1:30-3:00', range:'60-180s', name:'Why This Matters Now', purpose:'Cultural / market / scientific context', reelCut:'Reel C: insight/talking-head', detail:'90 seconds of context. Why is this video relevant in 2026? What\'s happening to busy professionals\' bodies right now? This is your "topical insight" reel — strong for talking-head shorts on Instagram. Often quotable.' },
+  { num:'05', time:'3:00-9:00', range:'4-15 min', name:'The Principles', purpose:'The substance — 3-7 actionable points', reelCut:'Reels D, E, F (+G, H if extended): standalone shorts per principle', detail:'2 min per principle = 6 min for a 3-principle build. Methodology deep-dives use 5-7 principles for a 10-15 min substance section. Each principle = its own reel cut. Use frameworks, examples, and contrarian beats. This is the MOST extractable section.' },
+  { num:'06', time:'9:00-11:30', range:'2-6 min', name:'Demonstration', purpose:'Training / nutrition / framework live', reelCut:'Reel G: visual-heavy', detail:'Demo size scales with content. Standard build: 2.5 min. Methodology deep-dives: 4-6 min. Skipped entirely on case-study videos (story replaces it). If training: actual lifts on camera. If nutrition: meal-prep walk-through. If framework: whiteboard / app screen recording. Becomes Reel G — visual-heavy with subtitles, no voice required.' },
+  { num:'07', time:'11:30-13:00', range:'90s — 12 min', name:'A Client\'s Story', purpose:'Anonymised case study with permission', reelCut:'Reel H: transformation reveal', detail:'On standard videos: 90 sec story beat. On case-study videos: this section IS the spine — 8-12 min walking through the full transformation arc with 3 turning-point beats. With written consent (UK ASA compliance). Highest-converting reel cut — transformation reveals are his top-performing format (1,920 avg views).' },
+  { num:'08', time:'13:00-14:00', range:'45-120s', name:'Common Mistakes', purpose:'Contrarian / "stop doing X" callout', reelCut:'Reel I: mistake callout', detail:'1 min on the 2-3 mistakes most viewers will be making. Specific, named. Contrarian framing performs well as a standalone reel — pattern interrupt + insight.' },
+  { num:'09', time:'14:00-14:30', range:'30-60s', name:'Action Steps', purpose:'What to do this week', reelCut:'(YT only)', detail:'Specific actions. "Step 1: do X by tomorrow. Step 2: track Y. Step 3: review Z by Sunday." Specificity creates retention + makes the video feel useful. Cut on case-study videos (the story carries the takeaway).' },
+  { num:'10', time:'14:30-15:00', range:'30-60s', name:'CTAs', purpose:'Lead magnet → application → subscribe', reelCut:'(YT only)', detail:'Soft → strong CTA progression. (1) "Get the [magnet] in description." (2) "If you want me to coach you through this — apply via the link." (3) "Subscribe + see the next video where I cover..." Each CTA serves a different funnel stage.' },
 ];
 
 const tl = document.getElementById('lfTimeline');
 tl.innerHTML = lfSections.map(s => `<div class="lf-section" data-section="${s.num}">
   <div class="num">${s.num}</div>
   <div>
-    <div class="time">${s.time}</div>
+    <div class="time">${s.time}<small style="display:block;font-family:var(--mono);font-size:10px;color:var(--ink-mute);margin-top:2px">flex: ${s.range}</small></div>
     <div class="name">${s.name}<small>${s.purpose}</small></div>
   </div>
   <div class="purpose">${s.purpose}</div>
@@ -736,22 +844,22 @@ document.getElementById('skitGrid').innerHTML = skitFormats.map(s => `<div class
 
 // 12-week calendar
 const calendar = [
-  { wk:1, pillar:'talking_head', pillarLabel:'Talking-head', title:'Why busy professionals train hard but don\'t transform', preview:'The 3 reasons 12-week attempts collapse. Pattern interrupt hook.', magnet:'12-Week Performance Audit', stage:'Problem-aware', sells:'£997 online' },
-  { wk:2, pillar:'transformation', pillarLabel:'Transformation', title:'How a Goldman trader lost 12kg in 16 weeks (working 80h/wk)', preview:'Story-led case study. Anonymised. Strongest converting format.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
-  { wk:3, pillar:'skit', pillarLabel:'Skit + talking-head', title:'3 mistakes London executives make in the gym', preview:'Direct ICP callout. Skit-style mistake callouts + serious teaching mid-section.', magnet:'12-Week Performance Audit', stage:'Problem-aware', sells:'£997 online' },
-  { wk:4, pillar:'transformation', pillarLabel:'Transformation', title:'The 12-week framework I use with founders + execs', preview:'Methodology reveal. Direct sale-aligned. End of validation sprint.', magnet:'Application directly', stage:'Product-aware', sells:'£997 online' },
-  { wk:5, pillar:'talking_head', pillarLabel:'Talking-head', title:'5 numbers I track for every client over 40', preview:'Data-driven trust. Builds authority. Methodology window.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
-  { wk:6, pillar:'event', pillarLabel:'HYROX', title:'Sub-90 HYROX with 3 sessions a week (busy professional plan)', preview:'HYROX-specific. Tied to London ExCeL events. Event-recap pillar.', magnet:'HYROX Readiness Scorecard', stage:'Solution-aware', sells:'Hybrid Signature' },
-  { wk:7, pillar:'personal', pillarLabel:'Personal', title:'Why I left India for London (and what I built when I got here)', preview:'Story-led: Chennai → Asia podiums (Singapore 2016/17) → British Pro Champion 2019 → London transformation coach. Authority + emotion.', magnet:'(none — pillar 4, brand build)', stage:'Authority', sells:'Trust building' },
-  { wk:8, pillar:'transformation', pillarLabel:'Transformation', title:'My client\'s biggest physique transformation — what we actually did', preview:'Detailed case study. Before/after compliance-cleared. Methodology demonstrated.', magnet:'12-Week Performance Audit', stage:'Most-aware', sells:'£997 online' },
-  { wk:9, pillar:'talking_head', pillarLabel:'Talking-head', title:'Why I don\'t train clients more than 4 hours a week', preview:'Contrarian. Premium positioning ("less is more"). Methodology defence.', magnet:'British Pro 7-Day Reset', stage:'Solution-aware', sells:'£997 online' },
-  { wk:10, pillar:'event', pillarLabel:'HYROX', title:'Doubles HYROX prep — what I learned at London Olympia', preview:'Race recap. Highest community engagement format. Tied to next race.', magnet:'HYROX Readiness Scorecard', stage:'Community', sells:'Hybrid Signature' },
-  { wk:11, pillar:'talking_head', pillarLabel:'Talking-head', title:'The 3 stages of building elite physique after 35', preview:'Framework reveal. "Phase 1 / Phase 2 / Phase 3" structure. Brand asset.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
-  { wk:12, pillar:'personal', pillarLabel:'Personal + transformation', title:'Father, founder, fit at 45 — the schedule', preview:'Lifestyle + methodology. Closes Q1. Identity content for ICP.', magnet:'Application directly', stage:'Most-aware', sells:'£997 online' },
+  { wk:1, pillar:'talking_head', pillarLabel:'Talking-head', length:'12-15 min', type:'Talking-head educational', title:'Why busy professionals train hard but don\'t transform', preview:'The 3 reasons 12-week attempts collapse. Pattern interrupt hook.', magnet:'12-Week Performance Audit', stage:'Problem-aware', sells:'£997 online' },
+  { wk:2, pillar:'transformation', pillarLabel:'Transformation', length:'15-22 min', type:'Client case study', title:'How a Goldman trader lost 12kg in 16 weeks (working 80h/wk)', preview:'Story-led case study. Anonymised. Strongest converting format. Story section becomes 8-12 min spine.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
+  { wk:3, pillar:'skit', pillarLabel:'Skit + talking-head', length:'10-13 min', type:'Skit-extended hybrid', title:'3 mistakes London executives make in the gym', preview:'Direct ICP callout. Skit-style mistake callouts + serious teaching mid-section.', magnet:'12-Week Performance Audit', stage:'Problem-aware', sells:'£997 online' },
+  { wk:4, pillar:'transformation', pillarLabel:'Methodology', length:'18-25 min', type:'Methodology deep-dive', title:'The 12-week framework I use with founders + execs', preview:'Methodology reveal. Direct sale-aligned. End of validation sprint. 5-7 principles × 2-3 min.', magnet:'Application directly', stage:'Product-aware', sells:'£997 online' },
+  { wk:5, pillar:'talking_head', pillarLabel:'Talking-head', length:'12-15 min', type:'Talking-head educational', title:'5 numbers I track for every client over 40', preview:'Data-driven trust. Builds authority. Methodology window.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
+  { wk:6, pillar:'event', pillarLabel:'HYROX', length:'14-18 min', type:'Talking-head educational', title:'Sub-90 HYROX with 3 sessions a week (busy professional plan)', preview:'HYROX-specific. Tied to London ExCeL events. Event-recap pillar. Demo expanded for race-day walkthrough.', magnet:'HYROX Readiness Scorecard', stage:'Solution-aware', sells:'Hybrid Signature' },
+  { wk:7, pillar:'personal', pillarLabel:'Personal', length:'12-16 min', type:'Story-led / personal', title:'Why I left India for London (and what I built when I got here)', preview:'Story-led: Chennai → Asia podiums (Singapore 2016/17) → British Pro Champion 2019 → London transformation coach. Authority + emotion.', magnet:'(none — pillar 4, brand build)', stage:'Authority', sells:'Trust building' },
+  { wk:8, pillar:'transformation', pillarLabel:'Transformation', length:'18-22 min', type:'Client case study (deep)', title:'My client\'s biggest physique transformation — what we actually did', preview:'Detailed case study. Before/after compliance-cleared. Methodology demonstrated. Full programming reveal.', magnet:'12-Week Performance Audit', stage:'Most-aware', sells:'£997 online' },
+  { wk:9, pillar:'talking_head', pillarLabel:'Talking-head', length:'10-14 min', type:'Talking-head contrarian', title:'Why I don\'t train clients more than 4 hours a week', preview:'Contrarian. Premium positioning ("less is more"). Methodology defence.', magnet:'British Pro 7-Day Reset', stage:'Solution-aware', sells:'£997 online' },
+  { wk:10, pillar:'event', pillarLabel:'HYROX', length:'12-16 min', type:'Event recap', title:'Doubles HYROX prep — what I learned at London Olympia', preview:'Race recap. Highest community engagement format. Tied to next race.', magnet:'HYROX Readiness Scorecard', stage:'Community', sells:'Hybrid Signature' },
+  { wk:11, pillar:'talking_head', pillarLabel:'Methodology', length:'18-25 min', type:'Methodology deep-dive', title:'The 3 stages of building elite physique after 35', preview:'Framework reveal. "Phase 1 / Phase 2 / Phase 3" structure. Brand asset. Each phase = its own 5-7 min chapter.', magnet:'12-Week Performance Audit', stage:'Solution-aware', sells:'£997 online' },
+  { wk:12, pillar:'personal', pillarLabel:'Personal + transformation', length:'15-20 min', type:'Story-led / lifestyle', title:'Father, founder, fit at 45 — the schedule', preview:'Lifestyle + methodology. Closes Q1. Identity content for ICP.', magnet:'Application directly', stage:'Most-aware', sells:'£997 online' },
 ];
 
 document.getElementById('calendarGrid').innerHTML = calendar.map(c => `<div class="cal-week" data-wk="${c.wk}">
-  <div class="wk">Week ${c.wk}</div>
+  <div class="wk">Week ${c.wk} <span style="float:right;font-family:var(--mono);color:var(--accent);text-transform:none;letter-spacing:0">${c.length}</span></div>
   <div class="pillar ${c.pillar}">${c.pillarLabel}</div>
   <h4>${c.title}</h4>
   <div class="preview">${c.preview}</div>
@@ -769,11 +877,12 @@ document.querySelectorAll('.cal-week').forEach(el => {
     document.getElementById('calendarDetailContent').innerHTML = `
       <span class="tag acc">Week ${c.wk} · ${c.pillarLabel}</span>
       <h3 style="margin:10px 0">${c.title}</h3>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px"><span class="tag good">${c.type}</span><span class="tag" style="border-color:var(--accent);color:var(--accent)">${c.length}</span></div>
       <div class="grid-2" style="margin-top:14px">
         <div>
           <h4>Brief</h4>
           <p style="font-size:13.5px">${c.preview}</p>
-          <p style="font-size:12.5px;color:var(--ink-mute);margin-top:8px"><b>Awareness stage:</b> ${c.stage}<br><b>Sells:</b> ${c.sells}<br><b>Lead magnet:</b> ${c.magnet}</p>
+          <p style="font-size:12.5px;color:var(--ink-mute);margin-top:8px"><b>Target length:</b> ${c.length} (${c.type})<br><b>Awareness stage:</b> ${c.stage}<br><b>Sells:</b> ${c.sells}<br><b>Lead magnet:</b> ${c.magnet}</p>
         </div>
         <div>
           <h4>Production checklist</h4>
@@ -792,35 +901,121 @@ document.querySelectorAll('.cal-week').forEach(el => {
   });
 });
 
-// Hook archetypes
+// Hook archetypes — research-backed for the 1.3-second window on Reels/Shorts
+// Each archetype: mechanism (WHY it stops the scroll), formula, 3 specific examples, when to use
 const hooks = [
-  { archetype:'Pattern interrupt', for:'High-performers who tune out generic fitness', example:'"I\'m not training to look good. I\'m training to live longer."', proof:'1,914 views' },
-  { archetype:'Avatar callout', for:'Direct ICP recognition', example:'"If you\'re a London exec who used to be fit but stopped — this video is for you."', proof:'Tested template' },
-  { archetype:'Contrarian truth', for:'Challenge a held belief', example:'"Stop training backwards. Cardio first is why you\'re stuck."', proof:'856 views (DSVc2E0DLSs)' },
-  { archetype:'Result tease', for:'Hint at the outcome', example:'"How my client lost 12kg while travelling 3 of the 16 weeks."', proof:'Story-format pattern' },
-  { archetype:'Question hook', for:'Problem-aware self-identification', example:'"Are you feeling stuck on your fat-loss journey?"', proof:'⭐ 6,747 views — his all-time #1' },
+  {
+    num:'01',
+    archetype:'The Authority Inversion',
+    mechanism:'<b>Pattern interrupt + credibility anchor.</b> Lead with your highest-status credential, then immediately contradict the thing your audience expects you to say. Two cognitive jolts in one breath: status confirmation, then expectation violation. The brain has to stay to resolve the contradiction.',
+    formula:'<b>[Credential]</b> + <b>[Counter-conventional statement that contradicts industry orthodoxy]</b>',
+    examples:[
+      'British Pro Champion. I lift four times a week. Max.',
+      'I coached a £40M founder. Cardio wasn\'t the answer.',
+      'Won a pro bodybuilding title eating carbs at midnight.',
+    ],
+    when:'<b>Best for:</b> myth-busting reels, series openers, non-consensus positions. Executives default-trust credentialled experts but are exhausted by generic advice — this archetype lets you bypass scepticism in 1.5 seconds.',
+  },
+  {
+    num:'02',
+    archetype:'The Calendar Callout',
+    mechanism:'<b>Identity-callout via specificity.</b> Generic "busy professionals" hits no one. A founder hearing their own week described — Tuesday board meeting, Heathrow lounge, 11pm laptop — experiences cognitive self-recognition (the "that\'s literally me" reflex). Specificity is the pattern interrupt.',
+    formula:'<b>[Specific time/context most viewers will recognise as their own life]</b> + <b>[Implied diagnosis or stake]</b>',
+    examples:[
+      'It\'s 9pm. You just got home. Gym closed.',
+      'Founders flying weekly: this is why your back hurts.',
+      'Board meeting Tuesday, deadlift Thursday, hotel gym Friday.',
+    ],
+    when:'<b>Best for:</b> lifestyle-design content, training-around-travel, logistical takeaways. Viewer feels <i>seen</i> in the first second — buying you 30 seconds of attention to deliver the answer.',
+  },
+  {
+    num:'03',
+    archetype:'The Receipt Drop',
+    mechanism:'<b>Proof-first / curiosity gap.</b> Lead with the outcome, force the viewer to backfill the <i>how</i>. The curiosity gap widens when the result is concrete and quantifiable, AND the constraints make it sound impossible. "Lost weight" doesn\'t gap. "Down 14kg in 19 weeks while running a Series B" gaps hard.',
+    formula:'<b>[Specific named client archetype]</b> + <b>[Quantified result]</b> + <b>[Constraint that makes it sound impossible]</b>',
+    examples:[
+      'PE partner. Down 11kg. Three sessions a week.',
+      'Founder hit sub-60 HYROX while raising £8M.',
+      'CEO added 22kg to his deadlift in 14 weeks.',
+    ],
+    when:'<b>Best for:</b> case-study reels, before/after content, proof posts. Particularly powerful as a YouTube Short opener — the receipt earns you the full 60 seconds. Use sparingly (1× per 6 posts) — overuse trains viewers to dismiss it as a brag.',
+  },
+  {
+    num:'04',
+    archetype:'The False-Belief Kill',
+    mechanism:'<b>Contrarian + cognitive dissonance.</b> Name the lie your audience has been told, then promise to replace it. Disproportionately effective on high-achievers because they pride themselves on <i>being right</i>. Telling them they\'ve been wrong about something — especially something they\'ve spent money on — triggers a defend-or-investigate response. Most investigate.',
+    formula:'<b>[Confident negation of a held belief]</b> + <b>[Sharper alternative framing]</b>',
+    examples:[
+      'Stop training six days a week. You\'re a founder, not an athlete.',
+      'Your protein target is wrong. Here\'s the executive number.',
+      'HIIT is making your cortisol worse. Do this instead.',
+    ],
+    when:'<b>Best for:</b> pillar content where you stake a position differentiating from IG-fitness mainstream. Strongest moat for premium positioning. Use 1-2× per week max — every-hook contrarian becomes background noise.',
+  },
+  {
+    num:'05',
+    archetype:'The Cost-of-Ignorance Hook',
+    mechanism:'<b>Loss aversion + identity stakes.</b> Losses hit roughly 2× harder than equivalent gains (Kahneman). Reframe the workout/nutrition advice as something they\'re <i>already paying for</i> through inaction — in time, longevity, performance, status. Executives who optimise capital allocation for a living respond to health framed as a misallocated asset.',
+    formula:'<b>[Hidden cost the viewer is unknowingly paying]</b> + <b>[Tied to identity / role they care about]</b>',
+    examples:[
+      'Every year over 40 you skip lifting costs 1% muscle. Compound that.',
+      'Your 6am calls are stealing the testosterone your 50s need.',
+      'Visceral fat at 42 is the silent tax on your next decade.',
+    ],
+    when:'<b>Best for:</b> longevity content, hormonal-health content, "why bother training" content for already-wealthy audiences who need a different motivator than aesthetics. This is the differentiator from the £40/month online-coach market.',
+  },
+  {
+    num:'06',
+    archetype:'The Insider Reveal',
+    mechanism:'<b>Privileged-access / authority hijack.</b> Position the viewer as being let into a room they\'re not normally in. Behavioural economics calls this "exclusivity priming" — the same mechanism that makes private-members clubs work. For executives who already pay for access (NetJets, Soho House, private GPs), the frame is pre-sold.',
+    formula:'<b>[What I tell / do with my private clients]</b> + <b>[That contradicts public advice]</b>',
+    examples:[
+      'What I actually program for my £2,400-a-quarter clients.',
+      'The deload week I give every founder before a raise.',
+      'Three things I won\'t let my exec clients do in the gym.',
+    ],
+    when:'<b>Best for:</b> framework reveals, programming content, philosophy of <i>how</i> you coach. Strongest archetype for converting follower → £997+ enquiry. Pre-frames coaching as something earned, not advertised. Pair with soft CTA in caption only — never in hook.',
+  },
+  {
+    num:'07',
+    archetype:'The Diagnostic Question',
+    mechanism:'<b>Interactive curiosity gap + self-categorisation.</b> Standard "question hooks" fail because viewers can answer mentally and scroll on. The diagnostic version forces a <i>self-assessment</i> the viewer cannot resolve without watching. The scroll cost becomes higher than the watch cost.',
+    formula:'<b>[Specific measurable benchmark]</b> + <b>[Implicit self-test the viewer can\'t pass without watching]</b>',
+    examples:[
+      'Can you carry your bodyweight for 60 seconds? You should.',
+      'Resting heart rate over 65 at 40? We need to talk.',
+      'If you can\'t deadlift bodyweight by 45, you\'re behind.',
+    ],
+    when:'<b>Best for:</b> standards content, benchmarking, fitness-test reels. Excellent retention performer — viewer keeps watching to learn where they rank. Works as a recurring series ("The 7 Standards Every Founder Over 40 Should Hit") for compound algorithmic returns.',
+  },
 ];
 document.getElementById('hookGrid').innerHTML = hooks.map(h => `<div class="hook-card">
-  <div class="for">For ${h.for}</div>
-  <div class="archetype">${h.archetype}</div>
-  <div class="example">"${h.example}"</div>
-  <div class="proof">${h.proof}</div>
+  <div class="num">${h.num} · Archetype</div>
+  <h3 class="archetype">${h.archetype}</h3>
+  <div class="mechanism">${h.mechanism}</div>
+  <div class="formula">${h.formula}</div>
+  <div class="examples">
+    <div class="ex-label">3 examples for Mukund</div>
+    ${h.examples.map(e => `<div class="ex">"${e}"</div>`).join('')}
+  </div>
+  <div class="when">${h.when}</div>
 </div>`).join('');
 
-// ICP playbook
+// ICP playbook — 7 actions ordered by leverage
 const icpActions = [
-  { title:'Bio rewrite', desc:'Current: "Helping High Performers Build Muscle & Confidence." Generic, no ICP signal. <b>New:</b> "Mukund Venkat — Performance Coach. 🏆 2 Bros Pro British Champion 2019 · Stage-ready physiques to everyday transformations · London · 14 yrs · 📩 DM \'AUDIT\' for the 12-week scorecard."', signal:'Lifts: caption keyword density + ICP recognition + lead magnet trigger' },
-  { title:'Audience reset (the biggest single lever)', desc:'<b>15-20 fitness-creator peers</b> currently dominate his comments — they engage out of professional courtesy, not buying intent. Block / restrict the worst offenders. Engage actively with verified ICP accounts (founders / execs / pros). Within 4-6 weeks Meta\'s recommendation model rebuilds the audience map.', signal:'Lifts: ICP fit 1.11 → 3.0+ in 4 weeks (largest gain)' },
-  { title:'Caption SEO', desc:'Front-load value in the first 125 characters (caption truncation point). Always include 2-3 ICP keywords: <b>executive · London · founder · performance · transformation · professional · busy</b>. Don\'t write captions for your existing audience — write them for the ICP you want.', signal:'Lifts: keyword-based audience targeting (Meta uses caption tokens for recommendations)' },
-  { title:'Story polls (weekly demographic signal)', desc:'One poll per week designed to make Meta map his audience to professional demographics. "What\'s your role? Founder / Senior pro / Athlete / Other" — Meta uses poll responses to refine the audience model. 8-12 weeks of consistent polls = audience reclassification.', signal:'Lifts: explicit demographic signal (highest-quality audience telemetry)' },
-  { title:'Hashtag refinement (per §07)', desc:'Move from generic #fitness #motivation to the niche-precise tier. <b>5-6 ICP tags + 3 broad + 2 branded</b> = 10-11 total. Meta caps engagement signal at 11.', signal:'Lifts: discovery from ICP-specific hashtag feeds' },
-  { title:'Engagement quality optimisation', desc:'Saves > shares > comments > likes. Add "save this" CTAs to teaching content. Add "tag the friend who..." to skits. Reply to every comment in the first hour after posting (Meta weight peaks early).', signal:'Lifts: post-level signal quality (saves & shares from real ICP = strongest signal)' },
-  { title:'Cross-platform congruence', desc:'LinkedIn currently absent from his ecosystem. <b>Start now.</b> Same bio, same value prop, weekly post (1 short-form clip + 1 written post). LinkedIn presence + IG + YouTube triangulation tells the algorithm "this creator\'s audience is professional men." LinkedIn alone might add 3-5 ICP-fit points.', signal:'Lifts: ecosystem-level audience modelling (cross-platform consistency)' },
+  { title:'Bio rewrite', lever:'Profile-level signal', desc:'Current bio: "Helping High Performers Build Muscle & Confidence." Generic. No ICP signal. <b>New:</b> "Mukund Venkat — Performance Coach · 🏆 2 Bros Pro British Champion 2019 · Stage-ready physiques to everyday transformations · London · 14 yrs · 📩 DM \'AUDIT\' for the 12-week scorecard."', signal:'Lifts caption keyword density + ICP recognition + lead-magnet trigger' },
+  { title:'Audience reset', lever:'⭐ Flagship lever — largest single gain', flagship:true, desc:'<b>15-20 fitness-creator peers</b> currently dominate Mukund\'s comments — they engage out of professional courtesy, not buying intent. Action: block / restrict the worst offenders, then actively engage on verified ICP accounts (founders / execs / pros). Within 4-6 weeks Meta\'s recommendation model rebuilds the audience map.', signal:'1.11 → 3.0+ in 4 weeks (single largest contributor)' },
+  { title:'Caption SEO', lever:'Caption-level signal', desc:'Front-load value in the first 125 characters (the caption truncation point). Always include 2-3 ICP keywords: <b>executive · London · founder · performance · transformation · professional · busy</b>. Write captions for the ICP you <i>want</i>, not the audience you currently have.', signal:'Keyword-based audience targeting (Meta tokenises captions for recommendations)' },
+  { title:'Story polls — weekly', lever:'Demographic telemetry', desc:'One poll per week designed to make Meta map the audience to professional demographics. "What\'s your role? Founder / Senior pro / Athlete / Other." Meta uses poll responses to refine the audience model. 8-12 weeks of consistent polls = audience reclassification.', signal:'Explicit demographic signal — highest-quality telemetry available' },
+  { title:'Hashtag refinement', lever:'Discovery-feed signal', desc:'Move from generic <span style="font-family:var(--mono);font-size:11.5px">#fitness #motivation</span> to the niche-precise tier (per §07). <b>5-6 ICP tags + 3 broad + 2 branded = 10-11 total.</b> Meta caps engagement signal at 11.', signal:'Discovery via ICP-specific hashtag feeds' },
+  { title:'Engagement quality', lever:'Post-level signal', desc:'<b>Saves > shares > comments > likes.</b> Add "save this for [specific use]" CTAs to teaching content. Add "tag the founder who…" to skits. Reply to every comment within the first hour after posting (Meta weight peaks early in the post lifecycle).', signal:'Post-level signal quality — saves/shares from real ICP are the strongest signal' },
+  { title:'Cross-platform congruence', lever:'Ecosystem signal', desc:'LinkedIn is currently absent from Mukund\'s ecosystem. <b>Start now.</b> Same bio, same value prop. Weekly post: 1 short-form clip + 1 written post. LinkedIn + IG + YouTube triangulation tells the algorithm "this creator\'s audience is professional men." LinkedIn alone may add 3-5 ICP-fit points.', signal:'Ecosystem-level audience modelling — cross-platform consistency' },
 ];
 document.getElementById('icpList').innerHTML = icpActions.map(a => `<li>
+  <div class="lever ${a.flagship ? 'flagship' : ''}">${a.lever}</div>
   <h4>${a.title}</h4>
   <div class="desc">${a.desc}</div>
-  <div class="signal">→ ${a.signal}</div>
+  <div class="signal">${a.signal}</div>
 </li>`).join('');
 
 // Distribution rhythm
