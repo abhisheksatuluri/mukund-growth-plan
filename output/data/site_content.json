@@ -1,5 +1,5 @@
 {
-  "_source": "Extracted from https://v0-mukund-venkat-website.vercel.app/ on 2026-04-27 + revenue_model.json synthesised positioning",
+  "_source": "Synthesised from v0 site (https://v0-mukund-venkat-website.vercel.app/) + revenue_model.json + verified facts from Mukund's WhatsApp reply 2026-04-28",
   "positioning": {
     "headline": "The Performance Coach behind high-achieving men.",
     "tagline": "Stage-ready physiques to everyday transformations.",
@@ -9,16 +9,60 @@
     "name": "Mukund Venkat",
     "location": "London",
     "specialties": ["body transformation", "stage-ready physiques", "performance coaching"],
-    "credentials": [
-      { "label": "Mr. India Medallist", "evidence": "Deccan Chronicle 2019" },
-      { "label": "5+ Years Experience" },
-      { "label": "100+ Clients Transformed" },
-      { "label": "10+ Awards Won" }
-    ],
-    "background_arc": "Indian-born → studied in London → ran gyms in Chennai → returned to London → competition stage to client transformation",
+    "credentials_verified_by_mukund_2026_04_28": {
+      "competition_record": [
+        { "title": "2 Bros Pro British Champion", "year": 2019, "placement": "1st (Champion)" },
+        { "title": "PCA British Pro", "location": "Jersey", "placement": "2nd" },
+        { "title": "Asia Fitness Model Search", "location": "Singapore", "year": 2016, "placement": "2nd" },
+        { "title": "Asia Fitness Model Search", "year": 2017, "placement": "3rd" },
+        { "title": "Mr Tamil Nadu", "placement": "2nd" }
+      ],
+      "career_milestones": [
+        "14 years in the fitness industry as a personal trainer",
+        "Thousands of clients coached over career (1000+)",
+        "Bodybuilding career concluded after 2019 — full focus on coaching"
+      ],
+      "qualifications": [
+        "Level 2 Personal Trainer",
+        "Level 3 Personal Trainer",
+        "Diploma — Kensington and Chelsea"
+      ],
+      "headline_eyebrow": "British Pro Champion · London",
+      "previous_misattribution_note": "Previously displayed as 'Mr. India medallist' based on Deccan Chronicle 2019 — corrected to actual record per Mukund's own statement."
+    },
+    "background_arc": "Indian-born → studied in London → ran gyms in Chennai → returned to London → competition career 2016-2019 (Singapore, Tamil Nadu, PCA Jersey, 2 Bros Pro British Champion) → full-time coaching since 2019",
     "team": [
-      { "name": "Dr Neel Reddy", "role": "Clinical lead — bloodwork & biomarker analysis", "handle": "@dr.neelreddy" },
-      { "name": "Samuel Afriyie", "role": "Performance physiotherapist (Team GB)", "handle": "@sa4fitness" }
+      {
+        "name": "Dr Neel Reddy",
+        "role": "Longevity & Clinical Health",
+        "experience": "20 years in London medical industry",
+        "specialty": "Longevity healthcare",
+        "availability": "Top-tier programmes by request only — NOT bundled by default. Compliance-safe positioning.",
+        "handle": "@dr.neelreddy"
+      },
+      {
+        "name": "Samuel Afriyie",
+        "role": "Physiotherapist · Personal Trainer · Coach",
+        "specialty": "Structural performance, recovery, movement quality",
+        "availability": "Available across programmes",
+        "handle": "@sa4fitness"
+      },
+      {
+        "name": "Andras Thamas",
+        "role": "Mindset Coach",
+        "availability": "By request only — additional fee. Mukund hires him for the engagement when client requests dedicated mindset work."
+      }
+    ]
+  },
+  "compliance_notes": {
+    "bloodwork": "NOT performed in-house. Recommended via 3rd party (e.g., Medichecks/Medicare) for serious individuals. Charged additionally. Site copy rewritten to: 'For top-tier clients we layer in third-party bloodwork & biomarker testing through our clinical partners.' This avoids any unlicensed medical service claim.",
+    "retreats": "NOT yet run — aspirational. REMOVED from site copy. Future goal: travel-based retreats.",
+    "longevity_claims": "Soft references via Dr Neel Reddy ('longevity healthcare') only — kept compliant under ASA guidance because it points to a licensed clinician's separate service, not Mukund's deliverable.",
+    "medical_claims_to_avoid": [
+      "'We do bloodwork' (Mukund doesn't, partners do)",
+      "'Hormone optimisation' (medical claim)",
+      "'Cellular health / longevity protocols delivered by Mukund' (only via clinical partner)",
+      "Any 'cure', 'treat', 'fix' language"
     ]
   },
   "testimonials_real": [
@@ -33,17 +77,18 @@
     { "name": "Paul", "tag": "Industry Leading", "quote": "Personalised meal plans and workouts based on goals. One of the best in industry." },
     { "name": "Rada", "tag": "Life-Changing Results", "quote": "Helped with diet program and body muscle development with amazing perspective." }
   ],
+  "_pending_from_mukund": "Mukund will share 5 best client wins separately — anonymised: rough age + occupation + what they wanted + what they got + how long it took. Plus permissions to use full names + photos for the testimonials above. He noted: 'I have some great Google reviews on Fitwithmukund but I need to change the name and page.'",
   "method_pillars": [
     {
       "title": "Data, not guesswork",
-      "body": "Bloodwork, biomarkers, and structured assessments — overseen by clinical partner Dr Neel Reddy — set the baseline. We treat the body like a system, not a hunch."
+      "body": "Structured assessments, measurable benchmarks, and outcome tracking. For top-tier clients we layer in third-party bloodwork & biomarker testing through our clinical partners — so we treat the body like a system, not a hunch."
     },
     {
       "title": "Stage-ready discipline",
       "body": "Methods proven on the international physique stage — applied to busy professionals. Restraint over volume. Precision over noise."
     },
     {
-      "title": "Strength as the foundation",
+      "title": "Strength as foundation",
       "body": "Lean physique, athletic performance, and longevity all start with structural strength. We build the body that lets you do everything else better."
     },
     {
@@ -86,6 +131,14 @@
       "best_for": "London residents wanting the highest-touch experience"
     }
   ],
+  "content_strategy_validation_2026_04_28": {
+    "mukund_confirmation": "Comedy works great — best for reach. Then educational. Skits with multiple characters work well.",
+    "implication": "Confirms the 30% skits + 20% transformation + 20% talking-head mix already in content_strategy.html. No format changes needed. Specifically: invest more in multi-character skits (vs solo skits) since Mukund explicitly called out the multi-character format as effective."
+  },
+  "brand_directives_from_mukund_2026_04_28": [
+    "Classy and professional",
+    "Reach ideal clients — not vanity audience"
+  ],
   "contact": {
     "instagram": "@fitwithmukundvenkat",
     "youtube": "@fitwithmukundvenkat",
@@ -94,21 +147,10 @@
   "image_strategy_decision": {
     "decision": "Use existing 17 curated images with editorial CSS treatments. NO face regeneration.",
     "rationale": [
-      "Face drift risk is too high for a personal brand — even careful AI regen can subtly alter identity",
-      "Authentic photographs carry premium credibility for personal brand sites",
-      "Framing issues solvable via object-position, aspect-ratio, mask gradients, duotone overlays",
-      "5 hero candidates already score 8/10 — strong working set",
-      "The 1 discard candidate (mukund_coaching_client_2) gets dropped, not regenerated",
-      "Future shoot day: replace audit-flagged images with intentional studio shoot rather than AI regen"
-    ],
-    "css_treatments_to_use": [
-      "object-position: center top/bottom for tight crops",
-      "Duotone/desaturated overlay for tonal consistency",
-      "Subtle grain texture overlay for editorial feel",
-      "Linear-gradient bottom-fade so cropped subjects merge with section backgrounds",
-      "Aspect-ratio fixing via container — never stretch images",
-      "Ken burns + parallax animations for cinematic motion",
-      "Vignette overlays for hero shots"
+      "Face drift risk too high for a personal brand",
+      "Authentic photographs carry premium credibility",
+      "Framing issues solvable via object-position, gradients, duotone overlays",
+      "Future shoot day to replace audit-flagged images with intentional studio shoot"
     ]
   }
 }

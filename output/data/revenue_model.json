@@ -189,16 +189,37 @@
       "psychographics": ["high-performer / founder / executive / senior pro", "image-conscious", "time-poor", "wants visible transformation + performance, not just abstract wellness"]
     },
     "biographical_context_verified": {
+      "_correction_2026_04_28": "Earlier framing as 'Mr. India medallist' was INCORRECT (came from Deccan Chronicle wording). Mukund confirmed via WhatsApp 2026-04-28 his actual record is below.",
       "indian_born": true,
       "studied_in_london": true,
       "ran_gyms_in_chennai": true,
       "now_london_based": true,
-      "mr_india_medallist": "Verified via Deccan Chronicle 2019 — exact year/category pending confirmation from Mukund",
-      "team_associates_verified_via_co_author_tags": [
-        { "name": "Dr Neel Reddy", "handle": "@dr.neelreddy", "role": "London-based clinician — overseeing bloodwork/biomarker per existing Mukund site copy", "evidence": "Tagged as co-author in Mukund's IG posts" },
-        { "name": "Samuel Afriyie", "handle": "@sa4fitness", "role": "Per Mukund's existing site: Team GB coach, sports physio. 10 co-authored posts in scrape — relationship is real" }
+      "competition_record_verified": [
+        { "title": "2 Bros Pro British Champion", "year": 2019, "placement": "1st (Champion)", "use": "STRONGEST single credential — 'British Pro Champion' is the cleanest hero claim" },
+        { "title": "PCA British Pro", "location": "Jersey", "placement": "2nd" },
+        { "title": "Asia Fitness Model Search", "location": "Singapore", "year": 2016, "placement": "2nd" },
+        { "title": "Asia Fitness Model Search", "year": 2017, "placement": "3rd" },
+        { "title": "Mr Tamil Nadu", "placement": "2nd" }
       ],
-      "implication": "Mr. India authority + verified clinical / Team GB physio team = unique premium positioning signals nobody else can replicate. Use these as authority assets in headline + bio sections, NOT as the niche definition."
+      "competitive_career_status": "Concluded after 2019 — 'That was the end of body building' per Mukund. Full focus on coaching since.",
+      "career_metrics": {
+        "years_in_industry": 14,
+        "clients_coached": "1000+",
+        "qualifications": ["Level 2 Personal Trainer", "Level 3 Personal Trainer", "Diploma Kensington and Chelsea"]
+      },
+      "team_verified_via_mukund_directly": [
+        { "name": "Dr Neel Reddy", "role": "Longevity & Clinical Health, 20 yrs London medical industry", "availability": "TOP-TIER ONLY by request — NOT bundled by default. Compliance-safe positioning.", "handle": "@dr.neelreddy" },
+        { "name": "Samuel Afriyie", "role": "Physiotherapist · Personal Trainer · Coach", "availability": "Available across programmes", "handle": "@sa4fitness", "evidence": "10 co-authored IG posts confirm real relationship" },
+        { "name": "Andras Thamas", "role": "Mindset Coach", "availability": "BY REQUEST ONLY — additional fee. Mukund hires him for the engagement when client requests dedicated mindset work." }
+      ],
+      "compliance_position_per_mukund": {
+        "bloodwork_in_house": false,
+        "bloodwork_method": "Recommended via 3rd party (Medichecks/Medicare) for serious individuals — additional charge. Mukund himself flagged: 'this affects compliance — important'",
+        "retreats_run": false,
+        "retreats_status": "Aspirational — 'no retreats run as of yet, this will be the ultimate goal'. REMOVED from current site copy.",
+        "site_copy_strategy": "Pillar 1 (Method) rewritten: 'For top-tier clients we layer in third-party bloodwork & biomarker testing through our clinical partners' — avoids unlicensed medical service claim while still surfacing the credentials advantage."
+      },
+      "implication": "British Pro Champion 2019 + verified multidisciplinary team (clinical longevity + physio + mindset, all by-request) = unique premium positioning signals nobody else can replicate. Use as authority assets in headline + bio sections, NOT as niche definition."
     },
     "format_performance_v2": {
       "source": "Re-analysis of 136 unique Mukund posts spanning 2024-04 to 2026-04 (102 reels)",
