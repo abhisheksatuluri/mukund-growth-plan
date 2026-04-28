@@ -8,3 +8,7 @@ output/data/raw_instagram_comments.json
 output/data/raw_instagram_posts.json
 output/data/competitors.json
 output/data/profile.json
+# Image processing intermediate folders — only assets/final/ is committed
+Website/assets/optimized/
+Website/assets/regen/
+Website/assets/video/

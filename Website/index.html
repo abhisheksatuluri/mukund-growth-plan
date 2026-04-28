@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5 {
 @media (min-width: 768px) { .wrap { padding: 0 56px; } }
 @media (min-width: 1280px) { .wrap { padding: 0 72px; } }
 
-section { position: relative; padding: clamp(80px, 12vw, 160px) 0; }
+section { position: relative; padding: clamp(56px, 12vw, 160px) 0; }
 
 /* ============ NAV ============ */
 nav.top {
@@ -151,25 +151,29 @@ nav.top.compact { padding: 14px 24px; }
 }
 .hero-content {
   position: relative; z-index: 2;
-  padding: 120px 24px 72px;
+  padding: 96px 20px 56px;
 }
+@media (min-width: 480px) { .hero-content { padding: 120px 24px 72px; } }
 @media (min-width: 768px) { .hero-content { padding: 160px 56px 96px; } }
 @media (min-width: 1280px) { .hero-content { padding: 200px 72px 120px; } }
 
 .hero h1 {
-  font-size: clamp(48px, 8.2vw, 124px);
-  line-height: 0.96; letter-spacing: -0.025em;
-  max-width: 16ch; margin-bottom: 28px;
+  font-size: clamp(40px, 8.2vw, 124px);
+  line-height: 0.98; letter-spacing: -0.025em;
+  max-width: 16ch; margin-bottom: 24px;
 }
+@media (min-width: 768px) { .hero h1 { line-height: 0.96; margin-bottom: 28px; } }
 .hero h1 em { font-style: italic; color: var(--brass-2); font-weight: 300; }
 .hero-sub {
-  font-family: var(--serif); font-size: clamp(20px, 2.4vw, 30px); font-weight: 300;
+  font-family: var(--serif); font-size: clamp(18px, 2.4vw, 30px); font-weight: 300;
   line-height: 1.4; max-width: 42ch; color: var(--cream-2);
-  margin-bottom: 48px; font-style: italic;
+  margin-bottom: 32px; font-style: italic;
 }
+@media (min-width: 768px) { .hero-sub { margin-bottom: 48px; } }
 .hero-meta {
-  display: flex; flex-wrap: wrap; gap: 28px; align-items: center;
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
 }
+@media (min-width: 768px) { .hero-meta { gap: 28px; } }
 .hero-cta {
   display: inline-flex; align-items: center; gap: 14px;
   padding: 18px 32px; background: var(--brass); color: var(--ink);
@@ -307,10 +311,11 @@ nav.top.compact { padding: 14px 24px; }
 }
 @media (min-width: 768px) { .method-grid { grid-template-columns: 1fr 1fr; } }
 .method-item {
-  background: var(--ink); padding: 48px 40px; min-height: 280px;
+  background: var(--ink); padding: 32px 24px; min-height: 240px;
   display: flex; flex-direction: column; justify-content: space-between;
   transition: background .4s var(--ease);
 }
+@media (min-width: 768px) { .method-item { padding: 48px 40px; min-height: 280px; } }
 .method-item:hover { background: var(--ink-2); }
 .method-num {
   font-family: var(--mono); font-size: 11px; color: var(--brass);
@@ -330,10 +335,11 @@ nav.top.compact { padding: 14px 24px; }
 @media (min-width: 1100px) { .ladder { grid-template-columns: repeat(4, 1fr); } }
 
 .tier {
-  background: var(--ink-2); border: 1px solid var(--line); padding: 40px 32px;
-  display: flex; flex-direction: column; min-height: 460px;
+  background: var(--ink-2); border: 1px solid var(--line); padding: 28px 22px;
+  display: flex; flex-direction: column; min-height: auto;
   position: relative; transition: all .4s var(--ease);
 }
+@media (min-width: 768px) { .tier { padding: 40px 32px; min-height: 460px; } }
 .tier:hover { border-color: var(--brass); transform: translateY(-4px); }
 .tier.flagship {
   border-color: var(--brass); background: linear-gradient(180deg, rgba(184,148,90,0.06) 0%, var(--ink-2) 100%);
@@ -357,9 +363,10 @@ nav.top.compact { padding: 14px 24px; }
   letter-spacing: 0.18em; text-transform: uppercase;
 }
 .tier-price {
-  font-family: var(--serif); font-size: 48px; line-height: 1;
-  margin: 32px 0 24px; color: var(--brass); font-weight: 400;
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 48px); line-height: 1;
+  margin: 24px 0 18px; color: var(--brass); font-weight: 400;
 }
+@media (min-width: 768px) { .tier-price { margin: 32px 0 24px; } }
 .tier-desc {
   font-size: 15px; line-height: 1.65; color: var(--cream-2);
   margin-bottom: 24px; flex-grow: 1;
@@ -405,13 +412,15 @@ nav.top.compact { padding: 14px 24px; }
 
 .testimonial {
   border-left: 1px solid var(--brass);
-  padding: 4px 0 4px 28px;
+  padding: 4px 0 4px 20px;
 }
+@media (min-width: 768px) { .testimonial { padding: 4px 0 4px 28px; } }
 .testimonial blockquote {
-  font-family: var(--serif); font-size: clamp(20px, 1.7vw, 24px);
-  font-style: italic; line-height: 1.4; color: var(--cream);
-  margin-bottom: 20px; font-weight: 300;
+  font-family: var(--serif); font-size: clamp(18px, 1.7vw, 24px);
+  font-style: italic; line-height: 1.45; color: var(--cream);
+  margin-bottom: 16px; font-weight: 300;
 }
+@media (min-width: 768px) { .testimonial blockquote { line-height: 1.4; margin-bottom: 20px; } }
 .testimonial blockquote::before {
   content: '"'; color: var(--brass); font-size: 1.1em; margin-right: 2px;
 }
@@ -607,7 +616,7 @@ footer.foot {
 <!-- ========= HERO ========= -->
 <header class="hero" id="top">
   <div class="hero-bg">
-    <img src="assets/mukund_gym_dynamic.jpeg" alt="Mukund Venkat training" loading="eager" fetchpriority="high" />
+    <img src="assets/final/mukund_gym_dynamic.jpeg" alt="Mukund Venkat training" loading="eager" fetchpriority="high" />
   </div>
   <div class="hero-veil"></div>
   <div class="hero-content">
@@ -671,7 +680,7 @@ footer.foot {
         </p>
       </div>
       <div class="visual tall reveal">
-        <img src="assets/mukund_competition_stage.jpeg" alt="Mukund on competition stage" loading="lazy" />
+        <img src="assets/final/mukund_competition_stage.jpeg" alt="Mukund on competition stage" loading="lazy" />
         <span class="caption">2 Bros Pro · British Champion 2019</span>
       </div>
     </div>
@@ -709,7 +718,7 @@ footer.foot {
         <p style="color: var(--cream-3);">Every client journey runs on the same four principles.</p>
       </div>
       <div class="visual tall reveal">
-        <img src="assets/mukund_mirror_gym.jpeg" alt="Mukund training" loading="lazy" />
+        <img src="assets/final/mukund_mirror_gym.jpeg" alt="Mukund training" loading="lazy" />
       </div>
     </div>
 
@@ -836,42 +845,42 @@ footer.foot {
 
     <div class="proof-gallery reveal-stagger">
       <div class="proof-item">
-        <img src="assets/from-v0/v0_04.jpeg" alt="Body transformation — back view comparison" loading="lazy" />
+        <img src="assets/final/from-v0/v0_04.jpeg" alt="Body transformation — back view comparison" loading="lazy" />
         <div class="proof-tag">
           <span class="week">Stage Prep · Back</span>
           <div class="name">Mukund — Own Transformation</div>
         </div>
       </div>
       <div class="proof-item">
-        <img src="assets/client_transformation_front.jpeg" alt="Client transformation — front view" loading="lazy" />
+        <img src="assets/final/client_transformation_front.jpeg" alt="Client transformation — front view" loading="lazy" />
         <div class="proof-tag">
           <span class="week">16 Weeks · Front</span>
           <div class="name">Client A</div>
         </div>
       </div>
       <div class="proof-item">
-        <img src="assets/client_transformation_back.jpeg" alt="Client transformation — back view" loading="lazy" />
+        <img src="assets/final/client_transformation_back.jpeg" alt="Client transformation — back view" loading="lazy" />
         <div class="proof-tag">
           <span class="week">12 Weeks · Back</span>
           <div class="name">Client B</div>
         </div>
       </div>
       <div class="proof-item">
-        <img src="assets/from-v0/v0_03.jpeg" alt="Body transformation — composite comparison" loading="lazy" />
+        <img src="assets/final/from-v0/v0_03.jpeg" alt="Body transformation — composite comparison" loading="lazy" />
         <div class="proof-tag">
           <span class="week">Front + Back</span>
           <div class="name">Mukund — 4-View Composite</div>
         </div>
       </div>
       <div class="proof-item">
-        <img src="assets/mukund_coaching_client_1.jpeg" alt="Private coaching session" loading="lazy" />
+        <img src="assets/final/mukund_coaching_client_1.jpeg" alt="Private coaching session" loading="lazy" />
         <div class="proof-tag">
           <span class="week">1-on-1 · Studio</span>
           <div class="name">Private Coaching</div>
         </div>
       </div>
       <div class="proof-item">
-        <img src="assets/from-v0/v0_01.jpeg" alt="Mukund training in gym" loading="lazy" />
+        <img src="assets/final/from-v0/v0_01.jpeg" alt="Mukund training in gym" loading="lazy" />
         <div class="proof-tag">
           <span class="week">In the Gym</span>
           <div class="name">Daily Practice</div>
@@ -928,7 +937,7 @@ footer.foot {
 
 <!-- ========= CYCLING / EDITORIAL BREAK ========= -->
 <section style="padding: 0; min-height: 70vh; position: relative; overflow: hidden;">
-  <img src="assets/mukund_cycling_triumph.jpeg" alt="Mukund cycling triumph" loading="lazy"
+  <img src="assets/final/mukund_cycling_triumph.jpeg" alt="Mukund cycling triumph" loading="lazy"
        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: center 40%; filter: brightness(0.6) contrast(1.1) saturate(0.85);" />
   <div style="position:absolute; inset:0; background: linear-gradient(90deg, rgba(10,10,11,0.85) 0%, rgba(10,10,11,0.5) 50%, rgba(10,10,11,0.2) 100%);"></div>
   <div class="wrap" style="position: relative; z-index: 2; min-height: 70vh; display: flex; align-items: center;">

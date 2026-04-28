@@ -1,0 +1,14 @@
+{
+  "same_person": true,
+  "face_similarity_0_10": 9,
+  "body_similarity_0_10": 9,
+  "pose_preserved": true,
+  "clothing_preserved": true,
+  "background_changed": true,
+  "screenshot_artifacts_removed": true,
+  "regen_quality_0_10": 9,
+  "image2_premium_score_0_10": 8,
+  "ai_giveaway_visible": "none",
+  "verdict": "use_regen",
+  "notes": "The regenerated image accurately preserves the person's face, body, pose, and clothing with high fidelity. Although the background has been changed to a cleaner, simpler one, the overall quality of the regeneration is excellent, enhancing the image's clarity."
+}

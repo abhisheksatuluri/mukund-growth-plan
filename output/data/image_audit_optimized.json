@@ -1,0 +1,80 @@
+[
+  {
+    "filename": "mukund_editorial_singapore.jpeg",
+    "framing_issues": [],
+    "needs_regen": false,
+    "best_use": "hero",
+    "premium_feel_score_0_10": 9,
+    "subject_intact": true,
+    "screenshot_artifacts_visible": false,
+    "notes": "A well-composed and high-quality image of a muscular man posing against a vibrant graffiti wall, suitable for a hero shot."
+  },
+  {
+    "filename": "mukund_mirror_gym.jpeg",
+    "framing_issues": [
+      "top of head (reflection) slightly cut",
+      "bottom of legs/feet cut",
+      "left arm (reflection) slightly cut",
+      "right arm (back view) slightly cut"
+    ],
+    "needs_regen": false,
+    "best_use": "proof_section",
+    "premium_feel_score_0_10": 8,
+    "subject_intact": true,
+    "screenshot_artifacts_visible": false,
+    "notes": "Good quality image showcasing physique from front (reflection) and back, with minor cropping at the edges."
+  },
+  {
+    "filename": "mukund_suit_smiling.jpeg",
+    "framing_issues": [
+      "black bar at bottom"
+    ],
+    "needs_regen": true,
+    "best_use": "discard",
+    "premium_feel_score_0_10": 5,
+    "subject_intact": true,
+    "screenshot_artifacts_visible": true,
+    "notes": "Image has a large black bar at the bottom, indicating a screenshot artifact, which significantly detracts from its quality."
+  },
+  {
+    "filename": "mukund_suit_portrait.jpeg",
+    "framing_issues": [
+      "subject slightly off-center",
+      "top of building cut off",
+      "bottom of subject's legs cut off"
+    ],
+    "needs_regen": true,
+    "best_use": "story_section",
+    "premium_feel_score_0_10": 7,
+    "subject_intact": false,
+    "screenshot_artifacts_visible": false,
+    "notes": "Good lighting and subject attire, but framing issues and a slightly awkward pose detract from a premium feel."
+  },
+  {
+    "filename": "mukund_suit_fullbody.jpeg",
+    "framing_issues": [
+      "subject's feet are cut off",
+      "bottom of image has a black bar",
+      "top of building slightly cut off"
+    ],
+    "needs_regen": true,
+    "best_use": "discard",
+    "premium_feel_score_0_10": 4,
+    "subject_intact": false,
+    "screenshot_artifacts_visible": true,
+    "notes": "Image is a screenshot with a black bar at the bottom, and the subject's feet are cropped."
+  },
+  {
+    "filename": "mukund_suit_side.jpeg",
+    "framing_issues": [
+      "subject's left hand is cut off",
+      "bottom of subject's legs/pants are cut off"
+    ],
+    "needs_regen": false,
+    "best_use": "secondary",
+    "premium_feel_score_0_10": 8,
+    "subject_intact": false,
+    "screenshot_artifacts_visible": false,
+    "notes": "Good quality image with a well-dressed subject, but framing issues with a cut-off hand and legs."
+  }
+]
