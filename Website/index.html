@@ -15,6 +15,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<!-- Calendly popup, for booking discovery calls from offer tiers -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 <style>
 :root {
   --ink: #0a0a0b;
@@ -469,6 +473,7 @@ nav.top.compact { padding: 14px 24px; }
 }
 .method-pin-image img {
   width: 100%; height: 100%; object-fit: cover;
+  object-position: center top;
   filter: brightness(0.82) contrast(1.05) saturate(0.92);
   transition: filter .8s var(--ease);
 }
@@ -575,9 +580,48 @@ nav.top.compact { padding: 14px 24px; }
 }
 .tier-price {
   font-family: var(--serif); font-size: clamp(36px, 5vw, 48px); line-height: 1;
-  margin: 24px 0 18px; color: var(--brass); font-weight: 400;
+  margin: 24px 0 8px; color: var(--brass); font-weight: 400;
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
 }
-@media (min-width: 768px) { .tier-price { margin: 32px 0 24px; } }
+.tier-price .strike {
+  font-size: 0.5em; color: var(--cream-4);
+  text-decoration: line-through; text-decoration-thickness: 1px;
+  font-weight: 300; letter-spacing: 0;
+}
+.tier-scarcity {
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass);
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-bottom: 18px;
+}
+.tier-scarcity::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--brass); box-shadow: 0 0 0 4px rgba(184,148,90,0.18);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(184,148,90,0.18); }
+  50% { box-shadow: 0 0 0 8px rgba(184,148,90,0.04); }
+}
+@media (min-width: 768px) { .tier-price { margin: 32px 0 8px; } }
+
+/* Tier book-a-call button */
+.tier-book {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 18px; margin-top: 16px;
+  background: transparent; border: 1px solid var(--brass);
+  color: var(--brass); font-family: var(--mono); font-size: 11px;
+  font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em;
+  cursor: pointer; transition: all .35s var(--ease);
+  width: 100%;
+}
+.tier-book:hover { background: var(--brass); color: var(--ink); }
+.tier-book span { transition: transform .3s var(--ease); }
+.tier-book:hover span { transform: translateX(3px); }
+.tier.flagship .tier-book {
+  background: var(--brass); color: var(--ink); border-color: var(--brass);
+}
+.tier.flagship .tier-book:hover { background: var(--cream); border-color: var(--cream); }
 .tier-desc {
   font-size: 15px; line-height: 1.65; color: var(--cream-2);
   margin-bottom: 24px; flex-grow: 1;
@@ -1091,15 +1135,18 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
         <div class="tier-price">£250</div>
         <p class="tier-desc">A diagnostic of your current state, physical, structural, behavioural. You leave with a 14-day action plan. Even if we never work together again, you walk away with the system.</p>
         <div class="tier-best"><strong>Best for:</strong> Anyone serious about getting started, without committing yet.</div>
+        <button type="button" class="tier-book" data-cal-tier="Performance Audit (£250)">Book a call <span aria-hidden="true">→</span></button>
       </div>
 
       <div class="tier">
         <span class="tier-num">02</span>
         <h4>Online Transformation</h4>
         <span class="tier-duration">12 weeks · global</span>
-        <div class="tier-price">£997</div>
+        <div class="tier-price">£997 <span class="strike">£1,200</span></div>
+        <span class="tier-scarcity">4 spots open this quarter</span>
         <p class="tier-desc">The signature programme. Custom training, evidence-led nutrition, weekly check-ins. Globally accessible. The most chosen tier, and the one most clients renew.</p>
         <div class="tier-best"><strong>Best for:</strong> Travel-heavy professionals or anyone with their own gym.</div>
+        <button type="button" class="tier-book" data-cal-tier="Online Transformation (£997)">Book a call <span aria-hidden="true">→</span></button>
       </div>
 
       <div class="tier flagship">
@@ -1107,8 +1154,10 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
         <h4>Hybrid Signature</h4>
         <span class="tier-duration">Min. 3 months · London</span>
         <div class="tier-price">£499<span style="font-size:24px;color:var(--cream-3);">/mo</span></div>
+        <span class="tier-scarcity">By invitation · capacity-based</span>
         <p class="tier-desc">Online programme + monthly in-person session in London. The "best of both worlds" tier, built for high-accountability London-based professionals who want recalibration without the daily PT cost.</p>
         <div class="tier-best"><strong>Best for:</strong> London execs who need structure plus periodic in-person calibration.</div>
+        <button type="button" class="tier-book" data-cal-tier="Hybrid Signature (£499/mo)">Book a call <span aria-hidden="true">→</span></button>
       </div>
 
       <div class="tier">
@@ -1116,8 +1165,10 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
         <h4>Full In-Person</h4>
         <span class="tier-duration">12 weeks · London only</span>
         <div class="tier-price">£2,400</div>
+        <span class="tier-scarcity">Limited · 2 cohorts per quarter</span>
         <p class="tier-desc">2–3 in-person sessions per week. Full programming, nutrition, recovery oversight. The most intensive tier, a complete rebuild of body, energy, and routine.</p>
         <div class="tier-best"><strong>Best for:</strong> London residents wanting the highest-touch experience.</div>
+        <button type="button" class="tier-book" data-cal-tier="Full In-Person (£2,400)">Book a call <span aria-hidden="true">→</span></button>
       </div>
 
     </div>
@@ -1506,6 +1557,22 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
     open.addEventListener('click', () => mob.classList.add('open'));
     close.addEventListener('click', () => mob.classList.remove('open'));
   }
+
+  // ---- Calendly popup booking on tier cards ----
+  document.querySelectorAll('[data-cal-tier]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tier = btn.getAttribute('data-cal-tier') || '';
+      if (window.Calendly && Calendly.initPopupWidget) {
+        Calendly.initPopupWidget({
+          url: 'https://calendly.com/fitwithmukund' + (tier ? '?utm_source=website&utm_content=' + encodeURIComponent(tier) : ''),
+        });
+      } else {
+        // fallback if Calendly script blocked
+        window.open('https://calendly.com/fitwithmukund', '_blank', 'noopener');
+      }
+    });
+  });
 
   // ---- Apply form (mailto fallback) ----
   const form = document.getElementById('applyForm');
