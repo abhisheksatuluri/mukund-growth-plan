@@ -402,6 +402,47 @@ nav.top.compact { padding: 14px 24px; }
 }
 @media (min-width: 768px) { .method-closer { padding: 120px 56px 0; } }
 
+/* ============ GOOGLE REVIEWS BAND + CARDS ============ */
+.google-band {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(66,133,244,0.04) 0%, var(--ink-2) 100%);
+}
+.google-band-inner {
+  padding: 28px 28px;
+  display: flex; flex-wrap: wrap; gap: 24px;
+  align-items: center; justify-content: space-between;
+}
+.google-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.2em; color: var(--cream);
+}
+.google-eyebrow .g-mark { display: inline-block; vertical-align: middle; }
+.google-rating {
+  display: inline-flex; align-items: baseline; gap: 10px;
+  margin-top: 8px;
+  font-family: var(--serif); font-size: clamp(22px, 2vw, 30px);
+  color: var(--cream); font-weight: 400;
+}
+.g-stars { color: #fbbc05; letter-spacing: 0.04em; font-size: 0.88em; }
+.g-rating-num { font-weight: 500; }
+.g-rating-count { color: var(--cream-3); font-size: 0.7em; font-style: italic; }
+
+/* Google review card variant */
+.testimonial.google-rev {
+  border-left-color: #4285F4;
+  background: rgba(66,133,244,0.03);
+  padding: 18px 0 18px 24px;
+}
+.google-rev .g-source {
+  display: block;
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: #fbbc05; margin-bottom: 12px;
+}
+.google-rev .g-source span { color: var(--cream-3); }
+.google-rev cite .tag { color: #4285F4; }
+
 /* ============ HONEST FIT CHECK (Who this is for / isn't) ============ */
 .fit-grid {
   display: grid; grid-template-columns: 1fr; gap: 1px;
@@ -1231,20 +1272,65 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
       </div>
     </div>
 
-    <!-- Google reviews trust band (placeholder until top 10 are imported into the grid below) -->
-    <div class="reveal" style="margin-top: 80px; padding: 32px; background: var(--ink-2); border: 1px solid var(--line); border-radius: 4px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
-      <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
-        <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass);">Verified on Google</div>
-        <div style="font-family: var(--serif); font-size: clamp(20px, 2vw, 28px); color: var(--cream); font-style: italic;">⭐⭐⭐⭐⭐ <span style="font-style: normal; font-weight: 500;">40+ five-star reviews</span></div>
+    <!-- Verified on Google trust band -->
+    <div class="reveal google-band" style="margin-top: 80px;">
+      <div class="google-band-inner">
+        <div class="google-band-meta">
+          <div class="google-eyebrow">
+            <svg class="g-mark" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.836.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+            Verified on Google
+          </div>
+          <div class="google-rating">
+            <span class="g-stars">★★★★★</span>
+            <span class="g-rating-num">5.0</span>
+            <span class="g-rating-count">· 44 reviews</span>
+          </div>
+        </div>
+        <a href="https://share.google/jc34oIJr4njVBf2LY" target="_blank" rel="noopener" class="proof-cta" style="margin-top: 0;">Read all on Google <span aria-hidden="true">→</span></a>
       </div>
-      <a href="https://share.google/jc34oIJr4njVBf2LY" target="_blank" rel="noopener" class="proof-cta" style="margin-top: 0;">Read all on Google <span aria-hidden="true">→</span></a>
     </div>
 
-    <div class="testimonials-grid reveal-stagger" style="margin-top: 56px;">
-      <div class="testimonial">
-        <blockquote>Expertise, motivation, and personalised approach helped me achieve fitness goals faster.</blockquote>
-        <cite><span class="name">Haroon Awan</span><span class="tag">Verified Client</span></cite>
+    <!-- Google review sub-grid (6 strongest captured) -->
+    <div class="testimonials-grid reveal-stagger" style="margin-top: 32px;">
+      <div class="testimonial google-rev">
+        <span class="g-source">★★★★★ <span style="opacity:.7">· Google</span></span>
+        <blockquote>One of the best personal trainers out there. Really helped me get in shape after lockdown with his professional guidance. I lost 10 kg in less than 4 months. I would definitely recommend him for anyone of any level.</blockquote>
+        <cite><span class="name">Iurie Grama</span><span class="tag">Local Guide · 2 years ago</span></cite>
       </div>
+      <div class="testimonial google-rev">
+        <span class="g-source">★★★★★ <span style="opacity:.7">· Google</span></span>
+        <blockquote>Highly recommend Mukund. He made fitness fun, helped me build confidence, and my strength has improved. Very friendly, professional, supportive, and has a fantastic ability to adapt workouts to my needs.</blockquote>
+        <cite><span class="name">Nicola Christian</span><span class="tag">5 months ago</span></cite>
+      </div>
+      <div class="testimonial google-rev">
+        <span class="g-source">★★★★★ <span style="opacity:.7">· Google</span></span>
+        <blockquote>Training with Mukund is always great fun and lots of laughs. He has extensive experience, incredible knowledge and commitment to his work. His positive energy is contagious and gives you more energy. I highly recommend him.</blockquote>
+        <cite><span class="name">Emilia Olszewska</span><span class="tag">Local Guide · a year ago</span></cite>
+      </div>
+      <div class="testimonial google-rev">
+        <span class="g-source">★★★★★ <span style="opacity:.7">· Google</span></span>
+        <blockquote>Muks is the best around. Welcomed me into the gym way before I ever trained with him. Gave me knowledge and helped me get results I never thought I could achieve. Completely changed my mindset.</blockquote>
+        <cite><span class="name">Asim Rasib</span><span class="tag">Local Guide · 2 years ago</span></cite>
+      </div>
+      <div class="testimonial google-rev">
+        <span class="g-source">★★★★★ <span style="opacity:.7">· Google</span></span>
+        <blockquote>My diet was poor, and exercise was nonexistent in my life when I met Mukund. I had no motivation to work out and couldn't maintain consistency, even when I tried. He turned that around completely.</blockquote>
+        <cite><span class="name">Mehreen Butt</span><span class="tag">a year ago</span></cite>
+      </div>
+      <div class="testimonial google-rev">
+        <span class="g-source">★★★★★ <span style="opacity:.7">· Google</span></span>
+        <blockquote>Mukund is an amazing PT. His expertise, motivation, and personalised approach helped me achieve my fitness goals faster than I ever imagined. I highly recommend him to anyone seeking first-class guidance and support.</blockquote>
+        <cite><span class="name">Haroon Awan</span><span class="tag">2 years ago</span></cite>
+      </div>
+    </div>
+
+    <!-- Existing client testimonials (from Mukund's prior site) -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line);">
+      <span class="eyebrow eyebrow-line">In their words</span>
+      <p style="font-family: var(--serif); font-size: clamp(18px, 1.7vw, 22px); color: var(--cream-2); font-style: italic; margin-top: 12px; max-width: 56ch;">More from clients across both training studios and the online programme.</p>
+    </div>
+
+    <div class="testimonials-grid reveal-stagger" style="margin-top: 32px;">
       <div class="testimonial">
         <blockquote>Made huge improvements to my workout with his guidance and positive reinforcement.</blockquote>
         <cite><span class="name">Caimin Collins</span><span class="tag">2+ Years Training</span></cite>
@@ -1260,10 +1346,6 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
       <div class="testimonial">
         <blockquote>Friendly, experienced push to start or improve your fitness journey with enthusiasm.</blockquote>
         <cite><span class="name">Jenson</span><span class="tag">Motivated &amp; Consistent</span></cite>
-      </div>
-      <div class="testimonial">
-        <blockquote>Listens to specific needs, adjusts workouts dynamically while constantly pushing goals.</blockquote>
-        <cite><span class="name">Natalia Sharon</span><span class="tag">Best PT Experience</span></cite>
       </div>
       <div class="testimonial">
         <blockquote>True professional that pushes you at your pace with practical advice and genuine care.</blockquote>
