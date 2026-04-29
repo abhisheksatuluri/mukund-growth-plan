@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#0a0a0b" />
 <title>Mukund Venkat, The Performance Coach behind high-achieving men</title>
-<meta name="description" content="Stage-ready physiques to everyday transformations. British Pro Champion 2019. London-based, 14 years coaching. 1000+ clients. Apply for online or in-person coaching." />
+<meta name="description" content="Stage-ready physiques to everyday transformations. British Pro Champion. London-based. A decade of experience, 10,000+ sessions, 1000+ clients. Apply for online or in-person coaching." />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Mukund Venkat, The Performance Coach behind high-achieving men" />
 <meta property="og:description" content="Stage-ready physiques to everyday transformations. British Pro Champion 2019. London-based." />
@@ -375,6 +375,79 @@ nav.top.compact { padding: 14px 24px; }
 
 /* duotone for editorial consistency */
 .duo img { filter: brightness(0.85) contrast(1.1) saturate(0.7) sepia(0.12); }
+
+/* ============ METHOD: PILLAR OUTCOMES + CLOSER ============ */
+.pillar-outcome {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(17px, 1.5vw, 20px); line-height: 1.4;
+  color: var(--brass-2); margin-top: 14px; max-width: 36ch;
+}
+.pillar-outcome b { color: var(--brass-2); font-weight: 400; }
+
+.method-closer {
+  text-align: center; padding: 80px 24px 0;
+  max-width: 880px;
+}
+.method-closer p {
+  font-family: var(--serif); font-size: clamp(24px, 2.6vw, 36px);
+  font-weight: 300; line-height: 1.3; color: var(--cream);
+  margin-bottom: 32px; letter-spacing: -0.01em;
+}
+.method-closer p em {
+  color: var(--brass-2); font-style: italic;
+}
+@media (min-width: 768px) { .method-closer { padding: 120px 56px 0; } }
+
+/* ============ HONEST FIT CHECK (Who this is for / isn't) ============ */
+.fit-grid {
+  display: grid; grid-template-columns: 1fr; gap: 1px;
+  background: var(--line); border: 1px solid var(--line);
+  margin-top: 56px;
+}
+@media (min-width: 768px) { .fit-grid { grid-template-columns: 1fr 1fr; } }
+.fit-col {
+  background: var(--ink); padding: 40px 28px;
+}
+@media (min-width: 768px) { .fit-col { padding: 56px 48px; } }
+.fit-col .fit-eyebrow {
+  display: block; font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.22em;
+  margin-bottom: 28px;
+}
+.fit-yes .fit-eyebrow { color: var(--brass); }
+.fit-no .fit-eyebrow { color: var(--cream-3); }
+.fit-col ul {
+  list-style: none; padding: 0; margin: 0;
+}
+.fit-col li {
+  position: relative; padding: 16px 0 16px 32px;
+  font-size: 16px; line-height: 1.55; color: var(--cream-2);
+  border-bottom: 1px solid var(--line);
+}
+.fit-col li:last-child { border-bottom: none; }
+.fit-col li::before {
+  position: absolute; left: 0; top: 18px; font-family: var(--mono); font-size: 13px; font-weight: 500;
+}
+.fit-yes li::before { content: '✓'; color: var(--brass); }
+.fit-no li::before { content: '✕'; color: var(--cream-4); }
+
+/* ============ INLINE CTA LINKS (within copy blocks) ============ */
+.story-cta, .method-cta, .proof-cta {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em; color: var(--brass);
+  padding: 14px 22px; border: 1px solid var(--brass);
+  transition: all .35s var(--ease);
+  background: transparent;
+}
+.story-cta:hover, .method-cta:hover, .proof-cta:hover {
+  background: var(--brass); color: var(--ink);
+  transform: translateX(2px);
+}
+.story-cta span, .method-cta span, .proof-cta span {
+  transition: transform .35s var(--ease);
+}
+.story-cta:hover span, .method-cta:hover span, .proof-cta:hover span { transform: translateX(4px); }
 
 /* ============ METHOD: PINNED PILLARS ============ */
 .method-pin {
@@ -781,7 +854,6 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
       </h1>
       <p class="hero-sub">
         Stage-ready physiques to everyday transformations.
-        Strength as a system, not a season.
       </p>
       <div class="hero-meta">
         <a href="#apply" class="hero-cta">Apply for coaching <span class="arrow">→</span></a>
@@ -800,16 +872,20 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
     <span class="marquee-item">Asia Fitness Model Search · Singapore 2016, 2nd</span>
     <span class="marquee-item">Asia Fitness Model Search · 2017, 3rd</span>
     <span class="marquee-item">Mr Tamil Nadu · 2nd</span>
-    <span class="marquee-item">14 years coaching</span>
-    <span class="marquee-item">1000+ clients transformed</span>
+    <span class="marquee-item">A decade of experience</span>
+    <span class="marquee-item">10,000+ sessions delivered</span>
+    <span class="marquee-item">1000+ clients coached</span>
+    <span class="marquee-item">Singapore · Jersey · Tamil Nadu · London</span>
     <!-- duplicated for seamless loop -->
     <span class="marquee-item">2 Bros Pro British Champion · 2019</span>
     <span class="marquee-item">PCA British Pro · 2nd, Jersey</span>
     <span class="marquee-item">Asia Fitness Model Search · Singapore 2016, 2nd</span>
     <span class="marquee-item">Asia Fitness Model Search · 2017, 3rd</span>
     <span class="marquee-item">Mr Tamil Nadu · 2nd</span>
-    <span class="marquee-item">14 years coaching</span>
-    <span class="marquee-item">1000+ clients transformed</span>
+    <span class="marquee-item">A decade of experience</span>
+    <span class="marquee-item">10,000+ sessions delivered</span>
+    <span class="marquee-item">1000+ clients coached</span>
+    <span class="marquee-item">Singapore · Jersey · Tamil Nadu · London</span>
   </div>
 </div>
 
@@ -817,10 +893,10 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
 <section class="authority-strip" style="padding: 64px 0;">
   <div class="wrap">
     <div class="authority-grid reveal-stagger">
-      <div class="auth-item"><span class="auth-num"><em>British</em> Pro</span><span class="auth-label">2 Bros Pro Champion · 2019</span></div>
+      <div class="auth-item"><span class="auth-num"><em>British</em> Pro</span><span class="auth-label">2 Bros Pro Champion</span></div>
+      <div class="auth-item"><span class="auth-num">10,000<em>+</em></span><span class="auth-label">Sessions Delivered</span></div>
       <div class="auth-item"><span class="auth-num">1000<em>+</em></span><span class="auth-label">Clients Coached</span></div>
-      <div class="auth-item"><span class="auth-num">14<em>yrs</em></span><span class="auth-label">In the Industry</span></div>
-      <div class="auth-item"><span class="auth-num">5<em>×</em></span><span class="auth-label">International Pro Podium</span></div>
+      <div class="auth-item"><span class="auth-num"><em>A</em> Decade</span><span class="auth-label">Of Experience</span></div>
     </div>
   </div>
 </section>
@@ -831,32 +907,41 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
     <div class="split wide">
       <div class="copy reveal">
         <span class="eyebrow eyebrow-line">The Story</span>
-        <h2 class="reveal-words">From the international stage to <em>the everyday transformation</em>.</h2>
+        <h2 class="reveal-words"><em>I didn't get into this</em> to help people lose weight.</h2>
         <p>
-          Born in India. Studied in London. Ran gyms in Chennai. Returned to London ·
-          where the same discipline behind a <strong>British Pro Champion title</strong>
-          now shapes the physiques and performance of founders, executives, and ambitious professionals.
-        </p>
-        <p style="font-family: var(--mono); font-size: 13px; line-height: 2; letter-spacing: 0.04em; color: var(--cream-3); padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-width: 52ch;">
-          2 BROS PRO BRITISH CHAMPION · 2019<br>
-          PCA BRITISH PRO · 2ND PLACE, JERSEY<br>
-          ASIA FITNESS MODEL SEARCH · SINGAPORE 2016, 2ND<br>
-          ASIA FITNESS MODEL SEARCH · 2017, 3RD<br>
-          MR TAMIL NADU · 2ND PLACE
+          I got into it because I know what it feels like to demand the absolute most from your body, and have it deliver.
         </p>
         <p>
-          The premise is simple: <strong>if it works on the international pro stage ·
-          where there is no margin for error, it works for the everyday transformation</strong>.
-          What changes isn't the science. What changes is the dose.
+          On the international stage, there is no margin for error. No excuses. No off days. You either show up as the best version of yourself or you don't. I chose to show up. Every single time.
         </p>
         <p>
-          You don't need motivation. You don't need another transformation challenge.
-          You need <em>structure, evidence, and someone who has done it himself</em>, at the highest level.
+          Years of competitive discipline that most people will never understand. Not because they lack the ability, but because nobody ever showed them what real structure looks like. That's what I bring to every client.
+        </p>
+        <p style="border-top: 1px solid var(--line); padding-top: 24px; margin-top: 8px;">
+          But here's what competing actually taught me, and what nobody talks about. <strong>The physique was never the point.</strong> The point was the energy I had walking into a room. The clarity in my thinking. The way I handled pressure. The way I slept, recovered, performed, in every area of my life, not just on stage.
+        </p>
+        <p>
+          <em>I looked good because I felt extraordinary. Not the other way around.</em>
+        </p>
+        <p>
+          That's the shift most coaches never make. They chase the mirror. <strong>I chase the machine behind it.</strong>
+        </p>
+        <p style="border-top: 1px solid var(--line); padding-top: 24px; margin-top: 8px; color: var(--cream-3);">
+          The men I work with are running businesses, raising children, operating at high pressure. They don't have time for guesswork. They have time for one system that compounds, year after year.
+        </p>
+        <p>
+          I've delivered over <strong>10,000 sessions</strong> across India and the UK, working with more than <strong>1,000 clients</strong> over a decade in the industry. The clients I work with had tried everything before. Not because they were weak, but because nobody had ever built them a system designed for someone who actually performs at a high level.
+        </p>
+        <p>
+          The look is the side effect. <strong>The energy, the function, the longevity, that's the product.</strong>
+        </p>
+        <p style="margin-top: 24px;">
+          <a href="#apply" class="story-cta">Apply for coaching <span aria-hidden="true">→</span></a>
         </p>
       </div>
       <div class="visual tall reveal">
-        <img src="assets/final/mukund_competition_stage.jpeg" alt="Mukund on competition stage" loading="lazy" />
-        <span class="caption">2 Bros Pro · British Champion 2019</span>
+        <img src="assets/final/mukund_competition_stage.jpeg" alt="Mukund competing on the international stage" loading="lazy" />
+        <span class="caption">Singapore 2015 · One of the first Indians to compete internationally and win</span>
       </div>
     </div>
   </div>
@@ -885,12 +970,16 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
     <div class="split">
       <div class="copy reveal">
         <span class="eyebrow eyebrow-line">The Method</span>
-        <h2 class="reveal-words">Four principles. <em>No fluff.</em></h2>
+        <h2 class="reveal-words">Four principles. One system. <em>No guesswork.</em></h2>
         <p>
-          What makes Mukund's coaching different isn't a gimmick. It's the operating system ·
-          built from over a decade of stage prep, clinical partnerships, and 100+ private transformations.
+          Every client who failed before failed for the same reason. Not lack of motivation. <strong>Lack of structure.</strong>
         </p>
-        <p style="color: var(--cream-3);">Every client journey runs on the same four principles.</p>
+        <p>
+          This is the system I've used across 10,000+ sessions. It does what it claims to do.
+        </p>
+        <p style="color: var(--cream-3);">
+          Most coaches stop at three of these. We don't.
+        </p>
       </div>
       <div class="visual vid reveal">
         <video
@@ -915,25 +1004,35 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
       <div class="method-pin-pillars">
         <div class="method-pillar" data-pin="01">
           <span class="num">PRINCIPLE 01</span>
-          <h3>Data, not guesswork.</h3>
-          <p>Structured assessments, measurable benchmarks, and outcome tracking. For top-tier clients we layer in third-party bloodwork &amp; biomarker testing through our clinical partners, so we treat the body like a system, not a hunch.</p>
+          <h3>Fix the foundation.</h3>
+          <p>Before we add anything, we fix what's broken. Posture. Core integrity. Joint stability. This isn't a warm-up. This is the work. A body built on a weak foundation will always break down under pressure. We build yours to last.</p>
+          <p class="pillar-outcome"><b>You move without pain. You feel capable again.</b></p>
         </div>
         <div class="method-pillar" data-pin="02">
           <span class="num">PRINCIPLE 02</span>
-          <h3>Stage-ready discipline.</h3>
-          <p>Methods proven on the international physique stage, applied to busy professionals. Restraint over volume. Precision over noise. The minimum effective dose, applied with maximum intent.</p>
+          <h3>Build strength that lasts decades.</h3>
+          <p>Muscle is your insurance policy. It protects your joints, regulates your metabolism, anchors your hormones, and tells your biology you intend to stay. We build it methodically. No ego, no injury. Just compounding progress, year after year.</p>
+          <p class="pillar-outcome"><b>Stronger at 50 than most men at 35.</b></p>
         </div>
         <div class="method-pillar" data-pin="03">
           <span class="num">PRINCIPLE 03</span>
-          <h3>Strength as foundation.</h3>
-          <p>Lean physique, athletic performance, and longevity all start with structural strength. We build the body that lets you do everything else better, for the next decade, not the next quarter.</p>
+          <h3>Build the engine.</h3>
+          <p>Cardiovascular capacity. Energy system development. The ability to sustain output when everyone else fades. This is what separates people who look fit from people who actually perform. We train your body to produce energy, recover fast, and go again.</p>
+          <p class="pillar-outcome"><b>You have the stamina to lead. Every single day.</b></p>
         </div>
         <div class="method-pillar" data-pin="04">
           <span class="num">PRINCIPLE 04</span>
-          <h3>Coaching, not cheerleading.</h3>
-          <p>You're already driven. You don't need motivation. You need a system, structured accountability, and someone who has done it himself, at the highest level.</p>
+          <h3>Sharpen the edge.</h3>
+          <p>This is where most coaches stop. We don't. Grip strength. Athletic carry. Real-world physical capability. The kind of presence that shows up in how you walk into a room, how you handle pressure, how you perform when it counts. This is your edge, and we protect it.</p>
+          <p class="pillar-outcome"><b>You don't just look strong. You are.</b></p>
         </div>
       </div>
+    </div>
+
+    <!-- Method closing line + inline CTA -->
+    <div class="method-closer wrap reveal">
+      <p>This isn't a fitness plan. <em>It's a framework for the next 30 years of your life.</em></p>
+      <a href="#work" class="method-cta">Start with the £250 Performance Audit <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -946,7 +1045,7 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
     <div class="split">
       <div class="copy reveal">
         <span class="eyebrow eyebrow-line">The Team</span>
-        <h2 class="reveal-words">Coaching is a <em>multi-disciplinary</em> craft.</h2>
+        <h2 class="reveal-words">When the work demands <em>more than one specialist</em>.</h2>
         <p>Mukund leads the system. For top-tier clients we layer in clinical longevity oversight and structural physiotherapy, so the work is matched by the right specialist when it matters.</p>
         <p style="color: var(--cream-3);">Available by request on serious-tier programmes, never bundled by default.</p>
       </div>
@@ -979,7 +1078,7 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
   <div class="wrap">
     <div class="section-head reveal" style="max-width: 900px;">
       <span class="eyebrow eyebrow-line">Work With Mukund</span>
-      <h2 class="reveal-words">Four ways in. <em>One standard.</em></h2>
+      <h2 class="reveal-words">Four ways to work with me. <em>Pick the one that fits your life.</em></h2>
       <p class="lede">No matter the tier, the system is the same. The difference is how much of it you want delivered in person, and how fast.</p>
     </div>
 
@@ -1032,7 +1131,7 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
   <div class="wrap">
     <div class="section-head reveal" style="max-width: 800px;">
       <span class="eyebrow eyebrow-line">The Proof</span>
-      <h2 class="reveal-words">Outcomes you can see. Outcomes you can <em>measure</em>.</h2>
+      <h2 class="reveal-words">What real outcomes <em>actually look like</em>.</h2>
       <p class="lede">Names below are real. Most preferred to share by first name only. Photos and full names available on request, confidentiality is the default.</p>
     </div>
 
@@ -1123,6 +1222,14 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
         <cite><span class="name">Rada</span><span class="tag">Life-Changing Results</span></cite>
       </div>
     </div>
+
+    <!-- Proof closer + CTA -->
+    <div class="reveal" style="text-align: center; margin-top: 96px; padding-top: 56px; border-top: 1px solid var(--line); max-width: 720px; margin-left: auto; margin-right: auto;">
+      <p style="font-family: var(--serif); font-size: clamp(22px, 2.4vw, 30px); font-weight: 300; line-height: 1.35; color: var(--cream); margin-bottom: 28px;">
+        These are people who decided their body was a system worth investing in. <em style="color: var(--brass-2);">The next one could be yours.</em>
+      </p>
+      <a href="#apply" class="proof-cta">Become the next case study <span aria-hidden="true">→</span></a>
+    </div>
   </div>
 </section>
 
@@ -1140,9 +1247,44 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
         Discipline isn't a feeling. <em style="color: var(--brass-2); font-style: italic;">It's a structure.</em>
       </h2>
       <p style="font-size: clamp(18px, 1.6vw, 22px); color: var(--cream-2); line-height: 1.5; max-width: 50ch;">
-        The body adapts to whatever you keep doing. The work is to keep doing the right thing ·
-        on the days you don't feel like it. That's what we build.
+        The body adapts to whatever you keep doing. The work is to keep doing the right thing on the days you don't feel like it. That's what we build.
       </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ========= WHO THIS IS FOR ========= -->
+<section id="fit" style="background: var(--ink-2);">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width: 760px;">
+      <span class="eyebrow eyebrow-line">Honest Fit Check</span>
+      <h2 class="reveal-words">Coaching at this level isn't <em>for everyone</em>.</h2>
+      <p class="lede">Before you apply, read both lists. The right answer to "is this for me?" is the one that comes from clarity, not enthusiasm.</p>
+    </div>
+
+    <div class="fit-grid reveal-stagger">
+      <div class="fit-col fit-yes">
+        <span class="fit-eyebrow">This is for you if</span>
+        <ul>
+          <li>You're a founder, executive, or senior professional running at high pressure, and you refuse to slow down.</li>
+          <li>You've tried programmes before. They worked for a few weeks, then fell apart.</li>
+          <li>You know your body is the foundation everything else runs on, and you're done treating it like an afterthought.</li>
+          <li>You want a system you can run for the next decade, not a six-week reset.</li>
+          <li>You're ready to be coached, not cheered on.</li>
+        </ul>
+      </div>
+      <div class="fit-col fit-no">
+        <span class="fit-eyebrow">This isn't for you if</span>
+        <ul>
+          <li>You're looking for a 6-week shred, summer abs, or a quick fix.</li>
+          <li>You want to be told what you want to hear, not what's actually true.</li>
+          <li>You can't commit to twelve weeks of structured work as the minimum.</li>
+          <li>You're hoping motivation will carry you through. It won't.</li>
+          <li>You're not ready to invest in yourself at this level yet. That's fine. Come back when you are.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
