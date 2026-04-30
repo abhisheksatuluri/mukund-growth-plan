@@ -140,8 +140,9 @@ nav.top.compact { padding: 14px 24px; }
 .hero-bg img {
   width: 100%; height: 100%; object-fit: cover;
   /* Mobile portrait viewport: subject sits in upper half so legs fall behind the gradient/text below */
-  object-position: center 25%;
-  filter: brightness(0.72) contrast(1.08) saturate(0.85);
+  /* New hero (St Paul's suit shot, 1200x1600 portrait): subject is centre-right, head in upper third */
+  object-position: 55% 22%;
+  filter: brightness(0.78) contrast(1.06) saturate(0.92);
   animation: kenburns 24s var(--ease) infinite alternate;
   will-change: transform;
 }
@@ -152,10 +153,10 @@ nav.top.compact { padding: 14px 24px; }
 }
 /* on landscape viewports we shift subject right so the headline gets clean negative space on the left */
 @media (min-width: 900px) {
-  .hero-bg img { object-position: 72% 8%; }
+  .hero-bg img { object-position: 62% 18%; }
 }
 @media (min-width: 1280px) {
-  .hero-bg img { object-position: 70% 5%; }
+  .hero-bg img { object-position: 60% 15%; }
 }
 @keyframes kenburns {
   0% { transform: scale(1.08) translate(0, 0); }
