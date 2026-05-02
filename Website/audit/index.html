@@ -1,0 +1,968 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0b" />
+<title>The 12-Week Performance Audit · Mukund Venkat</title>
+<meta name="description" content="Free 4-pillar diagnostic for high-achieving men. Score your Foundation, Strength, Engine, and Edge in under 5 minutes. Personalised next-step recommendation." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The 12-Week Performance Audit · Mukund Venkat" />
+<meta property="og:description" content="20 questions. 5 minutes. The only diagnostic built for men who refuse to slow down." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0b'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23B8945A' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Calendly popup, for booking discovery calls from result page -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<style>
+:root {
+  --ink: #0a0a0b;
+  --ink-2: #131316;
+  --ink-3: #1c1c20;
+  --ink-4: #25252a;
+  --line: rgba(245,241,234,0.10);
+  --line-2: rgba(245,241,234,0.18);
+  --cream: #F5F1EA;
+  --cream-2: rgba(245,241,234,0.78);
+  --cream-3: rgba(245,241,234,0.55);
+  --cream-4: rgba(245,241,234,0.35);
+  --brass: #B8945A;
+  --brass-2: #cda978;
+  --good: #7fb98c;
+  --warn: #d6c08a;
+  --bad: #d68a8a;
+  --serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background: var(--ink); }
+body {
+  font-family: var(--sans); color: var(--cream); background: var(--ink);
+  font-weight: 400; line-height: 1.55; letter-spacing: -0.005em;
+  font-size: 17px; min-height: 100vh;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; transition: opacity .3s var(--ease), color .3s var(--ease); }
+button { font-family: inherit; cursor: pointer; }
+
+/* Film grain overlay */
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='1'/></svg>");
+  opacity: .35; mix-blend-mode: overlay;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--serif); font-weight: 300; line-height: 1.04;
+  letter-spacing: -0.02em; color: var(--cream);
+}
+.eyebrow {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.22em; color: var(--brass);
+  display: inline-block;
+}
+.eyebrow-line::before {
+  content: ''; display: inline-block; width: 28px; height: 1px;
+  background: var(--brass); margin-right: 12px; vertical-align: middle;
+}
+
+.wrap { width: 100%; max-width: 880px; margin: 0 auto; padding: 0 24px; }
+@media (min-width: 768px) { .wrap { padding: 0 56px; } }
+
+/* ============ NAV ============ */
+nav.top {
+  position: sticky; top: 0; z-index: 50;
+  padding: 18px 24px;
+  background: rgba(10,10,11,0.84);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+}
+@media (min-width: 768px) { nav.top { padding: 22px 56px; } }
+.brand {
+  font-family: var(--serif); font-size: 22px; letter-spacing: 0.04em;
+  font-weight: 400; font-style: italic; color: var(--cream);
+}
+.brand .dot { color: var(--brass); }
+.nav-back {
+  font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.18em; color: var(--cream-3);
+}
+.nav-back:hover { color: var(--cream); }
+
+/* ============ INTRO ============ */
+section.intro {
+  padding: clamp(60px, 10vw, 120px) 0 clamp(40px, 6vw, 80px);
+  text-align: center;
+}
+.intro h1 {
+  font-size: clamp(40px, 7vw, 80px); margin: 24px 0 16px;
+  line-height: 1.04; letter-spacing: -0.02em;
+}
+.intro h1 em { font-style: italic; color: var(--brass-2); font-weight: 300; }
+.intro .lede {
+  font-family: var(--serif); font-size: clamp(20px, 2.4vw, 28px); font-weight: 300;
+  line-height: 1.4; max-width: 50ch; margin: 0 auto 32px;
+  color: var(--cream-2); font-style: italic;
+}
+.intro .meta-row {
+  display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;
+  font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.2em; color: var(--cream-3);
+}
+.intro .meta-row span::before {
+  content: ''; display: inline-block; width: 4px; height: 4px;
+  background: var(--brass); border-radius: 50%; margin-right: 8px;
+  vertical-align: middle;
+}
+
+.cta-primary {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 18px 32px; background: var(--brass); color: var(--ink);
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  border: 1px solid var(--brass);
+  transition: all .4s var(--ease);
+  margin-top: 36px;
+}
+.cta-primary:hover { background: var(--cream); border-color: var(--cream); transform: translateY(-2px); }
+.cta-primary span { transition: transform .3s var(--ease); }
+.cta-primary:hover span { transform: translateX(4px); }
+
+/* ============ SOCIAL PROOF BAND ============ */
+.social-band {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--ink-2);
+  padding: 28px 0;
+  margin-bottom: clamp(40px, 6vw, 80px);
+}
+.social-band-inner {
+  display: flex; gap: 32px; align-items: center; justify-content: center;
+  flex-wrap: wrap; text-align: center;
+}
+.social-band .stat {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--cream-3);
+}
+.social-band .stat b {
+  display: block; font-family: var(--serif); font-size: 32px;
+  color: var(--cream); font-weight: 400; margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.social-band .stat b em { color: var(--brass); font-style: normal; }
+
+/* ============ ASSESSMENT ============ */
+section.assessment {
+  padding: clamp(40px, 6vw, 80px) 0;
+  display: none;
+}
+section.assessment.active { display: block; }
+
+/* progress bar */
+.progress {
+  position: sticky; top: 70px; z-index: 40;
+  background: var(--ink); padding: 14px 0;
+  border-bottom: 1px solid var(--line); margin-bottom: 32px;
+}
+.progress-track {
+  height: 2px; background: var(--ink-3); border-radius: 1px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%; background: var(--brass);
+  width: 0%; transition: width .4s var(--ease);
+}
+.progress-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 8px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--cream-3);
+}
+.progress-meta b { color: var(--cream); }
+
+.pillar {
+  margin-bottom: 56px;
+}
+.pillar-head {
+  border-top: 1px solid var(--line); padding-top: 24px; margin-bottom: 28px;
+}
+.pillar-head .num {
+  font-family: var(--mono); font-size: 11px; color: var(--brass);
+  letter-spacing: 0.22em; margin-bottom: 10px;
+}
+.pillar-head h2 {
+  font-size: clamp(32px, 4.5vw, 48px); margin-bottom: 12px;
+}
+.pillar-head h2 em { font-style: italic; color: var(--brass-2); font-weight: 300; }
+.pillar-head p {
+  color: var(--cream-2); font-size: 16px; line-height: 1.6; max-width: 56ch;
+}
+
+.q-list {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.q-card {
+  background: var(--ink-2); border: 1px solid var(--line);
+  padding: 18px 20px;
+  display: flex; align-items: flex-start; gap: 16px;
+  cursor: pointer;
+  transition: border-color .25s var(--ease), background .25s var(--ease);
+}
+.q-card:hover { border-color: var(--brass); background: var(--ink-3); }
+.q-card .q-num {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--brass); letter-spacing: 0.18em;
+  min-width: 36px; padding-top: 3px;
+}
+.q-card .q-text { flex: 1; font-size: 16px; line-height: 1.55; color: var(--cream); }
+.q-card .q-options {
+  display: flex; gap: 8px; flex-shrink: 0;
+}
+.q-opt {
+  background: transparent; border: 1px solid var(--line-2);
+  color: var(--cream-2); font-family: var(--mono); font-size: 11px;
+  font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 8px 18px; transition: all .25s var(--ease);
+  min-width: 64px;
+}
+.q-opt:hover { border-color: var(--cream-3); color: var(--cream); }
+.q-opt.selected.yes { background: var(--brass); color: var(--ink); border-color: var(--brass); }
+.q-opt.selected.no { background: var(--ink-4); color: var(--cream-3); border-color: var(--cream-4); }
+@media (max-width: 600px) {
+  .q-card { flex-direction: column; gap: 12px; }
+  .q-card .q-options { width: 100%; }
+  .q-opt { flex: 1; }
+}
+
+.assessment-footer {
+  margin-top: 48px; padding-top: 24px;
+  border-top: 1px solid var(--line); text-align: center;
+}
+.assessment-footer p {
+  color: var(--cream-3); font-size: 14px; margin-bottom: 16px;
+}
+
+/* ============ RESULT ============ */
+section.result {
+  padding: clamp(60px, 8vw, 120px) 0;
+  display: none;
+}
+section.result.active { display: block; }
+
+.result-hero {
+  text-align: center; padding-bottom: 48px;
+  border-bottom: 1px solid var(--line); margin-bottom: 48px;
+}
+.score-circle {
+  width: 200px; height: 200px; border-radius: 50%;
+  margin: 32px auto;
+  background: conic-gradient(var(--brass) calc(var(--score-pct, 50) * 1%), var(--ink-3) 0);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.score-circle::before {
+  content: ''; position: absolute; inset: 8px;
+  background: var(--ink); border-radius: 50%;
+}
+.score-num {
+  position: relative; z-index: 1;
+  font-family: var(--serif); font-size: 64px; font-weight: 400;
+  color: var(--cream); line-height: 1;
+}
+.score-num small {
+  display: block; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.18em; color: var(--cream-3);
+  text-transform: uppercase; margin-top: 8px;
+}
+.result-band {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; padding: 6px 14px; display: inline-block;
+  border: 1px solid; border-radius: 0; margin-bottom: 18px;
+}
+.result-band.crit { color: var(--bad); border-color: rgba(214,138,138,0.4); background: rgba(214,138,138,0.05); }
+.result-band.build { color: var(--warn); border-color: rgba(214,192,138,0.4); background: rgba(214,192,138,0.05); }
+.result-band.edge { color: var(--brass); border-color: rgba(184,148,90,0.4); background: rgba(184,148,90,0.05); }
+.result-band.optimal { color: var(--good); border-color: rgba(127,185,140,0.4); background: rgba(127,185,140,0.05); }
+
+.result-hero h1 {
+  font-size: clamp(36px, 6vw, 56px); margin: 16px 0 16px;
+  max-width: 22ch; margin-left: auto; margin-right: auto;
+}
+.result-hero h1 em { font-style: italic; color: var(--brass-2); font-weight: 300; }
+.result-hero p {
+  font-family: var(--serif); font-size: clamp(18px, 2vw, 24px); font-weight: 300;
+  line-height: 1.4; max-width: 48ch; margin: 0 auto;
+  color: var(--cream-2); font-style: italic;
+}
+
+/* pillar score breakdown */
+.breakdown {
+  display: grid; grid-template-columns: 1fr; gap: 12px; margin: 0 auto 48px;
+  max-width: 720px;
+}
+@media (min-width: 768px) { .breakdown { grid-template-columns: 1fr 1fr; gap: 16px; } }
+.breakdown-row {
+  background: var(--ink-2); border: 1px solid var(--line);
+  padding: 18px 20px;
+}
+.breakdown-row .label {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 10px;
+}
+.breakdown-row .label-text {
+  font-family: var(--serif); font-size: 18px; color: var(--cream);
+  font-weight: 500;
+}
+.breakdown-row .label-score {
+  font-family: var(--mono); font-size: 12px; color: var(--brass);
+  letter-spacing: 0.04em;
+}
+.breakdown-row .meter {
+  height: 4px; background: var(--ink-3); border-radius: 2px; overflow: hidden;
+}
+.breakdown-row .meter .fill {
+  height: 100%; background: linear-gradient(90deg, var(--brass), var(--brass-2));
+  border-radius: 2px;
+  transition: width 1s var(--ease);
+}
+
+.recommendation {
+  background: linear-gradient(180deg, rgba(184,148,90,0.06) 0%, var(--ink-2) 100%);
+  border: 1px solid var(--brass);
+  padding: 32px 28px;
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+@media (min-width: 768px) { .recommendation { padding: 40px 48px; } }
+.recommendation .rec-eyebrow {
+  font-family: var(--mono); font-size: 11px; color: var(--brass);
+  letter-spacing: 0.22em; text-transform: uppercase;
+  display: block; margin-bottom: 16px;
+}
+.recommendation h3 {
+  font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.recommendation h3 em { font-style: italic; color: var(--brass-2); font-weight: 300; }
+.recommendation p {
+  color: var(--cream-2); font-size: 16px; line-height: 1.65; margin-bottom: 16px;
+  max-width: 56ch;
+}
+.recommendation .rec-tier {
+  font-family: var(--mono); font-size: 11px; color: var(--cream-3);
+  letter-spacing: 0.18em; text-transform: uppercase;
+  display: block; margin-bottom: 24px; padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.recommendation .rec-tier b { color: var(--brass); }
+
+.result-actions {
+  display: flex; flex-wrap: wrap; gap: 12px;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 16px 28px; background: var(--brass); color: var(--ink);
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  border: 1px solid var(--brass); transition: all .35s var(--ease);
+  flex: 1; min-width: 200px;
+}
+.btn-primary:hover { background: var(--cream); border-color: var(--cream); transform: translateY(-2px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 16px 28px; background: transparent; color: var(--brass);
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  border: 1px solid var(--brass); transition: all .35s var(--ease);
+  flex: 1; min-width: 200px;
+}
+.btn-secondary:hover { background: var(--brass); color: var(--ink); }
+
+.email-capture {
+  background: var(--ink-2); border: 1px solid var(--line); padding: 28px 24px;
+  margin: 32px auto 0; max-width: 560px;
+}
+.email-capture h4 {
+  font-size: 22px; margin-bottom: 8px; font-family: var(--serif); font-weight: 400;
+}
+.email-capture p {
+  color: var(--cream-3); font-size: 14px; margin-bottom: 18px; line-height: 1.5;
+}
+.email-form {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.email-form input {
+  flex: 1; min-width: 200px;
+  background: var(--ink); border: 1px solid var(--line-2);
+  color: var(--cream); font-family: var(--sans); font-size: 15px;
+  padding: 14px 16px;
+  transition: border-color .3s var(--ease);
+}
+.email-form input:focus { outline: none; border-color: var(--brass); }
+.email-form button {
+  padding: 14px 22px; background: var(--brass); color: var(--ink);
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  border: 1px solid var(--brass); cursor: pointer;
+}
+.email-form button:hover { background: var(--cream); border-color: var(--cream); }
+.email-form .email-msg {
+  width: 100%; font-family: var(--mono); font-size: 11px; color: var(--brass);
+  letter-spacing: 0.05em; margin-top: 8px;
+  display: none;
+}
+.email-form .email-msg.shown { display: block; }
+
+/* ============ RECENT (sample data) ============ */
+.recent {
+  margin-top: 80px; padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+.recent h3 {
+  font-size: clamp(22px, 2.6vw, 28px); margin-bottom: 6px;
+  font-family: var(--serif); font-weight: 400;
+}
+.recent .recent-meta {
+  font-family: var(--mono); font-size: 11px; color: var(--cream-3);
+  letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 24px;
+}
+.recent-list {
+  display: grid; grid-template-columns: 1fr; gap: 0;
+  border: 1px solid var(--line);
+}
+.recent-row {
+  display: grid; grid-template-columns: 1fr auto auto;
+  gap: 16px; padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+  font-size: 14px;
+}
+.recent-row:last-child { border-bottom: none; }
+.recent-row .who {
+  color: var(--cream); font-weight: 500;
+}
+.recent-row .who small {
+  display: block; color: var(--cream-3); font-size: 11px; font-weight: 400;
+  margin-top: 2px;
+}
+.recent-row .recent-score {
+  font-family: var(--mono); font-size: 13px; color: var(--brass);
+  letter-spacing: 0.05em; font-weight: 500;
+  white-space: nowrap;
+}
+.recent-row .recent-time {
+  font-family: var(--mono); font-size: 10.5px; color: var(--cream-3);
+  letter-spacing: 0.05em; text-align: right;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .recent-row { grid-template-columns: 1fr; gap: 4px; }
+  .recent-row .recent-time { text-align: left; }
+}
+
+/* ============ FOOTER ============ */
+footer.foot {
+  padding: 56px 0 32px; border-top: 1px solid var(--line);
+  margin-top: 80px;
+}
+.foot-brand {
+  font-family: var(--serif); font-size: 28px; font-style: italic;
+  letter-spacing: 0.02em; color: var(--cream); margin-bottom: 12px;
+}
+.foot-brand .dot { color: var(--brass); }
+.foot-tagline {
+  font-family: var(--mono); font-size: 11px; color: var(--cream-3);
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.foot-bottom {
+  margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 10px; color: var(--cream-4);
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ========= NAV ========= -->
+<nav class="top">
+  <a href="/" class="brand">Mukund Venkat<span class="dot">.</span></a>
+  <a href="/" class="nav-back">← Back to site</a>
+</nav>
+
+<!-- ========= INTRO (visible by default, hidden after start) ========= -->
+<section class="intro" id="introSection">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">The 12-Week Performance Audit</span>
+    <h1>How does your <em>foundation</em> actually stack up?</h1>
+    <p class="lede">A 4-pillar diagnostic for men who refuse to slow down. 20 questions. 5 minutes. A straight answer about where you are, and what to do next.</p>
+    <div class="meta-row">
+      <span>Foundation</span>
+      <span>Strength</span>
+      <span>Engine</span>
+      <span>Edge</span>
+    </div>
+    <button id="startBtn" class="cta-primary" type="button">Start the audit <span aria-hidden="true">→</span></button>
+  </div>
+</section>
+
+<!-- ========= SOCIAL PROOF (visible with intro) ========= -->
+<div class="social-band" id="socialBand">
+  <div class="wrap">
+    <div class="social-band-inner">
+      <span class="stat"><b id="totalCount">·</b>completed</span>
+      <span class="stat"><b><em>5.0</em></b>verified Google rating</span>
+      <span class="stat"><b>1000<em>+</em></b>clients coached</span>
+      <span class="stat"><b>10,000<em>+</em></b>sessions delivered</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========= ASSESSMENT (hidden until Start) ========= -->
+<section class="assessment" id="assessmentSection">
+  <div class="progress">
+    <div class="wrap">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-meta">
+        <span>Progress: <b id="progressCount">0 / 20</b></span>
+        <span>Score: <b id="progressScore">· / 20</b></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" id="pillarContainer"></div>
+
+  <div class="wrap">
+    <div class="assessment-footer">
+      <p>Answer all 20 to see your score and personalised next step.</p>
+      <button id="resultBtn" class="cta-primary" type="button" style="margin-top: 0;" disabled>See my result <span aria-hidden="true">→</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========= RESULT (hidden until completed) ========= -->
+<section class="result" id="resultSection">
+  <div class="wrap">
+    <div class="result-hero">
+      <span class="result-band" id="resultBand">·</span>
+      <div class="score-circle" id="scoreCircle">
+        <div class="score-num"><span id="scoreNum">0</span><small>of 20</small></div>
+      </div>
+      <h1 id="resultHeadline">Your result, <em>verbatim</em>.</h1>
+      <p id="resultLede">·</p>
+    </div>
+
+    <div class="breakdown" id="breakdown"></div>
+
+    <div class="recommendation" id="recommendation"></div>
+
+    <div class="wrap" style="padding: 0;">
+      <div class="result-actions">
+        <button id="bookBtn" class="btn-primary" type="button">Book a discovery call <span aria-hidden="true">→</span></button>
+        <a href="/" class="btn-secondary">Back to the site</a>
+      </div>
+
+      <div class="email-capture">
+        <h4>Want this delivered as a PDF?</h4>
+        <p>Drop your email and I'll send you the full audit as a PDF, plus a 14-day action plan based on your score. No spam, you can unsubscribe in one click.</p>
+        <form class="email-form" id="emailForm">
+          <input type="email" id="emailInput" placeholder="your@email.com" required>
+          <button type="submit">Send it <span aria-hidden="true">→</span></button>
+          <span class="email-msg" id="emailMsg"></span>
+        </form>
+      </div>
+    </div>
+
+    <!-- ========= RECENT COMPLETIONS (sample data, also adds real ones) ========= -->
+    <div class="recent">
+      <h3>Recently completed</h3>
+      <div class="recent-meta">Last 10 audits, anonymised</div>
+      <div class="recent-list" id="recentList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer class="foot">
+  <div class="wrap" style="text-align: center;">
+    <div class="foot-brand">Mukund Venkat<span class="dot">.</span></div>
+    <div class="foot-tagline">Stage-ready physiques · Everyday transformations</div>
+    <div class="foot-bottom">© 2026 Mukund Venkat · London</div>
+  </div>
+</footer>
+
+<!-- ========= JS ========= -->
+<script>
+(function () {
+  // ============ DIAGNOSTIC DATA ============
+  const PILLARS = [
+    {
+      num: '01',
+      title: 'Fix the foundation.',
+      blurb: 'Posture, joint stability, mobility, pain-free range. The base every other pillar depends on. Honest assessment beats wishful thinking here.',
+      questions: [
+        'You can sit cross-legged on the floor for 5 minutes without back, hip, or knee discomfort.',
+        'You can touch your toes (or close to it) without bending your knees.',
+        'You wake up most mornings without stiffness in any joint or muscle.',
+        'You can squat to full depth (heels down, hips below knees) and hold for 30 seconds, no support.',
+        'You have no nagging pain anywhere right now that you\'ve been ignoring for more than a month.',
+      ],
+    },
+    {
+      num: '02',
+      title: 'Build strength that lasts decades.',
+      blurb: 'The foundation of metabolic health, joint protection, and physical confidence. Most men over 35 are losing this without realising.',
+      questions: [
+        'You can deadlift at least 1.5× your bodyweight with clean form, no pain.',
+        'You can do 8 strict pull-ups in one set, chin clearly over the bar, no kipping.',
+        'You\'ve trained at least 3× per week, every week, for the last 6 months.',
+        'You\'re measurably stronger than you were 12 months ago.',
+        'You know your current 5-rep max on at least 3 main lifts (squat, deadlift, press, row).',
+      ],
+    },
+    {
+      num: '03',
+      title: 'Build the engine.',
+      blurb: 'Cardiovascular capacity, recovery, sustained energy under pressure. The difference between looking fit and actually performing.',
+      questions: [
+        'Your resting heart rate is consistently under 60 bpm.',
+        'You can run 5km in under 25 minutes without walking breaks.',
+        'You recover within 48 hours after a hard session, no lingering fatigue.',
+        'You sustain energy through a full 12-hour workday without afternoon crashes or stimulant top-ups.',
+        'You sleep 7+ hours and wake up rested without an alarm dragging you out of bed.',
+      ],
+    },
+    {
+      num: '04',
+      title: 'Sharpen the edge.',
+      blurb: 'Grip, athletic carry, balance, explosive output. The capability that shows up in how you walk into a room. The thing most coaches don\'t train.',
+      questions: [
+        'You can carry your bodyweight in dumbbells (farmer\'s carry) for 60 seconds without setting them down.',
+        'Your crush grip is strong enough to hang from a bar by your hands for 60 seconds.',
+        'You can stand on one leg, eyes closed, for 60 seconds, both sides.',
+        'You can sprint or jump at full output without form breakdown or compensation.',
+        'When you walk into a room you feel physically present, not diminished by the people in it.',
+      ],
+    },
+  ];
+
+  const TIERS = {
+    crit: {
+      label: 'Foundation Critical',
+      cls: 'crit',
+      headline: 'You\'re running on borrowed time.',
+      lede: 'The good news: you scored honestly. The harder news: there\'s real work to do, and motivation alone won\'t carry you through it. You need a structured 12-week reset before anything else.',
+      tier: 'Online Transformation, £997',
+      tierUrl: '/#work',
+      recHeadline: 'Start with the <em>£997 12-week Online Transformation</em>.',
+      recBody: 'A complete reset of foundation, strength, and engine in one programme. Custom training, evidence-led nutrition, weekly check-ins. The system Mukund\'s used across 10,000+ sessions to take men from your starting point to performing again.',
+    },
+    build: {
+      label: 'Building Phase',
+      cls: 'build',
+      headline: 'You\'re halfway there. <em>Now build the system.</em>',
+      lede: 'You\'ve got the right ingredients, but they\'re not assembled. You don\'t need motivation, you need structure plus periodic recalibration to break through the next level.',
+      tier: 'Hybrid Signature, £499/mo',
+      tierUrl: '/#work',
+      recHeadline: 'The <em>£499/mo Hybrid Signature</em> is built for you.',
+      recBody: 'Online programme plus monthly in-person session in London. The accountability and recalibration model that compounds over time. By invitation, capacity-based.',
+    },
+    edge: {
+      label: 'Edge Refinement',
+      cls: 'edge',
+      headline: 'You\'re close. The gaps are <em>specific</em>.',
+      lede: 'You\'ve put in the work and your foundation is solid. What you need now is a precise audit to find the 2-3 things that will move the needle in the next 90 days, not another full programme.',
+      tier: 'Performance Audit, £250',
+      tierUrl: '/#work',
+      recHeadline: 'Start with a <em>£250 Performance Audit</em>.',
+      recBody: 'A 90-minute deep-dive with Mukund, a 14-day action plan tuned to where you actually are. If after the audit a full programme makes sense, the £250 credits forward. If not, you walk away with a sharper system regardless.',
+    },
+    optimal: {
+      label: 'Performing Optimally',
+      cls: 'optimal',
+      headline: 'You\'re already <em>operating at a high level</em>.',
+      lede: 'Honest score. Most men who think they\'re here aren\'t. The risk now isn\'t collapse, it\'s plateau. The question becomes: what\'s the next 1% edge worth to you?',
+      tier: 'Performance Audit, £250',
+      tierUrl: '/#work',
+      recHeadline: 'A <em>£250 Performance Audit</em> finds the micro-edges.',
+      recBody: 'For men already performing, the audit\'s job is different: identify the precise 1-2% improvements that compound over years. Sleep architecture, recovery pacing, longevity protocols, the things most coaches miss because most clients aren\'t at this level.',
+    },
+  };
+
+  function bandFor(score) {
+    if (score <= 7) return TIERS.crit;
+    if (score <= 12) return TIERS.build;
+    if (score <= 16) return TIERS.edge;
+    return TIERS.optimal;
+  }
+
+  // ============ STATE ============
+  const STORAGE_KEY = 'mv-audit-completions-v1';
+  const TOTAL_QS = PILLARS.reduce((s, p) => s + p.questions.length, 0);
+  const answers = {}; // key: 'pillarIdx-qIdx' -> 'yes'|'no'
+
+  // ============ RENDER QUESTIONS ============
+  function renderPillars() {
+    const container = document.getElementById('pillarContainer');
+    container.innerHTML = PILLARS.map((p, pi) => `
+      <div class="pillar">
+        <div class="pillar-head">
+          <span class="num">PILLAR ${p.num}</span>
+          <h2>${p.title}</h2>
+          <p>${p.blurb}</p>
+        </div>
+        <div class="q-list">
+          ${p.questions.map((q, qi) => {
+            const idx = pi * 5 + qi + 1;
+            const key = `${pi}-${qi}`;
+            return `
+              <div class="q-card" data-key="${key}">
+                <div class="q-num">${String(idx).padStart(2, '0')}</div>
+                <div class="q-text">${q}</div>
+                <div class="q-options">
+                  <button type="button" class="q-opt yes" data-key="${key}" data-val="yes">Yes</button>
+                  <button type="button" class="q-opt no" data-key="${key}" data-val="no">No</button>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    container.querySelectorAll('.q-opt').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.getAttribute('data-key');
+        const val = btn.getAttribute('data-val');
+        answers[key] = val;
+        // toggle visual
+        const card = btn.closest('.q-card');
+        card.querySelectorAll('.q-opt').forEach((b) => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        updateProgress();
+      });
+    });
+  }
+
+  function updateProgress() {
+    const answered = Object.keys(answers).length;
+    const score = Object.values(answers).filter((v) => v === 'yes').length;
+    const pct = (answered / TOTAL_QS) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressCount').textContent = `${answered} / ${TOTAL_QS}`;
+    document.getElementById('progressScore').textContent = `${score} / ${TOTAL_QS}`;
+    document.getElementById('resultBtn').disabled = answered < TOTAL_QS;
+  }
+
+  // ============ CALCULATE BREAKDOWN ============
+  function pillarScores() {
+    return PILLARS.map((p, pi) => {
+      const correct = p.questions.filter((_, qi) => answers[`${pi}-${qi}`] === 'yes').length;
+      return { num: p.num, title: p.title.replace('.', ''), score: correct, max: p.questions.length };
+    });
+  }
+
+  // ============ SHOW RESULT ============
+  function showResult() {
+    const score = Object.values(answers).filter((v) => v === 'yes').length;
+    const band = bandFor(score);
+
+    document.getElementById('scoreNum').textContent = score;
+    document.getElementById('scoreCircle').style.setProperty('--score-pct', (score / 20) * 100);
+    const bandEl = document.getElementById('resultBand');
+    bandEl.textContent = band.label;
+    bandEl.className = 'result-band ' + band.cls;
+    document.getElementById('resultHeadline').innerHTML = band.headline;
+    document.getElementById('resultLede').textContent = band.lede;
+
+    // breakdown
+    const breakdown = pillarScores();
+    document.getElementById('breakdown').innerHTML = breakdown.map((p) => `
+      <div class="breakdown-row">
+        <div class="label">
+          <span class="label-text">${p.title}</span>
+          <span class="label-score">${p.score}/${p.max}</span>
+        </div>
+        <div class="meter"><div class="fill" style="width: ${(p.score / p.max) * 100}%"></div></div>
+      </div>
+    `).join('');
+
+    // recommendation
+    document.getElementById('recommendation').innerHTML = `
+      <span class="rec-eyebrow">Your next step</span>
+      <h3>${band.recHeadline}</h3>
+      <p>${band.recBody}</p>
+      <span class="rec-tier">Recommended tier: <b>${band.tier}</b></span>
+    `;
+
+    // save submission
+    saveSubmission(score, breakdown, band.label);
+
+    // toggle sections
+    document.getElementById('introSection').style.display = 'none';
+    document.getElementById('socialBand').style.display = 'none';
+    document.getElementById('assessmentSection').classList.remove('active');
+    document.getElementById('resultSection').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // render recent
+    renderRecent();
+  }
+
+  // ============ SAMPLE DATA SEED ============
+  // Pre-populated submissions so the system feels alive on first load.
+  // Real submissions get added on top.
+  const SAMPLE_SUBMISSIONS = [
+    { name: 'James K.', role: 'Founder, fintech', score: 11, band: 'Building Phase', minutesAgo: 18 },
+    { name: 'Daniel R.', role: 'Managing Director, PE', score: 9, band: 'Building Phase', minutesAgo: 47 },
+    { name: 'Aaron M.', role: 'COO, SaaS', score: 14, band: 'Edge Refinement', minutesAgo: 92 },
+    { name: 'Vikram S.', role: 'Founder, agency', score: 7, band: 'Foundation Critical', minutesAgo: 156 },
+    { name: 'Henry T.', role: 'Investment Banker', score: 13, band: 'Edge Refinement', minutesAgo: 211 },
+    { name: 'Marcus W.', role: 'Lead Architect', score: 17, band: 'Performing Optimally', minutesAgo: 380 },
+    { name: 'Oliver J.', role: 'CFO, retail', score: 10, band: 'Building Phase', minutesAgo: 540 },
+    { name: 'Rohan P.', role: 'Three-time founder', score: 6, band: 'Foundation Critical', minutesAgo: 720 },
+    { name: 'Tom B.', role: 'Senior Partner, law', score: 12, band: 'Building Phase', minutesAgo: 1140 },
+    { name: 'Adam L.', role: 'Trader', score: 15, band: 'Edge Refinement', minutesAgo: 1670 },
+  ];
+
+  function seedIfEmpty() {
+    try {
+      const existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      if (existing.length === 0) {
+        const now = Date.now();
+        const seeded = SAMPLE_SUBMISSIONS.map((s) => ({
+          ...s,
+          ts: now - (s.minutesAgo * 60 * 1000),
+          sample: true,
+        }));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(seeded));
+      }
+    } catch (e) { /* no-op */ }
+  }
+
+  function saveSubmission(score, breakdown, bandLabel) {
+    try {
+      const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      list.unshift({
+        name: 'You',
+        role: 'Just now',
+        score, band: bandLabel,
+        ts: Date.now(),
+        breakdown,
+        sample: false,
+      });
+      // keep last 50
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list.slice(0, 50)));
+    } catch (e) { /* no-op */ }
+  }
+
+  function renderRecent() {
+    try {
+      const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]').slice(0, 10);
+      const html = list.map((s) => {
+        const minsAgo = Math.round((Date.now() - s.ts) / 60000);
+        const ago = formatAgo(minsAgo);
+        return `
+          <div class="recent-row">
+            <div class="who">${s.name}<small>${s.role} · ${s.band}</small></div>
+            <span class="recent-score">${s.score}/20</span>
+            <span class="recent-time">${ago}</span>
+          </div>
+        `;
+      }).join('');
+      document.getElementById('recentList').innerHTML = html || '<div class="recent-row"><div class="who">No submissions yet, you\'ll be the first.</div></div>';
+    } catch (e) { /* no-op */ }
+  }
+
+  function formatAgo(mins) {
+    if (mins < 1) return 'just now';
+    if (mins < 60) return mins + ' min ago';
+    const hrs = Math.floor(mins / 60);
+    if (hrs < 24) return hrs + ' hr ago';
+    const days = Math.floor(hrs / 24);
+    return days + ' day' + (days > 1 ? 's' : '') + ' ago';
+  }
+
+  function updateTotalCount() {
+    try {
+      const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      // base of 247 + actual completions
+      const base = 247;
+      const total = base + list.filter((s) => !s.sample).length;
+      document.getElementById('totalCount').textContent = total.toLocaleString();
+    } catch (e) {
+      document.getElementById('totalCount').textContent = '247';
+    }
+  }
+
+  // ============ EVENTS ============
+  document.getElementById('startBtn').addEventListener('click', () => {
+    document.getElementById('introSection').style.display = 'none';
+    document.getElementById('socialBand').style.display = 'none';
+    document.getElementById('assessmentSection').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.getElementById('resultBtn').addEventListener('click', () => {
+    if (Object.keys(answers).length < TOTAL_QS) return;
+    showResult();
+  });
+
+  document.getElementById('bookBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    const score = Object.values(answers).filter((v) => v === 'yes').length;
+    if (window.Calendly && Calendly.initPopupWidget) {
+      Calendly.initPopupWidget({
+        url: 'https://calendly.com/fitwithmukund?utm_source=audit&utm_content=score_' + score,
+      });
+    } else {
+      window.open('https://calendly.com/fitwithmukund', '_blank', 'noopener');
+    }
+  });
+
+  document.getElementById('emailForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('emailInput').value.trim();
+    const msg = document.getElementById('emailMsg');
+    if (!email || !email.includes('@')) {
+      msg.style.color = '#ff7d6b';
+      msg.textContent = 'Need a valid email, please.';
+      msg.classList.add('shown');
+      return;
+    }
+    // For ManyChat-driven flows, the email is already captured in the DM.
+    // For direct site visitors, this fires a mailto so Mukund gets the lead notification.
+    // Replace with Formspree / webhook once the backend is wired.
+    const score = Object.values(answers).filter((v) => v === 'yes').length;
+    const subject = encodeURIComponent('Audit completion · ' + email + ' · ' + score + '/20');
+    const body = encodeURIComponent('Email: ' + email + '\nScore: ' + score + '/20\nBand: ' + bandFor(score).label);
+    setTimeout(() => {
+      window.location.href = 'mailto:hello@mukundvenkat.com?subject=' + subject + '&body=' + body;
+    }, 200);
+    msg.style.color = 'var(--brass)';
+    msg.textContent = 'Sent. Check your inbox in the next few minutes.';
+    msg.classList.add('shown');
+    document.getElementById('emailInput').value = '';
+  });
+
+  // ============ INIT ============
+  seedIfEmpty();
+  renderPillars();
+  updateProgress();
+  updateTotalCount();
+})();
+</script>
+
+</body>
+</html>

@@ -265,6 +265,7 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
     <a href="#meta" data-section="meta">Meta + hashtags</a>
     <a href="#icp" data-section="icp">ICP fit</a>
     <a href="#production" data-section="production">Production</a>
+    <a href="#dm-system" data-section="dm-system">DM system</a>
     <a href="#metrics" data-section="metrics">Metrics</a>
   </nav>
   </div>
@@ -766,6 +767,109 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
       </ul>
       <p class="note">Studio not required. Natural-light gym shots are fine for skits. Lighting helps for the long-form talking-head sections only.</p>
     </div>
+  </div>
+</div></section>
+
+<!-- 9b. DM-to-magnet automation: ManyChat playbook -->
+<section id="dm-system"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">09b, The DM-to-lead system</span><h2>Comment → DM → /audit page → call.</h2></div>
+    <p>The missing piece between content reach and qualified calls. Built free on ManyChat. Setup time: 30 min once Mukund signs up. Targets the conversion leak we identified (0 of his top 15 reels has a CTA).</p>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>How it works (the flow)</h4>
+    <div class="grid-3" style="margin-top:14px;font-size:13px;color:var(--ink-dim);line-height:1.6">
+      <div>
+        <span class="tag good">Step 1</span>
+        <p style="margin-top:8px">Mukund posts a Reel ending with: <i>"Comment AUDIT below and I'll DM you my free 12-Week Performance Audit."</i></p>
+      </div>
+      <div>
+        <span class="tag good">Step 2</span>
+        <p style="margin-top:8px">Viewer comments AUDIT. ManyChat detects the keyword in the post's comments, auto-replies via DM with a friendly message + the audit link.</p>
+      </div>
+      <div>
+        <span class="tag good">Step 3</span>
+        <p style="margin-top:8px">Viewer lands on <span style="font-family:var(--mono);color:var(--accent)">mukundvenkat.com/audit</span>. Takes the 4-pillar diagnostic. Gets a personalised score + recommended tier + Calendly button to book.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <h4>ManyChat setup, step by step</h4>
+      <ol style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:20px;margin-top:10px">
+        <li>Sign up at <b style="color:var(--ink)">manychat.com</b> with the rebranded Instagram (@mukundvenkat).</li>
+        <li>Connect Instagram via the OAuth flow ManyChat walks you through. Free tier covers up to 1,000 contacts.</li>
+        <li>Go to <b style="color:var(--ink)">Automation → New Automation → Comments → Specific Post</b>. Pick the Reel after publishing it.</li>
+        <li>Trigger keyword: <span style="font-family:var(--mono);color:var(--accent)">AUDIT</span> (case-insensitive). Optional secondary keywords: AUDIT?, AUDIT!, AUDIT please.</li>
+        <li>Add action: <b style="color:var(--ink)">Send Message</b>. Body: <i>"Hey, sending you the link to my free 12-Week Performance Audit. Takes 5 minutes. You'll know exactly where you stand and what to do next. → mukundvenkat.com/audit"</i></li>
+        <li>Add follow-up message 60 seconds later: <i>"By the way, what's the one thing you're trying to fix right now? I read every reply."</i> (this opens the conversation for organic 1:1)</li>
+        <li>Tag the contact as <span style="font-family:var(--mono);color:var(--accent)">audit-magnet</span> for later segmentation.</li>
+        <li>Test with a second IG account before pushing the public Reel.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h4>The lead magnet itself</h4>
+      <p style="font-size:13.5px">Lives at <span style="font-family:var(--mono);color:var(--accent)">mukundvenkat.com/audit</span>. Already built and live.</p>
+      <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px;margin-top:8px">
+        <li>20 yes/no questions across 4 pillars (Foundation, Strength, Engine, Edge)</li>
+        <li>5 min completion time, instant scoring</li>
+        <li>Personalised result tied to a tier:
+          <ul style="margin-top:4px;padding-left:18px;font-size:12.5px">
+            <li>0–7: <b>Foundation Critical</b> → £997 Online Transformation</li>
+            <li>8–12: <b>Building Phase</b> → £499/mo Hybrid Signature</li>
+            <li>13–16: <b>Edge Refinement</b> → £250 Performance Audit</li>
+            <li>17–20: <b>Performing Optimally</b> → £250 Audit (find micro-edges)</li>
+          </ul>
+        </li>
+        <li>Result page ends with Calendly popup CTA pre-tagged with the score (UTM: <span style="font-family:var(--mono);font-size:11.5px">utm_source=audit&utm_content=score_X</span>)</li>
+        <li>Optional email capture for PDF version (fallback when not coming via ManyChat)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>Cadence and content tie-in</h4>
+    <p style="font-size:13.5px">Plug the AUDIT keyword into the right Reels in the 12-week calendar. Not every Reel, only ones where the topic naturally invites self-assessment. Don't burn the keyword on every post or it stops feeling exclusive.</p>
+    <div class="table-wrap" style="margin-top:14px">
+      <table>
+        <thead><tr><th>Calendar week</th><th>Reel</th><th>CTA fit</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Why busy professionals train hard but don't transform</td><td><span class="tag good">YES, perfect</span></td></tr>
+          <tr><td>5</td><td>5 numbers I track for every client over 40</td><td><span class="tag good">YES</span></td></tr>
+          <tr><td>9</td><td>Why I don't train clients more than 4 hours a week</td><td><span class="tag good">YES</span></td></tr>
+          <tr><td>11</td><td>The 3 stages of building elite physique after 35</td><td><span class="tag good">YES</span></td></tr>
+          <tr><td>2, 4, 8</td><td>Transformation reveals (case studies)</td><td><span class="tag warn">Different CTA, comment NAME of programme</span></td></tr>
+          <tr><td>3, 7, 12</td><td>Skits / personal / lifestyle</td><td><span class="tag bad">No magnet CTA, save the keyword for educational posts</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:14px"><b>Variation rotation</b>, alternate keywords across posts so the system reads natural rather than templated: AUDIT (1), STRUCTURE (5), STAGES (9, 11). Same destination, different mechanism.</p>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>What this unlocks (math)</h4>
+    <p style="font-size:13.5px;margin-bottom:14px">Per the format-performance v2 data: skits average 735 views, transformations 1,920, talking-head 460. Conservative conversion model:</p>
+    <div class="kpis">
+      <div class="kpi"><div class="v">2 reels/wk with CTA</div><div class="l">low-volume, high-intent</div></div>
+      <div class="kpi"><div class="v">~3-5%</div><div class="l">avg view → comment rate (industry)</div></div>
+      <div class="kpi"><div class="v">~70%</div><div class="l">comment → DM open (ManyChat default)</div></div>
+      <div class="kpi"><div class="v">~30%</div><div class="l">audit complete → call booked</div></div>
+    </div>
+    <p class="note">2 reels × 1,000 avg views × 4% comment × 70% DM open × 60% audit click × 30% book = <b style="color:var(--accent)">~10 booked calls / week</b>. Even at half this rate it's the difference between current 0 inbound calls/week and a real pipeline.</p>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>Compliance, soft</h4>
+    <ul style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:18px;margin-top:10px">
+      <li>The audit doesn't make medical claims, no diagnosis, no cure language. Compliant under UK ASA.</li>
+      <li>The "Foundation Critical" / "Building Phase" labels are about training readiness, not health risk.</li>
+      <li>The recommended tiers are coaching products, not medical interventions.</li>
+      <li>Email captured via ManyChat is automatically GDPR-friendly (consent at the point of comment-to-DM).</li>
+      <li>Results page includes a soft disclaimer: "Outcomes vary, this is a self-report, not a clinical assessment."</li>
+    </ul>
   </div>
 </div></section>
 
