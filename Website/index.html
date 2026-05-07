@@ -1667,7 +1667,20 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
     });
   });
 
-  // ---- Apply form (mailto fallback) ----
+  // ---- Lead capture endpoint (paste deployed Apps Script Web App URL once available) ----
+  // See scripts/lead_capture_apps_script.gs for the GAS code that powers this.
+  const LEAD_ENDPOINT = '__PASTE_GAS_WEB_APP_URL_HERE__';
+
+  function postLead(payload) {
+    if (!LEAD_ENDPOINT || LEAD_ENDPOINT.startsWith('__PASTE')) return Promise.resolve({ skipped: true });
+    return fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+    }).then((r) => r.json()).catch((e) => ({ ok: false, error: String(e) }));
+  }
+
+  // ---- Apply form ----
   const form = document.getElementById('applyForm');
   const msg = document.getElementById('formMessage');
   if (form) {
@@ -1683,16 +1696,37 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
         if (msg) { msg.textContent = 'Please fill name, email, and your 12-week goal.'; msg.style.display = 'block'; msg.style.color = '#ff7d6b'; }
         return;
       }
-      const subject = encodeURIComponent(`Coaching application, ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nTier: ${tier}\n\n12-week goal:\n${goal}\n\nContext:\n${context}\n`
-      );
-      window.location.href = `mailto:hello@mukundvenkat.com?subject=${subject}&body=${body}`;
+
+      const url = new URL(window.location.href);
+      const payload = {
+        source: 'apply',
+        name, email, tier, goal, context,
+        utm_source: url.searchParams.get('utm_source') || '',
+        utm_content: url.searchParams.get('utm_content') || '',
+        page_url: window.location.href,
+        user_agent: navigator.userAgent,
+      };
+
       if (msg) {
-        msg.textContent = 'Opening your email, please send to complete the application.';
+        msg.textContent = 'Sending your application...';
         msg.style.display = 'block';
-        msg.style.color = 'var(--brass)';
+        msg.style.color = 'var(--cream-3)';
       }
+
+      postLead(payload).then((res) => {
+        if (res && res.ok) {
+          if (msg) { msg.textContent = 'Got it. Mukund will reply within 48 hours.'; msg.style.color = 'var(--brass)'; }
+          form.reset();
+        } else if (res && res.skipped) {
+          // Backend not wired yet, preserve original mailto fallback so the form still works
+          const subject = encodeURIComponent('Coaching application, ' + name);
+          const bodyTxt = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nTier: ' + tier + '\n\n12-week goal:\n' + goal + '\n\nContext:\n' + context + '\n');
+          window.location.href = 'mailto:hello@mukundvenkat.com?subject=' + subject + '&body=' + bodyTxt;
+          if (msg) { msg.textContent = 'Opening your email - please send to complete the application.'; msg.style.color = 'var(--brass)'; }
+        } else {
+          if (msg) { msg.textContent = 'Something glitched. Try again or DM @mukundvenkat.'; msg.style.color = '#ff7d6b'; }
+        }
+      });
     });
   }
 })();

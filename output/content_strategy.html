@@ -266,6 +266,7 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
     <a href="#icp" data-section="icp">ICP fit</a>
     <a href="#production" data-section="production">Production</a>
     <a href="#dm-system" data-section="dm-system">DM system</a>
+    <a href="#lead-pipeline" data-section="lead-pipeline">Lead pipeline</a>
     <a href="#metrics" data-section="metrics">Metrics</a>
   </nav>
   </div>
@@ -870,6 +871,124 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
       <li>Email captured via ManyChat is automatically GDPR-friendly (consent at the point of comment-to-DM).</li>
       <li>Results page includes a soft disclaimer: "Outcomes vary, this is a self-report, not a clinical assessment."</li>
     </ul>
+  </div>
+</div></section>
+
+<!-- 9c. Lead capture pipeline: Sheet + WhatsApp/Telegram notification -->
+<section id="lead-pipeline"><div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">09c, Lead capture pipeline</span><h2>Form → Sheet → WhatsApp ping.</h2></div>
+    <p>Every form submission on the site (audit completion + apply form) lands in one Google Sheet. Mukund gets a WhatsApp ping the moment a lead comes in. Free forever, no third-party SaaS in between.</p>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>The architecture</h4>
+    <div class="grid-3" style="margin-top:14px;font-size:13px;color:var(--ink-dim);line-height:1.6">
+      <div>
+        <span class="tag good">Step 1</span>
+        <p style="margin-top:8px">Site form (audit / apply / hero CTA) submits a JSON payload via <code style="color:var(--accent);font-family:var(--mono);font-size:11.5px">fetch()</code> to a Google Apps Script web-app endpoint.</p>
+      </div>
+      <div>
+        <span class="tag good">Step 2</span>
+        <p style="margin-top:8px">Apps Script appends a row to the Leads sheet with timestamp, source, name, email, score, tier interest, UTM tags, page URL, user agent.</p>
+      </div>
+      <div>
+        <span class="tag good">Step 3</span>
+        <p style="margin-top:8px">Apps Script fires a WhatsApp message via CallMeBot (free) to Mukund's personal number. Includes name, score, tier, time. He sees it in WhatsApp within seconds.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <h4>Setup, step by step (one-time, ~15 min)</h4>
+      <ol style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:20px;margin-top:10px">
+        <li>Open the target sheet: the Leads tracking spreadsheet Abhishek shared.</li>
+        <li><b style="color:var(--ink)">Extensions → Apps Script</b>.</li>
+        <li>Delete any default code. Paste the contents of <code style="font-family:var(--mono);color:var(--accent);font-size:11.5px">scripts/lead_capture_apps_script.gs</code> from the repo.</li>
+        <li>Fill in the CONFIG block at the top with the CallMeBot apikey + Mukund's phone (steps to get the apikey are below).</li>
+        <li>In the editor toolbar, run <code style="font-family:var(--mono);color:var(--accent);font-size:11.5px">setupHeaders</code> once. Authorise the script when Google asks.</li>
+        <li><b style="color:var(--ink)">Deploy → New deployment → Web app</b>. Execute as: Me. Who has access: Anyone. Click Deploy.</li>
+        <li>Copy the <b style="color:var(--ink)">Web app URL</b>. It looks like <code style="font-family:var(--mono);color:var(--accent);font-size:11px">https://script.google.com/macros/s/.../exec</code>.</li>
+        <li>Paste that URL into the website HTML, replacing <code style="font-family:var(--mono);color:var(--accent);font-size:11.5px">__PASTE_GAS_WEB_APP_URL_HERE__</code> in:
+          <ul style="font-size:12.5px;margin-top:4px;padding-left:18px">
+            <li><code style="font-family:var(--mono);color:var(--accent);font-size:11px">Website/index.html</code> (apply form)</li>
+            <li><code style="font-family:var(--mono);color:var(--accent);font-size:11px">Website/audit/index.html</code> (audit email capture)</li>
+          </ul>
+        </li>
+        <li>Push, redeploy, test by submitting a form.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h4>CallMeBot WhatsApp setup (2 min, free)</h4>
+      <ol style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:20px;margin-top:10px">
+        <li>On Mukund's WhatsApp, save this number: <b style="color:var(--accent)">+34 644 96 16 96</b> (CallMeBot's bot).</li>
+        <li>Open chat with that contact and send: <i>"I allow callmebot to send me messages"</i> (exact text).</li>
+        <li>Wait up to 2 minutes for the bot's reply. It will contain his unique apikey.</li>
+        <li>Paste the apikey into the GAS CONFIG block:
+          <pre style="background:var(--bg-3);padding:10px 12px;border-radius:4px;font-size:11.5px;margin-top:6px;overflow-x:auto;color:var(--ink-dim);font-family:var(--mono)">CALLMEBOT: {
+  PHONE: '447943011882',     // his phone, no + or spaces
+  APIKEY: 'XXXXXX',           // from the bot reply
+}</pre>
+        </li>
+        <li>Run <code style="font-family:var(--mono);color:var(--accent);font-size:11.5px">testNotify</code> in the Apps Script editor. He should get a WhatsApp ping immediately.</li>
+      </ol>
+      <p class="note" style="margin-top:12px">CallMeBot is unofficial but stable, used by thousands of similar setups. If it ever flakes, switch the toggle in CONFIG to <code style="font-family:var(--mono);color:var(--accent);font-size:11px">NOTIFY_TELEGRAM: true</code> and follow the Telegram steps in the script header.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>Sheet column structure</h4>
+    <p style="font-size:13px;margin-bottom:10px">Each row captures everything we know at submission time. Use the sheet's filter view to slice by source / tier / score / UTM:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Column</th><th>Captured from</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><b>Timestamp</b></td><td>auto</td><td>2026-05-02 19:34:11</td></tr>
+          <tr><td><b>Source</b></td><td>form data-source</td><td><code style="font-family:var(--mono);font-size:11.5px">audit</code> / <code style="font-family:var(--mono);font-size:11.5px">apply</code></td></tr>
+          <tr><td>Name</td><td>form input</td><td>James Kavanagh</td></tr>
+          <tr><td><b>Email</b></td><td>form input</td><td>james@example.com</td></tr>
+          <tr><td>Phone</td><td>optional form input</td><td>+44 7XXX XXXXXX</td></tr>
+          <tr><td>Tier interest</td><td>form select / inferred from audit score</td><td>Hybrid Signature (£499/mo)</td></tr>
+          <tr><td><b>Audit score</b></td><td>audit page only</td><td>11/20</td></tr>
+          <tr><td><b>Audit band</b></td><td>derived from score</td><td>Building Phase</td></tr>
+          <tr><td>Goal / message</td><td>form textarea</td><td>"Want to lose 8kg before September"</td></tr>
+          <tr><td>Context</td><td>form textarea</td><td>"42, founder, training 2x/wk"</td></tr>
+          <tr><td>UTM source / content</td><td>URL params</td><td><code style="font-family:var(--mono);font-size:11.5px">audit / score_11</code></td></tr>
+          <tr><td>Page URL</td><td>auto</td><td>mukundvenkat.com/audit</td></tr>
+          <tr><td>User agent</td><td>auto</td><td>iPhone Safari, Chrome desktop, etc.</td></tr>
+          <tr><td>Notified</td><td>auto</td><td><code style="font-family:var(--mono);font-size:11.5px">wa</code> (WhatsApp sent OK)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>What the WhatsApp ping looks like</h4>
+    <pre style="background:var(--bg-3);padding:16px 18px;border-radius:4px;font-size:12.5px;margin-top:10px;overflow-x:auto;color:var(--ink);font-family:var(--mono);line-height:1.55">🔔 NEW LEAD · AUDIT
+Score: 11/20 · Building Phase
+Tier interest: Hybrid Signature (£499/mo)
+Email: james@example.com
+Goal: Audit completion - PDF requested
+---
+Time: 02/05/2026, 19:34:11
+UTM: audit / score_11</pre>
+    <p class="note" style="margin-top:12px">Apply-form submissions look the same but with the goal copy + tier they selected. Mukund can reply directly from his WhatsApp inbox to follow up the lead before they cool off.</p>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h4>Why this beats the alternatives</h4>
+    <table>
+      <thead><tr><th>Approach</th><th>Cost</th><th>Trade-off</th></tr></thead>
+      <tbody>
+        <tr><td><b>Apps Script + Sheet (this)</b></td><td>Free forever</td><td>One-time 15 min setup, no SaaS dependency, full data ownership</td></tr>
+        <tr><td>Formspree / Getform</td><td>Free 50/mo, then £10+/mo</td><td>Quick setup but caps fast and notifications are email-only on free tier</td></tr>
+        <tr><td>Zapier / Make.com</td><td>Free 100 tasks/mo, then £20+/mo</td><td>Easy GUI but limited free tier and slow polling</td></tr>
+        <tr><td>Twilio WhatsApp Business</td><td>£0.05+ per message</td><td>Official but per-message cost, requires verified business setup</td></tr>
+        <tr><td>Email forward only</td><td>Free</td><td>No real-time ping, easy to miss leads</td></tr>
+      </tbody>
+    </table>
   </div>
 </div></section>
 
