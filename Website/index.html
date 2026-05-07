@@ -820,27 +820,50 @@ nav.top.compact { padding: 14px 24px; }
   border-left: 1px solid var(--brass); padding-left: 18px;
 }
 
-/* ============ APPLY MODAL (full-screen popup hosting /apply iframe) ============ */
+/* ============ APPLY DRAWER (slides in from right) ============ */
 body.modal-open { overflow: hidden; }
 .apply-modal {
   position: fixed; inset: 0; z-index: 1000;
-  background: rgba(10,10,11,0.96);
-  backdrop-filter: blur(6px) saturate(120%);
-  -webkit-backdrop-filter: blur(6px) saturate(120%);
-  opacity: 0; pointer-events: none;
-  transition: opacity .45s var(--ease);
-  display: flex; flex-direction: column;
+  display: flex; justify-content: flex-end;
+  pointer-events: none;
 }
-.apply-modal.open { opacity: 1; pointer-events: auto; }
 .apply-modal[hidden] { display: none; }
+.apply-modal-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(10,10,11,0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background .45s var(--ease), backdrop-filter .45s var(--ease);
+  cursor: pointer;
+}
+.apply-modal.open .apply-modal-backdrop {
+  background: rgba(10,10,11,0.65);
+  backdrop-filter: blur(4px) saturate(120%);
+  -webkit-backdrop-filter: blur(4px) saturate(120%);
+  pointer-events: auto;
+}
+.apply-modal-panel {
+  position: relative;
+  width: 100%; max-width: 820px; height: 100%;
+  background: var(--ink);
+  border-left: 1px solid var(--brass);
+  box-shadow: -40px 0 80px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform .55s var(--ease);
+  pointer-events: auto;
+}
+.apply-modal.open .apply-modal-panel {
+  transform: translateX(0);
+}
 .apply-modal-bar {
-  position: relative; z-index: 2;
+  position: relative; z-index: 2; flex-shrink: 0;
   display: flex; justify-content: space-between; align-items: center;
   padding: 18px 24px;
-  background: rgba(10,10,11,0.94);
+  background: var(--ink);
   border-bottom: 1px solid var(--line);
 }
-@media (min-width: 768px) { .apply-modal-bar { padding: 22px 56px; } }
+@media (min-width: 768px) { .apply-modal-bar { padding: 22px 32px; } }
 .apply-modal-bar .label {
   font-family: var(--mono); font-size: 11px; color: var(--brass);
   letter-spacing: 0.22em; text-transform: uppercase;
@@ -849,9 +872,9 @@ body.modal-open { overflow: hidden; }
   background: none; border: 1px solid var(--line);
   color: var(--cream-2); font-family: var(--mono); font-size: 11px;
   text-transform: uppercase; letter-spacing: 0.18em;
-  padding: 10px 18px; cursor: pointer;
+  padding: 10px 16px; cursor: pointer;
   transition: all .3s var(--ease);
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; gap: 8px;
 }
 .apply-modal-close:hover { color: var(--cream); border-color: var(--cream-3); }
 .apply-modal-close::before {
@@ -860,8 +883,7 @@ body.modal-open { overflow: hidden; }
   margin-top: -2px;
 }
 .apply-modal-frame {
-  flex: 1; position: relative; background: var(--ink);
-  overflow: hidden;
+  flex: 1; position: relative; background: var(--ink); overflow: hidden;
 }
 .apply-modal-frame iframe {
   position: absolute; inset: 0; width: 100%; height: 100%;
@@ -894,7 +916,33 @@ body.modal-open { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   .apply-modal-loading .pulse, .apply-modal-loading .pulse::after { animation: none; }
+  .apply-modal-panel { transition: none; }
 }
+
+/* ============ FLOATING APPLY CTA (appears on scroll past hero) ============ */
+.float-apply {
+  position: fixed; right: 20px; bottom: 20px; z-index: 90;
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 14px 22px;
+  background: var(--brass); color: var(--ink);
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  border: 1px solid var(--brass);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 0 6px rgba(184,148,90,0.06);
+  transform: translateY(120px);
+  opacity: 0;
+  transition: transform .55s var(--ease), opacity .35s var(--ease), background .3s var(--ease), box-shadow .3s var(--ease);
+}
+.float-apply.visible { transform: translateY(0); opacity: 1; }
+.float-apply:hover {
+  background: var(--cream); border-color: var(--cream); color: var(--ink);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5), 0 0 0 8px rgba(184,148,90,0.08);
+}
+.float-apply .arrow { transition: transform .3s var(--ease); }
+.float-apply:hover .arrow { transform: translateX(3px); }
+@media (min-width: 768px) { .float-apply { right: 32px; bottom: 32px; padding: 16px 26px; } }
+@media (prefers-reduced-motion: reduce) { .float-apply { transition: opacity .3s var(--ease); transform: none; } }
 
 .apply-form { display: flex; flex-direction: column; gap: 28px; }
 .field { display: flex; flex-direction: column; gap: 8px; }
@@ -1071,7 +1119,7 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
         Stage-ready physiques to everyday transformations.
       </p>
       <div class="hero-meta">
-        <a href="#apply" class="hero-cta">Apply for coaching <span class="arrow">→</span></a>
+        <a href="/apply/" class="hero-cta" data-open-apply>Apply for coaching <span class="arrow">→</span></a>
         <a href="#story" class="hero-secondary">Read the story</a>
       </div>
     </div>
@@ -1151,7 +1199,7 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
           The look is the side effect. <strong>The energy, the function, the longevity, that's the product.</strong>
         </p>
         <p style="margin-top: 24px;">
-          <a href="#apply" class="story-cta">Apply for coaching <span aria-hidden="true">→</span></a>
+          <a href="/apply/" class="story-cta" data-open-apply>Apply for coaching <span aria-hidden="true">→</span></a>
         </p>
       </div>
       <div class="visual tall reveal">
@@ -1500,7 +1548,7 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
       <p style="font-family: var(--serif); font-size: clamp(22px, 2.4vw, 30px); font-weight: 300; line-height: 1.35; color: var(--cream); margin-bottom: 28px;">
         These are people who decided their body was a system worth investing in. <em style="color: var(--brass-2);">The next one could be yours.</em>
       </p>
-      <a href="#apply" class="proof-cta">Become the next case study <span aria-hidden="true">→</span></a>
+      <a href="/apply/" class="proof-cta" data-open-apply>Become the next case study <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -1629,19 +1677,27 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
   </div>
 </footer>
 
-<!-- ========= APPLY MODAL (cinematic survey, opens over the page) ========= -->
+<!-- ========= APPLY DRAWER (cinematic survey, slides in from right) ========= -->
 <div class="apply-modal" id="applyModal" hidden role="dialog" aria-modal="true" aria-labelledby="applyModalLabel">
-  <div class="apply-modal-bar">
-    <span class="label" id="applyModalLabel">Application · By invitation only</span>
-    <button type="button" class="apply-modal-close" id="applyModalClose" aria-label="Close application">Close</button>
-  </div>
-  <div class="apply-modal-frame">
-    <div class="apply-modal-loading" id="applyModalLoading">
-      <div class="pulse"></div>
+  <div class="apply-modal-backdrop" id="applyModalBackdrop"></div>
+  <div class="apply-modal-panel">
+    <div class="apply-modal-bar">
+      <span class="label" id="applyModalLabel">Application · By invitation only</span>
+      <button type="button" class="apply-modal-close" id="applyModalClose" aria-label="Close application">Close</button>
     </div>
-    <iframe id="applyModalIframe" title="Apply for coaching" loading="lazy" allow="forms" sandbox="allow-forms allow-scripts allow-same-origin allow-top-navigation"></iframe>
+    <div class="apply-modal-frame">
+      <div class="apply-modal-loading" id="applyModalLoading">
+        <div class="pulse"></div>
+      </div>
+      <iframe id="applyModalIframe" title="Apply for coaching" loading="lazy" allow="forms" sandbox="allow-forms allow-scripts allow-same-origin allow-top-navigation"></iframe>
+    </div>
   </div>
 </div>
+
+<!-- ========= FLOATING APPLY CTA (appears after hero scroll) ========= -->
+<button type="button" class="float-apply" id="floatApply" data-open-apply aria-label="Apply for coaching">
+  Apply <span class="arrow" aria-hidden="true">→</span>
+</button>
 
 <!-- ========= JS ========= -->
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.16/dist/lenis.min.js"></script>
@@ -1812,15 +1868,39 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
 
   // Close handlers
   if (applyClose) applyClose.addEventListener('click', closeApplyModal);
-  if (applyModal) {
-    applyModal.addEventListener('click', (e) => {
-      // Click on the bar or backdrop area outside iframe closes
-      if (e.target === applyModal) closeApplyModal();
-    });
-  }
+  const applyBackdrop = document.getElementById('applyModalBackdrop');
+  if (applyBackdrop) applyBackdrop.addEventListener('click', closeApplyModal);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && applyModal && !applyModal.hidden) closeApplyModal();
   });
+
+  // ---- Floating Apply CTA: appears after scrolling past hero ----
+  const floatApply = document.getElementById('floatApply');
+  const heroEl = document.querySelector('.hero');
+  if (floatApply && heroEl) {
+    let floatTicking = false;
+    function updateFloat() {
+      if (floatTicking) return;
+      floatTicking = true;
+      requestAnimationFrame(() => {
+        const heroBottom = heroEl.getBoundingClientRect().bottom;
+        // Show once hero is mostly off-screen + near the footer hide it
+        const footer = document.querySelector('footer.foot');
+        const nearFooter = footer ? footer.getBoundingClientRect().top < window.innerHeight : false;
+        const shouldShow = heroBottom < 60 && !nearFooter && (applyModal && applyModal.hidden);
+        floatApply.classList.toggle('visible', shouldShow);
+        floatTicking = false;
+      });
+    }
+    window.addEventListener('scroll', updateFloat, { passive: true });
+    window.addEventListener('resize', updateFloat);
+    updateFloat();
+    // Re-check after modal close
+    floatApply.addEventListener('click', () => {
+      // Hide the float button when modal is open (cleaner)
+      setTimeout(() => floatApply.classList.remove('visible'), 50);
+    });
+  }
 
   // ---- Calendly popup booking on tier cards ----
   document.querySelectorAll('[data-cal-tier]').forEach((btn) => {
