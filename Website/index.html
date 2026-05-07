@@ -767,6 +767,59 @@ nav.top.compact { padding: 14px 24px; }
 }
 @media (min-width: 1024px) { .apply-grid { grid-template-columns: 1fr 1fr; gap: 96px; } }
 
+/* Apply launch card (links to /apply/ cinematic survey) */
+.apply-launch-card {
+  background: linear-gradient(180deg, rgba(184,148,90,0.04) 0%, var(--ink-2) 100%);
+  border: 1px solid var(--brass);
+  padding: 40px 28px;
+  display: grid; grid-template-columns: 1fr; gap: 32px;
+  align-items: center;
+}
+@media (min-width: 768px) { .apply-launch-card { padding: 56px 48px; gap: 48px; } }
+@media (min-width: 1024px) { .apply-launch-card { grid-template-columns: 1.1fr 0.9fr; padding: 64px 56px; gap: 64px; } }
+.apply-launch-meta h3 {
+  font-family: var(--serif); font-size: clamp(28px, 3.6vw, 40px);
+  font-weight: 400; line-height: 1.15; margin: 14px 0 16px;
+  letter-spacing: -0.01em; max-width: 18ch;
+}
+.apply-launch-meta p {
+  color: var(--cream-2); font-size: 16px; line-height: 1.6; margin-bottom: 22px;
+  max-width: 50ch;
+}
+.apply-launch-meta ul {
+  list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); padding-top: 18px;
+}
+.apply-launch-meta li {
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+  font-size: 14px; line-height: 1.55; color: var(--cream-2);
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.apply-launch-meta li:last-child { border-bottom: none; }
+.apply-launch-meta li::before {
+  content: '·'; color: var(--brass); font-weight: 500; flex-shrink: 0;
+}
+.apply-launch-cta {
+  display: flex; flex-direction: column; align-items: stretch;
+  gap: 28px;
+}
+.apply-launch-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+  padding: 22px 32px; background: var(--brass); color: var(--ink);
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  border: 1px solid var(--brass);
+  transition: all .35s var(--ease);
+  text-align: center;
+}
+.apply-launch-btn:hover { background: var(--cream); border-color: var(--cream); transform: translateY(-2px); }
+.apply-launch-btn span { transition: transform .3s var(--ease); }
+.apply-launch-btn:hover span { transform: translateX(4px); }
+.apply-launch-quote {
+  font-family: var(--serif); font-style: italic; font-size: 18px;
+  line-height: 1.5; color: var(--cream-3); margin: 0;
+  border-left: 1px solid var(--brass); padding-left: 18px;
+}
+
 .apply-form { display: flex; flex-direction: column; gap: 28px; }
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field label {
@@ -1443,50 +1496,24 @@ h2.reveal-words.words-in .rw-i { transform: translate3d(0, 0, 0); }
       <p class="lede">Tell me a little about where you are and what you want. I read every application personally and reply within 48 hours. If we're a fit, we'll book a call.</p>
     </div>
 
-    <div class="apply-grid">
-      <form class="apply-form reveal-stagger" id="applyForm" autocomplete="on" novalidate>
-        <div class="field">
-          <label for="f-name">Full name</label>
-          <input id="f-name" name="name" type="text" required />
+    <div class="apply-launch reveal" style="margin-top: 48px;">
+      <div class="apply-launch-card">
+        <div class="apply-launch-meta">
+          <span class="eyebrow">2-minute application</span>
+          <h3>A short, considered set of questions.</h3>
+          <p>Six questions, answered one at a time, no fluff. Mukund reads every word personally and writes back within 48 hours.</p>
+          <ul>
+            <li>I read every application personally, usually within 48 hours.</li>
+            <li>If we're a fit, we book a 30-minute discovery call.</li>
+            <li>You leave the call with a specific recommendation, even if we don't end up working together.</li>
+            <li>Confidentiality is the default. Names, photos, results, never shared without your permission.</li>
+          </ul>
         </div>
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" required />
+        <div class="apply-launch-cta">
+          <a href="/apply/" class="apply-launch-btn">Begin application <span aria-hidden="true">→</span></a>
+          <p class="apply-launch-quote">"If you're starting this, you've already done the hardest part. Most people just keep scrolling."</p>
         </div>
-        <div class="field">
-          <label for="f-tier">Which tier interests you most?</label>
-          <select id="f-tier" name="tier">
-            <option value="audit">The Performance Audit (£250)</option>
-            <option value="online" selected>Online Transformation (£997)</option>
-            <option value="hybrid">Hybrid Signature (£499/mo), flagship</option>
-            <option value="inperson">Full In-Person (£2,400)</option>
-            <option value="unsure">Not sure yet, recommend me</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-goal">What does success look like in 12 weeks?</label>
-          <textarea id="f-goal" name="goal" placeholder="The more specific, the better." required></textarea>
-        </div>
-        <div class="field">
-          <label for="f-context">A bit about you (age, profession, current training)</label>
-          <textarea id="f-context" name="context"></textarea>
-        </div>
-        <button type="submit" class="apply-submit">Send application <span>→</span></button>
-        <p id="formMessage" style="font-family: var(--mono); font-size: 12px; color: var(--brass); display: none;"></p>
-      </form>
-
-      <aside class="apply-side reveal">
-        <h3>What happens next.</h3>
-        <ul>
-          <li>I read every application personally, usually within 48 hours.</li>
-          <li>If we're a fit, we book a 30-minute discovery call.</li>
-          <li>You leave the call with a specific recommendation, even if we don't end up working together.</li>
-          <li>Confidentiality is the default. Names, photos, results, never shared without your permission.</li>
-        </ul>
-        <p style="margin-top: 32px; font-style: italic; color: var(--cream-3); font-family: var(--serif); font-size: 18px; line-height: 1.5;">
-          "If you're sending this, you've already done the hardest part. Most people just keep scrolling."
-        </p>
-      </aside>
+      </div>
     </div>
   </div>
 </section>

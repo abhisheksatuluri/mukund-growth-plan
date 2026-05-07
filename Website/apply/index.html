@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0b" />
+<title>Apply for Coaching · Mukund Venkat</title>
+<meta name="description" content="Apply to work with Mukund Venkat. By application only. Takes 2 minutes." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0b'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23B8945A' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #0a0a0b;
+  --ink-2: #131316;
+  --ink-3: #1c1c20;
+  --ink-4: #25252a;
+  --line: rgba(245,241,234,0.10);
+  --line-2: rgba(245,241,234,0.18);
+  --cream: #F5F1EA;
+  --cream-2: rgba(245,241,234,0.78);
+  --cream-3: rgba(245,241,234,0.55);
+  --cream-4: rgba(245,241,234,0.35);
+  --brass: #B8945A;
+  --brass-2: #cda978;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter Tight', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background: var(--ink); height: 100%; }
+body {
+  font-family: var(--sans); color: var(--cream); background: var(--ink);
+  font-weight: 400; line-height: 1.55; letter-spacing: -0.005em;
+  font-size: 17px; min-height: 100vh; overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ============ ATMOSPHERIC BACKGROUND ============ */
+.bg-atmosphere {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 800px 600px at 30% 20%, rgba(184,148,90,0.06), transparent 60%),
+    radial-gradient(ellipse 600px 800px at 80% 80%, rgba(184,148,90,0.04), transparent 60%);
+  transition: opacity 1.6s var(--ease);
+}
+
+/* film grain */
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='1'/></svg>");
+  opacity: .35; mix-blend-mode: overlay;
+}
+
+.eyebrow {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.22em; color: var(--brass);
+  display: inline-block;
+}
+
+/* ============ NAV ============ */
+nav.top {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  padding: 22px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+@media (min-width: 768px) { nav.top { padding: 28px 56px; } }
+.brand {
+  font-family: var(--serif); font-size: 22px; letter-spacing: 0.04em;
+  font-weight: 400; font-style: italic; color: var(--cream);
+}
+.brand .dot { color: var(--brass); }
+.nav-back {
+  font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.18em; color: var(--cream-3); transition: color .3s var(--ease);
+}
+.nav-back:hover { color: var(--cream); }
+
+/* ============ PROGRESS ============ */
+.progress {
+  position: fixed; top: 76px; left: 50%; transform: translateX(-50%);
+  z-index: 40; display: flex; gap: 8px;
+  opacity: 0; transition: opacity .6s var(--ease);
+}
+.progress.visible { opacity: 1; }
+@media (min-width: 768px) { .progress { top: 88px; } }
+.progress .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cream-4); transition: all .4s var(--ease);
+}
+.progress .dot.active { background: var(--brass); width: 18px; border-radius: 3px; }
+.progress .dot.done { background: var(--brass-2); }
+
+/* ============ STAGE / SCREENS ============ */
+main.stage {
+  min-height: 100vh; min-height: 100dvh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 120px 24px 80px;
+  position: relative;
+}
+@media (min-width: 768px) { main.stage { padding: 140px 56px 100px; } }
+
+.screen {
+  width: 100%; max-width: 720px; margin: 0 auto;
+  display: none;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .55s var(--ease), transform .55s var(--ease);
+}
+.screen.active { display: block; }
+.screen.entering { opacity: 1; transform: translateY(0); }
+
+/* Question + label */
+.q-eyebrow {
+  font-family: var(--mono); font-size: 11px; color: var(--brass);
+  letter-spacing: 0.22em; text-transform: uppercase;
+  display: block; margin-bottom: 18px;
+}
+.q-eyebrow span { color: var(--cream-3); }
+.q-title {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(36px, 5.5vw, 60px); line-height: 1.08;
+  letter-spacing: -0.02em; color: var(--cream);
+  margin-bottom: 16px; max-width: 18ch;
+}
+.q-title em { font-style: italic; color: var(--brass-2); font-weight: 300; }
+.q-helper {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(17px, 1.8vw, 22px); font-weight: 300;
+  color: var(--cream-3); line-height: 1.5; max-width: 48ch;
+  margin-bottom: 40px;
+}
+
+/* Inputs */
+.input-wrap { position: relative; }
+.input-large {
+  width: 100%; background: transparent; border: none;
+  border-bottom: 1px solid var(--line-2);
+  color: var(--cream);
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(28px, 4vw, 44px); line-height: 1.2;
+  padding: 12px 0 16px;
+  letter-spacing: -0.01em;
+  transition: border-color .3s var(--ease);
+}
+.input-large::placeholder { color: var(--cream-4); font-style: italic; }
+.input-large:focus { outline: none; border-bottom-color: var(--brass); }
+
+textarea.input-large {
+  resize: none; line-height: 1.4;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-family: var(--serif); font-style: italic;
+  min-height: 140px;
+}
+
+/* Tier cards */
+.tier-grid {
+  display: grid; grid-template-columns: 1fr; gap: 14px;
+  margin: 8px 0 24px;
+}
+@media (min-width: 768px) { .tier-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
+.tier-card {
+  background: var(--ink-2); border: 1px solid var(--line);
+  padding: 22px 20px; cursor: pointer;
+  transition: all .3s var(--ease);
+  text-align: left;
+  position: relative;
+}
+.tier-card:hover { border-color: var(--cream-3); transform: translateY(-2px); }
+.tier-card.selected {
+  border-color: var(--brass); background: linear-gradient(180deg, rgba(184,148,90,0.08) 0%, var(--ink-2) 100%);
+}
+.tier-card.selected::after {
+  content: '✓'; position: absolute; top: 16px; right: 16px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--brass); color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+}
+.tier-card .tname {
+  font-family: var(--serif); font-size: 22px; font-weight: 500;
+  color: var(--cream); margin-bottom: 4px; letter-spacing: -0.01em;
+}
+.tier-card .tprice {
+  font-family: var(--mono); font-size: 11px; color: var(--brass);
+  letter-spacing: 0.18em; margin-bottom: 10px;
+}
+.tier-card .tdesc {
+  font-size: 13.5px; color: var(--cream-2); line-height: 1.55;
+}
+
+/* Buttons */
+.btn-row {
+  display: flex; gap: 12px; margin-top: 32px; align-items: center;
+}
+.btn-next {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 18px 32px; background: var(--brass); color: var(--ink);
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  border: 1px solid var(--brass);
+  transition: all .35s var(--ease);
+}
+.btn-next:hover:not(:disabled) { background: var(--cream); border-color: var(--cream); transform: translateY(-2px); }
+.btn-next:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn-next .arrow { transition: transform .3s var(--ease); }
+.btn-next:hover:not(:disabled) .arrow { transform: translateX(4px); }
+.btn-back {
+  background: none; border: none; color: var(--cream-3);
+  font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.18em; cursor: pointer; transition: color .3s var(--ease);
+  padding: 8px 0;
+}
+.btn-back:hover { color: var(--cream); }
+
+.hint {
+  margin-top: 14px; font-family: var(--mono); font-size: 10.5px;
+  color: var(--cream-3); letter-spacing: 0.04em;
+}
+.hint kbd {
+  display: inline-block; padding: 2px 8px; background: var(--ink-3);
+  border: 1px solid var(--line-2); border-radius: 3px;
+  font-size: 10px; color: var(--cream-2); font-family: var(--mono);
+  margin: 0 2px;
+}
+
+/* Hero screen */
+.screen.hero { text-align: left; max-width: 760px; }
+.screen.hero h1 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(48px, 8vw, 96px); line-height: 0.98;
+  letter-spacing: -0.025em; margin: 22px 0 24px; max-width: 16ch;
+}
+.screen.hero h1 em { font-style: italic; color: var(--brass-2); font-weight: 300; }
+.screen.hero p {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(20px, 2.6vw, 28px); font-weight: 300;
+  color: var(--cream-2); line-height: 1.4;
+  max-width: 44ch; margin-bottom: 36px;
+}
+
+/* Review screen */
+.review-list {
+  background: var(--ink-2); border: 1px solid var(--line);
+  padding: 28px 28px;
+  margin-bottom: 28px;
+}
+.review-row {
+  display: grid; grid-template-columns: 1fr; gap: 4px;
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+}
+.review-row:last-child { border-bottom: none; }
+@media (min-width: 600px) {
+  .review-row { grid-template-columns: 140px 1fr; gap: 16px; align-items: baseline; }
+}
+.review-row .lbl {
+  font-family: var(--mono); font-size: 10.5px;
+  text-transform: uppercase; letter-spacing: 0.2em; color: var(--cream-3);
+}
+.review-row .val {
+  font-family: var(--serif); font-size: 18px; color: var(--cream); line-height: 1.5;
+}
+.review-row .val em { font-style: italic; color: var(--brass-2); }
+
+/* Sending state */
+.sending {
+  text-align: center; padding: 48px 0;
+}
+.sending .pulse {
+  width: 60px; height: 60px; margin: 0 auto 24px;
+  border: 1px solid var(--brass);
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+.sending .pulse::after {
+  content: ''; position: absolute; inset: 12px;
+  background: var(--brass); border-radius: 50%;
+  animation: pulse-inner 1.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+@keyframes pulse-inner {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.7); }
+}
+.sending h3 {
+  font-family: var(--serif); font-size: 28px; font-weight: 400;
+  color: var(--cream); margin-bottom: 8px;
+}
+.sending p {
+  color: var(--cream-3); font-size: 14px;
+  font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen, .progress .dot, .tier-card { transition: none; }
+  .sending .pulse, .sending .pulse::after { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-atmosphere"></div>
+
+<nav class="top">
+  <a href="/" class="brand">Mukund Venkat<span class="dot">.</span></a>
+  <a href="/" class="nav-back">← Back to site</a>
+</nav>
+
+<div class="progress" id="progress">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<main class="stage">
+
+  <!-- 0: HERO -->
+  <section class="screen hero" data-step="0">
+    <span class="eyebrow">Application · By invitation only</span>
+    <h1>Coaching with Mukund is by <em>application</em>.</h1>
+    <p>Tell me a little about where you are and what you want. I read every application personally and reply within 48 hours. Takes about 2 minutes.</p>
+    <div class="btn-row">
+      <button type="button" class="btn-next" data-action="next" data-from="0">Begin <span class="arrow" aria-hidden="true">→</span></button>
+    </div>
+    <div class="hint">Or press <kbd>Enter ↵</kbd> to start.</div>
+  </section>
+
+  <!-- 1: NAME -->
+  <section class="screen" data-step="1">
+    <span class="q-eyebrow">Question 01 <span>/ 06</span></span>
+    <h2 class="q-title">Let's start with your <em>name</em>.</h2>
+    <div class="input-wrap">
+      <input type="text" id="f-name" class="input-large" placeholder="Your full name" autocomplete="name" required>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn-back" data-action="back">← Back</button>
+      <button type="button" class="btn-next" data-action="next" data-validates="f-name" disabled>Next <span class="arrow" aria-hidden="true">→</span></button>
+    </div>
+    <div class="hint">Press <kbd>Enter ↵</kbd> to continue.</div>
+  </section>
+
+  <!-- 2: EMAIL -->
+  <section class="screen" data-step="2">
+    <span class="q-eyebrow">Question 02 <span>/ 06</span></span>
+    <h2 class="q-title">Where do I send the <em>reply</em>?</h2>
+    <p class="q-helper">I'll personally read your application within 48 hours and write back from this address.</p>
+    <div class="input-wrap">
+      <input type="email" id="f-email" class="input-large" placeholder="your@email.com" autocomplete="email" required>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn-back" data-action="back">← Back</button>
+      <button type="button" class="btn-next" data-action="next" data-validates="f-email" disabled>Next <span class="arrow" aria-hidden="true">→</span></button>
+    </div>
+  </section>
+
+  <!-- 3: TIER -->
+  <section class="screen" data-step="3">
+    <span class="q-eyebrow">Question 03 <span>/ 06</span></span>
+    <h2 class="q-title">Which tier feels <em>right</em>?</h2>
+    <p class="q-helper">Pick the one closest to where you are. We'll fine-tune on the call. Not sure? "Recommend me" is fine.</p>
+    <div class="tier-grid" id="tierGrid">
+      <button type="button" class="tier-card" data-tier="The Performance Audit (£250)">
+        <div class="tname">The Performance Audit</div>
+        <div class="tprice">£250 · 90-min consult + 14-day plan</div>
+        <div class="tdesc">A diagnostic of where you are. Walk away with a 14-day action plan, even if we never work together again.</div>
+      </button>
+      <button type="button" class="tier-card" data-tier="Online Transformation (£997)">
+        <div class="tname">Online Transformation</div>
+        <div class="tprice">£997 · 12 weeks · global</div>
+        <div class="tdesc">Custom training, evidence-led nutrition, weekly check-ins. The signature programme. 4 spots open this quarter.</div>
+      </button>
+      <button type="button" class="tier-card" data-tier="Hybrid Signature (£499/mo)">
+        <div class="tname">Hybrid Signature <span style="color:var(--brass);font-size:11px;font-family:var(--mono);letter-spacing:.18em;text-transform:uppercase">· flagship</span></div>
+        <div class="tprice">£499/mo · London · min 3 months</div>
+        <div class="tdesc">Online programme plus monthly in-person session in London. By invitation, capacity-based.</div>
+      </button>
+      <button type="button" class="tier-card" data-tier="Full In-Person (£2,400)">
+        <div class="tname">Full In-Person</div>
+        <div class="tprice">£2,400 · 12 weeks · London only</div>
+        <div class="tdesc">2-3 in-person sessions per week. Full programming, nutrition, recovery. The most intensive tier.</div>
+      </button>
+      <button type="button" class="tier-card" data-tier="Not sure - recommend me" style="grid-column: 1 / -1;">
+        <div class="tname">Not sure yet, recommend me.</div>
+        <div class="tprice">Mukund will pick the right fit on the call</div>
+      </button>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn-back" data-action="back">← Back</button>
+      <button type="button" class="btn-next" data-action="next" data-validates="tier" disabled>Next <span class="arrow" aria-hidden="true">→</span></button>
+    </div>
+  </section>
+
+  <!-- 4: GOAL -->
+  <section class="screen" data-step="4">
+    <span class="q-eyebrow">Question 04 <span>/ 06</span></span>
+    <h2 class="q-title">What does success look like in <em>12 weeks</em>?</h2>
+    <p class="q-helper">The more specific, the better. "Drop 8kg" beats "get in shape." "Sub-90 HYROX" beats "perform better." Mukund reads every word.</p>
+    <div class="input-wrap">
+      <textarea id="f-goal" class="input-large" placeholder="In 12 weeks I want to..." rows="3" required></textarea>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn-back" data-action="back">← Back</button>
+      <button type="button" class="btn-next" data-action="next" data-validates="f-goal" disabled>Next <span class="arrow" aria-hidden="true">→</span></button>
+    </div>
+  </section>
+
+  <!-- 5: CONTEXT -->
+  <section class="screen" data-step="5">
+    <span class="q-eyebrow">Question 05 <span>/ 06</span></span>
+    <h2 class="q-title">A little <em>about you</em>.</h2>
+    <p class="q-helper">Age, profession, current training, anything that helps Mukund understand where you're starting from. Optional, but useful.</p>
+    <div class="input-wrap">
+      <textarea id="f-context" class="input-large" placeholder="42, founder, training 2x/wk, lost focus during last raise..." rows="3"></textarea>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn-back" data-action="back">← Back</button>
+      <button type="button" class="btn-next" data-action="next">Next <span class="arrow" aria-hidden="true">→</span></button>
+    </div>
+  </section>
+
+  <!-- 6: REVIEW -->
+  <section class="screen" data-step="6">
+    <span class="q-eyebrow">Final · review and send</span>
+    <h2 class="q-title">Looks <em>good</em>?</h2>
+    <p class="q-helper">Quick review before it lands in Mukund's inbox.</p>
+
+    <div class="review-list" id="reviewList"></div>
+
+    <div class="btn-row">
+      <button type="button" class="btn-back" data-action="back">← Edit</button>
+      <button type="button" class="btn-next" id="submitBtn">Send application <span class="arrow" aria-hidden="true">→</span></button>
+    </div>
+    <div class="hint">By submitting you agree to be contacted by Mukund about your application. No spam, no list, ever.</div>
+  </section>
+
+  <!-- 7: SENDING -->
+  <section class="screen" data-step="7">
+    <div class="sending">
+      <div class="pulse"></div>
+      <h3>Sending your application</h3>
+      <p>One moment</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  // Lead capture endpoint, paste deployed Apps Script URL once available
+  const LEAD_ENDPOINT = '__PASTE_GAS_WEB_APP_URL_HERE__';
+
+  const screens = [...document.querySelectorAll('.screen')];
+  const progress = document.getElementById('progress');
+  const dots = [...document.querySelectorAll('.progress .dot')];
+  const TOTAL_STEPS = 7; // 0=hero, 1-5=questions, 6=review (dots map to 1..7 visually)
+
+  let currentStep = 0;
+  const data = { name: '', email: '', tier: '', goal: '', context: '' };
+
+  // ============ NAVIGATION ============
+  function show(stepIndex) {
+    screens.forEach((s) => {
+      s.classList.remove('active', 'entering');
+    });
+    const target = screens[stepIndex];
+    if (!target) return;
+    target.classList.add('active');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => target.classList.add('entering'));
+    });
+    currentStep = stepIndex;
+    updateProgress();
+    setTimeout(() => focusInput(target), 320);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function updateProgress() {
+    if (currentStep >= 1 && currentStep <= 6) progress.classList.add('visible');
+    else progress.classList.remove('visible');
+    dots.forEach((d, i) => {
+      d.classList.remove('active', 'done');
+      if (currentStep - 1 === i) d.classList.add('active');
+      else if (i < currentStep - 1) d.classList.add('done');
+    });
+  }
+
+  function focusInput(screen) {
+    const input = screen.querySelector('input, textarea');
+    if (input && document.documentElement.clientWidth > 600) {
+      try { input.focus({ preventScroll: false }); } catch (_) {}
+    }
+  }
+
+  // ============ VALIDATION ============
+  function validate(field) {
+    if (!field) return true;
+    if (field === 'tier') return !!data.tier;
+    const el = document.getElementById(field);
+    if (!el) return true;
+    const val = (el.value || '').trim();
+    if (field === 'f-email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    return val.length > 0;
+  }
+
+  function setNextEnabled(screen, enabled) {
+    const btn = screen.querySelector('.btn-next');
+    if (btn) btn.disabled = !enabled;
+  }
+
+  // Watch inputs to enable next button
+  document.querySelectorAll('.screen input, .screen textarea').forEach((el) => {
+    el.addEventListener('input', () => {
+      const screen = el.closest('.screen');
+      const btn = screen.querySelector('.btn-next');
+      const validates = btn ? btn.getAttribute('data-validates') : null;
+      // Save into data object
+      if (el.id === 'f-name') data.name = el.value.trim();
+      if (el.id === 'f-email') data.email = el.value.trim();
+      if (el.id === 'f-goal') data.goal = el.value.trim();
+      if (el.id === 'f-context') data.context = el.value.trim();
+      setNextEnabled(screen, !validates || validate(validates));
+    });
+  });
+
+  // Tier card click
+  document.querySelectorAll('.tier-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.tier-card').forEach((c) => c.classList.remove('selected'));
+      card.classList.add('selected');
+      data.tier = card.getAttribute('data-tier') || '';
+      const screen = card.closest('.screen');
+      setNextEnabled(screen, true);
+    });
+  });
+
+  // Button clicks
+  document.querySelectorAll('[data-action="next"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const validates = btn.getAttribute('data-validates');
+      if (validates && !validate(validates)) return;
+      if (currentStep === 6) submit();
+      else show(currentStep + 1);
+    });
+  });
+  document.querySelectorAll('[data-action="back"]').forEach((btn) => {
+    btn.addEventListener('click', () => show(Math.max(0, currentStep - 1)));
+  });
+
+  // Keyboard: Enter advances
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    const target = e.target;
+    // Allow newlines in textareas with Shift+Enter; plain Enter advances
+    if (target && target.tagName === 'TEXTAREA' && e.shiftKey) return;
+    e.preventDefault();
+    const screen = screens[currentStep];
+    if (!screen) return;
+    const nextBtn = screen.querySelector('.btn-next');
+    if (nextBtn && !nextBtn.disabled) nextBtn.click();
+  });
+
+  // Build review list before showing review screen
+  function buildReview() {
+    const tierLabel = data.tier || 'Not specified';
+    const ctx = data.context || '(none)';
+    const html = `
+      <div class="review-row"><span class="lbl">Name</span><span class="val">${esc(data.name)}</span></div>
+      <div class="review-row"><span class="lbl">Email</span><span class="val">${esc(data.email)}</span></div>
+      <div class="review-row"><span class="lbl">Tier</span><span class="val"><em>${esc(tierLabel)}</em></span></div>
+      <div class="review-row"><span class="lbl">Your goal</span><span class="val">${esc(data.goal)}</span></div>
+      <div class="review-row"><span class="lbl">About you</span><span class="val">${esc(ctx)}</span></div>
+    `;
+    document.getElementById('reviewList').innerHTML = html;
+  }
+  function esc(s) { return String(s || '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])); }
+
+  // Hook into next-button click for review screen
+  document.querySelector('[data-step="5"] .btn-next').addEventListener('click', () => buildReview());
+  // Also build review when arriving via keyboard
+  const origShow = show;
+  show = function (i) { if (i === 6) buildReview(); origShow(i); };
+
+  // ============ SUBMIT ============
+  function postLead(payload) {
+    if (!LEAD_ENDPOINT || LEAD_ENDPOINT.startsWith('__PASTE')) return Promise.resolve({ skipped: true });
+    return fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+    }).then((r) => r.json()).catch((e) => ({ ok: false, error: String(e) }));
+  }
+
+  function buildThanksUrl() {
+    const params = new URLSearchParams({
+      name: data.name,
+      email: data.email,
+      tier: data.tier,
+    });
+    return '/thanks/?' + params.toString();
+  }
+
+  function submit() {
+    show(7); // sending screen
+
+    const url = new URL(window.location.href);
+    const payload = {
+      source: 'apply',
+      name: data.name,
+      email: data.email,
+      tier: data.tier,
+      goal: data.goal,
+      context: data.context,
+      utm_source: url.searchParams.get('utm_source') || '',
+      utm_content: url.searchParams.get('utm_content') || '',
+      page_url: window.location.href,
+      user_agent: navigator.userAgent,
+    };
+
+    postLead(payload).then((res) => {
+      // Always redirect to thanks. If endpoint isn't wired yet, also fire mailto so Mukund still gets notified.
+      if (res && res.skipped) {
+        const subject = encodeURIComponent('Coaching application: ' + data.name);
+        const bodyTxt = encodeURIComponent(
+          'Name: ' + data.name +
+          '\nEmail: ' + data.email +
+          '\nTier: ' + data.tier +
+          '\n\nGoal:\n' + data.goal +
+          '\n\nAbout:\n' + data.context
+        );
+        // open mailto in new tab so we can still redirect to thanks
+        window.open('mailto:hello@mukundvenkat.com?subject=' + subject + '&body=' + bodyTxt, '_blank');
+      }
+      setTimeout(() => {
+        window.location.href = buildThanksUrl();
+      }, 700);
+    });
+  }
+
+  // Init
+  show(0);
+})();
+</script>
+
+</body>
+</html>
