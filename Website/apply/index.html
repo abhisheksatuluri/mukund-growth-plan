@@ -646,9 +646,26 @@ textarea.input-large {
         window.open('mailto:hello@mukundvenkat.com?subject=' + subject + '&body=' + bodyTxt, '_blank');
       }
       setTimeout(() => {
-        window.location.href = buildThanksUrl();
+        // If we're inside the apply modal iframe, escape to top window so /thanks loads full-page.
+        // window.top === window when standalone, so this is safe in both contexts.
+        try { window.top.location.href = buildThanksUrl(); }
+        catch (_) { window.location.href = buildThanksUrl(); }
       }, 700);
     });
+  }
+
+  // ============ MODAL MODE STYLING ============
+  // When loaded inside the modal iframe (?modal=1), hide our own nav bar
+  // since the modal already provides one. Adjusts padding too.
+  if (new URLSearchParams(window.location.search).get('modal') === '1') {
+    document.documentElement.classList.add('in-modal');
+    const style = document.createElement('style');
+    style.textContent = `
+      .in-modal nav.top { display: none; }
+      .in-modal main.stage { padding-top: 56px; }
+      .in-modal .progress { top: 16px; }
+    `;
+    document.head.appendChild(style);
   }
 
   // Init
