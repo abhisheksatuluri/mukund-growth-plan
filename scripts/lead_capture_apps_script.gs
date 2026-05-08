@@ -35,8 +35,8 @@ const CONFIG = {
   //   4. Paste apikey below + your phone in international format with no + or spaces
   // If all numbers fail, the service may be down. Use Telegram below instead.
   CALLMEBOT: {
-    PHONE: '447943011882',         // Mukund's WhatsApp number, no + or spaces
-    APIKEY: 'PASTE_CALLMEBOT_APIKEY_HERE',
+    PHONE: '447943011882',         // VERIFY: must match the WhatsApp account you registered with CallMeBot. International format, no + or spaces.
+    APIKEY: '7538752',             // Filled in 2026-05-02
   },
 
   // Telegram bot fallback. https://core.telegram.org/bots#botfather
