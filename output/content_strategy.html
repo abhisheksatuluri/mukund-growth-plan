@@ -922,9 +922,16 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
 
     <div class="card">
       <h4>CallMeBot WhatsApp setup (2 min, free)</h4>
+      <p style="font-size:13px;margin-bottom:10px"><b style="color:var(--ink)">Note:</b> CallMeBot rotates their bot WhatsApp number occasionally. If one says "Invite to WhatsApp" or doesn't reply within 2 minutes, try the next one.</p>
       <ol style="font-size:13px;color:var(--ink-dim);line-height:1.7;padding-left:20px;margin-top:10px">
-        <li>On Mukund's WhatsApp, save this number: <b style="color:var(--accent)">+34 644 96 16 96</b> (CallMeBot's bot).</li>
-        <li>Open chat with that contact and send: <i>"I allow callmebot to send me messages"</i> (exact text).</li>
+        <li>Save the current bot number to Mukund's phone contacts. Try in this order:
+          <ul style="margin-top:6px;padding-left:18px;font-family:var(--mono);font-size:11.5px;line-height:1.8">
+            <li><b style="color:var(--accent)">+34 623 78 64 49</b> (most recent, try first)</li>
+            <li><b style="color:var(--accent)">+34 698 28 89 73</b> (fallback)</li>
+            <li><b style="color:var(--accent)">+34 684 78 33 47</b> (fallback)</li>
+          </ul>
+        </li>
+        <li>Open WhatsApp chat with the saved contact and send: <i>"I allow callmebot to send me messages"</i> (exact text, lowercase).</li>
         <li>Wait up to 2 minutes for the bot's reply. It will contain his unique apikey.</li>
         <li>Paste the apikey into the GAS CONFIG block:
           <pre style="background:var(--bg-3);padding:10px 12px;border-radius:4px;font-size:11.5px;margin-top:6px;overflow-x:auto;color:var(--ink-dim);font-family:var(--mono)">CALLMEBOT: {
@@ -934,7 +941,7 @@ footer{padding:48px 0;border-top:1px solid var(--line-2);background:var(--bg-2);
         </li>
         <li>Run <code style="font-family:var(--mono);color:var(--accent);font-size:11.5px">testNotify</code> in the Apps Script editor. He should get a WhatsApp ping immediately.</li>
       </ol>
-      <p class="note" style="margin-top:12px">CallMeBot is unofficial but stable, used by thousands of similar setups. If it ever flakes, switch the toggle in CONFIG to <code style="font-family:var(--mono);color:var(--accent);font-size:11px">NOTIFY_TELEGRAM: true</code> and follow the Telegram steps in the script header.</p>
+      <p class="note" style="margin-top:12px"><b style="color:var(--ink)">If all 3 numbers fail:</b> CallMeBot may have rotated again. Check <a href="https://www.callmebot.com/blog/free-api-whatsapp-messages/" target="_blank" style="color:var(--accent)">callmebot.com</a> for the current number. Or switch the toggle in CONFIG to <code style="font-family:var(--mono);color:var(--accent);font-size:11px">NOTIFY_TELEGRAM: true</code> and follow the Telegram steps in the script header (more stable, official API).</p>
     </div>
   </div>
 

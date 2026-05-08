@@ -23,9 +23,17 @@ const CONFIG = {
   NOTIFY_TELEGRAM: false,  // Telegram bot, set token + chat_id below
 
   // CallMeBot WhatsApp (free): https://www.callmebot.com/blog/free-api-whatsapp-messages/
-  // 1. On your WhatsApp, send "I allow callmebot to send me messages" to +34 644 96 16 96
-  // 2. Wait for the reply containing your apikey
-  // 3. Paste below + your phone in international format with no + or spaces
+  // CallMeBot rotates their bot phone number occasionally. As of 2026 the active numbers are:
+  //   1. +34 623 78 64 49 (current, try this first)
+  //   2. +34 698 28 89 73 (fallback)
+  //   3. +34 684 78 33 47 (fallback)
+  // If one says "Invite to WhatsApp" or doesn't reply, try the next.
+  // Setup:
+  //   1. Save the number above to your phone contacts
+  //   2. Open WhatsApp, send "I allow callmebot to send me messages" to the contact
+  //   3. Wait for reply containing your apikey (usually under 2 min)
+  //   4. Paste apikey below + your phone in international format with no + or spaces
+  // If all numbers fail, the service may be down. Use Telegram below instead.
   CALLMEBOT: {
     PHONE: '447943011882',         // Mukund's WhatsApp number, no + or spaces
     APIKEY: 'PASTE_CALLMEBOT_APIKEY_HERE',
